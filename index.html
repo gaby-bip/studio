@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sites pensados para valorizar sua marca e transformar sua presença digital.">
+  <title>Studio — Seu próximo site começa aqui</title>
+
+  <!-- Prévia local: os arquivos ficam em pastas separadas -->
+  <link rel="stylesheet" href="landing-page.css">
+</head>
+<body>
+
+  <!-- Todo o conteúdo da landing page fica dentro de #ss-landing -->
+  <div id="ss-landing">
+
+    <!-- Cabeçalho -->
+    <header class="ss-header">
+      <div class="ss-container ss-header__inner">
+        <a href="#" class="ss-brand" aria-label="Studio — início">
+          <span class="ss-brand__mark" aria-hidden="true"></span>
+          Studio
+        </a>
+
+        <nav class="ss-nav" aria-label="Navegação principal">
+          <a href="#ss-servicos" class="ss-nav__link">Serviços</a>
+          <a href="#ss-contato" class="ss-nav__link">Contato</a>
+
+          <div class="ss-theme" role="group" aria-label="Seleção de tema">
+            <button type="button" class="ss-theme__btn" data-ss-theme-choice="light" aria-pressed="false">Light</button>
+            <button type="button" class="ss-theme__btn" data-ss-theme-choice="dark" aria-pressed="false">Dark</button>
+            <button type="button" class="ss-theme__btn" data-ss-theme-choice="auto" aria-pressed="false">Auto</button>
+          </div>
+        </nav>
+
+        <button type="button" class="ss-menu-toggle" aria-expanded="false" aria-controls="ss-nav" aria-label="Abrir menu">
+          <span aria-hidden="true"></span>
+        </button>
+
+        <a href="#" class="ss-btn ss-btn--primary ss-header__cta" data-ss-msg="geral">Fale comigo</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="ss-hero">
+      <div class="ss-container ss-hero__inner">
+        <div class="ss-reveal">
+          <p class="ss-hero__eyebrow">Criação de sites</p>
+          <h1 class="ss-hero__title ss-serif">Seu próximo site <em>começa aqui</em>.</h1>
+          <p class="ss-hero__subtitle">Sites pensados para valorizar sua marca e transformar sua presença digital.</p>
+          <div class="ss-hero__actions">
+            <a href="#" class="ss-btn ss-btn--primary" data-ss-msg="geral">Solicitar um orçamento</a>
+            <a href="#ss-servicos" class="ss-hero__secondary">Conhecer os serviços</a>
+          </div>
+        </div>
+
+        <!-- Mockups em CSS puro (desktop + celular) -->
+        <div class="ss-mocks ss-reveal" aria-hidden="true">
+          <div class="ss-mocks__desktop">
+            <div class="ss-mocks__bar"><i></i><i></i><i></i></div>
+            <div class="ss-mocks__page">
+              <span class="ss-line-title"></span>
+              <span class="ss-line ss-line--w80"></span>
+              <span class="ss-line ss-line--w60"></span>
+              <span class="ss-line-cta"></span>
+            </div>
+          </div>
+          <div class="ss-mocks__phone">
+            <div class="ss-mocks__page">
+              <span class="ss-line-title"></span>
+              <span class="ss-line ss-line--w80"></span>
+              <span class="ss-line ss-line--w45"></span>
+              <span class="ss-line-cta"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="ss-services" id="ss-servicos">
+      <div class="ss-container">
+        <div class="ss-section-head ss-reveal">
+          <p class="ss-section-head__eyebrow">Serviços</p>
+          <h2 class="ss-section-head__title ss-serif">Três formas de colocar sua marca no ar.</h2>
+        </div>
+
+        <div class="ss-cards">
+          <article class="ss-card ss-reveal">
+            <span class="ss-card__num">01</span>
+            <h3 class="ss-card__title">Landing Page</h3>
+            <p class="ss-card__desc">Uma página estratégica para apresentar serviços, divulgar produtos e captar clientes.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informações <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="ss-card ss-reveal">
+            <span class="ss-card__num">02</span>
+            <h3 class="ss-card__title">E-commerce</h3>
+            <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catálogo, carrinho e integração com meios de pagamento.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informações <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="ss-card ss-reveal">
+            <span class="ss-card__num">03</span>
+            <h3 class="ss-card__title">Site Personalizado</h3>
+            <p class="ss-card__desc">Um site com duas ou mais páginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informações <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="ss-footer" id="ss-contato">
+      <div class="ss-container ss-footer__inner">
+        <a href="#" class="ss-brand" aria-label="Studio — início">
+          <span class="ss-brand__mark" aria-hidden="true"></span>
+          Studio
+        </a>
+
+        <nav class="ss-footer__nav" aria-label="Navegação do rodapé">
+          <a href="#ss-servicos" class="ss-footer__link">Serviços</a>
+          <a href="#" class="ss-footer__link" data-ss-msg="geral">Contato</a>
+        </nav>
+
+        <p class="ss-footer__copy">© <span data-ss-year>2026</span> Studio. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+  </div><!-- /#ss-landing -->
+
+  <!-- Prévia local: o script é carregado como arquivo separado -->
+  <script src="landing-page.js"></script>
+</body>
+</html>

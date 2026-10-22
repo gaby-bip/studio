@@ -1,0 +1,1040 @@
+<!-- ============================================================
+     ELEMENTOR - WIDGET HTML
+     Cole TODO o conteudo deste arquivo em UM unico widget HTML.
+     CSS e JS estao embutidos: nao depende de arquivos externos.
+     ============================================================ -->
+<style>
+/* ============================================================
+   LANDING PAGE — Estilos exclusivos
+   Todo o CSS está escopado dentro de #ss-landing.
+   Nenhum seletor global (html, body, header, footer) é afetado.
+   ============================================================ */
+
+#ss-landing {
+  /* Paleta */
+  --ss-green-deep: #0B1713;
+  --ss-forest: #254638;
+  --ss-sage: #A8C5B2;
+  --ss-pink: #E94B91;
+  --ss-offwhite: #F6F4EF;
+
+  /* Tema Light (padrão) */
+  --ss-bg: var(--ss-offwhite);
+  --ss-bg-soft: #EFEBE3;
+  --ss-bg-card: #FFFFFF;
+  --ss-text: var(--ss-green-deep);
+  --ss-text-muted: #5A6B62;
+  --ss-border: #D9D4C8;
+  --ss-accent: var(--ss-forest);
+  --ss-cta-bg: var(--ss-pink);
+  --ss-cta-text: #FFFFFF;
+  --ss-shadow: 0 10px 30px rgba(11, 23, 19, 0.08);
+  --ss-screen-bg: var(--ss-green-deep);
+
+  /* Tipografia e métricas */
+  --ss-font: "Georgia", "Times New Roman", serif;
+  --ss-font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ss-radius: 14px;
+  --ss-max: 1140px;
+
+  background: var(--ss-bg);
+  color: var(--ss-text);
+  font-family: var(--ss-font-ui);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+/* Tema Dark */
+#ss-landing[data-ss-theme="dark"] {
+  --ss-bg: var(--ss-green-deep);
+  --ss-bg-soft: #10201A;
+  --ss-bg-card: #14261F;
+  --ss-text: #EDF3EE;
+  --ss-text-muted: var(--ss-sage);
+  --ss-border: rgba(168, 197, 178, 0.18);
+  --ss-accent: var(--ss-sage);
+  --ss-cta-bg: var(--ss-pink);
+  --ss-cta-text: #FFFFFF;
+  --ss-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --ss-screen-bg: #10201A;
+}
+
+/* Anti-flash: o JS aplica .ss-ready depois de definir o tema */
+#ss-landing:not(.ss-ready),
+#ss-landing:not(.ss-ready) * {
+  transition: none !important;
+}
+
+/* ---------- Utilitários internos ---------- */
+#ss-landing .ss-container {
+  max-width: var(--ss-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+#ss-landing .ss-serif {
+  font-family: var(--ss-font);
+}
+
+/* ---------- Foco visível ---------- */
+#ss-landing a:focus-visible,
+#ss-landing button:focus-visible {
+  outline: 2px solid var(--ss-pink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Cabeçalho ---------- */
+#ss-landing .ss-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--ss-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ss-border);
+}
+
+#ss-landing .ss-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+}
+
+#ss-landing .ss-brand {
+  font-family: var(--ss-font);
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--ss-text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#ss-landing .ss-brand__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ss-pink);
+  flex: none;
+}
+
+#ss-landing .ss-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+#ss-landing .ss-nav__link {
+  color: var(--ss-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+#ss-landing .ss-nav__link:hover,
+#ss-landing .ss-nav__link:focus-visible {
+  color: var(--ss-text);
+}
+
+/* Botões */
+#ss-landing .ss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: var(--ss-font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+#ss-landing .ss-btn--primary {
+  background: var(--ss-cta-bg);
+  color: var(--ss-cta-text);
+}
+
+#ss-landing .ss-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ss-shadow);
+}
+
+#ss-landing .ss-btn--ghost {
+  background: transparent;
+  color: var(--ss-text);
+  border-color: var(--ss-border);
+}
+
+#ss-landing .ss-btn--ghost:hover {
+  border-color: var(--ss-accent);
+  color: var(--ss-accent);
+}
+
+/* Seletor de tema */
+#ss-landing .ss-theme {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ss-border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  background: var(--ss-bg-card);
+}
+
+#ss-landing .ss-theme__btn {
+  border: 0;
+  background: transparent;
+  color: var(--ss-text-muted);
+  font-family: var(--ss-font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#ss-landing .ss-theme__btn[aria-pressed="true"] {
+  background: var(--ss-forest);
+  color: #FFFFFF;
+}
+
+#ss-landing[data-ss-theme="dark"] .ss-theme__btn[aria-pressed="true"] {
+  background: var(--ss-sage);
+  color: var(--ss-green-deep);
+}
+
+/* Menu mobile */
+#ss-landing .ss-menu-toggle {
+  display: none;
+  border: 1px solid var(--ss-border);
+  background: var(--ss-bg-card);
+  color: var(--ss-text);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+#ss-landing .ss-menu-toggle span,
+#ss-landing .ss-menu-toggle span::before,
+#ss-landing .ss-menu-toggle span::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  content: "";
+}
+
+#ss-landing .ss-menu-toggle span::before {
+  position: absolute;
+  top: -6px;
+}
+
+#ss-landing .ss-menu-toggle span::after {
+  position: absolute;
+  top: 6px;
+}
+
+#ss-landing .ss-menu-toggle[aria-expanded="true"] span {
+  transform: rotate(45deg);
+}
+
+#ss-landing .ss-menu-toggle[aria-expanded="true"] span::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#ss-landing .ss-menu-toggle[aria-expanded="true"] span::after {
+  top: 0;
+  opacity: 0;
+}
+
+/* ---------- Hero ---------- */
+#ss-landing .ss-hero {
+  padding: 88px 0 96px;
+}
+
+#ss-landing .ss-hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px;
+  align-items: center;
+}
+
+#ss-landing .ss-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ss-accent);
+  margin-bottom: 24px;
+}
+
+#ss-landing .ss-hero__eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--ss-accent);
+}
+
+#ss-landing .ss-hero__title {
+  font-family: var(--ss-font);
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  font-weight: 500;
+}
+
+#ss-landing .ss-hero__title em {
+  font-style: italic;
+  color: var(--ss-accent);
+}
+
+#ss-landing .ss-hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--ss-text-muted);
+  max-width: 46ch;
+  margin: 0 0 36px;
+}
+
+#ss-landing .ss-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#ss-landing .ss-hero__secondary {
+  color: var(--ss-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--ss-accent);
+  padding-bottom: 3px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+#ss-landing .ss-hero__secondary:hover {
+  color: var(--ss-accent);
+}
+
+/* Mockups (CSS puro, sem imagens) */
+#ss-landing .ss-mocks {
+  position: relative;
+  min-height: 420px;
+}
+
+#ss-landing .ss-mocks__desktop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 86%;
+  background: var(--ss-screen-bg);
+  border: 1px solid var(--ss-border);
+  border-radius: 12px;
+  box-shadow: var(--ss-shadow);
+  overflow: hidden;
+}
+
+#ss-landing .ss-mocks__phone {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  aspect-ratio: 9 / 19;
+  background: var(--ss-screen-bg);
+  border: 1px solid var(--ss-border);
+  border-radius: 22px;
+  box-shadow: var(--ss-shadow);
+  overflow: hidden;
+  z-index: 2;
+}
+
+#ss-landing .ss-mocks__bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ss-border);
+}
+
+#ss-landing .ss-mocks__bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ss-sage);
+  opacity: 0.55;
+}
+
+#ss-landing .ss-mocks__bar i:first-child {
+  background: var(--ss-pink);
+  opacity: 0.9;
+}
+
+#ss-landing .ss-mocks__page {
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+#ss-landing .ss-mocks__page span {
+  display: block;
+  border-radius: 4px;
+  background: var(--ss-sage);
+  opacity: 0.28;
+}
+
+#ss-landing .ss-mocks__page .ss-line-title {
+  height: 14px;
+  width: 62%;
+  background: var(--ss-sage);
+  opacity: 0.65;
+}
+
+#ss-landing .ss-mocks__page .ss-line-cta {
+  height: 22px;
+  width: 34%;
+  background: var(--ss-pink);
+  opacity: 0.85;
+  border-radius: 999px;
+}
+
+#ss-landing .ss-mocks__page .ss-line {
+  height: 8px;
+}
+
+#ss-landing .ss-mocks__page .ss-line--w60 { width: 60%; }
+#ss-landing .ss-mocks__page .ss-line--w80 { width: 80%; }
+#ss-landing .ss-mocks__page .ss-line--w45 { width: 45%; }
+
+#ss-landing .ss-mocks__phone .ss-mocks__page {
+  padding: 14px 12px;
+}
+
+/* ---------- Serviços ---------- */
+#ss-landing .ss-services {
+  padding: 96px 0;
+  background: var(--ss-bg-soft);
+  border-top: 1px solid var(--ss-border);
+  border-bottom: 1px solid var(--ss-border);
+}
+
+#ss-landing .ss-section-head {
+  max-width: 620px;
+  margin-bottom: 56px;
+}
+
+#ss-landing .ss-section-head__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ss-accent);
+  margin-bottom: 16px;
+}
+
+#ss-landing .ss-section-head__title {
+  font-family: var(--ss-font);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 500;
+}
+
+#ss-landing .ss-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+#ss-landing .ss-card {
+  background: var(--ss-bg-card);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#ss-landing .ss-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ss-shadow);
+  border-color: var(--ss-accent);
+}
+
+#ss-landing .ss-card__num {
+  font-family: var(--ss-font);
+  font-size: 0.95rem;
+  color: var(--ss-accent);
+  letter-spacing: 0.08em;
+}
+
+#ss-landing .ss-card__title {
+  font-family: var(--ss-font);
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+#ss-landing .ss-card__desc {
+  color: var(--ss-text-muted);
+  font-size: 0.98rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+#ss-landing .ss-card__link {
+  color: var(--ss-text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+#ss-landing .ss-card__link:hover {
+  color: var(--ss-pink);
+  gap: 12px;
+}
+
+/* ---------- Rodapé ---------- */
+#ss-landing .ss-footer {
+  padding: 48px 0;
+}
+
+#ss-landing .ss-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#ss-landing .ss-footer__nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#ss-landing .ss-footer__link {
+  color: var(--ss-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+#ss-landing .ss-footer__link:hover {
+  color: var(--ss-text);
+}
+
+#ss-landing .ss-footer__copy {
+  font-size: 0.85rem;
+  color: var(--ss-text-muted);
+  width: 100%;
+  border-top: 1px solid var(--ss-border);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+/* ---------- Animações leves de entrada ---------- */
+#ss-landing .ss-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#ss-landing .ss-reveal.ss-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #ss-landing *,
+  #ss-landing *::before,
+  #ss-landing *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  #ss-landing .ss-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 960px) {
+  #ss-landing .ss-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  #ss-landing .ss-mocks {
+    min-height: 340px;
+    max-width: 560px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  #ss-landing .ss-cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #ss-landing .ss-hero {
+    padding: 56px 0 72px;
+  }
+
+  #ss-landing .ss-services {
+    padding: 72px 0;
+  }
+
+  #ss-landing .ss-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--ss-bg);
+    border-bottom: 1px solid var(--ss-border);
+    display: none;
+    padding: 8px 24px 20px;
+  }
+
+  #ss-landing .ss-nav.ss-nav--open {
+    display: flex;
+  }
+
+  #ss-landing .ss-nav__link {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--ss-border);
+    font-size: 1rem;
+  }
+
+  #ss-landing .ss-nav .ss-theme {
+    margin-top: 16px;
+    align-self: flex-start;
+  }
+
+  #ss-landing .ss-header__inner .ss-theme--desktop {
+    display: none;
+  }
+
+  #ss-landing .ss-menu-toggle {
+    display: inline-flex;
+  }
+
+  #ss-landing .ss-header__cta {
+    display: none;
+  }
+
+  #ss-landing .ss-header__inner {
+    gap: 12px;
+  }
+}
+
+</style>
+
+<body>
+
+  <!-- Todo o conteúdo da landing page fica dentro de #ss-landing -->
+  <div id="ss-landing">
+
+    <!-- Cabeçalho -->
+    <header class="ss-header">
+      <div class="ss-container ss-header__inner">
+        <a href="#" class="ss-brand" aria-label="Studio — início">
+          <span class="ss-brand__mark" aria-hidden="true"></span>
+          Studio
+        </a>
+
+        <nav class="ss-nav" aria-label="Navegação principal">
+          <a href="#ss-servicos" class="ss-nav__link">Serviços</a>
+          <a href="#ss-contato" class="ss-nav__link">Contato</a>
+
+          <div class="ss-theme" role="group" aria-label="Seleção de tema">
+            <button type="button" class="ss-theme__btn" data-ss-theme-choice="light" aria-pressed="false">Light</button>
+            <button type="button" class="ss-theme__btn" data-ss-theme-choice="dark" aria-pressed="false">Dark</button>
+            <button type="button" class="ss-theme__btn" data-ss-theme-choice="auto" aria-pressed="false">Auto</button>
+          </div>
+        </nav>
+
+        <button type="button" class="ss-menu-toggle" aria-expanded="false" aria-controls="ss-nav" aria-label="Abrir menu">
+          <span aria-hidden="true"></span>
+        </button>
+
+        <a href="#" class="ss-btn ss-btn--primary ss-header__cta" data-ss-msg="geral">Fale comigo</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="ss-hero">
+      <div class="ss-container ss-hero__inner">
+        <div class="ss-reveal">
+          <p class="ss-hero__eyebrow">Criação de sites</p>
+          <h1 class="ss-hero__title ss-serif">Seu próximo site <em>começa aqui</em>.</h1>
+          <p class="ss-hero__subtitle">Sites pensados para valorizar sua marca e transformar sua presença digital.</p>
+          <div class="ss-hero__actions">
+            <a href="#" class="ss-btn ss-btn--primary" data-ss-msg="geral">Solicitar um orçamento</a>
+            <a href="#ss-servicos" class="ss-hero__secondary">Conhecer os serviços</a>
+          </div>
+        </div>
+
+        <!-- Mockups em CSS puro (desktop + celular) -->
+        <div class="ss-mocks ss-reveal" aria-hidden="true">
+          <div class="ss-mocks__desktop">
+            <div class="ss-mocks__bar"><i></i><i></i><i></i></div>
+            <div class="ss-mocks__page">
+              <span class="ss-line-title"></span>
+              <span class="ss-line ss-line--w80"></span>
+              <span class="ss-line ss-line--w60"></span>
+              <span class="ss-line-cta"></span>
+            </div>
+          </div>
+          <div class="ss-mocks__phone">
+            <div class="ss-mocks__page">
+              <span class="ss-line-title"></span>
+              <span class="ss-line ss-line--w80"></span>
+              <span class="ss-line ss-line--w45"></span>
+              <span class="ss-line-cta"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="ss-services" id="ss-servicos">
+      <div class="ss-container">
+        <div class="ss-section-head ss-reveal">
+          <p class="ss-section-head__eyebrow">Serviços</p>
+          <h2 class="ss-section-head__title ss-serif">Três formas de colocar sua marca no ar.</h2>
+        </div>
+
+        <div class="ss-cards">
+          <article class="ss-card ss-reveal">
+            <span class="ss-card__num">01</span>
+            <h3 class="ss-card__title">Landing Page</h3>
+            <p class="ss-card__desc">Uma página estratégica para apresentar serviços, divulgar produtos e captar clientes.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informações <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="ss-card ss-reveal">
+            <span class="ss-card__num">02</span>
+            <h3 class="ss-card__title">E-commerce</h3>
+            <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catálogo, carrinho e integração com meios de pagamento.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informações <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="ss-card ss-reveal">
+            <span class="ss-card__num">03</span>
+            <h3 class="ss-card__title">Site Personalizado</h3>
+            <p class="ss-card__desc">Um site com duas ou mais páginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informações <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="ss-footer" id="ss-contato">
+      <div class="ss-container ss-footer__inner">
+        <a href="#" class="ss-brand" aria-label="Studio — início">
+          <span class="ss-brand__mark" aria-hidden="true"></span>
+          Studio
+        </a>
+
+        <nav class="ss-footer__nav" aria-label="Navegação do rodapé">
+          <a href="#ss-servicos" class="ss-footer__link">Serviços</a>
+          <a href="#" class="ss-footer__link" data-ss-msg="geral">Contato</a>
+        </nav>
+
+        <p class="ss-footer__copy">© <span data-ss-year>2026</span> Studio. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+  </div><!-- /#ss-landing -->
+
+<script>
+/* ============================================================
+   LANDING PAGE — JavaScript puro (sem jQuery, sem build)
+   Inicializa apenas dentro de #ss-landing.
+   ============================================================ */
+
+(function () {
+  "use strict";
+
+  /* ============================================================
+     ⚙️ CONFIGURAÇÃO ÚNICA — EDITE APENAS ESTE BLOCO
+     ============================================================
+     Substitua o valor de SS_WHATSAPP_URL pelo seu link do WhatsApp.
+     Exemplo: "https://wa.me/5511999999999"
+     (55 = Brasil, 11 = DDD, 999999999 = número, sem espaços/traços)
+     Enquanto não configurar, os botões apontam para "#" (marcador).
+     ============================================================ */
+  var SS_WHATSAPP_URL = "#"; // <-- COLOQUE SEU LINK DO WHATSAPP AQUI
+
+  // Mensagens pré-preenchidas por serviço (podem ser personalizadas)
+  var SS_MESSAGES = {
+    geral: "Olá! Vim pelo site e gostaria de conversar sobre um projeto.",
+    landing: "Olá! Tenho interesse em criar uma Landing Page.",
+    ecommerce: "Olá! Tenho interesse em criar um E-commerce.",
+    site: "Olá! Tenho interesse em um Site Personalizado."
+  };
+
+  /* Aplica os links de contato em todos os CTAs.
+     Cada CTA declara data-ss-msg="landing|ecommerce|site|geral". */
+  function applyContactLinks(root) {
+    var links = root.querySelectorAll("[data-ss-msg]");
+    for (var i = 0; i < links.length; i++) {
+      var key = links[i].getAttribute("data-ss-msg") || "geral";
+      var msg = SS_MESSAGES[key] || SS_MESSAGES.geral;
+      if (SS_WHATSAPP_URL && SS_WHATSAPP_URL !== "#") {
+        links[i].setAttribute(
+          "href",
+          SS_WHATSAPP_URL +
+            (SS_WHATSAPP_URL.indexOf("?") > -1 ? "&" : "?") +
+            "text=" +
+            encodeURIComponent(msg)
+        );
+        links[i].setAttribute("target", "_blank");
+        links[i].setAttribute("rel", "noopener noreferrer");
+      } else {
+        links[i].setAttribute("href", "#");
+        links[i].removeAttribute("target");
+        links[i].removeAttribute("rel");
+      }
+    }
+  }
+
+  /* ============================================================
+     TEMA: Light | Dark | Automático
+     - Automático: 06:00–18:59 = Light | 19:00–05:59 = Dark
+     - Persistência via localStorage (com fallback em memória)
+     - Recalcula a cada minuto e quando a aba volta a ficar visível
+     ============================================================ */
+
+  var STORAGE_KEY = "ss-theme-preference"; // "light" | "dark" | "auto"
+
+  // Fallback seguro quando localStorage está indisponível
+  var memoryStore = { value: null };
+  var store = {
+    get: function () {
+      try {
+        return window.localStorage.getItem(STORAGE_KEY);
+      } catch (e) {
+        return memoryStore.value;
+      }
+    },
+    set: function (val) {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, val);
+      } catch (e) {
+        memoryStore.value = val;
+      }
+    },
+    remove: function () {
+      try {
+        window.localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {
+        memoryStore.value = null;
+      }
+    }
+  };
+
+  // Retorna "light" ou "dark" conforme o horário local do navegador
+  function themeByTime() {
+    var hour = new Date().getHours(); // 0–23, horário local
+    return hour >= 6 && hour <= 18 ? "light" : "dark";
+  }
+
+  // Preferência salva + horário -> tema efetivo
+  function effectiveTheme(preference) {
+    if (preference === "light" || preference === "dark") return preference;
+    return themeByTime();
+  }
+
+  function setThemeAttr(root, theme) {
+    root.setAttribute("data-ss-theme", theme);
+    root.setAttribute("data-ss-theme-effective", theme);
+  }
+
+  // Marca o botão ativo do seletor
+  function syncThemeButtons(root, preference) {
+    var btns = root.querySelectorAll(".ss-theme__btn");
+    for (var i = 0; i < btns.length; i++) {
+      var active = btns[i].getAttribute("data-ss-theme-choice") === preference;
+      btns[i].setAttribute("aria-pressed", active ? "true" : "false");
+    }
+  }
+
+  function applyTheme(root, preference) {
+    setThemeAttr(root, effectiveTheme(preference));
+    syncThemeButtons(root, preference);
+  }
+
+  function initTheme(root) {
+    // Aplica imediatamente (o CSS já evita transição até .ss-ready)
+    var saved = store.get();
+    applyTheme(root, saved || "auto");
+
+    // Clique no seletor de tema
+    root.addEventListener("click", function (ev) {
+      var btn = ev.target.closest ? ev.target.closest(".ss-theme__btn") : null;
+      if (!btn || !root.contains(btn)) return;
+      var choice = btn.getAttribute("data-ss-theme-choice");
+      if (!choice) return;
+
+      if (choice === "auto") {
+        store.remove(); // remove preferência manual
+      } else {
+        store.set(choice);
+      }
+      applyTheme(root, store.get() || "auto");
+    });
+
+    // Recalcula o tema a cada minuto (modo automático)
+    setInterval(function () {
+      if ((store.get() || "auto") === "auto") {
+        applyTheme(root, "auto");
+      }
+    }, 60000);
+
+    // Recalcula quando a página volta a ficar visível
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && (store.get() || "auto") === "auto") {
+        applyTheme(root, "auto");
+      }
+    });
+  }
+
+  /* ============================================================
+     MENU MOBILE
+     ============================================================ */
+  function initMobileMenu(root) {
+    var toggle = root.querySelector(".ss-menu-toggle");
+    var nav = root.querySelector(".ss-nav");
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("ss-nav--open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    // Fecha o menu ao clicar em um link
+    nav.addEventListener("click", function (ev) {
+      if (ev.target.closest && ev.target.closest("a")) {
+        nav.classList.remove("ss-nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fecha com tecla Escape
+    root.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && nav.classList.contains("ss-nav--open")) {
+        nav.classList.remove("ss-nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
+  }
+
+  /* ============================================================
+     ANIMAÇÕES LEVES DE ENTRADA (IntersectionObserver)
+     ============================================================ */
+  function initReveals(root) {
+    var items = root.querySelectorAll(".ss-reveal");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      for (var i = 0; i < items.length; i++) {
+        items[i].classList.add("ss-visible");
+      }
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        for (var j = 0; j < entries.length; j++) {
+          if (entries[j].isIntersecting) {
+            entries[j].target.classList.add("ss-visible");
+            observer.unobserve(entries[j].target);
+          }
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    for (var k = 0; k < items.length; k++) {
+      observer.observe(items[k]);
+    }
+  }
+
+  /* ============================================================
+     INICIALIZAÇÃO
+     Roda para cada instância de #ss-landing na página.
+     ============================================================ */
+  function init() {
+    var roots = document.querySelectorAll("#ss-landing");
+    for (var i = 0; i < roots.length; i++) {
+      var root = roots[i];
+      if (root.getAttribute("data-ss-init") === "true") continue; // evita dupla inicialização
+      root.setAttribute("data-ss-init", "true");
+
+      applyContactLinks(root);
+      initTheme(root);
+      initMobileMenu(root);
+      initReveals(root);
+
+      // Ano automático no copyright
+      var yearEl = root.querySelector("[data-ss-year]");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      // Habilita transições só depois do tema definido (anti-flash)
+      requestAnimationFrame(function (el) {
+        return function () {
+          el.classList.add("ss-ready");
+        };
+      }(root));
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+</script>
