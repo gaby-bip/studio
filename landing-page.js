@@ -213,6 +213,33 @@
   }
 
   /* ============================================================
+      FAQ (ACORDEÃO)
+      - Usa <details>/<summary> nativos (sem dependências)
+      - Apenas uma pergunta aberta por vez
+      - Compatível com Elementor (inicialização idempotente)
+      ============================================================ */
+  function initFaq(root) {
+    var faq = root.querySelector("#ss-faq");
+    if (!faq || faq.getAttribute("data-ss-faq-init") === "true") return;
+    faq.setAttribute("data-ss-faq-init", "true");
+
+    var items = faq.querySelectorAll("details.ss-faq__item");
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("toggle", (function (item) {
+        return function () {
+          if (!item.open) return;
+          for (var j = 0; j < items.length; j++) {
+            if (items[j] !== item) {
+              items[j].open = false;
+            }
+          }
+        };
+      })(items[i]));
+    }
+  }
+
+  /* ============================================================
      INICIALIZAÇÃO
      Roda para cada instância de #ss-landing na página.
      ============================================================ */
@@ -227,6 +254,7 @@
       initTheme(root);
       initMobileMenu(root);
       initReveals(root);
+      initFaq(root);
 
       // Ano automático no copyright
       var yearEl = root.querySelector("[data-ss-year]");

@@ -513,6 +513,195 @@
   gap: 12px;
 }
 
+#ss-landing .ss-section-head__subtitle {
+  color: var(--ss-text-muted);
+  font-size: 1.05rem;
+  margin: 16px 0 0;
+}
+
+/* ---------- Perguntas frequentes (FAQ) ---------- */
+#ss-landing .ss-faq {
+  padding: 96px 0;
+}
+
+#ss-landing .ss-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: none;
+}
+
+/* Layout de duas colunas: ilustração à esquerda, FAQ à direita */
+#ss-landing .ss-faq__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 64px;
+  align-items: center;
+}
+
+#ss-landing .ss-faq__aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ss-landing .ss-faq__art {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+/* Lista de prazos dentro da resposta */
+#ss-landing .ss-faq__terms {
+  margin: 12px 0;
+  padding: 0 0 0 20px;
+  color: var(--ss-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+#ss-landing .ss-faq__terms li {
+  margin: 4px 0;
+}
+
+#ss-landing .ss-faq__item {
+  background: var(--ss-bg-card);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#ss-landing .ss-faq__item[open] {
+  border-color: var(--ss-accent);
+  box-shadow: var(--ss-shadow);
+}
+
+#ss-landing .ss-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--ss-font);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ss-text);
+  transition: color 0.25s ease;
+}
+
+#ss-landing .ss-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+#ss-landing .ss-faq__question:hover {
+  color: var(--ss-accent);
+}
+
+#ss-landing .ss-faq__question:focus-visible {
+  outline: 2px solid var(--ss-accent);
+  outline-offset: -2px;
+  border-radius: var(--ss-radius);
+}
+
+#ss-landing .ss-faq__icon {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ss-accent);
+  transition: transform 0.25s ease;
+}
+
+#ss-landing .ss-faq__item[open] .ss-faq__icon {
+  transform: rotate(45deg);
+}
+
+#ss-landing .ss-faq__answer {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--ss-border);
+  padding-top: 20px;
+}
+
+#ss-landing .ss-faq__answer p {
+  margin: 0;
+  color: var(--ss-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---------- Benefícios ---------- */
+#ss-landing .ss-benefits {
+  padding: 96px 0;
+  background: var(--ss-bg-soft);
+  border-top: 1px solid var(--ss-border);
+  border-bottom: 1px solid var(--ss-border);
+}
+
+#ss-landing .ss-cards--benefits {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#ss-landing .ss-card--benefit {
+  gap: 12px;
+}
+
+#ss-landing .ss-card--benefit .ss-card__num {
+  font-size: 0.85rem;
+  color: var(--ss-pink);
+}
+
+/* ---------- Botão flutuante de WhatsApp ---------- */
+#ss-landing .ss-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  box-shadow: 0 6px 18px rgba(11, 23, 19, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+#ss-landing .ss-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+#ss-landing .ss-whatsapp:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 24px rgba(11, 23, 19, 0.3);
+}
+
+#ss-landing .ss-whatsapp:focus-visible {
+  outline: 2px solid var(--ss-pink);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  #ss-landing .ss-whatsapp {
+    width: 52px;
+    height: 52px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+  }
+
+  #ss-landing .ss-whatsapp svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 /* ---------- Rodapé ---------- */
 #ss-landing .ss-footer {
   padding: 48px 0;
@@ -598,6 +787,42 @@
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
+  }
+
+  #ss-landing .ss-cards--benefits {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  #ss-landing .ss-faq,
+  #ss-landing .ss-benefits {
+    padding: 72px 0;
+  }
+
+  #ss-landing .ss-cards--benefits {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  #ss-landing .ss-faq__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #ss-landing .ss-faq__art {
+    max-width: 320px;
+  }
+
+  #ss-landing .ss-faq__question {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  #ss-landing .ss-faq__answer {
+    padding: 0 20px 20px;
   }
 }
 
