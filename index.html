@@ -54,24 +54,63 @@
           </div>
         </div>
 
-        <!-- Mockups em CSS puro (desktop + celular) -->
+        <!-- Mockups premium em CSS/SVG puro: notebook + smartphone -->
         <div class="ss-mocks ss-reveal" aria-hidden="true">
-          <div class="ss-mocks__desktop">
-            <div class="ss-mocks__bar"><i></i><i></i><i></i></div>
-            <div class="ss-mocks__page">
-              <span class="ss-line-title"></span>
-              <span class="ss-line ss-line--w80"></span>
-              <span class="ss-line ss-line--w60"></span>
-              <span class="ss-line-cta"></span>
+          <div class="ss-mocks__laptop">
+            <div class="ss-mocks__lid">
+              <span class="ss-mocks__camera"></span>
+              <div class="ss-mocks__screen">
+                <div class="ss-mocks__site">
+                  <div class="ss-mocks__topbar">
+                    <span class="ss-mocks__logo"><i></i>Studio</span>
+                    <span class="ss-mocks__links"><i></i><i></i><i></i><i></i></span>
+                    <span class="ss-mocks__pill"></span>
+                  </div>
+                  <div class="ss-mocks__page">
+                    <div class="ss-mocks__copy">
+                      <span class="ss-mocks__eyebrow">Criação de sites</span>
+                      <span class="ss-mocks__headline">Transforme suas <em>ideias</em> em resultados.</span>
+                      <span class="ss-mocks__cta"></span>
+                    </div>
+                    <div class="ss-mocks__visual">
+                      <svg class="ss-mocks__waves" viewBox="0 0 260 180" preserveAspectRatio="none">
+                        <path d="M0 150 C 60 120 120 170 260 110" fill="none" stroke="rgba(168,197,178,.35)" stroke-width="1.5"/>
+                        <path d="M0 165 C 70 135 140 180 260 130" fill="none" stroke="rgba(168,197,178,.22)" stroke-width="1.5"/>
+                        <path d="M0 180 C 80 150 160 190 260 150" fill="none" stroke="rgba(168,197,178,.14)" stroke-width="1.5"/>
+                      </svg>
+                      <span class="ss-mocks__pot"></span>
+                      <span class="ss-mocks__plant">
+                        <i></i><i></i><i></i><i></i><i></i>
+                      </span>
+                      <span class="ss-mocks__pedestal"></span>
+                    </div>
+                  </div>
+                </div>
+                <span class="ss-mocks__glare"></span>
+              </div>
             </div>
+            <div class="ss-mocks__base"><span class="ss-mocks__notch"></span></div>
+            <span class="ss-mocks__shadow"></span>
           </div>
+
           <div class="ss-mocks__phone">
-            <div class="ss-mocks__page">
-              <span class="ss-line-title"></span>
-              <span class="ss-line ss-line--w80"></span>
-              <span class="ss-line ss-line--w45"></span>
-              <span class="ss-line-cta"></span>
+            <span class="ss-mocks__notch-phone"></span>
+            <div class="ss-mocks__screen ss-mocks__screen--phone">
+              <div class="ss-mocks__topbar ss-mocks__topbar--phone">
+                <span class="ss-mocks__logo"><i></i></span>
+                <span class="ss-mocks__pill"></span>
+              </div>
+              <div class="ss-mocks__page ss-mocks__page--phone">
+                <span class="ss-mocks__headline ss-mocks__headline--sm">Seu site em <em>qualquer</em> dispositivo.</span>
+                <span class="ss-mocks__cta"></span>
+                <svg class="ss-mocks__waves ss-mocks__waves--sm" viewBox="0 0 160 120" preserveAspectRatio="none">
+                  <path d="M0 95 C 40 70 90 110 160 60" fill="none" stroke="rgba(168,197,178,.35)" stroke-width="1.5"/>
+                  <path d="M0 108 C 50 82 110 118 160 82" fill="none" stroke="rgba(168,197,178,.2)" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <span class="ss-mocks__glare ss-mocks__glare--phone"></span>
             </div>
+            <span class="ss-mocks__shadow ss-mocks__shadow--phone"></span>
           </div>
         </div>
       </div>
@@ -86,23 +125,68 @@
         </div>
 
         <div class="ss-cards">
-          <article class="ss-card ss-reveal">
+          <article class="ss-card ss-card--service ss-reveal">
+            <span class="ss-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+                <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+                <path d="M-10 130 C 90 108 150 134 250 100" fill="none" stroke="currentColor" stroke-width="1" opacity=".18"/>
+              </svg>
+            </span>
+            <span class="ss-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 3.5l7 17 2.2-6.3 6.3-2.2z"/>
+                <path d="M13.7 13.7l4.8 4.8"/>
+              </svg>
+            </span>
             <span class="ss-card__num">01</span>
-            <h3 class="ss-card__title">Landing Page</h3>
+            <h3 class="ss-card__title ss-serif">Landing Page</h3>
             <p class="ss-card__desc">Uma página estratégica para apresentar serviços, divulgar produtos e captar clientes.</p>
             <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informações <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="ss-card ss-reveal">
+          <article class="ss-card ss-card--service ss-reveal">
+            <span class="ss-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+                <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+                <path d="M-10 130 C 90 108 150 134 250 100" fill="none" stroke="currentColor" stroke-width="1" opacity=".18"/>
+              </svg>
+            </span>
+            <span class="ss-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/>
+                <circle cx="9.5" cy="20" r="1.2"/>
+                <circle cx="17.5" cy="20" r="1.2"/>
+              </svg>
+            </span>
             <span class="ss-card__num">02</span>
-            <h3 class="ss-card__title">E-commerce</h3>
+            <h3 class="ss-card__title ss-serif">E-commerce</h3>
             <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catálogo, carrinho e integração com meios de pagamento.</p>
             <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informações <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="ss-card ss-reveal">
+          <article class="ss-card ss-card--service ss-reveal">
+            <span class="ss-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+                <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+                <path d="M-10 130 C 90 108 150 134 250 100" fill="none" stroke="currentColor" stroke-width="1" opacity=".18"/>
+              </svg>
+            </span>
+            <span class="ss-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4.5" width="18" height="15" rx="2.5"/>
+                <path d="M3 9h18"/>
+                <path d="M14 4.5V9"/>
+                <path d="M6 13h6M6 16h4"/>
+              </svg>
+            </span>
             <span class="ss-card__num">03</span>
-            <h3 class="ss-card__title">Site Personalizado</h3>
+            <h3 class="ss-card__title ss-serif">Site Personalizado</h3>
             <p class="ss-card__desc">Um site com duas ou mais páginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
             <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informações <span aria-hidden="true">→</span></a>
           </article>

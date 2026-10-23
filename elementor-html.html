@@ -1,13 +1,13 @@
-<!-- ============================================================
+﻿<!-- ============================================================
      ELEMENTOR - WIDGET HTML
      Cole TODO o conteudo deste arquivo em UM unico widget HTML.
      CSS e JS estao embutidos: nao depende de arquivos externos.
      ============================================================ -->
 <style>
 /* ============================================================
-   LANDING PAGE — Estilos exclusivos
-   Todo o CSS está escopado dentro de #ss-landing.
-   Nenhum seletor global (html, body, header, footer) é afetado.
+   LANDING PAGE â€” Estilos exclusivos
+   Todo o CSS estÃ¡ escopado dentro de #ss-landing.
+   Nenhum seletor global (html, body, header, footer) Ã© afetado.
    ============================================================ */
 
 #ss-landing {
@@ -18,7 +18,7 @@
   --ss-pink: #E94B91;
   --ss-offwhite: #F6F4EF;
 
-  /* Tema Light (padrão) */
+  /* Tema Light (padrÃ£o) */
   --ss-bg: var(--ss-offwhite);
   --ss-bg-soft: #EFEBE3;
   --ss-bg-card: #FFFFFF;
@@ -31,7 +31,7 @@
   --ss-shadow: 0 10px 30px rgba(11, 23, 19, 0.08);
   --ss-screen-bg: var(--ss-green-deep);
 
-  /* Tipografia e métricas */
+  /* Tipografia e mÃ©tricas */
   --ss-font: "Georgia", "Times New Roman", serif;
   --ss-font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ss-radius: 14px;
@@ -68,7 +68,7 @@
   transition: none !important;
 }
 
-/* ---------- Utilitários internos ---------- */
+/* ---------- UtilitÃ¡rios internos ---------- */
 #ss-landing .ss-container {
   max-width: var(--ss-max);
   margin: 0 auto;
@@ -79,7 +79,7 @@
   font-family: var(--ss-font);
 }
 
-/* ---------- Foco visível ---------- */
+/* ---------- Foco visÃ­vel ---------- */
 #ss-landing a:focus-visible,
 #ss-landing button:focus-visible {
   outline: 2px solid var(--ss-pink);
@@ -87,7 +87,7 @@
   border-radius: 4px;
 }
 
-/* ---------- Cabeçalho ---------- */
+/* ---------- CabeÃ§alho ---------- */
 #ss-landing .ss-header {
   position: sticky;
   top: 0;
@@ -108,8 +108,9 @@
 
 #ss-landing .ss-brand {
   font-family: var(--ss-font);
-  font-size: 1.25rem;
-  letter-spacing: 0.02em;
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--ss-text);
   text-decoration: none;
   display: inline-flex;
@@ -134,7 +135,8 @@
 #ss-landing .ss-nav__link {
   color: var(--ss-text-muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
   transition: color 0.25s ease;
 }
 
@@ -143,7 +145,7 @@
   color: var(--ss-text);
 }
 
-/* Botões */
+/* BotÃµes */
 #ss-landing .ss-btn {
   display: inline-flex;
   align-items: center;
@@ -268,7 +270,25 @@
 
 /* ---------- Hero ---------- */
 #ss-landing .ss-hero {
-  padding: 88px 0 96px;
+  padding: 88px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Profundidade de fundo (brilho radial + linhas discretas) */
+#ss-landing .ss-hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -12%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(ellipse at center, rgba(37, 70, 56, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+#ss-landing[data-ss-theme="dark"] .ss-hero::before {
+  background: radial-gradient(ellipse at center, rgba(37, 70, 56, 0.45) 0%, transparent 65%);
 }
 
 #ss-landing .ss-hero__inner {
@@ -338,99 +358,319 @@
   color: var(--ss-accent);
 }
 
-/* Mockups (CSS puro, sem imagens) */
+/* Mockups premium: notebook + smartphone (CSS/SVG puro, sem imagens) */
 #ss-landing .ss-mocks {
   position: relative;
   min-height: 420px;
+  display: grid;
+  place-items: center;
 }
 
-#ss-landing .ss-mocks__desktop {
+#ss-landing .ss-mocks__laptop {
+  position: relative;
+  width: min(100%, 640px);
+  z-index: 1;
+}
+
+#ss-landing .ss-mocks__lid {
+  position: relative;
+  margin: 0 6%;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(160deg, #3a423e 0%, #23292b 30%, #14181a 100%);
+  padding: 10px 10px 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+#ss-landing .ss-mocks__camera {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0a0d0c;
+  box-shadow: inset 0 0 1px 1px rgba(120, 160, 140, 0.35);
+}
+
+#ss-landing .ss-mocks__screen {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0e1a15;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6), inset 0 0 24px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 16 / 10;
+}
+
+#ss-landing .ss-mocks__glare {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 30%, transparent 48%);
+  pointer-events: none;
+}
+
+#ss-landing .ss-mocks__base {
+  position: relative;
+  height: 14px;
+  margin: 0 -4%;
+  border-radius: 3px 3px 12px 12px;
+  background: linear-gradient(180deg, #545c5c 0%, #333a3a 45%, #1d2222 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 10px 24px -6px rgba(0, 0, 0, 0.45);
+}
+
+#ss-landing .ss-mocks__notch {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 86%;
-  background: var(--ss-screen-bg);
-  border: 1px solid var(--ss-border);
-  border-radius: 12px;
-  box-shadow: var(--ss-shadow);
-  overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14%;
+  height: 5px;
+  border-radius: 0 0 8px 8px;
+  background: #1d2222;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-#ss-landing .ss-mocks__phone {
+#ss-landing .ss-mocks__shadow {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30%;
-  aspect-ratio: 9 / 19;
-  background: var(--ss-screen-bg);
-  border: 1px solid var(--ss-border);
-  border-radius: 22px;
-  box-shadow: var(--ss-shadow);
-  overflow: hidden;
-  z-index: 2;
-}
-
-#ss-landing .ss-mocks__bar {
-  display: flex;
-  gap: 6px;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--ss-border);
-}
-
-#ss-landing .ss-mocks__bar i {
-  width: 8px;
-  height: 8px;
+  left: 8%;
+  right: 8%;
+  bottom: -18px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--ss-sage);
-  opacity: 0.55;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 68%);
+  filter: blur(4px);
+  z-index: 0;
 }
 
-#ss-landing .ss-mocks__bar i:first-child {
+/* Site exibido na tela do notebook */
+#ss-landing .ss-mocks__site {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(120% 100% at 80% 0%, #1b352a 0%, #10231b 45%, #0b1712 100%);
+  color: #EDF3EE;
+}
+
+#ss-landing .ss-mocks__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3.5% 5% 2.5%;
+  border-bottom: 1px solid rgba(168, 197, 178, 0.14);
+}
+
+#ss-landing .ss-mocks__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--ss-font);
+  font-size: clamp(8px, 1.1vw, 11px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #EDF3EE;
+}
+
+#ss-landing .ss-mocks__logo i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
   background: var(--ss-pink);
-  opacity: 0.9;
+}
+
+#ss-landing .ss-mocks__links {
+  display: inline-flex;
+  gap: 8px;
+}
+
+#ss-landing .ss-mocks__links i {
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(168, 197, 178, 0.4);
+}
+
+#ss-landing .ss-mocks__pill {
+  width: 34px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ss-pink);
 }
 
 #ss-landing .ss-mocks__page {
-  padding: 16px;
+  flex: 1;
   display: grid;
-  gap: 10px;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4%;
+  padding: 4% 6%;
+  min-height: 0;
 }
 
-#ss-landing .ss-mocks__page span {
-  display: block;
-  border-radius: 4px;
-  background: var(--ss-sage);
-  opacity: 0.28;
+#ss-landing .ss-mocks__copy {
+  display: grid;
+  gap: 7px;
+  align-content: center;
 }
 
-#ss-landing .ss-mocks__page .ss-line-title {
+#ss-landing .ss-mocks__eyebrow {
+  font-size: clamp(6px, 0.8vw, 8px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(168, 197, 178, 0.85);
+}
+
+#ss-landing .ss-mocks__headline {
+  font-family: var(--ss-font);
+  font-size: clamp(13px, 2.1vw, 21px);
+  line-height: 1.2;
+  color: #F4F8F4;
+}
+
+#ss-landing .ss-mocks__headline em {
+  font-style: italic;
+  color: #A8C5B2;
+}
+
+#ss-landing .ss-mocks__headline--sm {
+  font-size: clamp(11px, 1.6vw, 14px);
+}
+
+#ss-landing .ss-mocks__cta {
+  display: inline-block;
+  width: 52px;
   height: 14px;
-  width: 62%;
-  background: var(--ss-sage);
-  opacity: 0.65;
-}
-
-#ss-landing .ss-mocks__page .ss-line-cta {
-  height: 22px;
-  width: 34%;
-  background: var(--ss-pink);
-  opacity: 0.85;
+  margin-top: 4px;
   border-radius: 999px;
+  background: var(--ss-pink);
+  box-shadow: 0 0 12px rgba(233, 75, 145, 0.45);
 }
 
-#ss-landing .ss-mocks__page .ss-line {
-  height: 8px;
+#ss-landing .ss-mocks__visual {
+  position: relative;
+  align-self: end;
+  height: 100%;
+  min-height: 0;
 }
 
-#ss-landing .ss-mocks__page .ss-line--w60 { width: 60%; }
-#ss-landing .ss-mocks__page .ss-line--w80 { width: 80%; }
-#ss-landing .ss-mocks__page .ss-line--w45 { width: 45%; }
-
-#ss-landing .ss-mocks__phone .ss-mocks__page {
-  padding: 14px 12px;
+#ss-landing .ss-mocks__waves {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 55%;
 }
 
-/* ---------- Serviços ---------- */
+#ss-landing .ss-mocks__pot {
+  position: absolute;
+  bottom: 26%;
+  left: 42%;
+  width: 18%;
+  aspect-ratio: 1 / 0.8;
+  border-radius: 3px 3px 6px 6px;
+  background: linear-gradient(180deg, #4a5a52, #2c3833);
+}
+
+#ss-landing .ss-mocks__plant {
+  position: absolute;
+  bottom: calc(26% + 6%);
+  left: 44%;
+  width: 26%;
+  height: 46%;
+}
+
+#ss-landing .ss-mocks__plant i {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 14%;
+  height: 100%;
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(180deg, #6fa184, #2f5847);
+  transform-origin: bottom center;
+}
+
+#ss-landing .ss-mocks__plant i:nth-child(1) { transform: translateX(-50%) rotate(-42deg) scaleY(0.75); }
+#ss-landing .ss-mocks__plant i:nth-child(2) { transform: translateX(-60%) rotate(-18deg) scaleY(0.95); }
+#ss-landing .ss-mocks__plant i:nth-child(3) { transform: translateX(-50%) scaleY(1.05); }
+#ss-landing .ss-mocks__plant i:nth-child(4) { transform: translateX(-40%) rotate(18deg) scaleY(0.95); }
+#ss-landing .ss-mocks__plant i:nth-child(5) { transform: translateX(-50%) rotate(44deg) scaleY(0.75); }
+
+#ss-landing .ss-mocks__pedestal {
+  position: absolute;
+  bottom: 0;
+  left: 18%;
+  right: 12%;
+  height: 26%;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, #22352c, #14231c);
+  box-shadow: inset 0 1px 0 rgba(168, 197, 178, 0.18);
+}
+
+/* Smartphone */
+#ss-landing .ss-mocks__phone {
+  position: absolute;
+  bottom: -6px;
+  right: 2%;
+  width: clamp(88px, 22%, 132px);
+  aspect-ratio: 9 / 19;
+  border-radius: 14%/4.5%;
+  background: linear-gradient(160deg, #3a423e 0%, #1a1e20 60%, #101314 100%);
+  padding: 4.5% 3.5%;
+  box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+  z-index: 2;
+}
+
+#ss-landing .ss-mocks__notch-phone {
+  position: absolute;
+  top: 2.4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32%;
+  height: 2.6%;
+  border-radius: 999px;
+  background: #0a0d0c;
+  z-index: 3;
+}
+
+#ss-landing .ss-mocks__screen--phone {
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: 12%/6%;
+}
+
+#ss-landing .ss-mocks__topbar--phone {
+  padding: 9% 8% 5%;
+}
+
+#ss-landing .ss-mocks__page--phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10% 8%;
+  overflow: hidden;
+}
+
+#ss-landing .ss-mocks__waves--sm {
+  height: auto;
+  aspect-ratio: 160 / 120;
+  margin-top: auto;
+}
+
+#ss-landing .ss-mocks__glare--phone {
+  border-radius: 12%/6%;
+}
+
+#ss-landing .ss-mocks__shadow--phone {
+  left: -20%;
+  right: -20%;
+  bottom: -10px;
+  height: 14px;
+  z-index: 1;
+}
+
+/* ---------- ServiÃ§os ---------- */
 #ss-landing .ss-services {
   padding: 96px 0;
   background: var(--ss-bg-soft);
@@ -466,6 +706,7 @@
 }
 
 #ss-landing .ss-card {
+  position: relative;
   background: var(--ss-bg-card);
   border: 1px solid var(--ss-border);
   border-radius: var(--ss-radius);
@@ -473,6 +714,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow: hidden;
+  isolation: isolate;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -480,6 +723,86 @@
   transform: translateY(-4px);
   box-shadow: var(--ss-shadow);
   border-color: var(--ss-accent);
+}
+
+/* CartÃµes de serviÃ§o: Ã­cone, decorativos e acabamento premium */
+#ss-landing .ss-card--service {
+  min-height: 300px;
+  padding: 34px 30px 30px;
+}
+
+#ss-landing .ss-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  color: var(--ss-accent);
+  border: 1px solid var(--ss-border);
+  background: color-mix(in srgb, var(--ss-accent) 8%, transparent);
+  flex: none;
+}
+
+#ss-landing .ss-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+#ss-landing .ss-card--service .ss-card__num {
+  order: 3;
+  margin-top: auto;
+  position: absolute;
+  top: 34px;
+  right: 30px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+#ss-landing .ss-card--service .ss-card__title {
+  order: 1;
+  font-size: 1.55rem;
+  margin-top: 6px;
+}
+
+#ss-landing .ss-card--service .ss-card__desc {
+  order: 2;
+  line-height: 1.7;
+}
+
+#ss-landing .ss-card--service .ss-card__link {
+  order: 3;
+  margin-top: 6px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ss-border);
+}
+
+#ss-landing .ss-card__decor {
+  position: absolute;
+  right: -6%;
+  bottom: -4%;
+  width: 78%;
+  aspect-ratio: 240 / 110;
+  color: var(--ss-accent);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+#ss-landing .ss-card__decor svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ss-landing .ss-card--service:hover .ss-card__decor {
+  opacity: 0.55;
+  transform: translateX(-4px);
+}
+
+#ss-landing[data-ss-theme="dark"] .ss-card__decor {
+  opacity: 0.4;
 }
 
 #ss-landing .ss-card__num {
@@ -490,7 +813,6 @@
 }
 
 #ss-landing .ss-card__title {
-  font-family: var(--ss-font);
   font-size: 1.45rem;
   font-weight: 500;
   margin: 0;
@@ -537,7 +859,7 @@
   max-width: none;
 }
 
-/* Layout de duas colunas: ilustração à esquerda, FAQ à direita */
+/* Layout de duas colunas: ilustraÃ§Ã£o Ã  esquerda, FAQ Ã  direita */
 #ss-landing .ss-faq__inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
@@ -599,7 +921,7 @@
   transition: color 0.25s ease;
 }
 
-/* ---------- Benefícios ---------- */
+/* ---------- BenefÃ­cios ---------- */
 #ss-landing .ss-benefits {
   padding: 96px 0;
   background: var(--ss-bg-soft);
@@ -620,7 +942,7 @@
   color: var(--ss-pink);
 }
 
-/* ---------- Botão flutuante de WhatsApp ---------- */
+/* ---------- BotÃ£o flutuante de WhatsApp ---------- */
 #ss-landing .ss-whatsapp {
   position: fixed;
   right: 24px;
@@ -669,9 +991,11 @@
   }
 }
 
-/* ---------- Rodapé ---------- */
+/* ---------- RodapÃ© ---------- */
 #ss-landing .ss-footer {
-  padding: 48px 0;
+  padding: 56px 0 48px;
+  background: var(--ss-bg-soft);
+  border-top: 1px solid var(--ss-border);
 }
 
 #ss-landing .ss-footer__inner {
@@ -708,7 +1032,7 @@
   margin-top: 8px;
 }
 
-/* ---------- Animações leves de entrada ---------- */
+/* ---------- AnimaÃ§Ãµes leves de entrada ---------- */
 #ss-landing .ss-reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -852,22 +1176,22 @@
 
 <body>
 
-  <!-- Todo o conteúdo da landing page fica dentro de #ss-landing -->
+  <!-- Todo o conteÃºdo da landing page fica dentro de #ss-landing -->
   <div id="ss-landing">
 
-    <!-- Cabeçalho -->
+    <!-- CabeÃ§alho -->
     <header class="ss-header">
       <div class="ss-container ss-header__inner">
-        <a href="#" class="ss-brand" aria-label="Studio — início">
+        <a href="#" class="ss-brand" aria-label="Studio â€” inÃ­cio">
           <span class="ss-brand__mark" aria-hidden="true"></span>
           Studio
         </a>
 
-        <nav class="ss-nav" aria-label="Navegação principal">
-          <a href="#ss-servicos" class="ss-nav__link">Serviços</a>
+        <nav class="ss-nav" aria-label="NavegaÃ§Ã£o principal">
+          <a href="#ss-servicos" class="ss-nav__link">ServiÃ§os</a>
           <a href="#ss-contato" class="ss-nav__link">Contato</a>
 
-          <div class="ss-theme" role="group" aria-label="Seleção de tema">
+          <div class="ss-theme" role="group" aria-label="SeleÃ§Ã£o de tema">
             <button type="button" class="ss-theme__btn" data-ss-theme-choice="light" aria-pressed="false">Light</button>
             <button type="button" class="ss-theme__btn" data-ss-theme-choice="dark" aria-pressed="false">Dark</button>
             <button type="button" class="ss-theme__btn" data-ss-theme-choice="auto" aria-pressed="false">Auto</button>
@@ -886,114 +1210,198 @@
     <section class="ss-hero">
       <div class="ss-container ss-hero__inner">
         <div class="ss-reveal">
-          <p class="ss-hero__eyebrow">Criação de sites</p>
-          <h1 class="ss-hero__title ss-serif">Seu próximo site <em>começa aqui</em>.</h1>
-          <p class="ss-hero__subtitle">Sites pensados para valorizar sua marca e transformar sua presença digital.</p>
+          <p class="ss-hero__eyebrow">CriaÃ§Ã£o de sites</p>
+          <h1 class="ss-hero__title ss-serif">Seu prÃ³ximo site <em>comeÃ§a aqui</em>.</h1>
+          <p class="ss-hero__subtitle">Sites pensados para valorizar sua marca e transformar sua presenÃ§a digital.</p>
           <div class="ss-hero__actions">
-            <a href="#" class="ss-btn ss-btn--primary" data-ss-msg="geral">Solicitar um orçamento</a>
-            <a href="#ss-servicos" class="ss-hero__secondary">Conhecer os serviços</a>
+            <a href="#" class="ss-btn ss-btn--primary" data-ss-msg="geral">Solicitar um orÃ§amento</a>
+            <a href="#ss-servicos" class="ss-hero__secondary">Conhecer os serviÃ§os</a>
           </div>
         </div>
 
-        <!-- Mockups em CSS puro (desktop + celular) -->
+        <!-- Mockups premium em CSS/SVG puro: notebook + smartphone -->
         <div class="ss-mocks ss-reveal" aria-hidden="true">
-          <div class="ss-mocks__desktop">
-            <div class="ss-mocks__bar"><i></i><i></i><i></i></div>
-            <div class="ss-mocks__page">
-              <span class="ss-line-title"></span>
-              <span class="ss-line ss-line--w80"></span>
-              <span class="ss-line ss-line--w60"></span>
-              <span class="ss-line-cta"></span>
+          <div class="ss-mocks__laptop">
+            <div class="ss-mocks__lid">
+              <span class="ss-mocks__camera"></span>
+              <div class="ss-mocks__screen">
+                <div class="ss-mocks__site">
+                  <div class="ss-mocks__topbar">
+                    <span class="ss-mocks__logo"><i></i>Studio</span>
+                    <span class="ss-mocks__links"><i></i><i></i><i></i><i></i></span>
+                    <span class="ss-mocks__pill"></span>
+                  </div>
+                  <div class="ss-mocks__page">
+                    <div class="ss-mocks__copy">
+                      <span class="ss-mocks__eyebrow">CriaÃ§Ã£o de sites</span>
+                      <span class="ss-mocks__headline">Transforme suas <em>ideias</em> em resultados.</span>
+                      <span class="ss-mocks__cta"></span>
+                    </div>
+                    <div class="ss-mocks__visual">
+                      <svg class="ss-mocks__waves" viewBox="0 0 260 180" preserveAspectRatio="none">
+                        <path d="M0 150 C 60 120 120 170 260 110" fill="none" stroke="rgba(168,197,178,.35)" stroke-width="1.5"/>
+                        <path d="M0 165 C 70 135 140 180 260 130" fill="none" stroke="rgba(168,197,178,.22)" stroke-width="1.5"/>
+                        <path d="M0 180 C 80 150 160 190 260 150" fill="none" stroke="rgba(168,197,178,.14)" stroke-width="1.5"/>
+                      </svg>
+                      <span class="ss-mocks__pot"></span>
+                      <span class="ss-mocks__plant">
+                        <i></i><i></i><i></i><i></i><i></i>
+                      </span>
+                      <span class="ss-mocks__pedestal"></span>
+                    </div>
+                  </div>
+                </div>
+                <span class="ss-mocks__glare"></span>
+              </div>
             </div>
+            <div class="ss-mocks__base"><span class="ss-mocks__notch"></span></div>
+            <span class="ss-mocks__shadow"></span>
           </div>
+
           <div class="ss-mocks__phone">
-            <div class="ss-mocks__page">
-              <span class="ss-line-title"></span>
-              <span class="ss-line ss-line--w80"></span>
-              <span class="ss-line ss-line--w45"></span>
-              <span class="ss-line-cta"></span>
+            <span class="ss-mocks__notch-phone"></span>
+            <div class="ss-mocks__screen ss-mocks__screen--phone">
+              <div class="ss-mocks__topbar ss-mocks__topbar--phone">
+                <span class="ss-mocks__logo"><i></i></span>
+                <span class="ss-mocks__pill"></span>
+              </div>
+              <div class="ss-mocks__page ss-mocks__page--phone">
+                <span class="ss-mocks__headline ss-mocks__headline--sm">Seu site em <em>qualquer</em> dispositivo.</span>
+                <span class="ss-mocks__cta"></span>
+                <svg class="ss-mocks__waves ss-mocks__waves--sm" viewBox="0 0 160 120" preserveAspectRatio="none">
+                  <path d="M0 95 C 40 70 90 110 160 60" fill="none" stroke="rgba(168,197,178,.35)" stroke-width="1.5"/>
+                  <path d="M0 108 C 50 82 110 118 160 82" fill="none" stroke="rgba(168,197,178,.2)" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <span class="ss-mocks__glare ss-mocks__glare--phone"></span>
             </div>
+            <span class="ss-mocks__shadow ss-mocks__shadow--phone"></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Serviços -->
+    <!-- ServiÃ§os -->
     <section class="ss-services" id="ss-servicos">
       <div class="ss-container">
         <div class="ss-section-head ss-reveal">
-          <p class="ss-section-head__eyebrow">Serviços</p>
-          <h2 class="ss-section-head__title ss-serif">Três formas de colocar sua marca no ar.</h2>
+          <p class="ss-section-head__eyebrow">ServiÃ§os</p>
+          <h2 class="ss-section-head__title ss-serif">TrÃªs formas de colocar sua marca no ar.</h2>
         </div>
 
         <div class="ss-cards">
-          <article class="ss-card ss-reveal">
+          <article class="ss-card ss-card--service ss-reveal">
+            <span class="ss-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+                <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+                <path d="M-10 130 C 90 108 150 134 250 100" fill="none" stroke="currentColor" stroke-width="1" opacity=".18"/>
+              </svg>
+            </span>
+            <span class="ss-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 3.5l7 17 2.2-6.3 6.3-2.2z"/>
+                <path d="M13.7 13.7l4.8 4.8"/>
+              </svg>
+            </span>
             <span class="ss-card__num">01</span>
-            <h3 class="ss-card__title">Landing Page</h3>
-            <p class="ss-card__desc">Uma página estratégica para apresentar serviços, divulgar produtos e captar clientes.</p>
-            <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informações <span aria-hidden="true">→</span></a>
+            <h3 class="ss-card__title ss-serif">Landing Page</h3>
+            <p class="ss-card__desc">Uma pÃ¡gina estratÃ©gica para apresentar serviÃ§os, divulgar produtos e captar clientes.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informaÃ§Ãµes <span aria-hidden="true">â†’</span></a>
           </article>
 
-          <article class="ss-card ss-reveal">
+          <article class="ss-card ss-card--service ss-reveal">
+            <span class="ss-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+                <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+                <path d="M-10 130 C 90 108 150 134 250 100" fill="none" stroke="currentColor" stroke-width="1" opacity=".18"/>
+              </svg>
+            </span>
+            <span class="ss-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/>
+                <circle cx="9.5" cy="20" r="1.2"/>
+                <circle cx="17.5" cy="20" r="1.2"/>
+              </svg>
+            </span>
             <span class="ss-card__num">02</span>
-            <h3 class="ss-card__title">E-commerce</h3>
-            <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catálogo, carrinho e integração com meios de pagamento.</p>
-            <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informações <span aria-hidden="true">→</span></a>
+            <h3 class="ss-card__title ss-serif">E-commerce</h3>
+            <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catÃ¡logo, carrinho e integraÃ§Ã£o com meios de pagamento.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informaÃ§Ãµes <span aria-hidden="true">â†’</span></a>
           </article>
 
-          <article class="ss-card ss-reveal">
+          <article class="ss-card ss-card--service ss-reveal">
+            <span class="ss-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+                <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+                <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+                <path d="M-10 130 C 90 108 150 134 250 100" fill="none" stroke="currentColor" stroke-width="1" opacity=".18"/>
+              </svg>
+            </span>
+            <span class="ss-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4.5" width="18" height="15" rx="2.5"/>
+                <path d="M3 9h18"/>
+                <path d="M14 4.5V9"/>
+                <path d="M6 13h6M6 16h4"/>
+              </svg>
+            </span>
             <span class="ss-card__num">03</span>
-            <h3 class="ss-card__title">Site Personalizado</h3>
-            <p class="ss-card__desc">Um site com duas ou mais páginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
-            <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informações <span aria-hidden="true">→</span></a>
+            <h3 class="ss-card__title ss-serif">Site Personalizado</h3>
+            <p class="ss-card__desc">Um site com duas ou mais pÃ¡ginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informaÃ§Ãµes <span aria-hidden="true">â†’</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Benefícios -->
+    <!-- BenefÃ­cios -->
     <section class="ss-benefits" id="ss-beneficios" aria-labelledby="ss-beneficios-title">
       <div class="ss-container">
         <div class="ss-section-head ss-reveal">
-          <p class="ss-section-head__eyebrow">Benefícios</p>
-          <h2 class="ss-section-head__title ss-serif" id="ss-beneficios-title">Mais do que um site: tranquilidade para o seu negócio.</h2>
+          <p class="ss-section-head__eyebrow">BenefÃ­cios</p>
+          <h2 class="ss-section-head__title ss-serif" id="ss-beneficios-title">Mais do que um site: tranquilidade para o seu negÃ³cio.</h2>
         </div>
 
         <div class="ss-cards ss-cards--benefits ss-reveal">
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">◆</span>
+            <span class="ss-card__num" aria-hidden="true">â—†</span>
             <h3 class="ss-card__title">Suporte</h3>
-            <p class="ss-card__desc">Conte com orientação e auxílio para questões relacionadas ao seu site, de acordo com as condições do serviço contratado.</p>
+            <p class="ss-card__desc">Conte com orientaÃ§Ã£o e auxÃ­lio para questÃµes relacionadas ao seu site, de acordo com as condiÃ§Ãµes do serviÃ§o contratado.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">◆</span>
+            <span class="ss-card__num" aria-hidden="true">â—†</span>
             <h3 class="ss-card__title">Backup</h3>
-            <p class="ss-card__desc">Manter cópias de segurança do site facilita a recuperação de informações em situações de falha, conforme a política de backup do serviço.</p>
+            <p class="ss-card__desc">Manter cÃ³pias de seguranÃ§a do site facilita a recuperaÃ§Ã£o de informaÃ§Ãµes em situaÃ§Ãµes de falha, conforme a polÃ­tica de backup do serviÃ§o.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">◆</span>
-            <h3 class="ss-card__title">Proteção ponta a ponta</h3>
-            <p class="ss-card__desc">Cuidado com a segurança do site: configurações seguras, atualizações e boas práticas de proteção aplicadas na medida do possível.</p>
+            <span class="ss-card__num" aria-hidden="true">â—†</span>
+            <h3 class="ss-card__title">ProteÃ§Ã£o ponta a ponta</h3>
+            <p class="ss-card__desc">Cuidado com a seguranÃ§a do site: configuraÃ§Ãµes seguras, atualizaÃ§Ãµes e boas prÃ¡ticas de proteÃ§Ã£o aplicadas na medida do possÃ­vel.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">◆</span>
-            <h3 class="ss-card__title">Domínio próprio</h3>
-            <p class="ss-card__desc">Um endereço exclusivo fortalece a identidade profissional da sua marca e facilita o acesso dos visitantes ao seu site.</p>
+            <span class="ss-card__num" aria-hidden="true">â—†</span>
+            <h3 class="ss-card__title">DomÃ­nio prÃ³prio</h3>
+            <p class="ss-card__desc">Um endereÃ§o exclusivo fortalece a identidade profissional da sua marca e facilita o acesso dos visitantes ao seu site.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">◆</span>
+            <span class="ss-card__num" aria-hidden="true">â—†</span>
             <h3 class="ss-card__title">Responsividade</h3>
-            <p class="ss-card__desc">Experiência adaptada para celulares, tablets e computadores, para que sua marca apareça bem em qualquer tela.</p>
+            <p class="ss-card__desc">ExperiÃªncia adaptada para celulares, tablets e computadores, para que sua marca apareÃ§a bem em qualquer tela.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">◆</span>
-            <h3 class="ss-card__title">Desempenho e organização</h3>
-            <p class="ss-card__desc">Estrutura bem organizada e carregamento eficiente, para uma navegação leve e uma boa experiência de visita.</p>
+            <span class="ss-card__num" aria-hidden="true">â—†</span>
+            <h3 class="ss-card__title">Desempenho e organizaÃ§Ã£o</h3>
+            <p class="ss-card__desc">Estrutura bem organizada e carregamento eficiente, para uma navegaÃ§Ã£o leve e uma boa experiÃªncia de visita.</p>
           </article>
         </div>
       </div>
@@ -1005,13 +1413,13 @@
         <div class="ss-section-head ss-reveal">
           <p class="ss-section-head__eyebrow">FAQ</p>
           <h2 class="ss-section-head__title ss-serif" id="ss-faq-title">Perguntas frequentes</h2>
-          <p class="ss-section-head__subtitle">Tire suas dúvidas sobre nossos serviços, prazos e entrega.</p>
+          <p class="ss-section-head__subtitle">Tire suas dÃºvidas sobre nossos serviÃ§os, prazos e entrega.</p>
         </div>
 
         <div class="ss-faq__inner">
           <div class="ss-faq__aside ss-reveal" aria-hidden="true">
-            <!-- Ilustração: criação de sites (SVG minimalista, identidade do Studio) -->
-            <svg class="ss-faq__art" viewBox="0 0 420 380" role="img" aria-label="Ilustração de criação de sites" xmlns="http://www.w3.org/2000/svg">
+            <!-- IlustraÃ§Ã£o: criaÃ§Ã£o de sites (SVG minimalista, identidade do Studio) -->
+            <svg class="ss-faq__art" viewBox="0 0 420 380" role="img" aria-label="IlustraÃ§Ã£o de criaÃ§Ã£o de sites" xmlns="http://www.w3.org/2000/svg">
               <!-- Plano de fundo suave -->
               <circle cx="210" cy="190" r="170" fill="var(--ss-bg-soft)"/>
 
@@ -1022,7 +1430,7 @@
               <circle cx="112" cy="99" r="5" fill="var(--ss-sage)"/>
               <circle cx="130" cy="99" r="5" fill="var(--ss-border)"/>
 
-              <!-- Conteúdo abstrato da página -->
+              <!-- ConteÃºdo abstrato da pÃ¡gina -->
               <rect x="94" y="142" width="110" height="12" rx="6" fill="var(--ss-forest)"/>
               <rect x="94" y="166" width="180" height="8" rx="4" fill="var(--ss-sage)"/>
               <rect x="94" y="182" width="150" height="8" rx="4" fill="var(--ss-sage)"/>
@@ -1031,10 +1439,10 @@
               <rect x="158" y="248" width="56" height="8" rx="4" fill="var(--ss-border)"/>
               <rect x="222" y="248" width="56" height="8" rx="4" fill="var(--ss-border)"/>
 
-              <!-- Cursor apontando para o botão -->
+              <!-- Cursor apontando para o botÃ£o -->
               <path d="M262 214 l14 34 7-13 15 3 z" fill="var(--ss-forest)" stroke="var(--ss-bg-card)" stroke-width="2"/>
 
-              <!-- Balão de conversa -->
+              <!-- BalÃ£o de conversa -->
               <rect x="252" y="30" width="128" height="46" rx="10" fill="var(--ss-forest)"/>
               <path d="M272 76 l0 14 16 -14 z" fill="var(--ss-forest)"/>
               <rect x="266" y="44" width="70" height="7" rx="3.5" fill="var(--ss-sage)"/>
@@ -1046,7 +1454,7 @@
               <rect x="52" y="164" width="70" height="7" rx="3.5" fill="var(--ss-forest)"/>
               <rect x="52" y="178" width="52" height="7" rx="3.5" fill="var(--ss-border)"/>
 
-              <!-- Engrenagem / manutenção -->
+              <!-- Engrenagem / manutenÃ§Ã£o -->
               <g fill="none" stroke="var(--ss-accent)" stroke-width="2.5" stroke-linecap="round">
                 <circle cx="330" cy="316" r="16"/>
                 <circle cx="330" cy="316" r="5"/>
@@ -1064,47 +1472,47 @@
           <div class="ss-faq__list ss-reveal">
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Como faço para solicitar um orçamento?
+                Como faÃ§o para solicitar um orÃ§amento?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>Você pode preencher nosso formulário de orçamento ou entrar em contato conosco pelo WhatsApp. O processo é simples, rápido e requer apenas algumas informações para entendermos sua necessidade, o tipo de site desejado e os objetivos do seu negócio. Com essas informações, poderemos avaliar o projeto e orientar você sobre os próximos passos.</p>
+                <p>VocÃª pode preencher nosso formulÃ¡rio de orÃ§amento ou entrar em contato conosco pelo WhatsApp. O processo Ã© simples, rÃ¡pido e requer apenas algumas informaÃ§Ãµes para entendermos sua necessidade, o tipo de site desejado e os objetivos do seu negÃ³cio. Com essas informaÃ§Ãµes, poderemos avaliar o projeto e orientar vocÃª sobre os prÃ³ximos passos.</p>
               </div>
             </details>
 
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Qual é o prazo para desenvolver meu site?
+                Qual Ã© o prazo para desenvolver meu site?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>Os prazos variam conforme o tipo de projeto, a complexidade e o envio dos materiais necessários. Como referência inicial:</p>
+                <p>Os prazos variam conforme o tipo de projeto, a complexidade e o envio dos materiais necessÃ¡rios. Como referÃªncia inicial:</p>
                 <ul class="ss-faq__terms">
-                  <li>Landing Page: 5 a 7 dias úteis</li>
-                  <li>Site Personalizado: 10 a 20 dias úteis</li>
-                  <li>E-commerce: 15 a 25 dias úteis</li>
+                  <li>Landing Page: 5 a 7 dias Ãºteis</li>
+                  <li>Site Personalizado: 10 a 20 dias Ãºteis</li>
+                  <li>E-commerce: 15 a 25 dias Ãºteis</li>
                 </ul>
-                <p>O prazo final será confirmado após entendermos os requisitos do projeto e as funcionalidades necessárias. A contagem começa após o alinhamento do escopo e o recebimento dos materiais e informações necessários. Solicitações adicionais ou atrasos no envio de conteúdo podem alterar o cronograma.</p>
+                <p>O prazo final serÃ¡ confirmado apÃ³s entendermos os requisitos do projeto e as funcionalidades necessÃ¡rias. A contagem comeÃ§a apÃ³s o alinhamento do escopo e o recebimento dos materiais e informaÃ§Ãµes necessÃ¡rios. SolicitaÃ§Ãµes adicionais ou atrasos no envio de conteÃºdo podem alterar o cronograma.</p>
               </div>
             </details>
 
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Como funciona o suporte após a entrega?
+                Como funciona o suporte apÃ³s a entrega?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>O suporte é realizado por chat, e-mail ou videochamada, conforme o plano e as condições definidos em contrato. Antes de iniciar o projeto, alinhamos os canais disponíveis, o período de atendimento e os limites do suporte, para que você saiba exatamente com o que poderá contar após a entrega.</p>
+                <p>O suporte Ã© realizado por chat, e-mail ou videochamada, conforme o plano e as condiÃ§Ãµes definidos em contrato. Antes de iniciar o projeto, alinhamos os canais disponÃ­veis, o perÃ­odo de atendimento e os limites do suporte, para que vocÃª saiba exatamente com o que poderÃ¡ contar apÃ³s a entrega.</p>
               </div>
             </details>
 
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Como o site será entregue? Terei uma cópia de backup?
+                Como o site serÃ¡ entregue? Terei uma cÃ³pia de backup?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>Ao finalizar o projeto, entregaremos o site publicado ou preparado para publicação, conforme o escopo contratado. Também forneceremos uma cópia de backup do projeto e realizaremos uma demonstração por vídeo gravado ou videochamada, explicando o funcionamento do site e orientando você sobre os principais recursos. Os arquivos, acessos e procedimentos de recuperação serão disponibilizados conforme o que estiver definido no contrato e nas condições técnicas da hospedagem.</p>
+                <p>Ao finalizar o projeto, entregaremos o site publicado ou preparado para publicaÃ§Ã£o, conforme o escopo contratado. TambÃ©m forneceremos uma cÃ³pia de backup do projeto e realizaremos uma demonstraÃ§Ã£o por vÃ­deo gravado ou videochamada, explicando o funcionamento do site e orientando vocÃª sobre os principais recursos. Os arquivos, acessos e procedimentos de recuperaÃ§Ã£o serÃ£o disponibilizados conforme o que estiver definido no contrato e nas condiÃ§Ãµes tÃ©cnicas da hospedagem.</p>
               </div>
             </details>
           </div>
@@ -1112,24 +1520,24 @@
       </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- RodapÃ© -->
     <footer class="ss-footer" id="ss-contato">
       <div class="ss-container ss-footer__inner">
-        <a href="#" class="ss-brand" aria-label="Studio — início">
+        <a href="#" class="ss-brand" aria-label="Studio â€” inÃ­cio">
           <span class="ss-brand__mark" aria-hidden="true"></span>
           Studio
         </a>
 
-        <nav class="ss-footer__nav" aria-label="Navegação do rodapé">
-          <a href="#ss-servicos" class="ss-footer__link">Serviços</a>
+        <nav class="ss-footer__nav" aria-label="NavegaÃ§Ã£o do rodapÃ©">
+          <a href="#ss-servicos" class="ss-footer__link">ServiÃ§os</a>
           <a href="#" class="ss-footer__link" data-ss-msg="geral">Contato</a>
         </nav>
 
-        <p class="ss-footer__copy">© <span data-ss-year>2026</span> Studio. Todos os direitos reservados.</p>
+        <p class="ss-footer__copy">Â© <span data-ss-year>2026</span> Studio. Todos os direitos reservados.</p>
       </div>
     </footer>
 
-    <!-- Botão flutuante de WhatsApp (destino configurado em SS_WHATSAPP_URL) -->
+    <!-- BotÃ£o flutuante de WhatsApp (destino configurado em SS_WHATSAPP_URL) -->
     <a href="#" class="ss-whatsapp" data-ss-msg="geral" target="_blank" rel="noopener noreferrer" aria-label="Conversar com o Studio pelo WhatsApp">
       <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.115-.198.057-.371-.058-.52-.115-.148-.767-1.847-1.05-2.528-.265-.665-.534-.575-.733-.585-.191-.009-.411-.011-.631-.011-.22 0-.577.083-.88.415-.302.332-1.155 1.13-1.155 2.755 0 1.626 1.18 3.195 1.345 3.415.165.221 2.327 3.555 5.64 4.982.788.34 1.403.543 1.882.695.79.251 1.509.216 2.078.131.634-.095 1.955-.8 2.231-1.572.273-.773.273-1.435.191-1.575-.081-.14-.297-.222-.595-.371zM12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.488z"/>
@@ -1140,7 +1548,7 @@
 
 <script>
 /* ============================================================
-   LANDING PAGE — JavaScript puro (sem jQuery, sem build)
+   LANDING PAGE â€” JavaScript puro (sem jQuery, sem build)
    Inicializa apenas dentro de #ss-landing.
    ============================================================ */
 
@@ -1148,21 +1556,21 @@
   "use strict";
 
   /* ============================================================
-     ⚙️ CONFIGURAÇÃO ÚNICA — EDITE APENAS ESTE BLOCO
+     âš™ï¸ CONFIGURAÃ‡ÃƒO ÃšNICA â€” EDITE APENAS ESTE BLOCO
      ============================================================
      Substitua o valor de SS_WHATSAPP_URL pelo seu link do WhatsApp.
      Exemplo: "https://wa.me/5511999999999"
-     (55 = Brasil, 11 = DDD, 999999999 = número, sem espaços/traços)
-     Enquanto não configurar, os botões apontam para "#" (marcador).
+     (55 = Brasil, 11 = DDD, 999999999 = nÃºmero, sem espaÃ§os/traÃ§os)
+     Enquanto nÃ£o configurar, os botÃµes apontam para "#" (marcador).
      ============================================================ */
   var SS_WHATSAPP_URL = "#"; // <-- COLOQUE SEU LINK DO WHATSAPP AQUI
 
-  // Mensagens pré-preenchidas por serviço (podem ser personalizadas)
+  // Mensagens prÃ©-preenchidas por serviÃ§o (podem ser personalizadas)
   var SS_MESSAGES = {
-    geral: "Olá! Vim pelo site e gostaria de conversar sobre um projeto.",
-    landing: "Olá! Tenho interesse em criar uma Landing Page.",
-    ecommerce: "Olá! Tenho interesse em criar um E-commerce.",
-    site: "Olá! Tenho interesse em um Site Personalizado."
+    geral: "OlÃ¡! Vim pelo site e gostaria de conversar sobre um projeto.",
+    landing: "OlÃ¡! Tenho interesse em criar uma Landing Page.",
+    ecommerce: "OlÃ¡! Tenho interesse em criar um E-commerce.",
+    site: "OlÃ¡! Tenho interesse em um Site Personalizado."
   };
 
   /* Aplica os links de contato em todos os CTAs.
@@ -1191,15 +1599,15 @@
   }
 
   /* ============================================================
-     TEMA: Light | Dark | Automático
-     - Automático: 06:00–18:59 = Light | 19:00–05:59 = Dark
-     - Persistência via localStorage (com fallback em memória)
-     - Recalcula a cada minuto e quando a aba volta a ficar visível
+     TEMA: Light | Dark | AutomÃ¡tico
+     - AutomÃ¡tico: 06:00â€“18:59 = Light | 19:00â€“05:59 = Dark
+     - PersistÃªncia via localStorage (com fallback em memÃ³ria)
+     - Recalcula a cada minuto e quando a aba volta a ficar visÃ­vel
      ============================================================ */
 
   var STORAGE_KEY = "ss-theme-preference"; // "light" | "dark" | "auto"
 
-  // Fallback seguro quando localStorage está indisponível
+  // Fallback seguro quando localStorage estÃ¡ indisponÃ­vel
   var memoryStore = { value: null };
   var store = {
     get: function () {
@@ -1225,13 +1633,13 @@
     }
   };
 
-  // Retorna "light" ou "dark" conforme o horário local do navegador
+  // Retorna "light" ou "dark" conforme o horÃ¡rio local do navegador
   function themeByTime() {
-    var hour = new Date().getHours(); // 0–23, horário local
+    var hour = new Date().getHours(); // 0â€“23, horÃ¡rio local
     return hour >= 6 && hour <= 18 ? "light" : "dark";
   }
 
-  // Preferência salva + horário -> tema efetivo
+  // PreferÃªncia salva + horÃ¡rio -> tema efetivo
   function effectiveTheme(preference) {
     if (preference === "light" || preference === "dark") return preference;
     return themeByTime();
@@ -1242,7 +1650,7 @@
     root.setAttribute("data-ss-theme-effective", theme);
   }
 
-  // Marca o botão ativo do seletor
+  // Marca o botÃ£o ativo do seletor
   function syncThemeButtons(root, preference) {
     var btns = root.querySelectorAll(".ss-theme__btn");
     for (var i = 0; i < btns.length; i++) {
@@ -1257,7 +1665,7 @@
   }
 
   function initTheme(root) {
-    // Aplica imediatamente (o CSS já evita transição até .ss-ready)
+    // Aplica imediatamente (o CSS jÃ¡ evita transiÃ§Ã£o atÃ© .ss-ready)
     var saved = store.get();
     applyTheme(root, saved || "auto");
 
@@ -1269,21 +1677,21 @@
       if (!choice) return;
 
       if (choice === "auto") {
-        store.remove(); // remove preferência manual
+        store.remove(); // remove preferÃªncia manual
       } else {
         store.set(choice);
       }
       applyTheme(root, store.get() || "auto");
     });
 
-    // Recalcula o tema a cada minuto (modo automático)
+    // Recalcula o tema a cada minuto (modo automÃ¡tico)
     setInterval(function () {
       if ((store.get() || "auto") === "auto") {
         applyTheme(root, "auto");
       }
     }, 60000);
 
-    // Recalcula quando a página volta a ficar visível
+    // Recalcula quando a pÃ¡gina volta a ficar visÃ­vel
     document.addEventListener("visibilitychange", function () {
       if (document.visibilityState === "visible" && (store.get() || "auto") === "auto") {
         applyTheme(root, "auto");
@@ -1323,7 +1731,7 @@
   }
 
   /* ============================================================
-     ANIMAÇÕES LEVES DE ENTRADA (IntersectionObserver)
+     ANIMAÃ‡Ã•ES LEVES DE ENTRADA (IntersectionObserver)
      ============================================================ */
   function initReveals(root) {
     var items = root.querySelectorAll(".ss-reveal");
@@ -1354,10 +1762,10 @@
   }
 
   /* ============================================================
-      FAQ (ACORDEÃO)
-      - Usa <details>/<summary> nativos (sem dependências)
+      FAQ (ACORDEÃƒO)
+      - Usa <details>/<summary> nativos (sem dependÃªncias)
       - Apenas uma pergunta aberta por vez
-      - Compatível com Elementor (inicialização idempotente)
+      - CompatÃ­vel com Elementor (inicializaÃ§Ã£o idempotente)
       ============================================================ */
   function initFaq(root) {
     var faq = root.querySelector("#ss-faq");
@@ -1381,14 +1789,14 @@
   }
 
   /* ============================================================
-     INICIALIZAÇÃO
-     Roda para cada instância de #ss-landing na página.
+     INICIALIZAÃ‡ÃƒO
+     Roda para cada instÃ¢ncia de #ss-landing na pÃ¡gina.
      ============================================================ */
   function init() {
     var roots = document.querySelectorAll("#ss-landing");
     for (var i = 0; i < roots.length; i++) {
       var root = roots[i];
-      if (root.getAttribute("data-ss-init") === "true") continue; // evita dupla inicialização
+      if (root.getAttribute("data-ss-init") === "true") continue; // evita dupla inicializaÃ§Ã£o
       root.setAttribute("data-ss-init", "true");
 
       applyContactLinks(root);
@@ -1397,13 +1805,13 @@
       initReveals(root);
       initFaq(root);
 
-      // Ano automático no copyright
+      // Ano automÃ¡tico no copyright
       var yearEl = root.querySelector("[data-ss-year]");
       if (yearEl) {
         yearEl.textContent = String(new Date().getFullYear());
       }
 
-      // Habilita transições só depois do tema definido (anti-flash)
+      // Habilita transiÃ§Ãµes sÃ³ depois do tema definido (anti-flash)
       requestAnimationFrame(function (el) {
         return function () {
           el.classList.add("ss-ready");
