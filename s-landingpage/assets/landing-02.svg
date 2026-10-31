@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Mockup de Landing Page para produtos">
+  <defs>
+    <linearGradient id="wsprod-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B352A"/>
+      <stop offset="0.55" stop-color="#10231B"/>
+      <stop offset="1" stop-color="#0B1712"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#wsprod-bg)"/>
+
+  <!-- Navegação do site -->
+  <g>
+    <circle cx="64" cy="52" r="6" fill="#E94B91"/>
+    <text x="78" y="58" font-family="Georgia, serif" font-size="17" letter-spacing="2" fill="#F6F4EF">NOVA</text>
+    <rect x="470" y="47" width="46" height="9" rx="4.5" fill="#A8C5B2" opacity="0.55"/>
+    <rect x="528" y="47" width="46" height="9" rx="4.5" fill="#A8C5B2" opacity="0.35"/>
+    <rect x="586" y="47" width="46" height="9" rx="4.5" fill="#A8C5B2" opacity="0.35"/>
+    <rect x="646" y="38" width="92" height="28" rx="14" fill="#E94B91"/>
+  </g>
+
+  <!-- Hero centrado -->
+  <text x="400" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#A8C5B2">LANÇAMENTO EXCLUSIVO</text>
+  <text x="400" y="176" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#F4F8F4">O produto que faltava</text>
+  <text x="400" y="216" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-style="italic" fill="#A8C5B2">para o seu dia a dia.</text>
+  <rect x="340" y="244" width="120" height="32" rx="16" fill="#E94B91"/>
+
+  <!-- Vitrine de produtos -->
+  <g>
+    <rect x="64" y="310" width="200" height="150" rx="14" fill="#14261F" stroke="#A8C5B2" stroke-opacity="0.25"/>
+    <rect x="132" y="330" width="64" height="56" rx="8" fill="#254638"/>
+    <rect x="92" y="404" width="110" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
+    <rect x="92" y="422" width="64" height="12" rx="6" fill="#E94B91"/>
+
+    <rect x="300" y="310" width="200" height="150" rx="14" fill="#14261F" stroke="#E94B91" stroke-opacity="0.55"/>
+    <rect x="368" y="330" width="64" height="56" rx="8" fill="#254638"/>
+    <rect x="328" y="404" width="110" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
+    <rect x="328" y="422" width="64" height="12" rx="6" fill="#E94B91"/>
+    <rect x="440" y="296" width="72" height="22" rx="11" fill="#E94B91"/>
+
+    <rect x="536" y="310" width="200" height="150" rx="14" fill="#14261F" stroke="#A8C5B2" stroke-opacity="0.25"/>
+    <rect x="604" y="330" width="64" height="56" rx="8" fill="#254638"/>
+    <rect x="564" y="404" width="110" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
+    <rect x="564" y="422" width="64" height="12" rx="6" fill="#E94B91"/>
+  </g>
+
+  <!-- Brilho decorativo -->
+  <circle cx="720" cy="80" r="120" fill="#254638" opacity="0.35"/>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Mockup de Landing Page para captação de leads">
+  <rect width="800" height="500" fill="#F6F4EF"/>
+  <circle cx="90" cy="440" r="140" fill="#EFEBE3"/>
+
+  <!-- Navegação do site -->
+  <g>
+    <circle cx="64" cy="52" r="6" fill="#E94B91"/>
+    <text x="78" y="58" font-family="Georgia, serif" font-size="17" letter-spacing="2" fill="#0B1713">MENTORIA</text>
+    <rect x="600" y="38" width="138" height="28" rx="14" fill="none" stroke="#254638" stroke-width="1.5"/>
+  </g>
+
+  <!-- Coluna esquerda: promessa + benefícios -->
+  <text x="64" y="140" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#254638">TURMA LIMITADA</text>
+  <text x="64" y="188" font-family="Georgia, serif" font-size="36" fill="#0B1713">Transforme seu</text>
+  <text x="64" y="230" font-family="Georgia, serif" font-size="36" font-style="italic" fill="#254638">negócio em 90 dias.</text>
+
+  <g>
+    <circle cx="74" cy="284" r="6" fill="#E94B91"/>
+    <rect x="94" y="279" width="220" height="9" rx="4.5" fill="#5A6B62" opacity="0.5"/>
+    <circle cx="74" cy="320" r="6" fill="#E94B91"/>
+    <rect x="94" y="315" width="190" height="9" rx="4.5" fill="#5A6B62" opacity="0.4"/>
+    <circle cx="74" cy="356" r="6" fill="#E94B91"/>
+    <rect x="94" y="351" width="240" height="9" rx="4.5" fill="#5A6B62" opacity="0.4"/>
+    <circle cx="74" cy="392" r="6" fill="#E94B91"/>
+    <rect x="94" y="387" width="170" height="9" rx="4.5" fill="#5A6B62" opacity="0.4"/>
+  </g>
+
+  <!-- Cartão de captação de leads -->
+  <g>
+    <rect x="440" y="110" width="300" height="330" rx="18" fill="#FFFFFF" stroke="#D9D4C8"/>
+    <rect x="440" y="110" width="300" height="4" rx="2" fill="#E94B91"/>
+    <text x="472" y="162" font-family="Georgia, serif" font-size="21" fill="#0B1713">Garanta sua vaga</text>
+    <rect x="472" y="180" width="180" height="7" rx="3.5" fill="#D9D4C8"/>
+
+    <rect x="472" y="212" width="236" height="38" rx="10" fill="#F6F4EF" stroke="#D9D4C8"/>
+    <rect x="488" y="228" width="90" height="7" rx="3.5" fill="#A8C5B2" opacity="0.7"/>
+    <rect x="472" y="262" width="236" height="38" rx="10" fill="#F6F4EF" stroke="#D9D4C8"/>
+    <rect x="488" y="278" width="110" height="7" rx="3.5" fill="#A8C5B2" opacity="0.7"/>
+    <rect x="472" y="312" width="236" height="38" rx="10" fill="#F6F4EF" stroke="#D9D4C8"/>
+    <rect x="488" y="328" width="70" height="7" rx="3.5" fill="#A8C5B2" opacity="0.7"/>
+    <rect x="472" y="368" width="236" height="40" rx="20" fill="#E94B91"/>
+    <rect x="520" y="424" width="140" height="7" rx="3.5" fill="#D9D4C8"/>
+  </g>
+
+  <!-- Selo de vagas -->
+  <g>
+    <rect x="64" y="430" width="170" height="34" rx="17" fill="#FFFFFF" stroke="#D9D4C8"/>
+    <circle cx="86" cy="447" r="5" fill="#E94B91"/>
+    <rect x="102" y="443" width="110" height="8" rx="4" fill="#5A6B62" opacity="0.5"/>
+  </g>
+</svg>
