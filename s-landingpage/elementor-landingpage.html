@@ -814,6 +814,12 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Variante "Sob consulta" (serviços sem preço fixo) */
+#ws-landing-page .ws-pricing__price--consult {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-style: italic;
+}
+
 #ws-landing-page .ws-pricing__currency {
   font-size: 0.45em;
   vertical-align: 0.9em;
@@ -2087,6 +2093,12 @@
   var WEB3FORMS_ACCESS_KEY = ""; // <-- COLE SUA CHAVE DO WEB3FORMS AQUI
   var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
 
+  /* Dados desta página de serviço */
+  var SERVICE_NAME = "Landing Page";   // usado no e-mail, no WhatsApp e no popup
+  var SERVICE_ARTICLE = "uma";         // "uma Landing Page" / "um E-commerce"
+  var WHATSAPP_SUMMARY_FIELDS = ["nome", "negocio", "objetivo"]; // campos (name) no resumo do WhatsApp
+  var CAROUSEL_CAPTIONS = ["Serviços profissionais", "Produtos", "Negócios e empresas", "Captação de leads"];
+
   var THEME_STORAGE_KEY = "ss-theme-preference"; // mesma chave do site principal
   var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (confortável)
 
@@ -2250,7 +2262,7 @@
     var dots = region.querySelectorAll(".ws-carousel__dot");
     var caption = region.querySelector("[data-ws-carousel-caption]");
     var count = region.querySelector("[data-ws-carousel-count]");
-    var captions = ["Serviços profissionais", "Produtos", "Negócios e empresas", "Captação de leads"];
+    var captions = CAROUSEL_CAPTIONS;
 
     var index = 0;
     var timer = null;
@@ -2479,24 +2491,50 @@
     return el && el.value ? String(el.value).trim() : "";
   }
 
-  function collectLead(form) {
-    var possui = [];
-    var boxes = form.querySelectorAll("input[name='possui']:checked");
-    for (var i = 0; i < boxes.length; i++) possui.push(boxes[i].value);
+  /* Texto do rótulo de um campo, sem o "(opcional ...)" */
+  function fieldLabel(form, el) {
+    var text = "";
+    var fieldset = el.type === "checkbox" ? el.closest("fieldset") : null;
+    if (fieldset && fieldset.querySelector("legend")) {
+      text = fieldset.querySelector("legend").textContent;
+    } else if (el.id && form.querySelector("label[for='" + el.id + "']")) {
+      text = form.querySelector("label[for='" + el.id + "']").textContent;
+    } else {
+      text = el.name;
+    }
+    return text.replace(/\(.*?\)/g, "").replace(/\s+/g, " ").trim();
+  }
 
-    return {
-      nome: fieldValue(form, "nome"),
-      email: fieldValue(form, "email"),
-      telefone: fieldValue(form, "telefone"),
-      negocio: fieldValue(form, "negocio"),
-      area: fieldValue(form, "area"),
-      objetivo: fieldValue(form, "objetivo"),
-      prazo: fieldValue(form, "prazo"),
-      possui: possui.join(", "),
-      redes: fieldValue(form, "redes"),
-      mensagem: fieldValue(form, "mensagem"),
+  /* Lê TODOS os campos do formulário pelo atributo "name", na ordem
+     em que aparecem. Assim, novos campos no HTML entram no e-mail
+     automaticamente, sem alterar o JS.
+     Checkboxes com o mesmo "name" viram uma lista separada por vírgulas. */
+  function collectLead(form) {
+    var IGNORE = { botcheck: true, consentimento: true };
+    var fields = [];
+    var index = {};
+    var els = form.elements;
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (!el.name || IGNORE[el.name] || el.type === "submit" || el.type === "button") continue;
+
+      if (!(el.name in index)) {
+        index[el.name] = fields.length;
+        fields.push({ name: el.name, label: fieldLabel(form, el), values: [] });
+      }
+      var value = el.type === "checkbox" ? (el.checked ? el.value : "") : String(el.value || "").trim();
+      if (value) fields[index[el.name]].values.push(value);
+    }
+
+    var lead = {
+      fields: fields,
       botcheck: !!(form.elements.botcheck && form.elements.botcheck.checked)
     };
+    for (var j = 0; j < fields.length; j++) {
+      lead[fields[j].name] = fields[j].values.join(", ");
+    }
+    return lead;
   }
 
   /* Link do WhatsApp com um resumo curto (sem e-mail/telefone:
@@ -2504,11 +2542,14 @@
   function whatsappLink(lead) {
     var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
     if (!number) return "";
-    var lines = ["Olá! Tenho interesse em uma Landing Page."];
+    var lines = ["Olá! Tenho interesse em " + SERVICE_ARTICLE + " " + SERVICE_NAME + "."];
     if (lead) {
-      if (lead.nome) lines.push("Nome: " + lead.nome);
-      if (lead.negocio) lines.push("Negócio: " + lead.negocio);
-      if (lead.objetivo) lines.push("Objetivo: " + lead.objetivo);
+      for (var i = 0; i < lead.fields.length; i++) {
+        var f = lead.fields[i];
+        if (WHATSAPP_SUMMARY_FIELDS.indexOf(f.name) > -1 && f.values.length) {
+          lines.push(f.label.replace(/\?$/, "") + ": " + f.values.join(", "));
+        }
+      }
     }
     return "https://wa.me/" + number + "?text=" + encodeURIComponent(lines.join("\n"));
   }
@@ -2523,21 +2564,15 @@
 
     var payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
-      subject: "Novo interesse em Landing Page — " + (lead.negocio || lead.nome),
+      subject: "Novo interesse em " + SERVICE_NAME + " — " + (lead.negocio || lead.nome),
       from_name: "Site WebStudio",
       replyto: lead.email,
-      "Nome": lead.nome,
-      "E-mail": lead.email,
-      "WhatsApp": lead.telefone,
-      "Negócio": lead.negocio,
-      "Área de atuação": lead.area || "—",
-      "Objetivo da página": lead.objetivo,
-      "Quando quer começar": lead.prazo || "—",
-      "O que já tem": lead.possui || "—",
-      "Instagram / site": lead.redes || "—",
-      "Mensagem": lead.mensagem || "—",
-      "Consentimento (LGPD)": "Aceitou a Política de Privacidade em " + new Date().toLocaleString("pt-BR")
+      "Serviço": SERVICE_NAME
     };
+    for (var i = 0; i < lead.fields.length; i++) {
+      payload[lead.fields[i].label] = lead.fields[i].values.join(", ") || "—";
+    }
+    payload["Consentimento (LGPD)"] = "Aceitou a Política de Privacidade em " + new Date().toLocaleString("pt-BR");
 
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -2673,8 +2708,8 @@
     var STATES = {
       success: {
         title: "Que bom ter você por aqui!",
-        text: "Recebi seu interesse em desenvolver uma Landing Page com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
-        textNoWa: "Recebi seu interesse em desenvolver uma Landing Page com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+        text: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
+        textNoWa: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
       },
       fallback: {
         title: "Quase lá!",

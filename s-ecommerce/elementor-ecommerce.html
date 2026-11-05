@@ -1,0 +1,2916 @@
+﻿<!-- ============================================================
+     ELEMENTOR - WIDGET HTML  (Serviço: E-commerce)
+     ARQUIVO GERADO por build-elementor.py. NAO edite a mao:
+     altere s-ecommerce/ecommerce.html, s-ecommerce/ecommerce.css, s-ecommerce/ecommerce.js e rode:  python build-elementor.py
+     Cole TODO o conteudo deste arquivo em UM unico widget HTML.
+     CSS, JS e imagens estao embutidos: nao depende de arquivos externos.
+     ============================================================ -->
+
+<style>
+/* ============================================================
+   WEBSTUDIO — Página do serviço E-commerce
+   Todo o CSS está escopado dentro de #ws-ecommerce-page.
+   Nenhum seletor global (html, body, header, footer) é afetado.
+   ============================================================ */
+
+#ws-ecommerce-page {
+  /* Paleta */
+  --wsec-green-deep: #0B1713;
+  --wsec-forest: #254638;
+  --wsec-sage: #A8C5B2;
+  --wsec-pink: #E94B91;
+  --wsec-offwhite: #F6F4EF;
+
+  /* Tema Light (padrão) */
+  --wsec-bg: var(--wsec-offwhite);
+  --wsec-bg-soft: #EFEBE3;
+  --wsec-bg-card: #FFFFFF;
+  --wsec-text: var(--wsec-green-deep);
+  --wsec-text-muted: #5A6B62;
+  --wsec-border: #D9D4C8;
+  --wsec-accent: var(--wsec-forest);
+  --wsec-cta-bg: var(--wsec-pink);
+  --wsec-cta-text: #FFFFFF;
+  --wsec-shadow: 0 10px 30px rgba(11, 23, 19, 0.08);
+  --wsec-field-bg: #FFFFFF;
+
+  /* Tipografia e métricas */
+  --wsec-font: "Georgia", "Times New Roman", serif;
+  --wsec-font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --wsec-radius: 14px;
+  --wsec-max: 1140px;
+
+  background: var(--wsec-bg);
+  color: var(--wsec-text);
+  font-family: var(--wsec-font-ui);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+/* Tema Dark */
+#ws-ecommerce-page[data-ws-theme="dark"] {
+  --wsec-bg: var(--wsec-green-deep);
+  --wsec-bg-soft: #10201A;
+  --wsec-bg-card: #14261F;
+  --wsec-text: #EDF3EE;
+  --wsec-text-muted: var(--wsec-sage);
+  --wsec-border: rgba(168, 197, 178, 0.18);
+  --wsec-accent: var(--wsec-sage);
+  --wsec-cta-bg: var(--wsec-pink);
+  --wsec-cta-text: #FFFFFF;
+  --wsec-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --wsec-field-bg: #10201A;
+}
+
+/* Anti-flash: o JS aplica .ws-ready depois de definir o tema */
+#ws-ecommerce-page:not(.ws-ready),
+#ws-ecommerce-page:not(.ws-ready) * {
+  transition: none !important;
+}
+
+/* ---------- Utilitários internos ---------- */
+#ws-ecommerce-page .ws-container {
+  max-width: var(--wsec-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+#ws-ecommerce-page .ws-serif {
+  font-family: var(--wsec-font);
+}
+
+/* ---------- Foco visível ---------- */
+#ws-ecommerce-page a:focus-visible,
+#ws-ecommerce-page button:focus-visible,
+#ws-ecommerce-page input:focus-visible,
+#ws-ecommerce-page select:focus-visible,
+#ws-ecommerce-page textarea:focus-visible {
+  outline: 2px solid var(--wsec-pink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Cabeçalho ---------- */
+#ws-ecommerce-page .ws-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--wsec-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+}
+
+#ws-ecommerce-page .ws-brand {
+  font-family: var(--wsec-font);
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wsec-text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+#ws-ecommerce-page .ws-brand__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--wsec-pink);
+  flex: none;
+}
+
+#ws-ecommerce-page .ws-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+#ws-ecommerce-page .ws-nav__link {
+  color: var(--wsec-text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-nav__link:hover,
+#ws-ecommerce-page .ws-nav__link:focus-visible {
+  color: var(--wsec-text);
+}
+
+/* Botões */
+#ws-ecommerce-page .ws-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: var(--wsec-font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-btn--primary {
+  background: var(--wsec-cta-bg);
+  color: var(--wsec-cta-text);
+}
+
+#ws-ecommerce-page .ws-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--wsec-shadow);
+}
+
+#ws-ecommerce-page .ws-btn--ghost {
+  background: transparent;
+  color: var(--wsec-text);
+  border-color: var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-btn--ghost:hover {
+  border-color: var(--wsec-accent);
+  color: var(--wsec-accent);
+}
+
+/* Seletor de tema */
+#ws-ecommerce-page .ws-theme {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--wsec-border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  background: var(--wsec-bg-card);
+}
+
+#ws-ecommerce-page .ws-theme__btn {
+  border: 0;
+  background: transparent;
+  color: var(--wsec-text-muted);
+  font-family: var(--wsec-font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-theme__btn[aria-pressed="true"] {
+  background: var(--wsec-forest);
+  color: #FFFFFF;
+}
+
+#ws-ecommerce-page[data-ws-theme="dark"] .ws-theme__btn[aria-pressed="true"] {
+  background: var(--wsec-sage);
+  color: var(--wsec-green-deep);
+}
+
+/* Menu mobile */
+#ws-ecommerce-page .ws-menu-toggle {
+  display: none;
+  border: 1px solid var(--wsec-border);
+  background: var(--wsec-bg-card);
+  color: var(--wsec-text);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+#ws-ecommerce-page .ws-menu-toggle span,
+#ws-ecommerce-page .ws-menu-toggle span::before,
+#ws-ecommerce-page .ws-menu-toggle span::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  content: "";
+}
+
+#ws-ecommerce-page .ws-menu-toggle span::before {
+  position: absolute;
+  top: -6px;
+}
+
+#ws-ecommerce-page .ws-menu-toggle span::after {
+  position: absolute;
+  top: 6px;
+}
+
+#ws-ecommerce-page .ws-menu-toggle[aria-expanded="true"] span {
+  transform: rotate(45deg);
+}
+
+#ws-ecommerce-page .ws-menu-toggle[aria-expanded="true"] span::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#ws-ecommerce-page .ws-menu-toggle[aria-expanded="true"] span::after {
+  top: 0;
+  opacity: 0;
+}
+
+/* ---------- Hero ---------- */
+#ws-ecommerce-page .ws-hero {
+  padding: 88px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Profundidade de fundo (brilho radial discreto) */
+#ws-ecommerce-page .ws-hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -12%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(ellipse at center, rgba(37, 70, 56, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+#ws-ecommerce-page[data-ws-theme="dark"] .ws-hero::before {
+  background: radial-gradient(ellipse at center, rgba(37, 70, 56, 0.45) 0%, transparent 65%);
+}
+
+#ws-ecommerce-page .ws-hero__inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+#ws-ecommerce-page .ws-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wsec-accent);
+  margin-bottom: 24px;
+}
+
+#ws-ecommerce-page .ws-hero__eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-hero__title {
+  font-family: var(--wsec-font);
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  font-weight: 500;
+}
+
+#ws-ecommerce-page .ws-hero__title em {
+  font-style: italic;
+  color: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-hero__subtitle {
+  font-size: 1.12rem;
+  color: var(--wsec-text-muted);
+  max-width: 44ch;
+  margin: 0 0 36px;
+}
+
+#ws-ecommerce-page .ws-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#ws-ecommerce-page .ws-hero__secondary {
+  color: var(--wsec-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--wsec-accent);
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-hero__secondary:hover {
+  color: var(--wsec-accent);
+}
+
+/* ---------- Carrossel ---------- */
+#ws-ecommerce-page .ws-carousel {
+  position: relative;
+}
+
+#ws-ecommerce-page .ws-carousel__frame {
+  position: relative;
+  background: var(--wsec-bg-card);
+  border: 1px solid var(--wsec-border);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: var(--wsec-shadow);
+  overflow: hidden;
+}
+
+/* Barra superior estilo navegador */
+#ws-ecommerce-page .ws-carousel__chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px 10px;
+}
+
+#ws-ecommerce-page .ws-carousel__chrome i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-carousel__chrome i:first-child {
+  background: var(--wsec-pink);
+}
+
+#ws-ecommerce-page .ws-carousel__chrome i:nth-child(2) {
+  background: var(--wsec-sage);
+}
+
+#ws-ecommerce-page .ws-carousel__chrome .ws-carousel__url {
+  margin-left: 8px;
+  flex: 1;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--wsec-bg-soft);
+  border: 1px solid var(--wsec-border);
+  font-size: 0.62rem;
+  color: var(--wsec-text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  letter-spacing: 0.06em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#ws-ecommerce-page .ws-carousel__viewport {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#ws-ecommerce-page .ws-carousel__track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
+}
+
+#ws-ecommerce-page .ws-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  background: var(--wsec-bg-soft);
+}
+
+#ws-ecommerce-page .ws-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Etiqueta do slide */
+#ws-ecommerce-page .ws-carousel__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 6px 0;
+}
+
+#ws-ecommerce-page .ws-carousel__caption p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-carousel__caption .ws-carousel__count {
+  font-family: var(--wsec-font);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--wsec-accent);
+  flex: none;
+}
+
+/* Setas */
+#ws-ecommerce-page .ws-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--wsec-border);
+  background: var(--wsec-bg-card);
+  color: var(--wsec-text);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: var(--wsec-shadow);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-carousel__arrow:hover {
+  background: var(--wsec-pink);
+  border-color: var(--wsec-pink);
+  color: #FFFFFF;
+}
+
+#ws-ecommerce-page .ws-carousel__arrow--prev {
+  left: -14px;
+}
+
+#ws-ecommerce-page .ws-carousel__arrow--next {
+  right: -14px;
+}
+
+/* Indicadores */
+#ws-ecommerce-page .ws-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 18px;
+}
+
+#ws-ecommerce-page .ws-carousel__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: var(--wsec-border);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-carousel__dot[aria-selected="true"] {
+  background: var(--wsec-pink);
+  transform: scale(1.2);
+}
+
+/* ---------- Seção: Conheça a Landing Page ---------- */
+#ws-ecommerce-page .ws-about {
+  padding: 96px 0;
+  background: var(--wsec-bg-soft);
+  border-top: 1px solid var(--wsec-border);
+  border-bottom: 1px solid var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: 72px;
+  align-items: start;
+}
+
+#ws-ecommerce-page .ws-section-head {
+  max-width: 620px;
+}
+
+#ws-ecommerce-page .ws-section-head__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wsec-accent);
+  margin-bottom: 16px;
+}
+
+#ws-ecommerce-page .ws-section-head__title {
+  font-family: var(--wsec-font);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 500;
+}
+
+#ws-ecommerce-page .ws-section-head__subtitle {
+  color: var(--wsec-text-muted);
+  font-size: 1.05rem;
+  margin: 16px 0 0;
+}
+
+/* Acordeão "Conheça a Landing Page" — mesmo padrão do FAQ da página inicial */
+#ws-ecommerce-page .ws-about__faq {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#ws-ecommerce-page .ws-faq__item {
+  background: var(--wsec-bg-card);
+  border: 1px solid var(--wsec-border);
+  border-radius: var(--wsec-radius);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-faq__item[open] {
+  border-color: var(--wsec-accent);
+  box-shadow: var(--wsec-shadow);
+}
+
+#ws-ecommerce-page .ws-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--wsec-font);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--wsec-text);
+  transition: color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+#ws-ecommerce-page .ws-faq__question:hover {
+  color: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-faq__question:focus-visible {
+  outline: 2px solid var(--wsec-accent);
+  outline-offset: -2px;
+  border-radius: var(--wsec-radius);
+}
+
+#ws-ecommerce-page .ws-faq__icon {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--wsec-accent);
+  transition: transform 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-faq__item[open] .ws-faq__icon {
+  transform: rotate(45deg);
+}
+
+#ws-ecommerce-page .ws-faq__answer {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--wsec-border);
+  padding-top: 20px;
+}
+
+#ws-ecommerce-page .ws-faq__answer p {
+  margin: 0;
+  color: var(--wsec-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---------- Seção: Como funciona ---------- */
+#ws-ecommerce-page .ws-process {
+  padding: 96px 0;
+}
+
+#ws-ecommerce-page .ws-process .ws-section-head {
+  margin-bottom: 56px;
+}
+
+#ws-ecommerce-page .ws-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+#ws-ecommerce-page .ws-card {
+  position: relative;
+  background: var(--wsec-bg-card);
+  border: 1px solid var(--wsec-border);
+  border-radius: var(--wsec-radius);
+  padding: 30px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#ws-ecommerce-page .ws-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--wsec-shadow);
+  border-color: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: var(--wsec-accent);
+  border: 1px solid var(--wsec-border);
+  background: color-mix(in srgb, var(--wsec-accent) 8%, transparent);
+  flex: none;
+}
+
+#ws-ecommerce-page .ws-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+#ws-ecommerce-page .ws-card__num {
+  position: absolute;
+  top: 30px;
+  right: 26px;
+  font-family: var(--wsec-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--wsec-accent);
+  opacity: 0.7;
+}
+
+#ws-ecommerce-page .ws-card__title {
+  font-family: var(--wsec-font);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 6px 0 0;
+}
+
+#ws-ecommerce-page .ws-card__desc {
+  color: var(--wsec-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Ondas decorativas (mesma linguagem dos cards da página inicial) */
+#ws-ecommerce-page .ws-card__decor {
+  position: absolute;
+  right: -6%;
+  bottom: -4%;
+  width: 78%;
+  aspect-ratio: 240 / 110;
+  color: var(--wsec-accent);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+#ws-ecommerce-page .ws-card__decor svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ws-ecommerce-page .ws-card:hover .ws-card__decor {
+  opacity: 0.55;
+  transform: translateX(-4px);
+}
+
+#ws-ecommerce-page[data-ws-theme="dark"] .ws-card__decor {
+  opacity: 0.4;
+}
+
+/* ---------- Seção: Investimento ---------- */
+#ws-ecommerce-page .ws-pricing {
+  padding: 96px 0;
+  border-top: 1px solid var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-pricing .ws-section-head {
+  margin-bottom: 48px;
+}
+
+#ws-ecommerce-page .ws-pricing__card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--wsec-bg-card);
+  border: 1px solid var(--wsec-border);
+  border-radius: var(--wsec-radius);
+  box-shadow: var(--wsec-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Detalhe rosa no topo, mesma linguagem do formulário */
+#ws-ecommerce-page .ws-pricing__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wsec-pink), color-mix(in srgb, var(--wsec-pink) 35%, transparent));
+}
+
+#ws-ecommerce-page .ws-pricing__main {
+  padding: 44px 40px;
+  background: color-mix(in srgb, var(--wsec-accent) 6%, transparent);
+  border-right: 1px solid var(--wsec-border);
+  display: flex;
+  flex-direction: column;
+}
+
+#ws-ecommerce-page .ws-pricing__details {
+  padding: 44px 40px;
+}
+
+#ws-ecommerce-page .ws-pricing__from {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wsec-accent);
+  font-weight: 600;
+}
+
+#ws-ecommerce-page .ws-pricing__price {
+  margin: 6px 0 4px;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--wsec-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Variante "Sob consulta" (serviços sem preço fixo) */
+#ws-ecommerce-page .ws-pricing__price--consult {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-style: italic;
+}
+
+#ws-ecommerce-page .ws-pricing__currency {
+  font-size: 0.45em;
+  vertical-align: 0.9em;
+  margin-right: 2px;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-pricing__note {
+  margin: 0 0 28px;
+  font-size: 0.9rem;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-pricing__subtitle {
+  font-family: var(--wsec-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+#ws-ecommerce-page .ws-pricing__details .ws-pricing__subtitle + .ws-pricing__text {
+  margin-top: 0;
+}
+
+#ws-ecommerce-page .ws-pricing__pay,
+#ws-ecommerce-page .ws-pricing__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+#ws-ecommerce-page .ws-pricing__pay {
+  margin-bottom: 32px;
+}
+
+#ws-ecommerce-page .ws-pricing__pay li,
+#ws-ecommerce-page .ws-pricing__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-pricing__pay strong {
+  color: var(--wsec-text);
+  font-weight: 600;
+}
+
+/* Marcador: ponto rosa nas formas de pagamento */
+#ws-ecommerce-page .ws-pricing__pay li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wsec-pink);
+}
+
+/* Marcador: check verde no que está incluso */
+#ws-ecommerce-page .ws-pricing__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.35em;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--wsec-accent);
+  border-bottom: 2px solid var(--wsec-accent);
+  transform: rotate(-45deg);
+}
+
+#ws-ecommerce-page .ws-pricing__list {
+  margin-bottom: 28px;
+}
+
+#ws-ecommerce-page .ws-pricing__text {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-pricing__foot {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--wsec-border);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-pricing__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ---------- Seção: Formulário ---------- */
+#ws-ecommerce-page .ws-contact {
+  padding: 96px 0;
+  background: var(--wsec-bg-soft);
+  border-top: 1px solid var(--wsec-border);
+  border-bottom: 1px solid var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-contact__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+#ws-ecommerce-page .ws-contact .ws-section-head {
+  text-align: center;
+  margin: 0 auto 48px;
+}
+
+#ws-ecommerce-page .ws-contact .ws-section-head__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#ws-ecommerce-page .ws-contact .ws-section-head__eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-contact .ws-section-head__eyebrow::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-form {
+  background: var(--wsec-bg-card);
+  border: 1px solid var(--wsec-border);
+  border-radius: var(--wsec-radius);
+  padding: 40px;
+  box-shadow: var(--wsec-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Detalhe rosa no topo do formulário */
+#ws-ecommerce-page .ws-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wsec-pink), color-mix(in srgb, var(--wsec-pink) 35%, transparent));
+}
+
+#ws-ecommerce-page .ws-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+#ws-ecommerce-page .ws-form__row--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  #ws-ecommerce-page .ws-form__row--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ws-ecommerce-page .ws-field {
+  display: grid;
+  gap: 8px;
+}
+
+#ws-ecommerce-page .ws-field__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--wsec-text);
+  letter-spacing: 0.01em;
+}
+
+#ws-ecommerce-page .ws-field__input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--wsec-border);
+  background: var(--wsec-field-bg);
+  color: var(--wsec-text);
+  font-family: var(--wsec-font-ui);
+  font-size: 0.98rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-field__input::placeholder {
+  color: var(--wsec-text-muted);
+  opacity: 0.75;
+}
+
+#ws-ecommerce-page .ws-field__input:hover {
+  border-color: var(--wsec-accent);
+}
+
+#ws-ecommerce-page .ws-field__input:focus {
+  outline: none;
+  border-color: var(--wsec-pink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wsec-pink) 18%, transparent);
+}
+
+#ws-ecommerce-page .ws-field--invalid .ws-field__input {
+  border-color: var(--wsec-pink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wsec-pink) 14%, transparent);
+}
+
+#ws-ecommerce-page .ws-field__error {
+  font-size: 0.82rem;
+  color: var(--wsec-pink);
+  display: none;
+  margin: 0;
+}
+
+#ws-ecommerce-page .ws-field--invalid .ws-field__error {
+  display: block;
+}
+
+#ws-ecommerce-page .ws-form__actions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#ws-ecommerce-page .ws-form__hint {
+  font-size: 0.82rem;
+  color: var(--wsec-text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+#ws-ecommerce-page .ws-form__submit {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 26px;
+  font-size: 1rem;
+}
+
+#ws-ecommerce-page .ws-form__submit[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+#ws-ecommerce-page .ws-form__status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--wsec-text-muted);
+  text-align: center;
+}
+
+#ws-ecommerce-page .ws-form__status:empty {
+  display: none;
+}
+
+/* Honeypot anti-spam: fora da tela, sem afetar o layout */
+#ws-ecommerce-page .ws-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+#ws-ecommerce-page .ws-field__opt {
+  font-weight: 400;
+  color: var(--wsec-text-muted);
+}
+
+#ws-ecommerce-page .ws-field__textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+/* Select com seta própria (igual nos dois temas) */
+#ws-ecommerce-page .ws-field__select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--wsec-text-muted) 50%),
+    linear-gradient(135deg, var(--wsec-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) 50%,
+    calc(100% - 16px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+#ws-ecommerce-page .ws-field__select option {
+  background: var(--wsec-bg-card);
+  color: var(--wsec-text);
+}
+
+#ws-ecommerce-page .ws-choices {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+  min-width: 0;
+}
+
+#ws-ecommerce-page .ws-choices legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#ws-ecommerce-page .ws-choices__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+
+@media (max-width: 640px) {
+  #ws-ecommerce-page .ws-choices__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ws-ecommerce-page .ws-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--wsec-text);
+  cursor: pointer;
+}
+
+#ws-ecommerce-page .ws-check input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--wsec-pink);
+  cursor: pointer;
+}
+
+#ws-ecommerce-page .ws-check a {
+  color: var(--wsec-text);
+  text-decoration: underline;
+  text-decoration-color: var(--wsec-pink);
+  text-underline-offset: 3px;
+}
+
+#ws-ecommerce-page .ws-field--consent .ws-check {
+  font-size: 0.88rem;
+  color: var(--wsec-text-muted);
+}
+
+/* ---------- Seção: Suporte ---------- */
+#ws-ecommerce-page .ws-support {
+  padding: 72px 0;
+}
+
+#ws-ecommerce-page .ws-support__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--wsec-bg-card);
+  border: 1px solid var(--wsec-border);
+  border-radius: var(--wsec-radius);
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filete verde à esquerda */
+#ws-ecommerce-page .ws-support__inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--wsec-accent), color-mix(in srgb, var(--wsec-accent) 30%, transparent));
+}
+
+#ws-ecommerce-page .ws-support__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: var(--wsec-accent);
+  border: 1px solid var(--wsec-border);
+  background: color-mix(in srgb, var(--wsec-accent) 8%, transparent);
+  flex: none;
+}
+
+#ws-ecommerce-page .ws-support__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+#ws-ecommerce-page .ws-support__title {
+  font-family: var(--wsec-font);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+#ws-ecommerce-page .ws-support__desc {
+  margin: 0;
+  color: var(--wsec-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ---------- Rodapé ---------- */
+#ws-ecommerce-page .ws-footer {
+  padding: 56px 0 48px;
+  background: var(--wsec-bg-soft);
+  border-top: 1px solid var(--wsec-border);
+}
+
+#ws-ecommerce-page .ws-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#ws-ecommerce-page .ws-footer__nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#ws-ecommerce-page .ws-footer__link {
+  color: var(--wsec-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+#ws-ecommerce-page .ws-footer__link:hover {
+  color: var(--wsec-text);
+}
+
+#ws-ecommerce-page .ws-footer__copy {
+  font-size: 0.85rem;
+  color: var(--wsec-text-muted);
+  width: 100%;
+  border-top: 1px solid var(--wsec-border);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+/* ---------- Modal de agradecimento ---------- */
+#ws-ecommerce-page .ws-modal[hidden] {
+  display: none;
+}
+
+#ws-ecommerce-page .ws-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+#ws-ecommerce-page .ws-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 23, 19, 0.55);
+  border: 0;
+  padding: 0;
+  cursor: default;
+}
+
+#ws-ecommerce-page .ws-modal__dialog {
+  position: relative;
+  background: var(--wsec-bg-card);
+  color: var(--wsec-text);
+  border: 1px solid var(--wsec-border);
+  border-radius: 18px;
+  max-width: 460px;
+  width: 100%;
+  padding: 44px 40px 36px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(11, 23, 19, 0.35);
+  overflow: hidden;
+  animation: wsec-modal-in 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Detalhe rosa no topo do modal */
+#ws-ecommerce-page .ws-modal__dialog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wsec-pink), color-mix(in srgb, var(--wsec-pink) 35%, transparent));
+}
+
+@keyframes wsec-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#ws-ecommerce-page .ws-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--wsec-pink) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--wsec-pink) 35%, transparent);
+  color: var(--wsec-pink);
+  margin-bottom: 20px;
+}
+
+#ws-ecommerce-page .ws-modal__badge svg {
+  width: 26px;
+  height: 26px;
+}
+
+#ws-ecommerce-page .ws-modal__title {
+  font-family: var(--wsec-font);
+  font-size: 1.55rem;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+#ws-ecommerce-page .ws-modal__text {
+  color: var(--wsec-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  white-space: pre-line;
+}
+
+#ws-ecommerce-page .ws-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#ws-ecommerce-page .ws-modal__close,
+#ws-ecommerce-page .ws-modal__whatsapp {
+  min-width: 140px;
+}
+
+#ws-ecommerce-page .ws-modal__whatsapp[hidden] {
+  display: none;
+}
+
+/* ---------- Animações leves de entrada ---------- */
+#ws-ecommerce-page .ws-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#ws-ecommerce-page .ws-reveal.ws-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #ws-ecommerce-page *,
+  #ws-ecommerce-page *::before,
+  #ws-ecommerce-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  #ws-ecommerce-page .ws-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  #ws-ecommerce-page .ws-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  #ws-ecommerce-page .ws-hero {
+    padding: 56px 0 72px;
+  }
+
+  #ws-ecommerce-page .ws-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  #ws-ecommerce-page .ws-carousel {
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  #ws-ecommerce-page .ws-about__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #ws-ecommerce-page .ws-about,
+  #ws-ecommerce-page .ws-process,
+  #ws-ecommerce-page .ws-pricing,
+  #ws-ecommerce-page .ws-contact {
+    padding: 72px 0;
+  }
+
+  #ws-ecommerce-page .ws-pricing__card {
+    grid-template-columns: 1fr;
+  }
+
+  #ws-ecommerce-page .ws-pricing__main {
+    border-right: 0;
+    border-bottom: 1px solid var(--wsec-border);
+  }
+}
+
+@media (max-width: 640px) {
+  #ws-ecommerce-page .ws-pricing__main,
+  #ws-ecommerce-page .ws-pricing__details {
+    padding: 32px 24px;
+  }
+
+  #ws-ecommerce-page .ws-pricing__cta {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  #ws-ecommerce-page .ws-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--wsec-bg);
+    border-bottom: 1px solid var(--wsec-border);
+    display: none;
+    padding: 8px 24px 20px;
+  }
+
+  #ws-ecommerce-page .ws-nav.ws-nav--open {
+    display: flex;
+  }
+
+  #ws-ecommerce-page .ws-nav__link {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--wsec-border);
+    font-size: 1rem;
+  }
+
+  #ws-ecommerce-page .ws-nav .ws-theme {
+    margin-top: 16px;
+    align-self: flex-start;
+  }
+
+  #ws-ecommerce-page .ws-menu-toggle {
+    display: inline-flex;
+  }
+
+  #ws-ecommerce-page .ws-header__cta {
+    display: none;
+  }
+
+  #ws-ecommerce-page .ws-header__inner {
+    gap: 12px;
+  }
+
+  #ws-ecommerce-page .ws-carousel__arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  #ws-ecommerce-page .ws-carousel__arrow--prev {
+    left: 8px;
+  }
+
+  #ws-ecommerce-page .ws-carousel__arrow--next {
+    right: 8px;
+  }
+
+  #ws-ecommerce-page .ws-form {
+    padding: 28px 22px;
+  }
+
+  #ws-ecommerce-page .ws-support__inner {
+    flex-direction: column;
+    padding: 26px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  #ws-ecommerce-page .ws-cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  #ws-ecommerce-page .ws-faq__question {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  #ws-ecommerce-page .ws-faq__answer {
+    padding: 0 20px 20px;
+  }
+
+  #ws-ecommerce-page .ws-hero__actions .ws-btn {
+    width: 100%;
+  }
+
+  #ws-ecommerce-page .ws-modal__dialog {
+    padding: 36px 26px 30px;
+  }
+}
+</style>
+
+<div id="ws-ecommerce-page" data-ws-theme="light">
+
+  <!-- ==========================================================
+       SEÇÃO 1 — HEADER
+       ========================================================== -->
+  <header class="ws-header">
+    <div class="ws-container ws-header__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-nav" aria-label="Navegação principal">
+        <a href="#wsec-sobre" class="ws-nav__link">Serviços</a>
+        <a href="#wsec-investimento" class="ws-nav__link">Investimento</a>
+        <a href="#wsec-contato" class="ws-nav__link">Contato</a>
+
+        <div class="ws-theme" role="group" aria-label="Seleção de tema">
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="dark" aria-pressed="false">Dark</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="auto" aria-pressed="false">Auto</button>
+        </div>
+      </nav>
+
+      <button type="button" class="ws-menu-toggle" aria-expanded="false" aria-controls="ws-nav" aria-label="Abrir menu">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <a href="#wsec-contato" class="ws-btn ws-btn--primary ws-header__cta">Fale comigo</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       SEÇÃO 2 — HERO + CARROSSEL
+       ========================================================== -->
+  <section class="ws-hero" aria-labelledby="wsec-hero-title">
+    <div class="ws-container ws-hero__inner">
+
+      <div class="ws-reveal">
+        <p class="ws-hero__eyebrow">E-commerce</p>
+        <h1 class="ws-hero__title ws-serif" id="wsec-hero-title">Sua loja aberta 24 horas. <em>Vendendo por você.</em></h1>
+        <p class="ws-hero__subtitle">Uma loja virtual com a cara da sua marca, pronta para mostrar seus produtos, receber pagamentos e organizar seus pedidos em um só lugar.</p>
+        <div class="ws-hero__actions">
+          <a href="#wsec-contato" class="ws-btn ws-btn--primary">Quero minha loja virtual</a>
+          <a href="#wsec-processo" class="ws-hero__secondary">Entender como funciona</a>
+        </div>
+      </div>
+
+      <!-- Carrossel de lojas virtuais.
+           Para trocar as imagens futuramente, basta substituir os
+           arquivos em assets/ e atualizar o "src" e o "alt" abaixo.
+           As legendas ficam em CAROUSEL_CAPTIONS (ecommerce.js). -->
+      <div class="ws-carousel ws-reveal" aria-roledescription="carrossel" aria-label="Exemplos de lojas virtuais">
+        <div class="ws-carousel__frame">
+          <div class="ws-carousel__chrome" aria-hidden="true">
+            <i></i><i></i><i></i>
+            <span class="ws-carousel__url">sualoja.com.br</span>
+          </div>
+
+          <div class="ws-carousel__viewport">
+            <div class="ws-carousel__track" data-ws-carousel-track>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 4: Loja de moda e acessórios">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBsb2phIHZpcnR1YWwgZGUgbW9kYSwgY29tIHZpdHJpbmUgZGUgcHJvZHV0b3MgZSBmaWx0cm9zIHBvciBjYXRlZ29yaWEiPg0KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndzZWMxLWJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMUIzNTJBIi8+PHN0b3Agb2Zmc2V0PSIwLjU1IiBzdG9wLWNvbG9yPSIjMTAyMzFCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMEIxNzEyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9InVybCgjd3NlYzEtYmcpIi8+DQogIDxjaXJjbGUgY3g9IjY0IiBjeT0iNTIiIHI9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHRleHQgeD0iNzgiIHk9IjU4IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjRjZGNEVGIj5BVEVMScOKPC90ZXh0Pg0KICA8cmVjdCB4PSI0NzAiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI1MjgiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI1ODYiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNGNkY0RUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNjgwIDQyaDZsNSAyMGgyMGw0LTE0aC0yNyIvPjxjaXJjbGUgY3g9IjY5NCIgY3k9IjY4IiByPSIyIi8+PGNpcmNsZSBjeD0iNzA4IiBjeT0iNjgiIHI9IjIiLz48L2c+DQogIDxjaXJjbGUgY3g9IjcxOCIgY3k9IjQyIiByPSI4IiBmaWxsPSIjRTk0QjkxIi8+PHRleHQgeD0iNzE4IiB5PSI0NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSIjZmZmIj4yPC90ZXh0Pg0KICA8dGV4dCB4PSI2NCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxldHRlci1zcGFjaW5nPSIzIiBmaWxsPSIjQThDNUIyIj5OT1ZBIENPTEXDh8ODTzwvdGV4dD4NCiAgPHRleHQgeD0iNjQiIHk9IjE3MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjRjRGOEY0Ij5QZcOnYXMgcXVlIGNvbnRhbTwvdGV4dD4NCiAgPHRleHQgeD0iNjQiIHk9IjIxMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXN0eWxlPSJpdGFsaWMiIGZpbGw9IiNBOEM1QjIiPmEgc3VhIGhpc3TDs3JpYS48L3RleHQ+DQogIDxyZWN0IHg9IjY0IiB5PSIyMzYiIHdpZHRoPSI2NiIgaGVpZ2h0PSIyMiIgcng9IjExIiBmaWxsPSIjRTk0QjkxIiBzdHJva2U9IiNBOEM1QjIiIHN0cm9rZS1vcGFjaXR5PSIwIi8+DQogIDxyZWN0IHg9IjE0MCIgeT0iMjM2IiB3aWR0aD0iNjYiIGhlaWdodD0iMjIiIHJ4PSIxMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQThDNUIyIiBzdHJva2Utb3BhY2l0eT0iMC40Ii8+DQogIDxyZWN0IHg9IjIxNiIgeT0iMjM2IiB3aWR0aD0iNjYiIGhlaWdodD0iMjIiIHJ4PSIxMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQThDNUIyIiBzdHJva2Utb3BhY2l0eT0iMC40Ii8+DQogIDxyZWN0IHg9IjY0IiB5PSIyODgiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTcwIiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMjUiLz4NCiAgPHJlY3QgeD0iNzYiIHk9IjMwMCIgd2lkdGg9IjEyNiIgaGVpZ2h0PSI5NCIgcng9IjgiIGZpbGw9IiMyNTQ2MzgiLz4NCiAgPHJlY3QgeD0iNzYiIHk9IjQwNiIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9Ijc2IiB5PSI0MjQiIHdpZHRoPSI1NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHJlY3QgeD0iMjM4IiB5PSIyODgiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTcwIiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0U5NEI5MSIgc3Ryb2tlLW9wYWNpdHk9IjAuNTUiLz4NCiAgPHJlY3QgeD0iMjUwIiB5PSIzMDAiIHdpZHRoPSIxMjYiIGhlaWdodD0iOTQiIHJ4PSI4IiBmaWxsPSIjMjU0NjM4Ii8+DQogIDxyZWN0IHg9IjI1MCIgeT0iNDA2IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iMjUwIiB5PSI0MjQiIHdpZHRoPSI1NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHJlY3QgeD0iNDEyIiB5PSIyODgiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTcwIiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMjUiLz4NCiAgPHJlY3QgeD0iNDI0IiB5PSIzMDAiIHdpZHRoPSIxMjYiIGhlaWdodD0iOTQiIHJ4PSI4IiBmaWxsPSIjMjU0NjM4Ii8+DQogIDxyZWN0IHg9IjQyNCIgeT0iNDA2IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iNDI0IiB5PSI0MjQiIHdpZHRoPSI1NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHJlY3QgeD0iNTg2IiB5PSIyODgiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTcwIiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMjUiLz4NCiAgPHJlY3QgeD0iNTk4IiB5PSIzMDAiIHdpZHRoPSIxMjYiIGhlaWdodD0iOTQiIHJ4PSI4IiBmaWxsPSIjMjU0NjM4Ii8+DQogIDxyZWN0IHg9IjU5OCIgeT0iNDA2IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iNTk4IiB5PSI0MjQiIHdpZHRoPSI1NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCg0KPC9zdmc+DQo=" alt="Exemplo de loja virtual de moda, com vitrine de produtos e filtros por categoria" loading="eager" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 4: Loja de cosméticos e beleza">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBww6FnaW5hIGRlIHByb2R1dG8gZGUgY29zbcOpdGljb3MsIGNvbSBwcmXDp28sIHBhcmNlbGFtZW50byBlIGJvdMOjbyBkZSBjb21wcmEiPg0KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0Y2RjRFRiIvPg0KICA8Y2lyY2xlIGN4PSI2NCIgY3k9IjUyIiByPSI2IiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9Ijc4IiB5PSI1OCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE3IiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iIzBCMTcxMyI+QkVMTEE8L3RleHQ+DQogIDxyZWN0IHg9IjQ3MCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjU1Ii8+DQogIDxyZWN0IHg9IjUyOCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxyZWN0IHg9IjU4NiIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBCMTcxMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik02ODAgNDJoNmw1IDIwaDIwbDQtMTRoLTI3Ii8+PGNpcmNsZSBjeD0iNjk0IiBjeT0iNjgiIHI9IjIiLz48Y2lyY2xlIGN4PSI3MDgiIGN5PSI2OCIgcj0iMiIvPjwvZz4NCiAgPGNpcmNsZSBjeD0iNzE4IiBjeT0iNDIiIHI9IjgiIGZpbGw9IiNFOTRCOTEiLz48dGV4dCB4PSI3MTgiIHk9IjQ2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNmZmYiPjI8L3RleHQ+DQogIDxyZWN0IHg9IjY0IiB5PSI5NiIgd2lkdGg9IjMyMCIgaGVpZ2h0PSIzNjAiIHJ4PSIxNiIgZmlsbD0iI0UzRURFNiIvPg0KICA8cmVjdCB4PSIxNzQiIHk9IjE3MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxOTAiIHJ4PSIxOCIgZmlsbD0iIzI1NDYzOCIvPg0KPHJlY3QgeD0iMTk2IiB5PSIxNDYiIHdpZHRoPSI1NiIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHJlY3QgeD0iNjQiIHk9IjQ3MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjE0IiByeD0iNCIgZmlsbD0iIzI1NDYzOCIvPg0KICA8cmVjdCB4PSIxNDYiIHk9IjQ3MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjE0IiByeD0iNCIgZmlsbD0iI0Q5RDRDOCIvPg0KICA8cmVjdCB4PSIyMjgiIHk9IjQ3MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjE0IiByeD0iNCIgZmlsbD0iI0Q5RDRDOCIvPg0KICA8dGV4dCB4PSI0MzAiIHk9IjEzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyIgZmlsbD0iIzI1NDYzOCI+U0tJTkNBUkU8L3RleHQ+DQogIDx0ZXh0IHg9IjQzMCIgeT0iMTcyIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiMwQjE3MTMiPlPDqXJ1bSBGYWNpYWw8L3RleHQ+DQogIDx0ZXh0IHg9IjQzMCIgeT0iMjA2IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZmlsbD0iIzI1NDYzOCI+Vml0YW1pbmEgQzwvdGV4dD4NCiAgPHRleHQgeD0iNDMwIiB5PSIyNTYiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyNiIgZmlsbD0iIzBCMTcxMyI+UiQgODksOTA8L3RleHQ+DQogIDx0ZXh0IHg9IjQzMCIgeT0iMjgwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1QTZCNjIiPm91IDN4IHNlbSBqdXJvcyDCtyA1JSBvZmYgbm8gUGl4PC90ZXh0Pg0KICA8cmVjdCB4PSI0MzAiIHk9IjMwMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiNEOUQ0QzgiLz4NCjxyZWN0IHg9IjQzMCIgeT0iMzIwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjEwIiByeD0iNSIgZmlsbD0iI0Q5RDRDOCIvPg0KICA8cmVjdCB4PSI0MzAiIHk9IjM1NiIgd2lkdGg9Ijk2IiBoZWlnaHQ9IjQ0IiByeD0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8cmVjdCB4PSI1NDAiIHk9IjM1NiIgd2lkdGg9IjE5MCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9IjYzNSIgeT0iMzgzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmIj5Db21wcmFyPC90ZXh0Pg0KICA8cmVjdCB4PSI0MzAiIHk9IjQyMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI0MCIgcng9IjEwIiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiLz4NCjxyZWN0IHg9IjQ0NiIgeT0iNDM2IiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjUiLz4NCg0KPC9zdmc+DQo=" alt="Exemplo de página de produto de cosméticos, com preço, parcelamento e botão de compra" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 4: Loja de alimentos e bebidas">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBjYXJyaW5obyBkZSBjb21wcmFzIGRlIGxvamEgZGUgYWxpbWVudG9zLCBjb20gY8OhbGN1bG8gZGUgZnJldGUgZSByZXN1bW8gZG8gcGVkaWRvIj4NCiAgPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJ3c2VjMy1iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzFCMzUyQSIvPjxzdG9wIG9mZnNldD0iMC41NSIgc3RvcC1jb2xvcj0iIzEwMjMxQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBCMTcxMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI3dzZWMzLWJnKSIvPg0KICA8Y2lyY2xlIGN4PSI2NCIgY3k9IjUyIiByPSI2IiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9Ijc4IiB5PSI1OCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE3IiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iI0Y2RjRFRiI+U0FCT1I8L3RleHQ+DQogIDxyZWN0IHg9IjQ3MCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjU1Ii8+DQogIDxyZWN0IHg9IjUyOCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxyZWN0IHg9IjU4NiIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y2RjRFRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik02ODAgNDJoNmw1IDIwaDIwbDQtMTRoLTI3Ii8+PGNpcmNsZSBjeD0iNjk0IiBjeT0iNjgiIHI9IjIiLz48Y2lyY2xlIGN4PSI3MDgiIGN5PSI2OCIgcj0iMiIvPjwvZz4NCiAgPGNpcmNsZSBjeD0iNzE4IiBjeT0iNDIiIHI9IjgiIGZpbGw9IiNFOTRCOTEiLz48dGV4dCB4PSI3MTgiIHk9IjQ2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNmZmYiPjI8L3RleHQ+DQogIDx0ZXh0IHg9IjY0IiB5PSIxMzAiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzMCIgZmlsbD0iI0Y0RjhGNCI+U2V1IGNhcnJpbmhvPC90ZXh0Pg0KICA8cmVjdCB4PSI2NCIgeT0iMTU2IiB3aWR0aD0iNDIwIiBoZWlnaHQ9IjY4IiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPg0KICA8cmVjdCB4PSI3NiIgeT0iMTY2IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHJ4PSI4IiBmaWxsPSIjMjU0NjM4Ii8+DQogIDxyZWN0IHg9IjE0MCIgeT0iMTc0IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPg0KICA8cmVjdCB4PSIxNDAiIHk9IjE5NCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMyIvPg0KICA8cmVjdCB4PSI0MDAiIHk9IjE3OCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIyIiByeD0iMTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMjM2IiB3aWR0aD0iNDIwIiBoZWlnaHQ9IjY4IiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPg0KICA8cmVjdCB4PSI3NiIgeT0iMjQ2IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHJ4PSI4IiBmaWxsPSIjMjU0NjM4Ii8+DQogIDxyZWN0IHg9IjE0MCIgeT0iMjU0IiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPg0KICA8cmVjdCB4PSIxNDAiIHk9IjI3NCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMyIvPg0KICA8cmVjdCB4PSI0MDAiIHk9IjI1OCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIyIiByeD0iMTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMzE2IiB3aWR0aD0iNDIwIiBoZWlnaHQ9IjY4IiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPg0KICA8cmVjdCB4PSI3NiIgeT0iMzI2IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHJ4PSI4IiBmaWxsPSIjMjU0NjM4Ii8+DQogIDxyZWN0IHg9IjE0MCIgeT0iMzM0IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPg0KICA8cmVjdCB4PSIxNDAiIHk9IjM1NCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMyIvPg0KICA8cmVjdCB4PSI0MDAiIHk9IjMzOCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIyIiByeD0iMTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI1MTIiIHk9IjE1NiIgd2lkdGg9IjIyNCIgaGVpZ2h0PSIzMDAiIHJ4PSIxNCIgZmlsbD0iIzE0MjYxRiIgc3Ryb2tlPSIjRTk0QjkxIiBzdHJva2Utb3BhY2l0eT0iMC41Ii8+DQogIDx0ZXh0IHg9IjUzMiIgeT0iMTkwIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNGNEY4RjQiPlJlc3VtbzwvdGV4dD4NCiAgPHJlY3QgeD0iNTMyIiB5PSIyMTIiIHdpZHRoPSI5MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC40NSIvPjxyZWN0IHg9IjY2MCIgeT0iMjEyIiB3aWR0aD0iNTYiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNDUiLz4NCiAgPHJlY3QgeD0iNTMyIiB5PSIyMzYiIHdpZHRoPSI5MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC40NSIvPjxyZWN0IHg9IjY2MCIgeT0iMjM2IiB3aWR0aD0iNTYiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNDUiLz4NCiAgPHJlY3QgeD0iNTMyIiB5PSIyNjAiIHdpZHRoPSI5MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC40NSIvPjxyZWN0IHg9IjY2MCIgeT0iMjYwIiB3aWR0aD0iNTYiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNDUiLz4NCiAgPHRleHQgeD0iNTMyIiB5PSIzMDQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNBOEM1QjIiPkZSRVRFPC90ZXh0Pg0KICA8cmVjdCB4PSI1MzIiIHk9IjMxNCIgd2lkdGg9IjE4NCIgaGVpZ2h0PSIyOCIgcng9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMzUiLz4NCiAgPHRleHQgeD0iNTMyIiB5PSIzNzgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI0Y0RjhGNCI+VG90YWw8L3RleHQ+DQogIDxyZWN0IHg9IjUzMiIgeT0iNDAwIiB3aWR0aD0iMTg0IiBoZWlnaHQ9IjM2IiByeD0iMTgiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHRleHQgeD0iNjI0IiB5PSI0MjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiPkZpbmFsaXphciBjb21wcmE8L3RleHQ+DQoNCjwvc3ZnPg0K" alt="Exemplo de carrinho de compras de loja de alimentos, com cálculo de frete e resumo do pedido" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 de 4: Loja de artesanato e decoração">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBww6FnaW5hIGluaWNpYWwgZGUgbG9qYSBkZSBhcnRlc2FuYXRvIGUgZGVjb3Jhw6fDo28sIGNvbSBiYW5uZXIgZSBkZXN0YXF1ZXMiPg0KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0Y2RjRFRiIvPg0KICA8Y2lyY2xlIGN4PSI2NCIgY3k9IjUyIiByPSI2IiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9Ijc4IiB5PSI1OCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE3IiBsZXR0ZXItc3BhY2luZz0iMiIgZmlsbD0iIzBCMTcxMyI+QVJURSAmYW1wOyBDQVNBPC90ZXh0Pg0KICA8cmVjdCB4PSI0NzAiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI1MjgiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI1ODYiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC4zNSIvPg0KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMwQjE3MTMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNjgwIDQyaDZsNSAyMGgyMGw0LTE0aC0yNyIvPjxjaXJjbGUgY3g9IjY5NCIgY3k9IjY4IiByPSIyIi8+PGNpcmNsZSBjeD0iNzA4IiBjeT0iNjgiIHI9IjIiLz48L2c+DQogIDxjaXJjbGUgY3g9IjcxOCIgY3k9IjQyIiByPSI4IiBmaWxsPSIjRTk0QjkxIi8+PHRleHQgeD0iNzE4IiB5PSI0NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSIjZmZmIj4yPC90ZXh0Pg0KICA8cmVjdCB4PSI2NCIgeT0iOTIiIHdpZHRoPSI2NzIiIGhlaWdodD0iMTYwIiByeD0iMTYiIGZpbGw9IiMyNTQ2MzgiLz4NCiAgPHRleHQgeD0iOTYiIHk9IjE1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyIgZmlsbD0iI0E4QzVCMiI+RkVJVE8gw4AgTcODTzwvdGV4dD4NCiAgPHRleHQgeD0iOTYiIHk9IjE5MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjMyIiBmaWxsPSIjRjRGOEY0Ij5EZWNvcmHDp8OjbyBjb20gPHRzcGFuIGZvbnQtc3R5bGU9Iml0YWxpYyIgZmlsbD0iI0E4QzVCMiI+YWZldG8uPC90c3Bhbj48L3RleHQ+DQogIDxyZWN0IHg9Ijk2IiB5PSIyMDgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0iI0U5NEI5MSIvPg0KICA8Y2lyY2xlIGN4PSI2NDAiIGN5PSIxNzIiIHI9IjU2IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjM1Ii8+PGNpcmNsZSBjeD0iNjAwIiBjeT0iMTk2IiByPSIzNCIgZmlsbD0iI0U5NEI5MSIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMjc2IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE5MCIgcng9IjEyIiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiIHN0cm9rZS1vcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9Ijc2IiB5PSIyODgiIHdpZHRoPSIxMjYiIGhlaWdodD0iMTE0IiByeD0iOCIgZmlsbD0iI0UzRURFNiIvPg0KICA8cmVjdCB4PSI3NiIgeT0iNDE0IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iNzYiIHk9IjQzMiIgd2lkdGg9IjU0IiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0U5NEI5MSIvPg0KICA8cmVjdCB4PSIyMzgiIHk9IjI3NiIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxOTAiIHJ4PSIxMiIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjRDlENEM4IiBzdHJva2Utb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSIyNTAiIHk9IjI4OCIgd2lkdGg9IjEyNiIgaGVpZ2h0PSIxMTQiIHJ4PSI4IiBmaWxsPSIjRTNFREU2Ii8+DQogIDxyZWN0IHg9IjI1MCIgeT0iNDE0IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iMjUwIiB5PSI0MzIiIHdpZHRoPSI1NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHJlY3QgeD0iNDEyIiB5PSIyNzYiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTkwIiByeD0iMTIiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0U5NEI5MSIgc3Ryb2tlLW9wYWNpdHk9IjAuNTUiLz4NCiAgPHJlY3QgeD0iNDI0IiB5PSIyODgiIHdpZHRoPSIxMjYiIGhlaWdodD0iMTE0IiByeD0iOCIgZmlsbD0iI0UzRURFNiIvPg0KICA8cmVjdCB4PSI0MjQiIHk9IjQxNCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjQyNCIgeT0iNDMyIiB3aWR0aD0iNTQiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjRTk0QjkxIi8+DQogIDxyZWN0IHg9IjU4NiIgeT0iMjc2IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE5MCIgcng9IjEyIiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiIHN0cm9rZS1vcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjU5OCIgeT0iMjg4IiB3aWR0aD0iMTI2IiBoZWlnaHQ9IjExNCIgcng9IjgiIGZpbGw9IiNFM0VERTYiLz4NCiAgPHJlY3QgeD0iNTk4IiB5PSI0MTQiIHdpZHRoPSIxMDAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiMyNTQ2MzgiIG9wYWNpdHk9IjAuNiIvPg0KICA8cmVjdCB4PSI1OTgiIHk9IjQzMiIgd2lkdGg9IjU0IiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0U5NEI5MSIvPg0KDQo8L3N2Zz4NCg==" alt="Exemplo de página inicial de loja de artesanato e decoração, com banner e produtos em destaque" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="ws-carousel__caption">
+            <p data-ws-carousel-caption>Moda e acessórios</p>
+            <span class="ws-carousel__count" data-ws-carousel-count aria-hidden="true">01 / 04</span>
+          </div>
+        </div>
+
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--prev" data-ws-carousel-prev aria-label="Slide anterior">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--next" data-ws-carousel-next aria-label="Próximo slide">
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <div class="ws-carousel__dots" role="tablist" aria-label="Escolher slide">
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="true" aria-label="Ir para o slide 1"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 2"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 3"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 4"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 3 — CONHEÇA O E-COMMERCE
+       ========================================================== -->
+  <section class="ws-about" id="wsec-sobre" aria-labelledby="wsec-sobre-title">
+    <div class="ws-container ws-about__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Conheça o E-commerce</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-sobre-title">Uma vitrine que nunca fecha, com a identidade da sua marca.</h2>
+        <p class="ws-section-head__subtitle">Clique nas perguntas para entender como ela funciona.</p>
+      </div>
+
+      <div class="ws-about__faq ws-reveal">
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            O que é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Uma loja virtual completa, onde seus clientes encontram os produtos, escolhem, calculam o frete e finalizam a compra sem precisar falar com você para cada pedido.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Para quem é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Para quem já vende pelo Instagram, WhatsApp ou marketplaces e quer um canal próprio, e para quem está começando e quer vender pela internet com uma estrutura profissional.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Como recebo os pagamentos?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>A loja é integrada a um meio de pagamento, como Pix e cartão de crédito. O dinheiro das vendas vai direto para a sua conta nessa plataforma, que cobra as próprias taxas por transação.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Por que escolher?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Na sua própria loja, você define as regras, não divide espaço com concorrentes e constrói uma relação direta com quem compra de você.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4 — COMO FUNCIONA O PROCESSO
+       ========================================================== -->
+  <section class="ws-process" id="wsec-processo" aria-labelledby="wsec-processo-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Como funciona</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-processo-title">Do primeiro contato à sua primeira venda.</h2>
+        <p class="ws-section-head__subtitle">Um processo simples, organizado e pensado para colocar a sua loja no ar com segurança.</p>
+      </div>
+
+      <div class="ws-cards">
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">01</span>
+          <h3 class="ws-card__title ws-serif">Vamos começar?</h3>
+          <p class="ws-card__desc">Você conta o que vende, para quem vende e como imagina a sua loja.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">02</span>
+          <h3 class="ws-card__title ws-serif">Produtos e regras</h3>
+          <p class="ws-card__desc">Você envia fotos, descrições e preços, e definimos juntos as formas de pagamento e de entrega.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">03</span>
+          <h3 class="ws-card__title ws-serif">Montagem da loja</h3>
+          <p class="ws-card__desc">Desenvolvo a loja, cadastro os produtos e testo a compra do início ao fim, do carrinho ao pagamento.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">04</span>
+          <h3 class="ws-card__title ws-serif">Sua loja no ar!</h3>
+          <p class="ws-card__desc">Publico a loja e mostro como gerenciar produtos, estoque e pedidos no dia a dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4.1 — INVESTIMENTO
+       ⚠️ PREENCHER: valor "a partir de", % de desconto no Pix e
+       quantidade de produtos inclusa (procure por "PREENCHER").
+       ========================================================== -->
+  <section class="ws-pricing" id="wsec-investimento" aria-labelledby="wsec-investimento-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Investimento</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-investimento-title">Tudo o que sua loja precisa para começar a vender.</h2>
+        <p class="ws-section-head__subtitle">O valor final depende da quantidade de produtos e das integrações. Você recebe o orçamento fechado antes de começarmos.</p>
+      </div>
+
+      <div class="ws-pricing__card ws-reveal">
+        <div class="ws-pricing__main">
+          <p class="ws-pricing__from">A partir de</p>
+          <!-- PREENCHER: valor do E-commerce -->
+          <p class="ws-pricing__price ws-serif"><span class="ws-pricing__currency">R$</span> 0.000</p>
+          <p class="ws-pricing__note">Pagamento único pelo projeto.</p>
+
+          <h3 class="ws-pricing__subtitle">Formas de pagamento</h3>
+          <ul class="ws-pricing__pay">
+            <!-- PREENCHER: % de desconto no Pix -->
+            <li><strong>Pix à vista</strong> com 0% de desconto</li>
+            <li><strong>50% na entrada</strong> e 50% na entrega</li>
+            <li><strong>Cartão de crédito</strong> parcelado, sem desconto</li>
+          </ul>
+
+          <a href="#wsec-contato" class="ws-btn ws-btn--primary ws-pricing__cta">Quero minha loja virtual</a>
+        </div>
+
+        <div class="ws-pricing__details">
+          <h3 class="ws-pricing__subtitle">O que está incluso</h3>
+          <ul class="ws-pricing__list">
+            <li>Loja adaptada para celular, tablet e computador</li>
+            <li>Página inicial, catálogo, página de produto, carrinho e finalização de compra</li>
+            <!-- PREENCHER: quantidade de produtos cadastrados no pacote -->
+            <li>Cadastro inicial de até 00 produtos</li>
+            <li>Integração com meio de pagamento (Pix e cartão)</li>
+            <li>Configuração de frete e formas de entrega</li>
+            <li>Textos das páginas institucionais, caso você ainda não os tenha</li>
+            <li>Botão de WhatsApp integrado</li>
+            <li>Uso do seu domínio ou registro de um novo, caso você ainda não tenha</li>
+            <li>Orientação para gerenciar produtos e pedidos</li>
+            <li>2 meses de suporte após a entrega</li>
+            <li>Entrega em 15 a 25 dias úteis<sup>*</sup></li>
+          </ul>
+
+          <h3 class="ws-pricing__subtitle">O que você me envia</h3>
+          <p class="ws-pricing__text">Logo, fotos e descrições dos produtos, preços, variações (tamanho, cor) e as informações de entrega e trocas.</p>
+
+          <p class="ws-pricing__foot"><sup>*</sup> O prazo começa após o alinhamento do escopo e o recebimento dos materiais. As taxas do meio de pagamento e do frete são cobradas diretamente pelas empresas responsáveis. Hospedagem: publico na sua ou cuido disso para você, com valor informado no orçamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 5 — FORMULÁRIO DE CONTATO
+       ========================================================== -->
+  <section class="ws-contact" id="wsec-contato" aria-labelledby="wsec-contato-title">
+    <div class="ws-container ws-contact__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Contato</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-contato-title">Vamos abrir a sua loja?</h2>
+        <p class="ws-section-head__subtitle">Conte um pouquinho sobre você e o que você vende. Em breve, entro em contato para conversarmos sobre o seu projeto.</p>
+      </div>
+
+      <!-- Campos com data-ws-field são validados pelo JS.
+           Campos sem "required" são opcionais. Todo campo com "name"
+           entra no e-mail automaticamente, usando o texto do rótulo. -->
+      <form class="ws-form ws-reveal" id="wsec-form" novalidate>
+        <!-- Anti-spam (honeypot): invisível para pessoas, bots costumam preencher -->
+        <input type="checkbox" name="botcheck" class="ws-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-nome">Nome e sobrenome</label>
+            <input class="ws-field__input" type="text" id="wsec-nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required aria-required="true" aria-describedby="wsec-nome-erro">
+            <p class="ws-field__error" id="wsec-nome-erro">Informe seu nome e sobrenome.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-email">E-mail</label>
+            <input class="ws-field__input" type="email" id="wsec-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true" aria-describedby="wsec-email-erro">
+            <p class="ws-field__error" id="wsec-email-erro">Informe um e-mail válido.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-telefone">WhatsApp</label>
+            <input class="ws-field__input" type="tel" id="wsec-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true" aria-describedby="wsec-telefone-erro">
+            <p class="ws-field__error" id="wsec-telefone-erro">Informe um WhatsApp com DDD.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-negocio">Nome da loja ou marca</label>
+            <input class="ws-field__input" type="text" id="wsec-negocio" name="negocio" placeholder="Ex.: Ateliê Flor de Lis" autocomplete="organization" required aria-required="true" aria-describedby="wsec-negocio-erro">
+            <p class="ws-field__error" id="wsec-negocio-erro">Informe o nome da sua loja ou marca.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-area">O que você vende?</label>
+            <input class="ws-field__input" type="text" id="wsec-area" name="area" placeholder="Ex.: roupas, cosméticos, doces" required aria-required="true" aria-describedby="wsec-area-erro">
+            <p class="ws-field__error" id="wsec-area-erro">Conte que tipo de produto você vende.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-vende-hoje">Você já vende hoje?</label>
+            <select class="ws-field__input ws-field__select" id="wsec-vende-hoje" name="vende_hoje" required aria-required="true" aria-describedby="wsec-vende-hoje-erro">
+              <option value="">Selecione</option>
+              <option>Ainda não vendo</option>
+              <option>Vendo pelo Instagram ou WhatsApp</option>
+              <option>Vendo em marketplaces (Shopee, Mercado Livre etc.)</option>
+              <option>Tenho loja física</option>
+              <option>Já tenho loja virtual e quero trocar</option>
+            </select>
+            <p class="ws-field__error" id="wsec-vende-hoje-erro">Escolha a opção que mais combina com você.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-produtos">Quantos produtos pretende vender?</label>
+            <select class="ws-field__input ws-field__select" id="wsec-produtos" name="produtos" required aria-required="true" aria-describedby="wsec-produtos-erro">
+              <option value="">Selecione</option>
+              <option>Até 20 produtos</option>
+              <option>De 21 a 50 produtos</option>
+              <option>De 51 a 100 produtos</option>
+              <option>Mais de 100 produtos</option>
+              <option>Ainda não sei</option>
+            </select>
+            <p class="ws-field__error" id="wsec-produtos-erro">Escolha uma quantidade aproximada.</p>
+          </div>
+        </div>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Como pretende entregar? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Correios"><span>Correios</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Transportadora"><span>Transportadora</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Entrega própria na região"><span>Entrega própria na região</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Retirada no local"><span>Retirada no local</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Produto digital"><span>Produto digital (sem entrega física)</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Quais pagamentos quer aceitar? <span class="ws-field__opt">(opcional)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Pix"><span>Pix</span></label>
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Cartão de crédito"><span>Cartão de crédito</span></label>
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Boleto"><span>Boleto</span></label>
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Ainda não sei"><span>Ainda não sei</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">O que você já tem? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="possui" value="Logo / identidade visual"><span>Logo / identidade visual</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Fotos dos produtos"><span>Fotos dos produtos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Descrições dos produtos"><span>Descrições dos produtos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Domínio"><span>Domínio (ex.: sualoja.com.br)</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Hospedagem"><span>Hospedagem</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Conta em meio de pagamento"><span>Conta em meio de pagamento</span></label>
+          </div>
+        </fieldset>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-prazo">Quando gostaria de começar? <span class="ws-field__opt">(opcional)</span></label>
+            <select class="ws-field__input ws-field__select" id="wsec-prazo" name="prazo">
+              <option value="">Selecione</option>
+              <option>O quanto antes</option>
+              <option>Nas próximas semanas</option>
+              <option>Ainda estou pesquisando</option>
+            </select>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-redes">Instagram ou site atual <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wsec-redes" name="redes" placeholder="@sualoja ou www.sualoja.com.br">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-mensagem">Conte um pouco sobre a loja <span class="ws-field__opt">(opcional)</span></label>
+            <textarea class="ws-field__input ws-field__textarea" id="wsec-mensagem" name="mensagem" rows="4" maxlength="1500" placeholder="Variações dos produtos (tamanho, cor), lojas que você admira, dúvidas…"></textarea>
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field ws-field--consent" data-ws-field>
+            <label class="ws-check">
+              <input type="checkbox" id="wsec-consentimento" name="consentimento" value="sim" required aria-required="true" aria-describedby="wsec-consentimento-erro">
+              <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+              <span>Li e concordo com a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato pelos canais informados.</span>
+            </label>
+            <p class="ws-field__error" id="wsec-consentimento-erro">Para continuar, é preciso concordar com a Política de Privacidade.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__actions">
+          <button type="submit" class="ws-btn ws-btn--primary ws-form__submit" data-ws-submit>Enviar interesse</button>
+          <p class="ws-form__hint">Seus dados serão usados apenas para que eu entre em contato com você sobre este projeto.</p>
+          <p class="ws-form__status" data-ws-form-status role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 7 — INFORMAÇÃO SOBRE SUPORTE
+       ========================================================== -->
+  <section class="ws-support" aria-labelledby="wsec-suporte-title">
+    <div class="ws-container">
+      <div class="ws-support__inner ws-reveal">
+        <span class="ws-support__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <div>
+          <h2 class="ws-support__title ws-serif" id="wsec-suporte-title">Sua loja continua acompanhada.</h2>
+          <p class="ws-support__desc">Após a entrega do seu E-commerce, você contará com 2 meses de suporte incluídos no contrato para orientações e auxílio relacionados à loja, conforme as condições acordadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 8 — FOOTER
+       ========================================================== -->
+  <footer class="ws-footer">
+    <div class="ws-container ws-footer__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-footer__nav" aria-label="Navegação do rodapé">
+        <a href="#wsec-sobre" class="ws-footer__link">Serviços</a>
+        <a href="#wsec-investimento" class="ws-footer__link">Investimento</a>
+        <a href="#wsec-contato" class="ws-footer__link">Contato</a>
+        <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+        <a href="/politica-de-privacidade/" class="ws-footer__link">Política de Privacidade</a>
+      </nav>
+
+      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WebStudio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       SEÇÃO 6 — POPUP DE AGRADECIMENTO
+       ========================================================== -->
+  <div class="ws-modal" id="wsec-modal" hidden>
+    <button type="button" class="ws-modal__backdrop" data-ws-modal-close tabindex="-1" aria-label="Fechar mensagem"></button>
+    <div class="ws-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="wsec-modal-title" aria-describedby="wsec-modal-text">
+      <span class="ws-modal__badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </span>
+      <!-- Título e texto são trocados pelo JS conforme o resultado do envio -->
+      <h2 class="ws-modal__title ws-serif" id="wsec-modal-title">Que bom ter você por aqui!</h2>
+      <p class="ws-modal__text" id="wsec-modal-text"></p>
+      <div class="ws-modal__actions">
+        <a href="#" class="ws-btn ws-btn--primary ws-modal__whatsapp" data-ws-modal-whatsapp target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+        <button type="button" class="ws-btn ws-btn--ghost ws-modal__close" data-ws-modal-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /#ws-ecommerce-page -->
+
+<script>
+/* ============================================================
+   WEBSTUDIO — Página do serviço E-commerce
+   JavaScript puro (sem jQuery, sem build).
+   Encapsulado em IIFE; inicializa apenas dentro de
+   #ws-ecommerce-page, sem conflitar com outros scripts.
+   ============================================================ */
+
+(function () {
+  "use strict";
+
+  /* ============================================================
+     ⚙️ CONFIGURAÇÃO — EDITE APENAS ESTE BLOCO
+     ============================================================
+     1) ENVIO POR E-MAIL (Web3Forms — https://web3forms.com):
+        Crie uma chave gratuita informando o e-mail que receberá os
+        contatos e cole em WEB3FORMS_ACCESS_KEY. A chave é pública
+        (feita para ficar no navegador); ela só permite ENVIAR para
+        o e-mail cadastrado.
+
+     2) WHATSAPP:
+        Número com código do país + DDD, apenas dígitos.
+        Ex.: "5511999999999". Usado no botão "Continuar no WhatsApp"
+        e como alternativa se o envio por e-mail falhar.
+
+     3) TEMA:
+        Esta página compartilha a MESMA chave de localStorage do site
+        principal ("ss-theme-preference"), para respeitar a escolha
+        Light / Dark / Auto feita pelo visitante em qualquer página.
+     ============================================================ */
+
+  var WEB3FORMS_ACCESS_KEY = ""; // <-- COLE SUA CHAVE DO WEB3FORMS AQUI
+  var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
+
+  /* Dados desta página de serviço */
+  var SERVICE_NAME = "E-commerce";   // usado no e-mail, no WhatsApp e no popup
+  var SERVICE_ARTICLE = "um";         // "uma Landing Page" / "um E-commerce"
+  var WHATSAPP_SUMMARY_FIELDS = ["nome", "negocio", "vende_hoje", "produtos"]; // campos (name) no resumo do WhatsApp
+  var CAROUSEL_CAPTIONS = ["Moda e acessórios", "Cosméticos e beleza", "Alimentos e bebidas", "Artesanato e decoração"];
+
+  var THEME_STORAGE_KEY = "ss-theme-preference"; // mesma chave do site principal
+  var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (confortável)
+
+  /* ============================================================
+     TEMA: Light | Dark | Auto (mesmo comportamento do site principal)
+     - Auto: 06:00–18:59 = Light | 19:00–05:59 = Dark
+     ============================================================ */
+
+  var memoryStore = { value: null };
+  var store = {
+    get: function () {
+      try {
+        return window.localStorage.getItem(THEME_STORAGE_KEY);
+      } catch (e) {
+        return memoryStore.value;
+      }
+    },
+    set: function (val) {
+      try {
+        window.localStorage.setItem(THEME_STORAGE_KEY, val);
+      } catch (e) {
+        memoryStore.value = val;
+      }
+    },
+    remove: function () {
+      try {
+        window.localStorage.removeItem(THEME_STORAGE_KEY);
+      } catch (e) {
+        memoryStore.value = null;
+      }
+    }
+  };
+
+  function themeByTime() {
+    var hour = new Date().getHours();
+    return hour >= 6 && hour <= 18 ? "light" : "dark";
+  }
+
+  function effectiveTheme(preference) {
+    if (preference === "light" || preference === "dark") return preference;
+    return themeByTime();
+  }
+
+  function syncThemeButtons(root, preference) {
+    var btns = root.querySelectorAll(".ws-theme__btn");
+    for (var i = 0; i < btns.length; i++) {
+      var active = btns[i].getAttribute("data-ws-theme-choice") === preference;
+      btns[i].setAttribute("aria-pressed", active ? "true" : "false");
+    }
+  }
+
+  function applyTheme(root, preference) {
+    var theme = effectiveTheme(preference);
+    root.setAttribute("data-ws-theme", theme);
+    root.setAttribute("data-ws-theme-effective", theme);
+    syncThemeButtons(root, preference);
+  }
+
+  function initTheme(root) {
+    var saved = store.get();
+    applyTheme(root, saved || "auto");
+
+    root.addEventListener("click", function (ev) {
+      var btn = ev.target.closest ? ev.target.closest(".ws-theme__btn") : null;
+      if (!btn || !root.contains(btn)) return;
+      var choice = btn.getAttribute("data-ws-theme-choice");
+      if (!choice) return;
+
+      if (choice === "auto") {
+        store.remove();
+      } else {
+        store.set(choice);
+      }
+      applyTheme(root, store.get() || "auto");
+    });
+
+    setInterval(function () {
+      if ((store.get() || "auto") === "auto") {
+        applyTheme(root, "auto");
+      }
+    }, 60000);
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && (store.get() || "auto") === "auto") {
+        applyTheme(root, "auto");
+      }
+    });
+  }
+
+  /* ============================================================
+     MENU MOBILE
+     ============================================================ */
+  function initMobileMenu(root) {
+    var toggle = root.querySelector(".ws-menu-toggle");
+    var nav = root.querySelector(".ws-nav");
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("ws-nav--open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    nav.addEventListener("click", function (ev) {
+      if (ev.target.closest && ev.target.closest("a")) {
+        nav.classList.remove("ws-nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    root.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && nav.classList.contains("ws-nav--open")) {
+        nav.classList.remove("ws-nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
+  }
+
+  /* ============================================================
+     ACORDEÃO "CONHEÇA A LANDING PAGE"
+     - Usa <details>/<summary> nativos (sem dependências)
+     - Apenas uma pergunta aberta por vez
+     ============================================================ */
+  function initAboutFaq(root) {
+    var list = root.querySelector(".ws-about__faq");
+    if (!list || list.getAttribute("data-ws-faq-init") === "true") return;
+    list.setAttribute("data-ws-faq-init", "true");
+
+    var items = list.querySelectorAll("details.ws-faq__item");
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("toggle", (function (item) {
+        return function () {
+          if (!item.open) return;
+          for (var j = 0; j < items.length; j++) {
+            if (items[j] !== item) {
+              items[j].open = false;
+            }
+          }
+        };
+      })(items[i]));
+    }
+  }
+
+  /* ============================================================
+     CARROSSEL
+     - Setas, indicadores, teclado (← →), toque/swipe
+     - Autoplay com pausa em interação e hover/foco
+     - Desativado quando o usuário prefere movimento reduzido
+     ============================================================ */
+  function initCarousel(root) {
+    var carousel = root.querySelector("[data-ws-carousel-track]");
+    if (!carousel || carousel.getAttribute("data-ws-carousel-init") === "true") return;
+    carousel.setAttribute("data-ws-carousel-init", "true");
+
+    var region = carousel.closest(".ws-carousel");
+    var slides = carousel.children;
+    var total = slides.length;
+    if (!region || total === 0) return;
+
+    var dots = region.querySelectorAll(".ws-carousel__dot");
+    var caption = region.querySelector("[data-ws-carousel-caption]");
+    var count = region.querySelector("[data-ws-carousel-count]");
+    var captions = CAROUSEL_CAPTIONS;
+
+    var index = 0;
+    var timer = null;
+    var paused = false;
+
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function pad(n) {
+      return n < 10 ? "0" + n : String(n);
+    }
+
+    function render() {
+      carousel.style.transform = "translateX(-" + index * 100 + "%)";
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].setAttribute("aria-selected", i === index ? "true" : "false");
+      }
+      if (caption) caption.textContent = captions[index] || "";
+      if (count) count.textContent = pad(index + 1) + " / " + pad(total);
+    }
+
+    function goTo(next) {
+      index = (next + total) % total;
+      render();
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (paused || (reduceMotion && reduceMotion.matches)) return;
+      timer = setInterval(function () {
+        goTo(index + 1);
+      }, CAROUSEL_INTERVAL_MS);
+    }
+
+    function stopAutoplay() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    // Controles
+    var prev = region.querySelector("[data-ws-carousel-prev]");
+    var next = region.querySelector("[data-ws-carousel-next]");
+
+    if (prev) {
+      prev.addEventListener("click", function () {
+        goTo(index - 1);
+        startAutoplay(); // reinicia a contagem após interação
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", function () {
+        goTo(index + 1);
+        startAutoplay();
+      });
+    }
+
+    for (var d = 0; d < dots.length; d++) {
+      (function (dot, i) {
+        dot.addEventListener("click", function () {
+          index = i;
+          render();
+          startAutoplay();
+        });
+      })(dots[d], d);
+    }
+
+    // Pausa em hover e foco
+    region.addEventListener("mouseenter", function () {
+      paused = true;
+      stopAutoplay();
+    });
+
+    region.addEventListener("mouseleave", function () {
+      paused = false;
+      startAutoplay();
+    });
+
+    region.addEventListener("focusin", function () {
+      paused = true;
+      stopAutoplay();
+    });
+
+    region.addEventListener("focusout", function (ev) {
+      // Só retoma o autoplay quando o foco sai de fato do carrossel
+      if (ev.relatedTarget && region.contains(ev.relatedTarget)) return;
+      paused = false;
+      startAutoplay();
+    });
+
+    // Teclado (setas) quando o carrossel tem foco
+    region.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") {
+        goTo(index - 1);
+        startAutoplay();
+      } else if (ev.key === "ArrowRight") {
+        goTo(index + 1);
+        startAutoplay();
+      }
+    });
+
+    // Swipe / arrastar (funciona em dispositivos móveis)
+    // O "pointerup" é observado na janela para capturar gestos
+    // que terminam fora do carrossel.
+    var startX = null;
+
+    carousel.addEventListener("pointerdown", function (ev) {
+      startX = ev.clientX;
+      stopAutoplay();
+    });
+
+    window.addEventListener("pointerup", function (ev) {
+      if (startX === null) return;
+      var delta = ev.clientX - startX;
+      startX = null;
+      if (Math.abs(delta) > 40) {
+        goTo(delta < 0 ? index + 1 : index - 1);
+      }
+      startAutoplay();
+    });
+
+    carousel.addEventListener("pointercancel", function () {
+      startX = null;
+      startAutoplay();
+    });
+
+    // Evita arrastar as imagens junto com o swipe
+    carousel.addEventListener("dragstart", function (ev) {
+      ev.preventDefault();
+    });
+
+    // Respeita mudanças na preferência de movimento reduzido
+    if (reduceMotion) {
+      var onMotionChange = function () {
+        if (reduceMotion.matches) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      };
+      if (reduceMotion.addEventListener) {
+        reduceMotion.addEventListener("change", onMotionChange);
+      }
+    }
+
+    // Pausa quando a aba não está visível
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") {
+        startAutoplay();
+      } else {
+        stopAutoplay();
+      }
+    });
+
+    render();
+    startAutoplay();
+  }
+
+  /* ============================================================
+     FORMULÁRIO
+     - Máscara de telefone brasileiro
+     - Validação de obrigatórios, e-mail, telefone e consentimento
+     - Envio por e-mail (Web3Forms) + continuação no WhatsApp
+     - Nunca informa "recebido" se o envio falhou
+     ============================================================ */
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function formatPhone(value) {
+    var digits = value.replace(/\D/g, "").slice(0, 11);
+    if (digits.length === 0) return "";
+    if (digits.length <= 2) return "(" + digits;
+    if (digits.length <= 6) return "(" + digits.slice(0, 2) + ") " + digits.slice(2);
+    if (digits.length <= 10) {
+      return "(" + digits.slice(0, 2) + ") " + digits.slice(2, 6) + "-" + digits.slice(6);
+    }
+    return "(" + digits.slice(0, 2) + ") " + digits.slice(2, 7) + "-" + digits.slice(7);
+  }
+
+  function fieldControl(field) {
+    return field.querySelector("input, select, textarea");
+  }
+
+  function setFieldError(field, invalid) {
+    field.classList.toggle("ws-field--invalid", invalid);
+    var input = fieldControl(field);
+    if (input) {
+      if (invalid) {
+        input.setAttribute("aria-invalid", "true");
+      } else {
+        input.removeAttribute("aria-invalid");
+      }
+    }
+  }
+
+  function validateField(field) {
+    var input = fieldControl(field);
+    if (!input) return true;
+
+    var required = input.hasAttribute("required");
+    var invalid = false;
+
+    if (input.type === "checkbox") {
+      invalid = required && !input.checked;
+    } else {
+      var value = (input.value || "").trim();
+      if (required && value === "") {
+        invalid = true;
+      } else if (input.type === "email" && value !== "" && !EMAIL_RE.test(value)) {
+        invalid = true;
+      } else if (input.type === "tel" && value !== "") {
+        var digits = value.replace(/\D/g, "");
+        invalid = digits.length < 10 || digits.length > 11;
+      } else if (input.name === "nome" && value !== "" && value.split(/\s+/).length < 2) {
+        invalid = true; // pede nome e sobrenome
+      }
+    }
+
+    setFieldError(field, invalid);
+    return !invalid;
+  }
+
+  function fieldValue(form, name) {
+    var el = form.elements[name];
+    return el && el.value ? String(el.value).trim() : "";
+  }
+
+  /* Texto do rótulo de um campo, sem o "(opcional ...)" */
+  function fieldLabel(form, el) {
+    var text = "";
+    var fieldset = el.type === "checkbox" ? el.closest("fieldset") : null;
+    if (fieldset && fieldset.querySelector("legend")) {
+      text = fieldset.querySelector("legend").textContent;
+    } else if (el.id && form.querySelector("label[for='" + el.id + "']")) {
+      text = form.querySelector("label[for='" + el.id + "']").textContent;
+    } else {
+      text = el.name;
+    }
+    return text.replace(/\(.*?\)/g, "").replace(/\s+/g, " ").trim();
+  }
+
+  /* Lê TODOS os campos do formulário pelo atributo "name", na ordem
+     em que aparecem. Assim, novos campos no HTML entram no e-mail
+     automaticamente, sem alterar o JS.
+     Checkboxes com o mesmo "name" viram uma lista separada por vírgulas. */
+  function collectLead(form) {
+    var IGNORE = { botcheck: true, consentimento: true };
+    var fields = [];
+    var index = {};
+    var els = form.elements;
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (!el.name || IGNORE[el.name] || el.type === "submit" || el.type === "button") continue;
+
+      if (!(el.name in index)) {
+        index[el.name] = fields.length;
+        fields.push({ name: el.name, label: fieldLabel(form, el), values: [] });
+      }
+      var value = el.type === "checkbox" ? (el.checked ? el.value : "") : String(el.value || "").trim();
+      if (value) fields[index[el.name]].values.push(value);
+    }
+
+    var lead = {
+      fields: fields,
+      botcheck: !!(form.elements.botcheck && form.elements.botcheck.checked)
+    };
+    for (var j = 0; j < fields.length; j++) {
+      lead[fields[j].name] = fields[j].values.join(", ");
+    }
+    return lead;
+  }
+
+  /* Link do WhatsApp com um resumo curto (sem e-mail/telefone:
+     a conversa já identifica o número de quem envia). */
+  function whatsappLink(lead) {
+    var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
+    if (!number) return "";
+    var lines = ["Olá! Tenho interesse em " + SERVICE_ARTICLE + " " + SERVICE_NAME + "."];
+    if (lead) {
+      for (var i = 0; i < lead.fields.length; i++) {
+        var f = lead.fields[i];
+        if (WHATSAPP_SUMMARY_FIELDS.indexOf(f.name) > -1 && f.values.length) {
+          lines.push(f.label.replace(/\?$/, "") + ": " + f.values.join(", "));
+        }
+      }
+    }
+    return "https://wa.me/" + number + "?text=" + encodeURIComponent(lines.join("\n"));
+  }
+
+  /* Envio por e-mail via Web3Forms.
+     Chama done(true) se enviado; done(false) se falhou ou não configurado. */
+  function submitLead(lead, done) {
+    if (!WEB3FORMS_ACCESS_KEY || !window.fetch) {
+      done(false);
+      return;
+    }
+
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "Novo interesse em " + SERVICE_NAME + " — " + (lead.negocio || lead.nome),
+      from_name: "Site WebStudio",
+      replyto: lead.email,
+      "Serviço": SERVICE_NAME
+    };
+    for (var i = 0; i < lead.fields.length; i++) {
+      payload[lead.fields[i].label] = lead.fields[i].values.join(", ") || "—";
+    }
+    payload["Consentimento (LGPD)"] = "Aceitou a Política de Privacidade em " + new Date().toLocaleString("pt-BR");
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().then(function (json) {
+          done(!!(res.ok && json && json.success));
+        });
+      })
+      .catch(function () {
+        done(false);
+      });
+  }
+
+  function initForm(root, modal) {
+    var form = root.querySelector("#wsec-form");
+    if (!form || form.getAttribute("data-ws-form-init") === "true") return;
+    form.setAttribute("data-ws-form-init", "true");
+
+    var submitBtn = form.querySelector("[data-ws-submit]");
+    var submitLabel = submitBtn ? submitBtn.textContent : "";
+    var status = form.querySelector("[data-ws-form-status]");
+    var sending = false;
+
+    var phone = form.querySelector("#wsec-telefone");
+    if (phone) {
+      phone.addEventListener("input", function () {
+        var pos = phone.value.length;
+        phone.value = formatPhone(phone.value);
+        // Mantém o cursor no fim enquanto digita
+        if (pos === phone.value.length - 1) {
+          try {
+            phone.setSelectionRange(phone.value.length, phone.value.length);
+          } catch (e) { /* noop */ }
+        }
+      });
+    }
+
+    // Revalida ao sair do campo (feedback imediato, discreto)
+    var fields = form.querySelectorAll("[data-ws-field]");
+    for (var i = 0; i < fields.length; i++) {
+      (function (field) {
+        var input = fieldControl(field);
+        if (!input) return;
+        var isToggle = input.type === "checkbox" || input.tagName === "SELECT";
+        if (!isToggle) {
+          input.addEventListener("blur", function () {
+            if (input.value.trim() !== "") validateField(field);
+          });
+        }
+        input.addEventListener(isToggle ? "change" : "input", function () {
+          if (field.classList.contains("ws-field--invalid")) {
+            validateField(field); // remove o erro assim que corrigir
+          }
+        });
+      })(fields[i]);
+    }
+
+    function setSending(on) {
+      sending = on;
+      if (submitBtn) {
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? "Enviando…" : submitLabel;
+      }
+      if (status) status.textContent = on ? "Enviando suas informações…" : "";
+    }
+
+    function clearForm() {
+      form.reset();
+      for (var k = 0; k < fields.length; k++) setFieldError(fields[k], false);
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (sending) return;
+
+      var firstInvalid = null;
+      for (var j = 0; j < fields.length; j++) {
+        if (!validateField(fields[j]) && !firstInvalid) firstInvalid = fields[j];
+      }
+
+      if (firstInvalid) {
+        var input = fieldControl(firstInvalid);
+        if (input) input.focus();
+        return;
+      }
+
+      var lead = collectLead(form);
+
+      // Honeypot marcado = bot: finge sucesso sem enviar nada
+      if (lead.botcheck) {
+        clearForm();
+        modal.open("success", "");
+        return;
+      }
+
+      var wa = whatsappLink(lead);
+
+      setSending(true);
+      submitLead(lead, function (ok) {
+        setSending(false);
+        if (ok) {
+          clearForm();
+          modal.open("success", wa);
+        } else {
+          // Mantém os dados preenchidos para uma nova tentativa
+          modal.open(wa ? "fallback" : "error", wa);
+        }
+      });
+    });
+  }
+
+  /* ============================================================
+     MODAL DE AGRADECIMENTO
+     - Fecha com botão, clique fora ou ESC
+     - Bloqueia a rolagem do fundo
+     - Foco controlado (abre no botão Fechar; devolve ao enviar)
+     ============================================================ */
+  function initModal(root) {
+    var modal = root.querySelector("#wsec-modal");
+    if (!modal || modal.getAttribute("data-ws-modal-init") === "true") return;
+    modal.setAttribute("data-ws-modal-init", "true");
+
+    var dialog = modal.querySelector(".ws-modal__dialog");
+    var titleEl = modal.querySelector(".ws-modal__title");
+    var textEl = modal.querySelector(".ws-modal__text");
+    var waBtn = modal.querySelector("[data-ws-modal-whatsapp]");
+    var lastFocus = null;
+
+    // Mensagens por resultado do envio
+    var STATES = {
+      success: {
+        title: "Que bom ter você por aqui!",
+        text: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
+        textNoWa: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+      },
+      fallback: {
+        title: "Quase lá!",
+        text: "Não consegui registrar seu envio agora.\n\nToque no botão abaixo para me enviar suas informações pelo WhatsApp. Seus dados continuam preenchidos no formulário."
+      },
+      error: {
+        title: "Algo deu errado",
+        text: "Não consegui registrar seu envio agora. Seus dados continuam preenchidos no formulário.\n\nTente novamente em alguns instantes."
+      }
+    };
+
+    function open(state, waUrl) {
+      var cfg = STATES[state] || STATES.success;
+      if (titleEl) titleEl.textContent = cfg.title;
+      if (textEl) textEl.textContent = !waUrl && cfg.textNoWa ? cfg.textNoWa : cfg.text;
+      if (waBtn) {
+        waBtn.hidden = !waUrl;
+        waBtn.setAttribute("href", waUrl || "#");
+      }
+
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+
+      // Bloqueia a rolagem do fundo
+      var body = document.body;
+      body.setAttribute("data-ws-scroll-lock", "true");
+      body.style.overflow = "hidden";
+
+      var focusBtn = waUrl && waBtn ? waBtn : modal.querySelector(".ws-modal__close");
+      if (focusBtn) focusBtn.focus();
+
+      document.addEventListener("keydown", onKeydown);
+    }
+
+    function close() {
+      modal.hidden = true;
+
+      var body = document.body;
+      body.style.overflow = "";
+      body.removeAttribute("data-ws-scroll-lock");
+
+      document.removeEventListener("keydown", onKeydown);
+
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
+      }
+      lastFocus = null;
+    }
+
+    function onKeydown(ev) {
+      if (ev.key === "Escape") {
+        close();
+        return;
+      }
+
+      // Mantém o foco dentro do diálogo (Tab / Shift+Tab)
+      if (ev.key === "Tab" && dialog) {
+        var focusables = dialog.querySelectorAll("button:not([hidden]), [href]:not([hidden]), input, [tabindex]:not([tabindex='-1'])");
+        if (!focusables.length) return;
+        var first = focusables[0];
+        var last = focusables[focusables.length - 1];
+
+        if (ev.shiftKey && document.activeElement === first) {
+          ev.preventDefault();
+          last.focus();
+        } else if (!ev.shiftKey && document.activeElement === last) {
+          ev.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    var closers = modal.querySelectorAll("[data-ws-modal-close]");
+    for (var i = 0; i < closers.length; i++) {
+      closers[i].addEventListener("click", close);
+    }
+
+    return { open: open, close: close };
+  }
+
+  /* ============================================================
+     ANIMAÇÕES LEVES DE ENTRADA (IntersectionObserver)
+     ============================================================ */
+  function initReveals(root) {
+    var items = root.querySelectorAll(".ws-reveal");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      for (var i = 0; i < items.length; i++) {
+        items[i].classList.add("ws-visible");
+      }
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        for (var j = 0; j < entries.length; j++) {
+          if (entries[j].isIntersecting) {
+            entries[j].target.classList.add("ws-visible");
+            observer.unobserve(entries[j].target);
+          }
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    for (var k = 0; k < items.length; k++) {
+      observer.observe(items[k]);
+    }
+  }
+
+  /* ============================================================
+     INICIALIZAÇÃO
+     Roda para cada instância de #ws-ecommerce-page na página.
+     ============================================================ */
+  function init() {
+    var roots = document.querySelectorAll("#ws-ecommerce-page");
+    for (var i = 0; i < roots.length; i++) {
+      var root = roots[i];
+      if (root.getAttribute("data-ws-init") === "true") continue; // evita dupla inicialização
+      root.setAttribute("data-ws-init", "true");
+
+      var modalApi = initModal(root);
+
+      initTheme(root);
+      initMobileMenu(root);
+      initAboutFaq(root);
+      initCarousel(root);
+      initForm(root, modalApi || { open: function () {} });
+      initReveals(root);
+
+      // Ano automático no copyright
+      var yearEl = root.querySelector("[data-ws-year]");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      // Habilita transições só depois do tema definido (anti-flash)
+      requestAnimationFrame(
+        function (el) {
+          return function () {
+            el.classList.add("ws-ready");
+          };
+        }(root)
+      );
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>

@@ -8,7 +8,15 @@ Fontes (edite SEMPRE estes arquivos):
       -> elementor-html.html
   s-landingpage/landingpage.html + landingpage.css + landingpage.js
       -> s-landingpage/elementor-landingpage.html
-      (as imagens de assets/ são embutidas no próprio HTML)
+  s-ecommerce/ecommerce.html + .css + .js
+      -> s-ecommerce/elementor-ecommerce.html
+  s-personalizado/personalizado.html + .css + .js
+      -> s-personalizado/elementor-personalizado.html
+      (nas páginas de serviço, as imagens de assets/ são embutidas no HTML)
+
+As três páginas de serviço usam o mesmo CSS/JS; só mudam o prefixo
+(#ws-*-page / ws** nos ids) e o bloco de configuração no topo do JS.
+Uma correção feita em uma delas deve ser repetida nas outras.
 
 Os arquivos gerados são UTF-8 com BOM (garante acentos corretos ao abrir o arquivo direto no navegador). Não edite os arquivos gerados à mão:
 as alterações seriam perdidas na próxima geração.
@@ -96,5 +104,25 @@ if __name__ == "__main__":
         lp / "landingpage.js",
         "ws-landing-page",
         lp / "elementor-landingpage.html",
+        embed_images=True,
+    )
+    ec = ROOT / "s-ecommerce"
+    build(
+        "Serviço: E-commerce",
+        ec / "ecommerce.html",
+        ec / "ecommerce.css",
+        ec / "ecommerce.js",
+        "ws-ecommerce-page",
+        ec / "elementor-ecommerce.html",
+        embed_images=True,
+    )
+    cp = ROOT / "s-personalizado"
+    build(
+        "Serviço: Site Personalizado",
+        cp / "personalizado.html",
+        cp / "personalizado.css",
+        cp / "personalizado.js",
+        "ws-personalizado-page",
+        cp / "elementor-personalizado.html",
         embed_images=True,
     )

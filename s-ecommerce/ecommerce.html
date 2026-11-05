@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-commerce sob medida para vender seus produtos pela internet. WebStudio.">
+  <title>WebStudio — E-commerce</title>
+
+  <!-- Prévia local: os arquivos ficam na mesma pasta.
+       Para publicar no Elementor, use elementor-ecommerce.html (gerado por build-elementor.py). -->
+  <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+
+<!-- ============================================================
+     Para o widget HTML do Elementor, cole o conteúdo de
+     elementor-ecommerce.html (CSS, JS e imagens embutidos).
+     Todo o conteúdo está dentro de #ws-ecommerce-page.
+     ============================================================ -->
+<div id="ws-ecommerce-page" data-ws-theme="light">
+
+  <!-- ==========================================================
+       SEÇÃO 1 — HEADER
+       ========================================================== -->
+  <header class="ws-header">
+    <div class="ws-container ws-header__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-nav" aria-label="Navegação principal">
+        <a href="#wsec-sobre" class="ws-nav__link">Serviços</a>
+        <a href="#wsec-investimento" class="ws-nav__link">Investimento</a>
+        <a href="#wsec-contato" class="ws-nav__link">Contato</a>
+
+        <div class="ws-theme" role="group" aria-label="Seleção de tema">
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="dark" aria-pressed="false">Dark</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="auto" aria-pressed="false">Auto</button>
+        </div>
+      </nav>
+
+      <button type="button" class="ws-menu-toggle" aria-expanded="false" aria-controls="ws-nav" aria-label="Abrir menu">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <a href="#wsec-contato" class="ws-btn ws-btn--primary ws-header__cta">Fale comigo</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       SEÇÃO 2 — HERO + CARROSSEL
+       ========================================================== -->
+  <section class="ws-hero" aria-labelledby="wsec-hero-title">
+    <div class="ws-container ws-hero__inner">
+
+      <div class="ws-reveal">
+        <p class="ws-hero__eyebrow">E-commerce</p>
+        <h1 class="ws-hero__title ws-serif" id="wsec-hero-title">Sua loja aberta 24 horas. <em>Vendendo por você.</em></h1>
+        <p class="ws-hero__subtitle">Uma loja virtual com a cara da sua marca, pronta para mostrar seus produtos, receber pagamentos e organizar seus pedidos em um só lugar.</p>
+        <div class="ws-hero__actions">
+          <a href="#wsec-contato" class="ws-btn ws-btn--primary">Quero minha loja virtual</a>
+          <a href="#wsec-processo" class="ws-hero__secondary">Entender como funciona</a>
+        </div>
+      </div>
+
+      <!-- Carrossel de lojas virtuais.
+           Para trocar as imagens futuramente, basta substituir os
+           arquivos em assets/ e atualizar o "src" e o "alt" abaixo.
+           As legendas ficam em CAROUSEL_CAPTIONS (ecommerce.js). -->
+      <div class="ws-carousel ws-reveal" aria-roledescription="carrossel" aria-label="Exemplos de lojas virtuais">
+        <div class="ws-carousel__frame">
+          <div class="ws-carousel__chrome" aria-hidden="true">
+            <i></i><i></i><i></i>
+            <span class="ws-carousel__url">sualoja.com.br</span>
+          </div>
+
+          <div class="ws-carousel__viewport">
+            <div class="ws-carousel__track" data-ws-carousel-track>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 4: Loja de moda e acessórios">
+                <img src="assets/ecommerce-01.svg" alt="Exemplo de loja virtual de moda, com vitrine de produtos e filtros por categoria" loading="eager" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 4: Loja de cosméticos e beleza">
+                <img src="assets/ecommerce-02.svg" alt="Exemplo de página de produto de cosméticos, com preço, parcelamento e botão de compra" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 4: Loja de alimentos e bebidas">
+                <img src="assets/ecommerce-03.svg" alt="Exemplo de carrinho de compras de loja de alimentos, com cálculo de frete e resumo do pedido" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 de 4: Loja de artesanato e decoração">
+                <img src="assets/ecommerce-04.svg" alt="Exemplo de página inicial de loja de artesanato e decoração, com banner e produtos em destaque" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="ws-carousel__caption">
+            <p data-ws-carousel-caption>Moda e acessórios</p>
+            <span class="ws-carousel__count" data-ws-carousel-count aria-hidden="true">01 / 04</span>
+          </div>
+        </div>
+
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--prev" data-ws-carousel-prev aria-label="Slide anterior">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--next" data-ws-carousel-next aria-label="Próximo slide">
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <div class="ws-carousel__dots" role="tablist" aria-label="Escolher slide">
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="true" aria-label="Ir para o slide 1"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 2"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 3"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 4"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 3 — CONHEÇA O E-COMMERCE
+       ========================================================== -->
+  <section class="ws-about" id="wsec-sobre" aria-labelledby="wsec-sobre-title">
+    <div class="ws-container ws-about__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Conheça o E-commerce</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-sobre-title">Uma vitrine que nunca fecha, com a identidade da sua marca.</h2>
+        <p class="ws-section-head__subtitle">Clique nas perguntas para entender como ela funciona.</p>
+      </div>
+
+      <div class="ws-about__faq ws-reveal">
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            O que é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Uma loja virtual completa, onde seus clientes encontram os produtos, escolhem, calculam o frete e finalizam a compra sem precisar falar com você para cada pedido.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Para quem é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Para quem já vende pelo Instagram, WhatsApp ou marketplaces e quer um canal próprio, e para quem está começando e quer vender pela internet com uma estrutura profissional.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Como recebo os pagamentos?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>A loja é integrada a um meio de pagamento, como Pix e cartão de crédito. O dinheiro das vendas vai direto para a sua conta nessa plataforma, que cobra as próprias taxas por transação.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Por que escolher?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Na sua própria loja, você define as regras, não divide espaço com concorrentes e constrói uma relação direta com quem compra de você.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4 — COMO FUNCIONA O PROCESSO
+       ========================================================== -->
+  <section class="ws-process" id="wsec-processo" aria-labelledby="wsec-processo-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Como funciona</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-processo-title">Do primeiro contato à sua primeira venda.</h2>
+        <p class="ws-section-head__subtitle">Um processo simples, organizado e pensado para colocar a sua loja no ar com segurança.</p>
+      </div>
+
+      <div class="ws-cards">
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">01</span>
+          <h3 class="ws-card__title ws-serif">Vamos começar?</h3>
+          <p class="ws-card__desc">Você conta o que vende, para quem vende e como imagina a sua loja.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">02</span>
+          <h3 class="ws-card__title ws-serif">Produtos e regras</h3>
+          <p class="ws-card__desc">Você envia fotos, descrições e preços, e definimos juntos as formas de pagamento e de entrega.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">03</span>
+          <h3 class="ws-card__title ws-serif">Montagem da loja</h3>
+          <p class="ws-card__desc">Desenvolvo a loja, cadastro os produtos e testo a compra do início ao fim, do carrinho ao pagamento.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">04</span>
+          <h3 class="ws-card__title ws-serif">Sua loja no ar!</h3>
+          <p class="ws-card__desc">Publico a loja e mostro como gerenciar produtos, estoque e pedidos no dia a dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4.1 — INVESTIMENTO
+       ⚠️ PREENCHER: valor "a partir de", % de desconto no Pix e
+       quantidade de produtos inclusa (procure por "PREENCHER").
+       ========================================================== -->
+  <section class="ws-pricing" id="wsec-investimento" aria-labelledby="wsec-investimento-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Investimento</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-investimento-title">Tudo o que sua loja precisa para começar a vender.</h2>
+        <p class="ws-section-head__subtitle">O valor final depende da quantidade de produtos e das integrações. Você recebe o orçamento fechado antes de começarmos.</p>
+      </div>
+
+      <div class="ws-pricing__card ws-reveal">
+        <div class="ws-pricing__main">
+          <p class="ws-pricing__from">A partir de</p>
+          <!-- PREENCHER: valor do E-commerce -->
+          <p class="ws-pricing__price ws-serif"><span class="ws-pricing__currency">R$</span> 0.000</p>
+          <p class="ws-pricing__note">Pagamento único pelo projeto.</p>
+
+          <h3 class="ws-pricing__subtitle">Formas de pagamento</h3>
+          <ul class="ws-pricing__pay">
+            <!-- PREENCHER: % de desconto no Pix -->
+            <li><strong>Pix à vista</strong> com 0% de desconto</li>
+            <li><strong>50% na entrada</strong> e 50% na entrega</li>
+            <li><strong>Cartão de crédito</strong> parcelado, sem desconto</li>
+          </ul>
+
+          <a href="#wsec-contato" class="ws-btn ws-btn--primary ws-pricing__cta">Quero minha loja virtual</a>
+        </div>
+
+        <div class="ws-pricing__details">
+          <h3 class="ws-pricing__subtitle">O que está incluso</h3>
+          <ul class="ws-pricing__list">
+            <li>Loja adaptada para celular, tablet e computador</li>
+            <li>Página inicial, catálogo, página de produto, carrinho e finalização de compra</li>
+            <!-- PREENCHER: quantidade de produtos cadastrados no pacote -->
+            <li>Cadastro inicial de até 00 produtos</li>
+            <li>Integração com meio de pagamento (Pix e cartão)</li>
+            <li>Configuração de frete e formas de entrega</li>
+            <li>Textos das páginas institucionais, caso você ainda não os tenha</li>
+            <li>Botão de WhatsApp integrado</li>
+            <li>Uso do seu domínio ou registro de um novo, caso você ainda não tenha</li>
+            <li>Orientação para gerenciar produtos e pedidos</li>
+            <li>2 meses de suporte após a entrega</li>
+            <li>Entrega em 15 a 25 dias úteis<sup>*</sup></li>
+          </ul>
+
+          <h3 class="ws-pricing__subtitle">O que você me envia</h3>
+          <p class="ws-pricing__text">Logo, fotos e descrições dos produtos, preços, variações (tamanho, cor) e as informações de entrega e trocas.</p>
+
+          <p class="ws-pricing__foot"><sup>*</sup> O prazo começa após o alinhamento do escopo e o recebimento dos materiais. As taxas do meio de pagamento e do frete são cobradas diretamente pelas empresas responsáveis. Hospedagem: publico na sua ou cuido disso para você, com valor informado no orçamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 5 — FORMULÁRIO DE CONTATO
+       ========================================================== -->
+  <section class="ws-contact" id="wsec-contato" aria-labelledby="wsec-contato-title">
+    <div class="ws-container ws-contact__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Contato</p>
+        <h2 class="ws-section-head__title ws-serif" id="wsec-contato-title">Vamos abrir a sua loja?</h2>
+        <p class="ws-section-head__subtitle">Conte um pouquinho sobre você e o que você vende. Em breve, entro em contato para conversarmos sobre o seu projeto.</p>
+      </div>
+
+      <!-- Campos com data-ws-field são validados pelo JS.
+           Campos sem "required" são opcionais. Todo campo com "name"
+           entra no e-mail automaticamente, usando o texto do rótulo. -->
+      <form class="ws-form ws-reveal" id="wsec-form" novalidate>
+        <!-- Anti-spam (honeypot): invisível para pessoas, bots costumam preencher -->
+        <input type="checkbox" name="botcheck" class="ws-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-nome">Nome e sobrenome</label>
+            <input class="ws-field__input" type="text" id="wsec-nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required aria-required="true" aria-describedby="wsec-nome-erro">
+            <p class="ws-field__error" id="wsec-nome-erro">Informe seu nome e sobrenome.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-email">E-mail</label>
+            <input class="ws-field__input" type="email" id="wsec-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true" aria-describedby="wsec-email-erro">
+            <p class="ws-field__error" id="wsec-email-erro">Informe um e-mail válido.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-telefone">WhatsApp</label>
+            <input class="ws-field__input" type="tel" id="wsec-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true" aria-describedby="wsec-telefone-erro">
+            <p class="ws-field__error" id="wsec-telefone-erro">Informe um WhatsApp com DDD.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-negocio">Nome da loja ou marca</label>
+            <input class="ws-field__input" type="text" id="wsec-negocio" name="negocio" placeholder="Ex.: Ateliê Flor de Lis" autocomplete="organization" required aria-required="true" aria-describedby="wsec-negocio-erro">
+            <p class="ws-field__error" id="wsec-negocio-erro">Informe o nome da sua loja ou marca.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-area">O que você vende?</label>
+            <input class="ws-field__input" type="text" id="wsec-area" name="area" placeholder="Ex.: roupas, cosméticos, doces" required aria-required="true" aria-describedby="wsec-area-erro">
+            <p class="ws-field__error" id="wsec-area-erro">Conte que tipo de produto você vende.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-vende-hoje">Você já vende hoje?</label>
+            <select class="ws-field__input ws-field__select" id="wsec-vende-hoje" name="vende_hoje" required aria-required="true" aria-describedby="wsec-vende-hoje-erro">
+              <option value="">Selecione</option>
+              <option>Ainda não vendo</option>
+              <option>Vendo pelo Instagram ou WhatsApp</option>
+              <option>Vendo em marketplaces (Shopee, Mercado Livre etc.)</option>
+              <option>Tenho loja física</option>
+              <option>Já tenho loja virtual e quero trocar</option>
+            </select>
+            <p class="ws-field__error" id="wsec-vende-hoje-erro">Escolha a opção que mais combina com você.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-produtos">Quantos produtos pretende vender?</label>
+            <select class="ws-field__input ws-field__select" id="wsec-produtos" name="produtos" required aria-required="true" aria-describedby="wsec-produtos-erro">
+              <option value="">Selecione</option>
+              <option>Até 20 produtos</option>
+              <option>De 21 a 50 produtos</option>
+              <option>De 51 a 100 produtos</option>
+              <option>Mais de 100 produtos</option>
+              <option>Ainda não sei</option>
+            </select>
+            <p class="ws-field__error" id="wsec-produtos-erro">Escolha uma quantidade aproximada.</p>
+          </div>
+        </div>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Como pretende entregar? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Correios"><span>Correios</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Transportadora"><span>Transportadora</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Entrega própria na região"><span>Entrega própria na região</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Retirada no local"><span>Retirada no local</span></label>
+            <label class="ws-check"><input type="checkbox" name="entrega" value="Produto digital"><span>Produto digital (sem entrega física)</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Quais pagamentos quer aceitar? <span class="ws-field__opt">(opcional)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Pix"><span>Pix</span></label>
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Cartão de crédito"><span>Cartão de crédito</span></label>
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Boleto"><span>Boleto</span></label>
+            <label class="ws-check"><input type="checkbox" name="pagamentos" value="Ainda não sei"><span>Ainda não sei</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">O que você já tem? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="possui" value="Logo / identidade visual"><span>Logo / identidade visual</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Fotos dos produtos"><span>Fotos dos produtos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Descrições dos produtos"><span>Descrições dos produtos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Domínio"><span>Domínio (ex.: sualoja.com.br)</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Hospedagem"><span>Hospedagem</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Conta em meio de pagamento"><span>Conta em meio de pagamento</span></label>
+          </div>
+        </fieldset>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-prazo">Quando gostaria de começar? <span class="ws-field__opt">(opcional)</span></label>
+            <select class="ws-field__input ws-field__select" id="wsec-prazo" name="prazo">
+              <option value="">Selecione</option>
+              <option>O quanto antes</option>
+              <option>Nas próximas semanas</option>
+              <option>Ainda estou pesquisando</option>
+            </select>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-redes">Instagram ou site atual <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wsec-redes" name="redes" placeholder="@sualoja ou www.sualoja.com.br">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wsec-mensagem">Conte um pouco sobre a loja <span class="ws-field__opt">(opcional)</span></label>
+            <textarea class="ws-field__input ws-field__textarea" id="wsec-mensagem" name="mensagem" rows="4" maxlength="1500" placeholder="Variações dos produtos (tamanho, cor), lojas que você admira, dúvidas…"></textarea>
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field ws-field--consent" data-ws-field>
+            <label class="ws-check">
+              <input type="checkbox" id="wsec-consentimento" name="consentimento" value="sim" required aria-required="true" aria-describedby="wsec-consentimento-erro">
+              <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+              <span>Li e concordo com a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato pelos canais informados.</span>
+            </label>
+            <p class="ws-field__error" id="wsec-consentimento-erro">Para continuar, é preciso concordar com a Política de Privacidade.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__actions">
+          <button type="submit" class="ws-btn ws-btn--primary ws-form__submit" data-ws-submit>Enviar interesse</button>
+          <p class="ws-form__hint">Seus dados serão usados apenas para que eu entre em contato com você sobre este projeto.</p>
+          <p class="ws-form__status" data-ws-form-status role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 7 — INFORMAÇÃO SOBRE SUPORTE
+       ========================================================== -->
+  <section class="ws-support" aria-labelledby="wsec-suporte-title">
+    <div class="ws-container">
+      <div class="ws-support__inner ws-reveal">
+        <span class="ws-support__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <div>
+          <h2 class="ws-support__title ws-serif" id="wsec-suporte-title">Sua loja continua acompanhada.</h2>
+          <p class="ws-support__desc">Após a entrega do seu E-commerce, você contará com 2 meses de suporte incluídos no contrato para orientações e auxílio relacionados à loja, conforme as condições acordadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 8 — FOOTER
+       ========================================================== -->
+  <footer class="ws-footer">
+    <div class="ws-container ws-footer__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-footer__nav" aria-label="Navegação do rodapé">
+        <a href="#wsec-sobre" class="ws-footer__link">Serviços</a>
+        <a href="#wsec-investimento" class="ws-footer__link">Investimento</a>
+        <a href="#wsec-contato" class="ws-footer__link">Contato</a>
+        <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+        <a href="/politica-de-privacidade/" class="ws-footer__link">Política de Privacidade</a>
+      </nav>
+
+      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WebStudio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       SEÇÃO 6 — POPUP DE AGRADECIMENTO
+       ========================================================== -->
+  <div class="ws-modal" id="wsec-modal" hidden>
+    <button type="button" class="ws-modal__backdrop" data-ws-modal-close tabindex="-1" aria-label="Fechar mensagem"></button>
+    <div class="ws-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="wsec-modal-title" aria-describedby="wsec-modal-text">
+      <span class="ws-modal__badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </span>
+      <!-- Título e texto são trocados pelo JS conforme o resultado do envio -->
+      <h2 class="ws-modal__title ws-serif" id="wsec-modal-title">Que bom ter você por aqui!</h2>
+      <p class="ws-modal__text" id="wsec-modal-text"></p>
+      <div class="ws-modal__actions">
+        <a href="#" class="ws-btn ws-btn--primary ws-modal__whatsapp" data-ws-modal-whatsapp target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+        <button type="button" class="ws-btn ws-btn--ghost ws-modal__close" data-ws-modal-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /#ws-ecommerce-page -->
+
+<!-- Prévia local: o script é carregado como arquivo separado -->
+<script src="ecommerce.js"></script>
+</body>
+</html>

@@ -805,6 +805,12 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Variante "Sob consulta" (serviços sem preço fixo) */
+#ws-landing-page .ws-pricing__price--consult {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-style: italic;
+}
+
 #ws-landing-page .ws-pricing__currency {
   font-size: 0.45em;
   vertical-align: 0.9em;

@@ -1,0 +1,2926 @@
+﻿<!-- ============================================================
+     ELEMENTOR - WIDGET HTML  (Serviço: Site Personalizado)
+     ARQUIVO GERADO por build-elementor.py. NAO edite a mao:
+     altere s-personalizado/personalizado.html, s-personalizado/personalizado.css, s-personalizado/personalizado.js e rode:  python build-elementor.py
+     Cole TODO o conteudo deste arquivo em UM unico widget HTML.
+     CSS, JS e imagens estao embutidos: nao depende de arquivos externos.
+     ============================================================ -->
+
+<style>
+/* ============================================================
+   WEBSTUDIO — Página do serviço Site Personalizado
+   Todo o CSS está escopado dentro de #ws-personalizado-page.
+   Nenhum seletor global (html, body, header, footer) é afetado.
+   ============================================================ */
+
+#ws-personalizado-page {
+  /* Paleta */
+  --wscp-green-deep: #0B1713;
+  --wscp-forest: #254638;
+  --wscp-sage: #A8C5B2;
+  --wscp-pink: #E94B91;
+  --wscp-offwhite: #F6F4EF;
+
+  /* Tema Light (padrão) */
+  --wscp-bg: var(--wscp-offwhite);
+  --wscp-bg-soft: #EFEBE3;
+  --wscp-bg-card: #FFFFFF;
+  --wscp-text: var(--wscp-green-deep);
+  --wscp-text-muted: #5A6B62;
+  --wscp-border: #D9D4C8;
+  --wscp-accent: var(--wscp-forest);
+  --wscp-cta-bg: var(--wscp-pink);
+  --wscp-cta-text: #FFFFFF;
+  --wscp-shadow: 0 10px 30px rgba(11, 23, 19, 0.08);
+  --wscp-field-bg: #FFFFFF;
+
+  /* Tipografia e métricas */
+  --wscp-font: "Georgia", "Times New Roman", serif;
+  --wscp-font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --wscp-radius: 14px;
+  --wscp-max: 1140px;
+
+  background: var(--wscp-bg);
+  color: var(--wscp-text);
+  font-family: var(--wscp-font-ui);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+/* Tema Dark */
+#ws-personalizado-page[data-ws-theme="dark"] {
+  --wscp-bg: var(--wscp-green-deep);
+  --wscp-bg-soft: #10201A;
+  --wscp-bg-card: #14261F;
+  --wscp-text: #EDF3EE;
+  --wscp-text-muted: var(--wscp-sage);
+  --wscp-border: rgba(168, 197, 178, 0.18);
+  --wscp-accent: var(--wscp-sage);
+  --wscp-cta-bg: var(--wscp-pink);
+  --wscp-cta-text: #FFFFFF;
+  --wscp-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --wscp-field-bg: #10201A;
+}
+
+/* Anti-flash: o JS aplica .ws-ready depois de definir o tema */
+#ws-personalizado-page:not(.ws-ready),
+#ws-personalizado-page:not(.ws-ready) * {
+  transition: none !important;
+}
+
+/* ---------- Utilitários internos ---------- */
+#ws-personalizado-page .ws-container {
+  max-width: var(--wscp-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+#ws-personalizado-page .ws-serif {
+  font-family: var(--wscp-font);
+}
+
+/* ---------- Foco visível ---------- */
+#ws-personalizado-page a:focus-visible,
+#ws-personalizado-page button:focus-visible,
+#ws-personalizado-page input:focus-visible,
+#ws-personalizado-page select:focus-visible,
+#ws-personalizado-page textarea:focus-visible {
+  outline: 2px solid var(--wscp-pink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Cabeçalho ---------- */
+#ws-personalizado-page .ws-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--wscp-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+}
+
+#ws-personalizado-page .ws-brand {
+  font-family: var(--wscp-font);
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wscp-text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+#ws-personalizado-page .ws-brand__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--wscp-pink);
+  flex: none;
+}
+
+#ws-personalizado-page .ws-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+#ws-personalizado-page .ws-nav__link {
+  color: var(--wscp-text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-nav__link:hover,
+#ws-personalizado-page .ws-nav__link:focus-visible {
+  color: var(--wscp-text);
+}
+
+/* Botões */
+#ws-personalizado-page .ws-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: var(--wscp-font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-btn--primary {
+  background: var(--wscp-cta-bg);
+  color: var(--wscp-cta-text);
+}
+
+#ws-personalizado-page .ws-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--wscp-shadow);
+}
+
+#ws-personalizado-page .ws-btn--ghost {
+  background: transparent;
+  color: var(--wscp-text);
+  border-color: var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-btn--ghost:hover {
+  border-color: var(--wscp-accent);
+  color: var(--wscp-accent);
+}
+
+/* Seletor de tema */
+#ws-personalizado-page .ws-theme {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--wscp-border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  background: var(--wscp-bg-card);
+}
+
+#ws-personalizado-page .ws-theme__btn {
+  border: 0;
+  background: transparent;
+  color: var(--wscp-text-muted);
+  font-family: var(--wscp-font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-theme__btn[aria-pressed="true"] {
+  background: var(--wscp-forest);
+  color: #FFFFFF;
+}
+
+#ws-personalizado-page[data-ws-theme="dark"] .ws-theme__btn[aria-pressed="true"] {
+  background: var(--wscp-sage);
+  color: var(--wscp-green-deep);
+}
+
+/* Menu mobile */
+#ws-personalizado-page .ws-menu-toggle {
+  display: none;
+  border: 1px solid var(--wscp-border);
+  background: var(--wscp-bg-card);
+  color: var(--wscp-text);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+#ws-personalizado-page .ws-menu-toggle span,
+#ws-personalizado-page .ws-menu-toggle span::before,
+#ws-personalizado-page .ws-menu-toggle span::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  content: "";
+}
+
+#ws-personalizado-page .ws-menu-toggle span::before {
+  position: absolute;
+  top: -6px;
+}
+
+#ws-personalizado-page .ws-menu-toggle span::after {
+  position: absolute;
+  top: 6px;
+}
+
+#ws-personalizado-page .ws-menu-toggle[aria-expanded="true"] span {
+  transform: rotate(45deg);
+}
+
+#ws-personalizado-page .ws-menu-toggle[aria-expanded="true"] span::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#ws-personalizado-page .ws-menu-toggle[aria-expanded="true"] span::after {
+  top: 0;
+  opacity: 0;
+}
+
+/* ---------- Hero ---------- */
+#ws-personalizado-page .ws-hero {
+  padding: 88px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Profundidade de fundo (brilho radial discreto) */
+#ws-personalizado-page .ws-hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -12%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(ellipse at center, rgba(37, 70, 56, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+#ws-personalizado-page[data-ws-theme="dark"] .ws-hero::before {
+  background: radial-gradient(ellipse at center, rgba(37, 70, 56, 0.45) 0%, transparent 65%);
+}
+
+#ws-personalizado-page .ws-hero__inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+#ws-personalizado-page .ws-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wscp-accent);
+  margin-bottom: 24px;
+}
+
+#ws-personalizado-page .ws-hero__eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-hero__title {
+  font-family: var(--wscp-font);
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  font-weight: 500;
+}
+
+#ws-personalizado-page .ws-hero__title em {
+  font-style: italic;
+  color: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-hero__subtitle {
+  font-size: 1.12rem;
+  color: var(--wscp-text-muted);
+  max-width: 44ch;
+  margin: 0 0 36px;
+}
+
+#ws-personalizado-page .ws-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#ws-personalizado-page .ws-hero__secondary {
+  color: var(--wscp-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--wscp-accent);
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-hero__secondary:hover {
+  color: var(--wscp-accent);
+}
+
+/* ---------- Carrossel ---------- */
+#ws-personalizado-page .ws-carousel {
+  position: relative;
+}
+
+#ws-personalizado-page .ws-carousel__frame {
+  position: relative;
+  background: var(--wscp-bg-card);
+  border: 1px solid var(--wscp-border);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: var(--wscp-shadow);
+  overflow: hidden;
+}
+
+/* Barra superior estilo navegador */
+#ws-personalizado-page .ws-carousel__chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px 10px;
+}
+
+#ws-personalizado-page .ws-carousel__chrome i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-carousel__chrome i:first-child {
+  background: var(--wscp-pink);
+}
+
+#ws-personalizado-page .ws-carousel__chrome i:nth-child(2) {
+  background: var(--wscp-sage);
+}
+
+#ws-personalizado-page .ws-carousel__chrome .ws-carousel__url {
+  margin-left: 8px;
+  flex: 1;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--wscp-bg-soft);
+  border: 1px solid var(--wscp-border);
+  font-size: 0.62rem;
+  color: var(--wscp-text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  letter-spacing: 0.06em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#ws-personalizado-page .ws-carousel__viewport {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#ws-personalizado-page .ws-carousel__track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
+}
+
+#ws-personalizado-page .ws-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  background: var(--wscp-bg-soft);
+}
+
+#ws-personalizado-page .ws-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Etiqueta do slide */
+#ws-personalizado-page .ws-carousel__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 6px 0;
+}
+
+#ws-personalizado-page .ws-carousel__caption p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-carousel__caption .ws-carousel__count {
+  font-family: var(--wscp-font);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--wscp-accent);
+  flex: none;
+}
+
+/* Setas */
+#ws-personalizado-page .ws-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--wscp-border);
+  background: var(--wscp-bg-card);
+  color: var(--wscp-text);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: var(--wscp-shadow);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-carousel__arrow:hover {
+  background: var(--wscp-pink);
+  border-color: var(--wscp-pink);
+  color: #FFFFFF;
+}
+
+#ws-personalizado-page .ws-carousel__arrow--prev {
+  left: -14px;
+}
+
+#ws-personalizado-page .ws-carousel__arrow--next {
+  right: -14px;
+}
+
+/* Indicadores */
+#ws-personalizado-page .ws-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 18px;
+}
+
+#ws-personalizado-page .ws-carousel__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: var(--wscp-border);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+#ws-personalizado-page .ws-carousel__dot[aria-selected="true"] {
+  background: var(--wscp-pink);
+  transform: scale(1.2);
+}
+
+/* ---------- Seção: Conheça a Landing Page ---------- */
+#ws-personalizado-page .ws-about {
+  padding: 96px 0;
+  background: var(--wscp-bg-soft);
+  border-top: 1px solid var(--wscp-border);
+  border-bottom: 1px solid var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: 72px;
+  align-items: start;
+}
+
+#ws-personalizado-page .ws-section-head {
+  max-width: 620px;
+}
+
+#ws-personalizado-page .ws-section-head__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wscp-accent);
+  margin-bottom: 16px;
+}
+
+#ws-personalizado-page .ws-section-head__title {
+  font-family: var(--wscp-font);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 500;
+}
+
+#ws-personalizado-page .ws-section-head__subtitle {
+  color: var(--wscp-text-muted);
+  font-size: 1.05rem;
+  margin: 16px 0 0;
+}
+
+/* Acordeão "Conheça a Landing Page" — mesmo padrão do FAQ da página inicial */
+#ws-personalizado-page .ws-about__faq {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#ws-personalizado-page .ws-faq__item {
+  background: var(--wscp-bg-card);
+  border: 1px solid var(--wscp-border);
+  border-radius: var(--wscp-radius);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#ws-personalizado-page .ws-faq__item[open] {
+  border-color: var(--wscp-accent);
+  box-shadow: var(--wscp-shadow);
+}
+
+#ws-personalizado-page .ws-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--wscp-font);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--wscp-text);
+  transition: color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+#ws-personalizado-page .ws-faq__question:hover {
+  color: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-faq__question:focus-visible {
+  outline: 2px solid var(--wscp-accent);
+  outline-offset: -2px;
+  border-radius: var(--wscp-radius);
+}
+
+#ws-personalizado-page .ws-faq__icon {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--wscp-accent);
+  transition: transform 0.25s ease;
+}
+
+#ws-personalizado-page .ws-faq__item[open] .ws-faq__icon {
+  transform: rotate(45deg);
+}
+
+#ws-personalizado-page .ws-faq__answer {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--wscp-border);
+  padding-top: 20px;
+}
+
+#ws-personalizado-page .ws-faq__answer p {
+  margin: 0;
+  color: var(--wscp-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---------- Seção: Como funciona ---------- */
+#ws-personalizado-page .ws-process {
+  padding: 96px 0;
+}
+
+#ws-personalizado-page .ws-process .ws-section-head {
+  margin-bottom: 56px;
+}
+
+#ws-personalizado-page .ws-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+#ws-personalizado-page .ws-card {
+  position: relative;
+  background: var(--wscp-bg-card);
+  border: 1px solid var(--wscp-border);
+  border-radius: var(--wscp-radius);
+  padding: 30px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#ws-personalizado-page .ws-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--wscp-shadow);
+  border-color: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: var(--wscp-accent);
+  border: 1px solid var(--wscp-border);
+  background: color-mix(in srgb, var(--wscp-accent) 8%, transparent);
+  flex: none;
+}
+
+#ws-personalizado-page .ws-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+#ws-personalizado-page .ws-card__num {
+  position: absolute;
+  top: 30px;
+  right: 26px;
+  font-family: var(--wscp-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--wscp-accent);
+  opacity: 0.7;
+}
+
+#ws-personalizado-page .ws-card__title {
+  font-family: var(--wscp-font);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 6px 0 0;
+}
+
+#ws-personalizado-page .ws-card__desc {
+  color: var(--wscp-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Ondas decorativas (mesma linguagem dos cards da página inicial) */
+#ws-personalizado-page .ws-card__decor {
+  position: absolute;
+  right: -6%;
+  bottom: -4%;
+  width: 78%;
+  aspect-ratio: 240 / 110;
+  color: var(--wscp-accent);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+#ws-personalizado-page .ws-card__decor svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ws-personalizado-page .ws-card:hover .ws-card__decor {
+  opacity: 0.55;
+  transform: translateX(-4px);
+}
+
+#ws-personalizado-page[data-ws-theme="dark"] .ws-card__decor {
+  opacity: 0.4;
+}
+
+/* ---------- Seção: Investimento ---------- */
+#ws-personalizado-page .ws-pricing {
+  padding: 96px 0;
+  border-top: 1px solid var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-pricing .ws-section-head {
+  margin-bottom: 48px;
+}
+
+#ws-personalizado-page .ws-pricing__card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--wscp-bg-card);
+  border: 1px solid var(--wscp-border);
+  border-radius: var(--wscp-radius);
+  box-shadow: var(--wscp-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Detalhe rosa no topo, mesma linguagem do formulário */
+#ws-personalizado-page .ws-pricing__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wscp-pink), color-mix(in srgb, var(--wscp-pink) 35%, transparent));
+}
+
+#ws-personalizado-page .ws-pricing__main {
+  padding: 44px 40px;
+  background: color-mix(in srgb, var(--wscp-accent) 6%, transparent);
+  border-right: 1px solid var(--wscp-border);
+  display: flex;
+  flex-direction: column;
+}
+
+#ws-personalizado-page .ws-pricing__details {
+  padding: 44px 40px;
+}
+
+#ws-personalizado-page .ws-pricing__from {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wscp-accent);
+  font-weight: 600;
+}
+
+#ws-personalizado-page .ws-pricing__price {
+  margin: 6px 0 4px;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--wscp-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Variante "Sob consulta" (serviços sem preço fixo) */
+#ws-personalizado-page .ws-pricing__price--consult {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-style: italic;
+}
+
+#ws-personalizado-page .ws-pricing__currency {
+  font-size: 0.45em;
+  vertical-align: 0.9em;
+  margin-right: 2px;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-pricing__note {
+  margin: 0 0 28px;
+  font-size: 0.9rem;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-pricing__subtitle {
+  font-family: var(--wscp-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+#ws-personalizado-page .ws-pricing__details .ws-pricing__subtitle + .ws-pricing__text {
+  margin-top: 0;
+}
+
+#ws-personalizado-page .ws-pricing__pay,
+#ws-personalizado-page .ws-pricing__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+#ws-personalizado-page .ws-pricing__pay {
+  margin-bottom: 32px;
+}
+
+#ws-personalizado-page .ws-pricing__pay li,
+#ws-personalizado-page .ws-pricing__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-pricing__pay strong {
+  color: var(--wscp-text);
+  font-weight: 600;
+}
+
+/* Marcador: ponto rosa nas formas de pagamento */
+#ws-personalizado-page .ws-pricing__pay li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wscp-pink);
+}
+
+/* Marcador: check verde no que está incluso */
+#ws-personalizado-page .ws-pricing__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.35em;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--wscp-accent);
+  border-bottom: 2px solid var(--wscp-accent);
+  transform: rotate(-45deg);
+}
+
+#ws-personalizado-page .ws-pricing__list {
+  margin-bottom: 28px;
+}
+
+#ws-personalizado-page .ws-pricing__text {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-pricing__foot {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--wscp-border);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-pricing__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ---------- Seção: Formulário ---------- */
+#ws-personalizado-page .ws-contact {
+  padding: 96px 0;
+  background: var(--wscp-bg-soft);
+  border-top: 1px solid var(--wscp-border);
+  border-bottom: 1px solid var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-contact__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+#ws-personalizado-page .ws-contact .ws-section-head {
+  text-align: center;
+  margin: 0 auto 48px;
+}
+
+#ws-personalizado-page .ws-contact .ws-section-head__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#ws-personalizado-page .ws-contact .ws-section-head__eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-contact .ws-section-head__eyebrow::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-form {
+  background: var(--wscp-bg-card);
+  border: 1px solid var(--wscp-border);
+  border-radius: var(--wscp-radius);
+  padding: 40px;
+  box-shadow: var(--wscp-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Detalhe rosa no topo do formulário */
+#ws-personalizado-page .ws-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wscp-pink), color-mix(in srgb, var(--wscp-pink) 35%, transparent));
+}
+
+#ws-personalizado-page .ws-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+#ws-personalizado-page .ws-form__row--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  #ws-personalizado-page .ws-form__row--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ws-personalizado-page .ws-field {
+  display: grid;
+  gap: 8px;
+}
+
+#ws-personalizado-page .ws-field__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--wscp-text);
+  letter-spacing: 0.01em;
+}
+
+#ws-personalizado-page .ws-field__input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--wscp-border);
+  background: var(--wscp-field-bg);
+  color: var(--wscp-text);
+  font-family: var(--wscp-font-ui);
+  font-size: 0.98rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+#ws-personalizado-page .ws-field__input::placeholder {
+  color: var(--wscp-text-muted);
+  opacity: 0.75;
+}
+
+#ws-personalizado-page .ws-field__input:hover {
+  border-color: var(--wscp-accent);
+}
+
+#ws-personalizado-page .ws-field__input:focus {
+  outline: none;
+  border-color: var(--wscp-pink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wscp-pink) 18%, transparent);
+}
+
+#ws-personalizado-page .ws-field--invalid .ws-field__input {
+  border-color: var(--wscp-pink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wscp-pink) 14%, transparent);
+}
+
+#ws-personalizado-page .ws-field__error {
+  font-size: 0.82rem;
+  color: var(--wscp-pink);
+  display: none;
+  margin: 0;
+}
+
+#ws-personalizado-page .ws-field--invalid .ws-field__error {
+  display: block;
+}
+
+#ws-personalizado-page .ws-form__actions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#ws-personalizado-page .ws-form__hint {
+  font-size: 0.82rem;
+  color: var(--wscp-text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+#ws-personalizado-page .ws-form__submit {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 26px;
+  font-size: 1rem;
+}
+
+#ws-personalizado-page .ws-form__submit[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+#ws-personalizado-page .ws-form__status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--wscp-text-muted);
+  text-align: center;
+}
+
+#ws-personalizado-page .ws-form__status:empty {
+  display: none;
+}
+
+/* Honeypot anti-spam: fora da tela, sem afetar o layout */
+#ws-personalizado-page .ws-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+#ws-personalizado-page .ws-field__opt {
+  font-weight: 400;
+  color: var(--wscp-text-muted);
+}
+
+#ws-personalizado-page .ws-field__textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+/* Select com seta própria (igual nos dois temas) */
+#ws-personalizado-page .ws-field__select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--wscp-text-muted) 50%),
+    linear-gradient(135deg, var(--wscp-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) 50%,
+    calc(100% - 16px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+#ws-personalizado-page .ws-field__select option {
+  background: var(--wscp-bg-card);
+  color: var(--wscp-text);
+}
+
+#ws-personalizado-page .ws-choices {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+  min-width: 0;
+}
+
+#ws-personalizado-page .ws-choices legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#ws-personalizado-page .ws-choices__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+
+@media (max-width: 640px) {
+  #ws-personalizado-page .ws-choices__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ws-personalizado-page .ws-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--wscp-text);
+  cursor: pointer;
+}
+
+#ws-personalizado-page .ws-check input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--wscp-pink);
+  cursor: pointer;
+}
+
+#ws-personalizado-page .ws-check a {
+  color: var(--wscp-text);
+  text-decoration: underline;
+  text-decoration-color: var(--wscp-pink);
+  text-underline-offset: 3px;
+}
+
+#ws-personalizado-page .ws-field--consent .ws-check {
+  font-size: 0.88rem;
+  color: var(--wscp-text-muted);
+}
+
+/* ---------- Seção: Suporte ---------- */
+#ws-personalizado-page .ws-support {
+  padding: 72px 0;
+}
+
+#ws-personalizado-page .ws-support__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--wscp-bg-card);
+  border: 1px solid var(--wscp-border);
+  border-radius: var(--wscp-radius);
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filete verde à esquerda */
+#ws-personalizado-page .ws-support__inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--wscp-accent), color-mix(in srgb, var(--wscp-accent) 30%, transparent));
+}
+
+#ws-personalizado-page .ws-support__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: var(--wscp-accent);
+  border: 1px solid var(--wscp-border);
+  background: color-mix(in srgb, var(--wscp-accent) 8%, transparent);
+  flex: none;
+}
+
+#ws-personalizado-page .ws-support__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+#ws-personalizado-page .ws-support__title {
+  font-family: var(--wscp-font);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+#ws-personalizado-page .ws-support__desc {
+  margin: 0;
+  color: var(--wscp-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ---------- Rodapé ---------- */
+#ws-personalizado-page .ws-footer {
+  padding: 56px 0 48px;
+  background: var(--wscp-bg-soft);
+  border-top: 1px solid var(--wscp-border);
+}
+
+#ws-personalizado-page .ws-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#ws-personalizado-page .ws-footer__nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#ws-personalizado-page .ws-footer__link {
+  color: var(--wscp-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+#ws-personalizado-page .ws-footer__link:hover {
+  color: var(--wscp-text);
+}
+
+#ws-personalizado-page .ws-footer__copy {
+  font-size: 0.85rem;
+  color: var(--wscp-text-muted);
+  width: 100%;
+  border-top: 1px solid var(--wscp-border);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+/* ---------- Modal de agradecimento ---------- */
+#ws-personalizado-page .ws-modal[hidden] {
+  display: none;
+}
+
+#ws-personalizado-page .ws-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+#ws-personalizado-page .ws-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 23, 19, 0.55);
+  border: 0;
+  padding: 0;
+  cursor: default;
+}
+
+#ws-personalizado-page .ws-modal__dialog {
+  position: relative;
+  background: var(--wscp-bg-card);
+  color: var(--wscp-text);
+  border: 1px solid var(--wscp-border);
+  border-radius: 18px;
+  max-width: 460px;
+  width: 100%;
+  padding: 44px 40px 36px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(11, 23, 19, 0.35);
+  overflow: hidden;
+  animation: wscp-modal-in 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Detalhe rosa no topo do modal */
+#ws-personalizado-page .ws-modal__dialog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wscp-pink), color-mix(in srgb, var(--wscp-pink) 35%, transparent));
+}
+
+@keyframes wscp-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#ws-personalizado-page .ws-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--wscp-pink) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--wscp-pink) 35%, transparent);
+  color: var(--wscp-pink);
+  margin-bottom: 20px;
+}
+
+#ws-personalizado-page .ws-modal__badge svg {
+  width: 26px;
+  height: 26px;
+}
+
+#ws-personalizado-page .ws-modal__title {
+  font-family: var(--wscp-font);
+  font-size: 1.55rem;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+#ws-personalizado-page .ws-modal__text {
+  color: var(--wscp-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  white-space: pre-line;
+}
+
+#ws-personalizado-page .ws-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#ws-personalizado-page .ws-modal__close,
+#ws-personalizado-page .ws-modal__whatsapp {
+  min-width: 140px;
+}
+
+#ws-personalizado-page .ws-modal__whatsapp[hidden] {
+  display: none;
+}
+
+/* ---------- Animações leves de entrada ---------- */
+#ws-personalizado-page .ws-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#ws-personalizado-page .ws-reveal.ws-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #ws-personalizado-page *,
+  #ws-personalizado-page *::before,
+  #ws-personalizado-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  #ws-personalizado-page .ws-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  #ws-personalizado-page .ws-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  #ws-personalizado-page .ws-hero {
+    padding: 56px 0 72px;
+  }
+
+  #ws-personalizado-page .ws-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  #ws-personalizado-page .ws-carousel {
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  #ws-personalizado-page .ws-about__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #ws-personalizado-page .ws-about,
+  #ws-personalizado-page .ws-process,
+  #ws-personalizado-page .ws-pricing,
+  #ws-personalizado-page .ws-contact {
+    padding: 72px 0;
+  }
+
+  #ws-personalizado-page .ws-pricing__card {
+    grid-template-columns: 1fr;
+  }
+
+  #ws-personalizado-page .ws-pricing__main {
+    border-right: 0;
+    border-bottom: 1px solid var(--wscp-border);
+  }
+}
+
+@media (max-width: 640px) {
+  #ws-personalizado-page .ws-pricing__main,
+  #ws-personalizado-page .ws-pricing__details {
+    padding: 32px 24px;
+  }
+
+  #ws-personalizado-page .ws-pricing__cta {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  #ws-personalizado-page .ws-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--wscp-bg);
+    border-bottom: 1px solid var(--wscp-border);
+    display: none;
+    padding: 8px 24px 20px;
+  }
+
+  #ws-personalizado-page .ws-nav.ws-nav--open {
+    display: flex;
+  }
+
+  #ws-personalizado-page .ws-nav__link {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--wscp-border);
+    font-size: 1rem;
+  }
+
+  #ws-personalizado-page .ws-nav .ws-theme {
+    margin-top: 16px;
+    align-self: flex-start;
+  }
+
+  #ws-personalizado-page .ws-menu-toggle {
+    display: inline-flex;
+  }
+
+  #ws-personalizado-page .ws-header__cta {
+    display: none;
+  }
+
+  #ws-personalizado-page .ws-header__inner {
+    gap: 12px;
+  }
+
+  #ws-personalizado-page .ws-carousel__arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  #ws-personalizado-page .ws-carousel__arrow--prev {
+    left: 8px;
+  }
+
+  #ws-personalizado-page .ws-carousel__arrow--next {
+    right: 8px;
+  }
+
+  #ws-personalizado-page .ws-form {
+    padding: 28px 22px;
+  }
+
+  #ws-personalizado-page .ws-support__inner {
+    flex-direction: column;
+    padding: 26px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  #ws-personalizado-page .ws-cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  #ws-personalizado-page .ws-faq__question {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  #ws-personalizado-page .ws-faq__answer {
+    padding: 0 20px 20px;
+  }
+
+  #ws-personalizado-page .ws-hero__actions .ws-btn {
+    width: 100%;
+  }
+
+  #ws-personalizado-page .ws-modal__dialog {
+    padding: 36px 26px 30px;
+  }
+}
+</style>
+
+<div id="ws-personalizado-page" data-ws-theme="light">
+
+  <!-- ==========================================================
+       SEÇÃO 1 — HEADER
+       ========================================================== -->
+  <header class="ws-header">
+    <div class="ws-container ws-header__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-nav" aria-label="Navegação principal">
+        <a href="#wscp-sobre" class="ws-nav__link">Serviços</a>
+        <a href="#wscp-investimento" class="ws-nav__link">Investimento</a>
+        <a href="#wscp-contato" class="ws-nav__link">Contato</a>
+
+        <div class="ws-theme" role="group" aria-label="Seleção de tema">
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="dark" aria-pressed="false">Dark</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="auto" aria-pressed="false">Auto</button>
+        </div>
+      </nav>
+
+      <button type="button" class="ws-menu-toggle" aria-expanded="false" aria-controls="ws-nav" aria-label="Abrir menu">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <a href="#wscp-contato" class="ws-btn ws-btn--primary ws-header__cta">Fale comigo</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       SEÇÃO 2 — HERO + CARROSSEL
+       ========================================================== -->
+  <section class="ws-hero" aria-labelledby="wscp-hero-title">
+    <div class="ws-container ws-hero__inner">
+
+      <div class="ws-reveal">
+        <p class="ws-hero__eyebrow">Site Personalizado</p>
+        <h1 class="ws-hero__title ws-serif" id="wscp-hero-title">Um site do tamanho <em>da sua ideia.</em></h1>
+        <p class="ws-hero__subtitle">Um site com quantas páginas o seu negócio precisar, estrutura pensada do zero e funcionalidades escolhidas para o seu público.</p>
+        <div class="ws-hero__actions">
+          <a href="#wscp-contato" class="ws-btn ws-btn--primary">Solicitar orçamento</a>
+          <a href="#wscp-processo" class="ws-hero__secondary">Entender como funciona</a>
+        </div>
+      </div>
+
+      <!-- Carrossel de sites personalizados.
+           Para trocar as imagens futuramente, basta substituir os
+           arquivos em assets/ e atualizar o "src" e o "alt" abaixo.
+           As legendas ficam em CAROUSEL_CAPTIONS (personalizado.js). -->
+      <div class="ws-carousel ws-reveal" aria-roledescription="carrossel" aria-label="Exemplos de sites personalizados">
+        <div class="ws-carousel__frame">
+          <div class="ws-carousel__chrome" aria-hidden="true">
+            <i></i><i></i><i></i>
+            <span class="ws-carousel__url">seunegocio.com.br</span>
+          </div>
+
+          <div class="ws-carousel__viewport">
+            <div class="ws-carousel__track" data-ws-carousel-track>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 4: Site institucional">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBzaXRlIGluc3RpdHVjaW9uYWwsIGNvbSBhcHJlc2VudGHDp8OjbyBkYSBlbXByZXNhIGUgw6FyZWFzIGRlIGF0dWHDp8OjbyI+DQogIDxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0id3NjcDEtYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxQjM1MkEiLz48c3RvcCBvZmZzZXQ9IjAuNTUiIHN0b3AtY29sb3I9IiMxMDIzMUIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwQjE3MTIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCN3c2NwMS1iZykiLz4NCiAgPGNpcmNsZSBjeD0iNjQiIGN5PSI1MiIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPg0KICA8dGV4dCB4PSI3OCIgeT0iNTgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxNyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNGNkY0RUYiPk1BUlFVRVMgQURWPC90ZXh0Pg0KICA8cmVjdCB4PSI0NzAiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI1MjgiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI1ODYiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI2NDYiIHk9IjM4IiB3aWR0aD0iOTIiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0iI0U5NEI5MSIvPg0KICA8dGV4dCB4PSI2NCIgeT0iMTM4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxldHRlci1zcGFjaW5nPSIzIiBmaWxsPSIjQThDNUIyIj5ERVNERSAyMDEwPC90ZXh0Pg0KICA8dGV4dCB4PSI2NCIgeT0iMTgyIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IiNGNEY4RjQiPlNlcmllZGFkZSBlIGN1aWRhZG88L3RleHQ+DQogIDx0ZXh0IHg9IjY0IiB5PSIyMjIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC1zdHlsZT0iaXRhbGljIiBmaWxsPSIjQThDNUIyIj5lbSBjYWRhIGNhc28uPC90ZXh0Pg0KICA8cmVjdCB4PSI2NCIgeT0iMjQ4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHJlY3QgeD0iNDcwIiB5PSIxMDQiIHdpZHRoPSIyNjYiIGhlaWdodD0iMTk2IiByeD0iMTYiIGZpbGw9IiMyNTQ2MzgiLz4NCiAgPGNpcmNsZSBjeD0iNjAzIiBjeT0iMTgwIiByPSI0NCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMzMwIiB3aWR0aD0iMjA4IiBoZWlnaHQ9IjEyOCIgcng9IjE0IiBmaWxsPSIjMTQyNjFGIiBzdHJva2U9IiNBOEM1QjIiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+DQogIDxyZWN0IHg9Ijg0IiB5PSIzNTAiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgcng9IjEwIiBmaWxsPSJub25lIiBzdHJva2U9IiNBOEM1QjIiIHN0cm9rZS1vcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iODQiIHk9IjQwMiIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iODQiIHk9IjQyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI3IiByeD0iMy41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjMiLz4NCiAgPHJlY3QgeD0iMjk2IiB5PSIzMzAiIHdpZHRoPSIyMDgiIGhlaWdodD0iMTI4IiByeD0iMTQiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMjUiLz4NCiAgPHJlY3QgeD0iMzE2IiB5PSIzNTAiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgcng9IjEwIiBmaWxsPSJub25lIiBzdHJva2U9IiNBOEM1QjIiIHN0cm9rZS1vcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iMzE2IiB5PSI0MDIiIHdpZHRoPSIxMjAiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjMxNiIgeT0iNDIwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjciIHJ4PSIzLjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMyIvPg0KICA8cmVjdCB4PSI1MjgiIHk9IjMzMCIgd2lkdGg9IjIwOCIgaGVpZ2h0PSIxMjgiIHJ4PSIxNCIgZmlsbD0iIzE0MjYxRiIgc3Ryb2tlPSIjQThDNUIyIiBzdHJva2Utb3BhY2l0eT0iMC4yNSIvPg0KICA8cmVjdCB4PSI1NDgiIHk9IjM1MCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjM2IiByeD0iMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPg0KICA8cmVjdCB4PSI1NDgiIHk9IjQwMiIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjYiLz4NCiAgPHJlY3QgeD0iNTQ4IiB5PSI0MjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zIi8+DQoNCjwvc3ZnPg0K" alt="Exemplo de site institucional, com apresentação da empresa e áreas de atuação" loading="eager" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 4: Site de portfólio">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBzaXRlIGRlIHBvcnRmw7NsaW8sIGNvbSBnYWxlcmlhIGRlIHRyYWJhbGhvcyBlIGZpbHRyb3MgcG9yIGNhdGVnb3JpYSI+DQogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRjZGNEVGIi8+DQogIDxjaXJjbGUgY3g9IjY0IiBjeT0iNTIiIHI9IjYiIGZpbGw9IiNFOTRCOTEiLz4NCiAgPHRleHQgeD0iNzgiIHk9IjU4IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjMEIxNzEzIj5MVVogRVNUw5pESU88L3RleHQ+DQogIDxyZWN0IHg9IjQ3MCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjU1Ii8+DQogIDxyZWN0IHg9IjUyOCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxyZWN0IHg9IjU4NiIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxyZWN0IHg9IjY0NiIgeT0iMzgiIHdpZHRoPSI5MiIgaGVpZ2h0PSIyOCIgcng9IjE0IiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9IjY0IiB5PSIxMzQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzMiIgZmlsbD0iIzBCMTcxMyI+UG9ydGbDs2xpbzwvdGV4dD4NCiAgPHJlY3QgeD0iMjQwIiB5PSIxMTYiIHdpZHRoPSI2MiIgaGVpZ2h0PSIyMiIgcng9IjExIiBmaWxsPSIjRTk0QjkxIiBzdHJva2U9IiNEOUQ0QzgiIHN0cm9rZS1vcGFjaXR5PSIwIi8+DQogIDxyZWN0IHg9IjMxMCIgeT0iMTE2IiB3aWR0aD0iNjIiIGhlaWdodD0iMjIiIHJ4PSIxMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDlENEM4IiBzdHJva2Utb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSIzODAiIHk9IjExNiIgd2lkdGg9IjYyIiBoZWlnaHQ9IjIyIiByeD0iMTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q5RDRDOCIgc3Ryb2tlLW9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNDUwIiB5PSIxMTYiIHdpZHRoPSI2MiIgaGVpZ2h0PSIyMiIgcng9IjExIiBmaWxsPSJub25lIiBzdHJva2U9IiNEOUQ0QzgiIHN0cm9rZS1vcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjY0IiB5PSIxNjAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMTQwIiByeD0iMTIiIGZpbGw9IiMyNTQ2MzgiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iMzgwIiB5PSIxNjAiIHdpZHRoPSIxNzAiIGhlaWdodD0iMTQwIiByeD0iMTIiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNTY2IiB5PSIxNjAiIHdpZHRoPSIxNzAiIGhlaWdodD0iMzAwIiByeD0iMTIiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNyIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMzE2IiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE0NCIgcng9IjEyIiBmaWxsPSIjRTk0QjkxIiBvcGFjaXR5PSIwLjc1Ii8+DQogIDxyZWN0IHg9IjI1MCIgeT0iMzE2IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjE0NCIgcng9IjEyIiBmaWxsPSIjMUIzNTJBIiBvcGFjaXR5PSIxIi8+DQoNCjwvc3ZnPg0K" alt="Exemplo de site de portfólio, com galeria de trabalhos e filtros por categoria" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 4: Site com blog e conteúdo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBzaXRlIGNvbSBibG9nLCBhcnRpZ29zIGVtIGRlc3RhcXVlIGUgbGlzdGEgZGUgY29udGXDumRvcyI+DQogIDxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0id3NjcDMtYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxQjM1MkEiLz48c3RvcCBvZmZzZXQ9IjAuNTUiIHN0b3AtY29sb3I9IiMxMDIzMUIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwQjE3MTIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCN3c2NwMy1iZykiLz4NCiAgPGNpcmNsZSBjeD0iNjQiIGN5PSI1MiIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPg0KICA8dGV4dCB4PSI3OCIgeT0iNTgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxNyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNGNkY0RUYiPkNPTlRFw5pETyBWSVZPPC90ZXh0Pg0KICA8cmVjdCB4PSI0NzAiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI1MjgiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI1ODYiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zNSIvPg0KICA8cmVjdCB4PSI2NDYiIHk9IjM4IiB3aWR0aD0iOTIiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0iI0U5NEI5MSIvPg0KICA8cmVjdCB4PSI2NCIgeT0iOTYiIHdpZHRoPSI0MjAiIGhlaWdodD0iMjIwIiByeD0iMTYiIGZpbGw9IiMyNTQ2MzgiLz4NCiAgPHRleHQgeD0iODgiIHk9IjI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyIgZmlsbD0iI0E4QzVCMiI+QVJUSUdPIEVNIERFU1RBUVVFPC90ZXh0Pg0KICA8dGV4dCB4PSI4OCIgeT0iMjg2IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNGNEY4RjQiPkNvbW8gcGxhbmVqYXIgbyBzZXUgYW5vPC90ZXh0Pg0KICA8cmVjdCB4PSI1MDgiIHk9Ijk2IiB3aWR0aD0iMjI4IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPg0KICA8cmVjdCB4PSI1MjAiIHk9IjEwNiIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjQ0IiByeD0iOCIgZmlsbD0iIzI1NDYzOCIvPg0KICA8cmVjdCB4PSI1NzYiIHk9IjExMiIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjU3NiIgeT0iMTMwIiB3aWR0aD0iOTAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zIi8+DQogIDxyZWN0IHg9IjUwOCIgeT0iMTc0IiB3aWR0aD0iMjI4IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPg0KICA8cmVjdCB4PSI1MjAiIHk9IjE4NCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjQ0IiByeD0iOCIgZmlsbD0iIzI1NDYzOCIvPg0KICA8cmVjdCB4PSI1NzYiIHk9IjE5MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjU3NiIgeT0iMjA4IiB3aWR0aD0iOTAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zIi8+DQogIDxyZWN0IHg9IjUwOCIgeT0iMjUyIiB3aWR0aD0iMjI4IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPg0KICA8cmVjdCB4PSI1MjAiIHk9IjI2MiIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjQ0IiByeD0iOCIgZmlsbD0iIzI1NDYzOCIvPg0KICA8cmVjdCB4PSI1NzYiIHk9IjI2OCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjU3NiIgeT0iMjg2IiB3aWR0aD0iOTAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zIi8+DQogIDxyZWN0IHg9IjY0IiB5PSIzNDQiIHdpZHRoPSIyMDgiIGhlaWdodD0iMTE2IiByeD0iMTQiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0U5NEI5MSIgc3Ryb2tlLW9wYWNpdHk9IjAuNSIvPg0KICA8cmVjdCB4PSI4MiIgeT0iMzY0IiB3aWR0aD0iNjAiIGhlaWdodD0iMTgiIHJ4PSI5IiBmaWxsPSIjRTk0QjkxIiBvcGFjaXR5PSIwLjg1Ii8+DQogIDxyZWN0IHg9IjgyIiB5PSIzOTgiIHdpZHRoPSIxNjAiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjgyIiB5PSI0MTYiIHdpZHRoPSIxMjAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC4zIi8+DQogIDxyZWN0IHg9IjI5NiIgeT0iMzQ0IiB3aWR0aD0iMjA4IiBoZWlnaHQ9IjExNiIgcng9IjE0IiBmaWxsPSIjMTQyNjFGIiBzdHJva2U9IiNBOEM1QjIiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+DQogIDxyZWN0IHg9IjMxNCIgeT0iMzY0IiB3aWR0aD0iNjAiIGhlaWdodD0iMTgiIHJ4PSI5IiBmaWxsPSIjRTk0QjkxIiBvcGFjaXR5PSIwLjg1Ii8+DQogIDxyZWN0IHg9IjMxNCIgeT0iMzk4IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPg0KICA8cmVjdCB4PSIzMTQiIHk9IjQxNiIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI3IiByeD0iMy41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjMiLz4NCiAgPHJlY3QgeD0iNTI4IiB5PSIzNDQiIHdpZHRoPSIyMDgiIGhlaWdodD0iMTE2IiByeD0iMTQiIGZpbGw9IiMxNDI2MUYiIHN0cm9rZT0iI0E4QzVCMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMjUiLz4NCiAgPHJlY3QgeD0iNTQ2IiB5PSIzNjQiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxOCIgcng9IjkiIGZpbGw9IiNFOTRCOTEiIG9wYWNpdHk9IjAuODUiLz4NCiAgPHJlY3QgeD0iNTQ2IiB5PSIzOTgiIHdpZHRoPSIxNjAiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC42Ii8+DQogIDxyZWN0IHg9IjU0NiIgeT0iNDE2IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjciIHJ4PSIzLjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMyIvPg0KDQo8L3N2Zz4NCg==" alt="Exemplo de site com blog, artigos em destaque e lista de conteúdos" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 de 4: Site de serviços com agendamento">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBzaXRlIGRlIHNlcnZpw6dvcyBjb20gYWdlbmRhbWVudG8gb25saW5lIGUgY2FsZW5kw6FyaW8gZGUgaG9yw6FyaW9zIj4NCiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGNkY0RUYiLz4NCiAgPGNpcmNsZSBjeD0iNjQiIGN5PSI1MiIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPg0KICA8dGV4dCB4PSI3OCIgeT0iNTgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxNyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiMwQjE3MTMiPlZJVkEgQ0zDjU5JQ0E8L3RleHQ+DQogIDxyZWN0IHg9IjQ3MCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjU1Ii8+DQogIDxyZWN0IHg9IjUyOCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxyZWN0IHg9IjU4NiIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjM1Ii8+DQogIDxyZWN0IHg9IjY0NiIgeT0iMzgiIHdpZHRoPSI5MiIgaGVpZ2h0PSIyOCIgcng9IjE0IiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9IjY0IiB5PSIxMzYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjMiIGZpbGw9IiMyNTQ2MzgiPkFHRU5ERSBPTkxJTkU8L3RleHQ+DQogIDx0ZXh0IHg9IjY0IiB5PSIxNzgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzMiIgZmlsbD0iIzBCMTcxMyI+Q3VpZGFkbyBxdWUgY2FiZTwvdGV4dD4NCiAgPHRleHQgeD0iNjQiIHk9IjIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjMyIiBmb250LXN0eWxlPSJpdGFsaWMiIGZpbGw9IiMyNTQ2MzgiPm5hIHN1YSByb3RpbmEuPC90ZXh0Pg0KICA8cmVjdCB4PSI2NCIgeT0iMjQ2IiB3aWR0aD0iMzMwIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8Y2lyY2xlIGN4PSI4NiIgY3k9IjI2NyIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPg0KICA8cmVjdCB4PSIxMDIiIHk9IjI2MyIgd2lkdGg9IjE1MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMzAwIiB3aWR0aD0iMzMwIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8Y2lyY2xlIGN4PSI4NiIgY3k9IjMyMSIgcj0iNiIgZmlsbD0iI0E4QzVCMiIvPg0KICA8cmVjdCB4PSIxMDIiIHk9IjMxNyIgd2lkdGg9IjEzNSIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMzU0IiB3aWR0aD0iMzMwIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8Y2lyY2xlIGN4PSI4NiIgY3k9IjM3NSIgcj0iNiIgZmlsbD0iI0E4QzVCMiIvPg0KICA8cmVjdCB4PSIxMDIiIHk9IjM3MSIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI2NCIgeT0iNDA4IiB3aWR0aD0iMzMwIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8Y2lyY2xlIGN4PSI4NiIgY3k9IjQyOSIgcj0iNiIgZmlsbD0iI0E4QzVCMiIvPg0KICA8cmVjdCB4PSIxMDIiIHk9IjQyNSIgd2lkdGg9IjEwNSIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC41NSIvPg0KICA8cmVjdCB4PSI0MzAiIHk9Ijk2IiB3aWR0aD0iMzA2IiBoZWlnaHQ9IjM2NCIgcng9IjE2IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiLz4NCiAgPHRleHQgeD0iNDU0IiB5PSIxMzIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzBCMTcxMyI+RXNjb2xoYSB1bSBob3LDoXJpbzwvdGV4dD4NCiAgPHJlY3QgeD0iNDU0IiB5PSIxNTIiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI0OTIiIHk9IjE1MiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSI1MzAiIHk9IjE1MiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSI1NjgiIHk9IjE1MiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMC40Ii8+DQogIDxyZWN0IHg9IjYwNiIgeT0iMTUyIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjY0NCIgeT0iMTUyIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjY4MiIgeT0iMTUyIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIwLjQiLz4NCiAgPHJlY3QgeD0iNDU0IiB5PSIxOTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNDkyIiB5PSIxOTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNTMwIiB5PSIxOTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI1NjgiIHk9IjE5MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0U5NEI5MSIgb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSI2MDYiIHk9IjE5MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSI2NDQiIHk9IjE5MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMC40Ii8+DQogIDxyZWN0IHg9IjY4MiIgeT0iMTkwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjQ1NCIgeT0iMjI4IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjQ5MiIgeT0iMjI4IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIwLjQiLz4NCiAgPHJlY3QgeD0iNTMwIiB5PSIyMjgiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNTY4IiB5PSIyMjgiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNjA2IiB5PSIyMjgiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI2NDQiIHk9IjIyOCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSI2ODIiIHk9IjIyOCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMSIvPg0KICA8cmVjdCB4PSI0NTQiIHk9IjI2NiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0UzRURFNiIgb3BhY2l0eT0iMC40Ii8+DQogIDxyZWN0IHg9IjQ5MiIgeT0iMjY2IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjUzMCIgeT0iMjY2IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIxIi8+DQogIDxyZWN0IHg9IjU2OCIgeT0iMjY2IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI4IiBmaWxsPSIjRTNFREU2IiBvcGFjaXR5PSIwLjQiLz4NCiAgPHJlY3QgeD0iNjA2IiB5PSIyNjYiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNjQ0IiB5PSIyNjYiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjEiLz4NCiAgPHJlY3QgeD0iNjgyIiB5PSIyNjYiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFM0VERTYiIG9wYWNpdHk9IjAuNCIvPg0KICA8cmVjdCB4PSI0NTQiIHk9IjMyMCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjI4IiByeD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8cmVjdCB4PSI1NDgiIHk9IjMyMCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjI4IiByeD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U5NEI5MSIvPg0KICA8cmVjdCB4PSI2NDIiIHk9IjMyMCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjI4IiByeD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q5RDRDOCIvPg0KICA8cmVjdCB4PSI0NTQiIHk9IjM5MCIgd2lkdGg9IjI1OCIgaGVpZ2h0PSI0MCIgcng9IjIwIiBmaWxsPSIjRTk0QjkxIi8+DQogIDx0ZXh0IHg9IjU4MyIgeT0iNDE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmIj5Db25maXJtYXIgYWdlbmRhbWVudG88L3RleHQ+DQoNCjwvc3ZnPg0K" alt="Exemplo de site de serviços com agendamento online e calendário de horários" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="ws-carousel__caption">
+            <p data-ws-carousel-caption>Institucional</p>
+            <span class="ws-carousel__count" data-ws-carousel-count aria-hidden="true">01 / 04</span>
+          </div>
+        </div>
+
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--prev" data-ws-carousel-prev aria-label="Slide anterior">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--next" data-ws-carousel-next aria-label="Próximo slide">
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <div class="ws-carousel__dots" role="tablist" aria-label="Escolher slide">
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="true" aria-label="Ir para o slide 1"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 2"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 3"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 4"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 3 — CONHEÇA O SITE PERSONALIZADO
+       ========================================================== -->
+  <section class="ws-about" id="wscp-sobre" aria-labelledby="wscp-sobre-title">
+    <div class="ws-container ws-about__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Conheça o Site Personalizado</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-sobre-title">Espaço para contar sua história, mostrar seu trabalho e crescer.</h2>
+        <p class="ws-section-head__subtitle">Clique nas perguntas para entender como ele funciona.</p>
+      </div>
+
+      <div class="ws-about__faq ws-reveal">
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            O que é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Um site com duas ou mais páginas, como início, sobre, serviços, portfólio, blog e contato, organizado de acordo com o que o seu negócio precisa comunicar.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Para quem é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Para empresas, profissionais liberais e marcas que precisam apresentar vários serviços, mostrar trabalhos realizados, publicar conteúdo ou oferecer recursos como agendamento.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Qual a diferença para a Landing Page?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>A Landing Page é uma única página com um objetivo. O Site Personalizado reúne várias páginas e funcionalidades, para quem precisa apresentar o negócio de forma mais completa.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Por que o preço é sob consulta?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Porque cada projeto é diferente: a quantidade de páginas e as funcionalidades mudam bastante o trabalho. Com as respostas do formulário, preparo um orçamento fechado para o seu caso.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4 — COMO FUNCIONA O PROCESSO
+       ========================================================== -->
+  <section class="ws-process" id="wscp-processo" aria-labelledby="wscp-processo-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Como funciona</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-processo-title">Do primeiro contato ao seu site no ar.</h2>
+        <p class="ws-section-head__subtitle">Um processo simples, organizado e pensado para transformar sua ideia em presença digital.</p>
+      </div>
+
+      <div class="ws-cards">
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">01</span>
+          <h3 class="ws-card__title ws-serif">Vamos começar?</h3>
+          <p class="ws-card__desc">Você conta sobre o seu negócio, quantas páginas imagina e o que o site precisa fazer.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">02</span>
+          <h3 class="ws-card__title ws-serif">Planejamos juntos</h3>
+          <p class="ws-card__desc">Definimos o mapa do site: as páginas, o conteúdo de cada uma e as funcionalidades. Você recebe o orçamento fechado.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M3 9h18"/>
+              <path d="M8 14h8"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">03</span>
+          <h3 class="ws-card__title ws-serif">Desenvolvimento</h3>
+          <p class="ws-card__desc">Desenvolvo as páginas, apresento uma prévia e faço os ajustes combinados antes da publicação.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">04</span>
+          <h3 class="ws-card__title ws-serif">Sua marca no ar!</h3>
+          <p class="ws-card__desc">Publico o site e mostro como atualizar textos e imagens no dia a dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4.1 — INVESTIMENTO (SOB CONSULTA)
+       ⚠️ PREENCHER: % de desconto no Pix (procure por "PREENCHER").
+       ========================================================== -->
+  <section class="ws-pricing" id="wscp-investimento" aria-labelledby="wscp-investimento-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Investimento</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-investimento-title">Um orçamento feito para o seu projeto.</h2>
+        <p class="ws-section-head__subtitle">O valor depende da quantidade de páginas e das funcionalidades. Responda ao formulário e receba um orçamento fechado, sem compromisso.</p>
+      </div>
+
+      <div class="ws-pricing__card ws-reveal">
+        <div class="ws-pricing__main">
+          <p class="ws-pricing__from">Investimento</p>
+          <p class="ws-pricing__price ws-pricing__price--consult ws-serif">Sob consulta</p>
+          <p class="ws-pricing__note">Orçamento fechado, com tudo descrito antes de começarmos.</p>
+
+          <h3 class="ws-pricing__subtitle">Formas de pagamento</h3>
+          <ul class="ws-pricing__pay">
+            <!-- PREENCHER: % de desconto no Pix -->
+            <li><strong>Pix à vista</strong> com 0% de desconto</li>
+            <li><strong>50% na entrada</strong> e 50% na entrega</li>
+            <li><strong>Cartão de crédito</strong> parcelado, sem desconto</li>
+          </ul>
+
+          <a href="#wscp-contato" class="ws-btn ws-btn--primary ws-pricing__cta">Solicitar orçamento</a>
+        </div>
+
+        <div class="ws-pricing__details">
+          <h3 class="ws-pricing__subtitle">Todo Site Personalizado inclui</h3>
+          <ul class="ws-pricing__list">
+            <li>Páginas planejadas para o seu negócio, na quantidade combinada</li>
+            <li>Site adaptado para celular, tablet e computador</li>
+            <li>Textos escritos por mim, caso você ainda não os tenha</li>
+            <li>Botão de WhatsApp integrado e formulário de contato</li>
+            <li>Funcionalidades combinadas no orçamento (blog, agendamento, galeria etc.)</li>
+            <li>Uso do seu domínio ou registro de um novo, caso você ainda não tenha</li>
+            <li>Publicação do site no ar</li>
+            <li>Orientação para atualizar textos e imagens</li>
+            <li>2 meses de suporte após a entrega</li>
+            <li>Entrega em 10 a 20 dias úteis<sup>*</sup></li>
+          </ul>
+
+          <h3 class="ws-pricing__subtitle">O que você me envia</h3>
+          <p class="ws-pricing__text">Logo, imagens do seu negócio, as informações de cada página e, se tiver, sites que você admira como referência.</p>
+
+          <p class="ws-pricing__foot"><sup>*</sup> O prazo final é confirmado no orçamento, conforme o número de páginas e funcionalidades, e começa após o alinhamento do escopo e o recebimento dos materiais. Hospedagem: publico na sua ou cuido disso para você, com valor informado no orçamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 5 — FORMULÁRIO DE CONTATO
+       ========================================================== -->
+  <section class="ws-contact" id="wscp-contato" aria-labelledby="wscp-contato-title">
+    <div class="ws-container ws-contact__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Contato</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-contato-title">Vamos desenhar o seu site?</h2>
+        <p class="ws-section-head__subtitle">Quanto mais você contar, mais preciso fica o orçamento. Em breve, entro em contato para conversarmos sobre o seu projeto.</p>
+      </div>
+
+      <!-- Campos com data-ws-field são validados pelo JS.
+           Campos sem "required" são opcionais. Todo campo com "name"
+           entra no e-mail automaticamente, usando o texto do rótulo. -->
+      <form class="ws-form ws-reveal" id="wscp-form" novalidate>
+        <!-- Anti-spam (honeypot): invisível para pessoas, bots costumam preencher -->
+        <input type="checkbox" name="botcheck" class="ws-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-nome">Nome e sobrenome</label>
+            <input class="ws-field__input" type="text" id="wscp-nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required aria-required="true" aria-describedby="wscp-nome-erro">
+            <p class="ws-field__error" id="wscp-nome-erro">Informe seu nome e sobrenome.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-email">E-mail</label>
+            <input class="ws-field__input" type="email" id="wscp-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true" aria-describedby="wscp-email-erro">
+            <p class="ws-field__error" id="wscp-email-erro">Informe um e-mail válido.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-telefone">WhatsApp</label>
+            <input class="ws-field__input" type="tel" id="wscp-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true" aria-describedby="wscp-telefone-erro">
+            <p class="ws-field__error" id="wscp-telefone-erro">Informe um WhatsApp com DDD.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-negocio">Nome do negócio ou marca</label>
+            <input class="ws-field__input" type="text" id="wscp-negocio" name="negocio" placeholder="Ex.: Marques Advocacia" autocomplete="organization" required aria-required="true" aria-describedby="wscp-negocio-erro">
+            <p class="ws-field__error" id="wscp-negocio-erro">Informe o nome do seu negócio ou marca.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-area">Área de atuação <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wscp-area" name="area" placeholder="Ex.: advocacia, fotografia, clínica">
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-tipo-site">Tipo de site</label>
+            <select class="ws-field__input ws-field__select" id="wscp-tipo-site" name="tipo_site" required aria-required="true" aria-describedby="wscp-tipo-site-erro">
+              <option value="">Selecione</option>
+              <option>Institucional (apresentar a empresa)</option>
+              <option>Portfólio (mostrar trabalhos)</option>
+              <option>Blog ou site de conteúdo</option>
+              <option>Serviços com agendamento</option>
+              <option>Catálogo de produtos (sem venda online)</option>
+              <option>Outro</option>
+            </select>
+            <p class="ws-field__error" id="wscp-tipo-site-erro">Escolha o tipo de site que mais se aproxima da sua ideia.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-paginas">Quantas páginas?</label>
+            <select class="ws-field__input ws-field__select" id="wscp-paginas" name="paginas" required aria-required="true" aria-describedby="wscp-paginas-erro">
+              <option value="">Selecione</option>
+              <option>2 a 3 páginas</option>
+              <option>4 a 6 páginas</option>
+              <option>7 a 10 páginas</option>
+              <option>Mais de 10 páginas</option>
+              <option>Ainda não sei</option>
+            </select>
+            <p class="ws-field__error" id="wscp-paginas-erro">Escolha uma quantidade aproximada (ou "Ainda não sei").</p>
+          </div>
+        </div>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Quais páginas você imagina? <span class="ws-field__opt">(opcional, marque quantas quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Início"><span>Início</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Sobre"><span>Sobre / quem somos</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Serviços"><span>Serviços</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Portfólio / galeria"><span>Portfólio / galeria</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Depoimentos"><span>Depoimentos</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Blog"><span>Blog</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Perguntas frequentes"><span>Perguntas frequentes</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Contato"><span>Contato</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Funcionalidades desejadas <span class="ws-field__opt">(opcional, marque quantas quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Formulário de contato"><span>Formulário de contato</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Agendamento online"><span>Agendamento online</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Blog com publicações"><span>Blog com publicações</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Galeria de fotos ou vídeos"><span>Galeria de fotos ou vídeos</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Integração com Instagram"><span>Integração com Instagram</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Mapa e localização"><span>Mapa e localização</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Área restrita com login"><span>Área restrita com login</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Site em mais de um idioma"><span>Site em mais de um idioma</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">O que você já tem? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="possui" value="Logo / identidade visual"><span>Logo / identidade visual</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Domínio"><span>Domínio (ex.: seunegocio.com.br)</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Hospedagem"><span>Hospedagem</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Textos prontos"><span>Textos prontos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Imagens"><span>Imagens do negócio</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Site atual"><span>Site atual (para refazer)</span></label>
+          </div>
+        </fieldset>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-prazo">Quando gostaria de começar? <span class="ws-field__opt">(opcional)</span></label>
+            <select class="ws-field__input ws-field__select" id="wscp-prazo" name="prazo">
+              <option value="">Selecione</option>
+              <option>O quanto antes</option>
+              <option>Nas próximas semanas</option>
+              <option>Ainda estou pesquisando</option>
+            </select>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-redes">Instagram ou site atual <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wscp-redes" name="redes" placeholder="@seunegocio ou www.seunegocio.com.br">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-referencias">Sites que você admira <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wscp-referencias" name="referencias" placeholder="Links de sites que podem servir de referência">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-mensagem">Conte um pouco sobre o projeto <span class="ws-field__opt">(opcional)</span></label>
+            <textarea class="ws-field__input ws-field__textarea" id="wscp-mensagem" name="mensagem" rows="4" maxlength="1500" placeholder="O que você oferece, para quem, e o que o site precisa resolver."></textarea>
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field ws-field--consent" data-ws-field>
+            <label class="ws-check">
+              <input type="checkbox" id="wscp-consentimento" name="consentimento" value="sim" required aria-required="true" aria-describedby="wscp-consentimento-erro">
+              <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+              <span>Li e concordo com a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato pelos canais informados.</span>
+            </label>
+            <p class="ws-field__error" id="wscp-consentimento-erro">Para continuar, é preciso concordar com a Política de Privacidade.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__actions">
+          <button type="submit" class="ws-btn ws-btn--primary ws-form__submit" data-ws-submit>Enviar interesse</button>
+          <p class="ws-form__hint">Seus dados serão usados apenas para que eu entre em contato com você sobre este projeto.</p>
+          <p class="ws-form__status" data-ws-form-status role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 7 — INFORMAÇÃO SOBRE SUPORTE
+       ========================================================== -->
+  <section class="ws-support" aria-labelledby="wscp-suporte-title">
+    <div class="ws-container">
+      <div class="ws-support__inner ws-reveal">
+        <span class="ws-support__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <div>
+          <h2 class="ws-support__title ws-serif" id="wscp-suporte-title">Seu projeto continua acompanhado.</h2>
+          <p class="ws-support__desc">Após a entrega do seu Site Personalizado, você contará com 2 meses de suporte incluídos no contrato para orientações e auxílio relacionados ao site, conforme as condições acordadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 8 — FOOTER
+       ========================================================== -->
+  <footer class="ws-footer">
+    <div class="ws-container ws-footer__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-footer__nav" aria-label="Navegação do rodapé">
+        <a href="#wscp-sobre" class="ws-footer__link">Serviços</a>
+        <a href="#wscp-investimento" class="ws-footer__link">Investimento</a>
+        <a href="#wscp-contato" class="ws-footer__link">Contato</a>
+        <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+        <a href="/politica-de-privacidade/" class="ws-footer__link">Política de Privacidade</a>
+      </nav>
+
+      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WebStudio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       SEÇÃO 6 — POPUP DE AGRADECIMENTO
+       ========================================================== -->
+  <div class="ws-modal" id="wscp-modal" hidden>
+    <button type="button" class="ws-modal__backdrop" data-ws-modal-close tabindex="-1" aria-label="Fechar mensagem"></button>
+    <div class="ws-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="wscp-modal-title" aria-describedby="wscp-modal-text">
+      <span class="ws-modal__badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </span>
+      <!-- Título e texto são trocados pelo JS conforme o resultado do envio -->
+      <h2 class="ws-modal__title ws-serif" id="wscp-modal-title">Que bom ter você por aqui!</h2>
+      <p class="ws-modal__text" id="wscp-modal-text"></p>
+      <div class="ws-modal__actions">
+        <a href="#" class="ws-btn ws-btn--primary ws-modal__whatsapp" data-ws-modal-whatsapp target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+        <button type="button" class="ws-btn ws-btn--ghost ws-modal__close" data-ws-modal-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /#ws-personalizado-page -->
+
+<script>
+/* ============================================================
+   WEBSTUDIO — Página do serviço Site Personalizado
+   JavaScript puro (sem jQuery, sem build).
+   Encapsulado em IIFE; inicializa apenas dentro de
+   #ws-personalizado-page, sem conflitar com outros scripts.
+   ============================================================ */
+
+(function () {
+  "use strict";
+
+  /* ============================================================
+     ⚙️ CONFIGURAÇÃO — EDITE APENAS ESTE BLOCO
+     ============================================================
+     1) ENVIO POR E-MAIL (Web3Forms — https://web3forms.com):
+        Crie uma chave gratuita informando o e-mail que receberá os
+        contatos e cole em WEB3FORMS_ACCESS_KEY. A chave é pública
+        (feita para ficar no navegador); ela só permite ENVIAR para
+        o e-mail cadastrado.
+
+     2) WHATSAPP:
+        Número com código do país + DDD, apenas dígitos.
+        Ex.: "5511999999999". Usado no botão "Continuar no WhatsApp"
+        e como alternativa se o envio por e-mail falhar.
+
+     3) TEMA:
+        Esta página compartilha a MESMA chave de localStorage do site
+        principal ("ss-theme-preference"), para respeitar a escolha
+        Light / Dark / Auto feita pelo visitante em qualquer página.
+     ============================================================ */
+
+  var WEB3FORMS_ACCESS_KEY = ""; // <-- COLE SUA CHAVE DO WEB3FORMS AQUI
+  var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
+
+  /* Dados desta página de serviço */
+  var SERVICE_NAME = "Site Personalizado";   // usado no e-mail, no WhatsApp e no popup
+  var SERVICE_ARTICLE = "um";         // "uma Landing Page" / "um E-commerce"
+  var WHATSAPP_SUMMARY_FIELDS = ["nome", "negocio", "tipo_site", "paginas"]; // campos (name) no resumo do WhatsApp
+  var CAROUSEL_CAPTIONS = ["Institucional", "Portfólio", "Blog e conteúdo", "Serviços e agendamento"];
+
+  var THEME_STORAGE_KEY = "ss-theme-preference"; // mesma chave do site principal
+  var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (confortável)
+
+  /* ============================================================
+     TEMA: Light | Dark | Auto (mesmo comportamento do site principal)
+     - Auto: 06:00–18:59 = Light | 19:00–05:59 = Dark
+     ============================================================ */
+
+  var memoryStore = { value: null };
+  var store = {
+    get: function () {
+      try {
+        return window.localStorage.getItem(THEME_STORAGE_KEY);
+      } catch (e) {
+        return memoryStore.value;
+      }
+    },
+    set: function (val) {
+      try {
+        window.localStorage.setItem(THEME_STORAGE_KEY, val);
+      } catch (e) {
+        memoryStore.value = val;
+      }
+    },
+    remove: function () {
+      try {
+        window.localStorage.removeItem(THEME_STORAGE_KEY);
+      } catch (e) {
+        memoryStore.value = null;
+      }
+    }
+  };
+
+  function themeByTime() {
+    var hour = new Date().getHours();
+    return hour >= 6 && hour <= 18 ? "light" : "dark";
+  }
+
+  function effectiveTheme(preference) {
+    if (preference === "light" || preference === "dark") return preference;
+    return themeByTime();
+  }
+
+  function syncThemeButtons(root, preference) {
+    var btns = root.querySelectorAll(".ws-theme__btn");
+    for (var i = 0; i < btns.length; i++) {
+      var active = btns[i].getAttribute("data-ws-theme-choice") === preference;
+      btns[i].setAttribute("aria-pressed", active ? "true" : "false");
+    }
+  }
+
+  function applyTheme(root, preference) {
+    var theme = effectiveTheme(preference);
+    root.setAttribute("data-ws-theme", theme);
+    root.setAttribute("data-ws-theme-effective", theme);
+    syncThemeButtons(root, preference);
+  }
+
+  function initTheme(root) {
+    var saved = store.get();
+    applyTheme(root, saved || "auto");
+
+    root.addEventListener("click", function (ev) {
+      var btn = ev.target.closest ? ev.target.closest(".ws-theme__btn") : null;
+      if (!btn || !root.contains(btn)) return;
+      var choice = btn.getAttribute("data-ws-theme-choice");
+      if (!choice) return;
+
+      if (choice === "auto") {
+        store.remove();
+      } else {
+        store.set(choice);
+      }
+      applyTheme(root, store.get() || "auto");
+    });
+
+    setInterval(function () {
+      if ((store.get() || "auto") === "auto") {
+        applyTheme(root, "auto");
+      }
+    }, 60000);
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && (store.get() || "auto") === "auto") {
+        applyTheme(root, "auto");
+      }
+    });
+  }
+
+  /* ============================================================
+     MENU MOBILE
+     ============================================================ */
+  function initMobileMenu(root) {
+    var toggle = root.querySelector(".ws-menu-toggle");
+    var nav = root.querySelector(".ws-nav");
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("ws-nav--open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    nav.addEventListener("click", function (ev) {
+      if (ev.target.closest && ev.target.closest("a")) {
+        nav.classList.remove("ws-nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    root.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && nav.classList.contains("ws-nav--open")) {
+        nav.classList.remove("ws-nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
+  }
+
+  /* ============================================================
+     ACORDEÃO "CONHEÇA A LANDING PAGE"
+     - Usa <details>/<summary> nativos (sem dependências)
+     - Apenas uma pergunta aberta por vez
+     ============================================================ */
+  function initAboutFaq(root) {
+    var list = root.querySelector(".ws-about__faq");
+    if (!list || list.getAttribute("data-ws-faq-init") === "true") return;
+    list.setAttribute("data-ws-faq-init", "true");
+
+    var items = list.querySelectorAll("details.ws-faq__item");
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("toggle", (function (item) {
+        return function () {
+          if (!item.open) return;
+          for (var j = 0; j < items.length; j++) {
+            if (items[j] !== item) {
+              items[j].open = false;
+            }
+          }
+        };
+      })(items[i]));
+    }
+  }
+
+  /* ============================================================
+     CARROSSEL
+     - Setas, indicadores, teclado (← →), toque/swipe
+     - Autoplay com pausa em interação e hover/foco
+     - Desativado quando o usuário prefere movimento reduzido
+     ============================================================ */
+  function initCarousel(root) {
+    var carousel = root.querySelector("[data-ws-carousel-track]");
+    if (!carousel || carousel.getAttribute("data-ws-carousel-init") === "true") return;
+    carousel.setAttribute("data-ws-carousel-init", "true");
+
+    var region = carousel.closest(".ws-carousel");
+    var slides = carousel.children;
+    var total = slides.length;
+    if (!region || total === 0) return;
+
+    var dots = region.querySelectorAll(".ws-carousel__dot");
+    var caption = region.querySelector("[data-ws-carousel-caption]");
+    var count = region.querySelector("[data-ws-carousel-count]");
+    var captions = CAROUSEL_CAPTIONS;
+
+    var index = 0;
+    var timer = null;
+    var paused = false;
+
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function pad(n) {
+      return n < 10 ? "0" + n : String(n);
+    }
+
+    function render() {
+      carousel.style.transform = "translateX(-" + index * 100 + "%)";
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].setAttribute("aria-selected", i === index ? "true" : "false");
+      }
+      if (caption) caption.textContent = captions[index] || "";
+      if (count) count.textContent = pad(index + 1) + " / " + pad(total);
+    }
+
+    function goTo(next) {
+      index = (next + total) % total;
+      render();
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (paused || (reduceMotion && reduceMotion.matches)) return;
+      timer = setInterval(function () {
+        goTo(index + 1);
+      }, CAROUSEL_INTERVAL_MS);
+    }
+
+    function stopAutoplay() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    // Controles
+    var prev = region.querySelector("[data-ws-carousel-prev]");
+    var next = region.querySelector("[data-ws-carousel-next]");
+
+    if (prev) {
+      prev.addEventListener("click", function () {
+        goTo(index - 1);
+        startAutoplay(); // reinicia a contagem após interação
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", function () {
+        goTo(index + 1);
+        startAutoplay();
+      });
+    }
+
+    for (var d = 0; d < dots.length; d++) {
+      (function (dot, i) {
+        dot.addEventListener("click", function () {
+          index = i;
+          render();
+          startAutoplay();
+        });
+      })(dots[d], d);
+    }
+
+    // Pausa em hover e foco
+    region.addEventListener("mouseenter", function () {
+      paused = true;
+      stopAutoplay();
+    });
+
+    region.addEventListener("mouseleave", function () {
+      paused = false;
+      startAutoplay();
+    });
+
+    region.addEventListener("focusin", function () {
+      paused = true;
+      stopAutoplay();
+    });
+
+    region.addEventListener("focusout", function (ev) {
+      // Só retoma o autoplay quando o foco sai de fato do carrossel
+      if (ev.relatedTarget && region.contains(ev.relatedTarget)) return;
+      paused = false;
+      startAutoplay();
+    });
+
+    // Teclado (setas) quando o carrossel tem foco
+    region.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") {
+        goTo(index - 1);
+        startAutoplay();
+      } else if (ev.key === "ArrowRight") {
+        goTo(index + 1);
+        startAutoplay();
+      }
+    });
+
+    // Swipe / arrastar (funciona em dispositivos móveis)
+    // O "pointerup" é observado na janela para capturar gestos
+    // que terminam fora do carrossel.
+    var startX = null;
+
+    carousel.addEventListener("pointerdown", function (ev) {
+      startX = ev.clientX;
+      stopAutoplay();
+    });
+
+    window.addEventListener("pointerup", function (ev) {
+      if (startX === null) return;
+      var delta = ev.clientX - startX;
+      startX = null;
+      if (Math.abs(delta) > 40) {
+        goTo(delta < 0 ? index + 1 : index - 1);
+      }
+      startAutoplay();
+    });
+
+    carousel.addEventListener("pointercancel", function () {
+      startX = null;
+      startAutoplay();
+    });
+
+    // Evita arrastar as imagens junto com o swipe
+    carousel.addEventListener("dragstart", function (ev) {
+      ev.preventDefault();
+    });
+
+    // Respeita mudanças na preferência de movimento reduzido
+    if (reduceMotion) {
+      var onMotionChange = function () {
+        if (reduceMotion.matches) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      };
+      if (reduceMotion.addEventListener) {
+        reduceMotion.addEventListener("change", onMotionChange);
+      }
+    }
+
+    // Pausa quando a aba não está visível
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") {
+        startAutoplay();
+      } else {
+        stopAutoplay();
+      }
+    });
+
+    render();
+    startAutoplay();
+  }
+
+  /* ============================================================
+     FORMULÁRIO
+     - Máscara de telefone brasileiro
+     - Validação de obrigatórios, e-mail, telefone e consentimento
+     - Envio por e-mail (Web3Forms) + continuação no WhatsApp
+     - Nunca informa "recebido" se o envio falhou
+     ============================================================ */
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function formatPhone(value) {
+    var digits = value.replace(/\D/g, "").slice(0, 11);
+    if (digits.length === 0) return "";
+    if (digits.length <= 2) return "(" + digits;
+    if (digits.length <= 6) return "(" + digits.slice(0, 2) + ") " + digits.slice(2);
+    if (digits.length <= 10) {
+      return "(" + digits.slice(0, 2) + ") " + digits.slice(2, 6) + "-" + digits.slice(6);
+    }
+    return "(" + digits.slice(0, 2) + ") " + digits.slice(2, 7) + "-" + digits.slice(7);
+  }
+
+  function fieldControl(field) {
+    return field.querySelector("input, select, textarea");
+  }
+
+  function setFieldError(field, invalid) {
+    field.classList.toggle("ws-field--invalid", invalid);
+    var input = fieldControl(field);
+    if (input) {
+      if (invalid) {
+        input.setAttribute("aria-invalid", "true");
+      } else {
+        input.removeAttribute("aria-invalid");
+      }
+    }
+  }
+
+  function validateField(field) {
+    var input = fieldControl(field);
+    if (!input) return true;
+
+    var required = input.hasAttribute("required");
+    var invalid = false;
+
+    if (input.type === "checkbox") {
+      invalid = required && !input.checked;
+    } else {
+      var value = (input.value || "").trim();
+      if (required && value === "") {
+        invalid = true;
+      } else if (input.type === "email" && value !== "" && !EMAIL_RE.test(value)) {
+        invalid = true;
+      } else if (input.type === "tel" && value !== "") {
+        var digits = value.replace(/\D/g, "");
+        invalid = digits.length < 10 || digits.length > 11;
+      } else if (input.name === "nome" && value !== "" && value.split(/\s+/).length < 2) {
+        invalid = true; // pede nome e sobrenome
+      }
+    }
+
+    setFieldError(field, invalid);
+    return !invalid;
+  }
+
+  function fieldValue(form, name) {
+    var el = form.elements[name];
+    return el && el.value ? String(el.value).trim() : "";
+  }
+
+  /* Texto do rótulo de um campo, sem o "(opcional ...)" */
+  function fieldLabel(form, el) {
+    var text = "";
+    var fieldset = el.type === "checkbox" ? el.closest("fieldset") : null;
+    if (fieldset && fieldset.querySelector("legend")) {
+      text = fieldset.querySelector("legend").textContent;
+    } else if (el.id && form.querySelector("label[for='" + el.id + "']")) {
+      text = form.querySelector("label[for='" + el.id + "']").textContent;
+    } else {
+      text = el.name;
+    }
+    return text.replace(/\(.*?\)/g, "").replace(/\s+/g, " ").trim();
+  }
+
+  /* Lê TODOS os campos do formulário pelo atributo "name", na ordem
+     em que aparecem. Assim, novos campos no HTML entram no e-mail
+     automaticamente, sem alterar o JS.
+     Checkboxes com o mesmo "name" viram uma lista separada por vírgulas. */
+  function collectLead(form) {
+    var IGNORE = { botcheck: true, consentimento: true };
+    var fields = [];
+    var index = {};
+    var els = form.elements;
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (!el.name || IGNORE[el.name] || el.type === "submit" || el.type === "button") continue;
+
+      if (!(el.name in index)) {
+        index[el.name] = fields.length;
+        fields.push({ name: el.name, label: fieldLabel(form, el), values: [] });
+      }
+      var value = el.type === "checkbox" ? (el.checked ? el.value : "") : String(el.value || "").trim();
+      if (value) fields[index[el.name]].values.push(value);
+    }
+
+    var lead = {
+      fields: fields,
+      botcheck: !!(form.elements.botcheck && form.elements.botcheck.checked)
+    };
+    for (var j = 0; j < fields.length; j++) {
+      lead[fields[j].name] = fields[j].values.join(", ");
+    }
+    return lead;
+  }
+
+  /* Link do WhatsApp com um resumo curto (sem e-mail/telefone:
+     a conversa já identifica o número de quem envia). */
+  function whatsappLink(lead) {
+    var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
+    if (!number) return "";
+    var lines = ["Olá! Tenho interesse em " + SERVICE_ARTICLE + " " + SERVICE_NAME + "."];
+    if (lead) {
+      for (var i = 0; i < lead.fields.length; i++) {
+        var f = lead.fields[i];
+        if (WHATSAPP_SUMMARY_FIELDS.indexOf(f.name) > -1 && f.values.length) {
+          lines.push(f.label.replace(/\?$/, "") + ": " + f.values.join(", "));
+        }
+      }
+    }
+    return "https://wa.me/" + number + "?text=" + encodeURIComponent(lines.join("\n"));
+  }
+
+  /* Envio por e-mail via Web3Forms.
+     Chama done(true) se enviado; done(false) se falhou ou não configurado. */
+  function submitLead(lead, done) {
+    if (!WEB3FORMS_ACCESS_KEY || !window.fetch) {
+      done(false);
+      return;
+    }
+
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "Novo interesse em " + SERVICE_NAME + " — " + (lead.negocio || lead.nome),
+      from_name: "Site WebStudio",
+      replyto: lead.email,
+      "Serviço": SERVICE_NAME
+    };
+    for (var i = 0; i < lead.fields.length; i++) {
+      payload[lead.fields[i].label] = lead.fields[i].values.join(", ") || "—";
+    }
+    payload["Consentimento (LGPD)"] = "Aceitou a Política de Privacidade em " + new Date().toLocaleString("pt-BR");
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().then(function (json) {
+          done(!!(res.ok && json && json.success));
+        });
+      })
+      .catch(function () {
+        done(false);
+      });
+  }
+
+  function initForm(root, modal) {
+    var form = root.querySelector("#wscp-form");
+    if (!form || form.getAttribute("data-ws-form-init") === "true") return;
+    form.setAttribute("data-ws-form-init", "true");
+
+    var submitBtn = form.querySelector("[data-ws-submit]");
+    var submitLabel = submitBtn ? submitBtn.textContent : "";
+    var status = form.querySelector("[data-ws-form-status]");
+    var sending = false;
+
+    var phone = form.querySelector("#wscp-telefone");
+    if (phone) {
+      phone.addEventListener("input", function () {
+        var pos = phone.value.length;
+        phone.value = formatPhone(phone.value);
+        // Mantém o cursor no fim enquanto digita
+        if (pos === phone.value.length - 1) {
+          try {
+            phone.setSelectionRange(phone.value.length, phone.value.length);
+          } catch (e) { /* noop */ }
+        }
+      });
+    }
+
+    // Revalida ao sair do campo (feedback imediato, discreto)
+    var fields = form.querySelectorAll("[data-ws-field]");
+    for (var i = 0; i < fields.length; i++) {
+      (function (field) {
+        var input = fieldControl(field);
+        if (!input) return;
+        var isToggle = input.type === "checkbox" || input.tagName === "SELECT";
+        if (!isToggle) {
+          input.addEventListener("blur", function () {
+            if (input.value.trim() !== "") validateField(field);
+          });
+        }
+        input.addEventListener(isToggle ? "change" : "input", function () {
+          if (field.classList.contains("ws-field--invalid")) {
+            validateField(field); // remove o erro assim que corrigir
+          }
+        });
+      })(fields[i]);
+    }
+
+    function setSending(on) {
+      sending = on;
+      if (submitBtn) {
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? "Enviando…" : submitLabel;
+      }
+      if (status) status.textContent = on ? "Enviando suas informações…" : "";
+    }
+
+    function clearForm() {
+      form.reset();
+      for (var k = 0; k < fields.length; k++) setFieldError(fields[k], false);
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (sending) return;
+
+      var firstInvalid = null;
+      for (var j = 0; j < fields.length; j++) {
+        if (!validateField(fields[j]) && !firstInvalid) firstInvalid = fields[j];
+      }
+
+      if (firstInvalid) {
+        var input = fieldControl(firstInvalid);
+        if (input) input.focus();
+        return;
+      }
+
+      var lead = collectLead(form);
+
+      // Honeypot marcado = bot: finge sucesso sem enviar nada
+      if (lead.botcheck) {
+        clearForm();
+        modal.open("success", "");
+        return;
+      }
+
+      var wa = whatsappLink(lead);
+
+      setSending(true);
+      submitLead(lead, function (ok) {
+        setSending(false);
+        if (ok) {
+          clearForm();
+          modal.open("success", wa);
+        } else {
+          // Mantém os dados preenchidos para uma nova tentativa
+          modal.open(wa ? "fallback" : "error", wa);
+        }
+      });
+    });
+  }
+
+  /* ============================================================
+     MODAL DE AGRADECIMENTO
+     - Fecha com botão, clique fora ou ESC
+     - Bloqueia a rolagem do fundo
+     - Foco controlado (abre no botão Fechar; devolve ao enviar)
+     ============================================================ */
+  function initModal(root) {
+    var modal = root.querySelector("#wscp-modal");
+    if (!modal || modal.getAttribute("data-ws-modal-init") === "true") return;
+    modal.setAttribute("data-ws-modal-init", "true");
+
+    var dialog = modal.querySelector(".ws-modal__dialog");
+    var titleEl = modal.querySelector(".ws-modal__title");
+    var textEl = modal.querySelector(".ws-modal__text");
+    var waBtn = modal.querySelector("[data-ws-modal-whatsapp]");
+    var lastFocus = null;
+
+    // Mensagens por resultado do envio
+    var STATES = {
+      success: {
+        title: "Que bom ter você por aqui!",
+        text: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
+        textNoWa: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+      },
+      fallback: {
+        title: "Quase lá!",
+        text: "Não consegui registrar seu envio agora.\n\nToque no botão abaixo para me enviar suas informações pelo WhatsApp. Seus dados continuam preenchidos no formulário."
+      },
+      error: {
+        title: "Algo deu errado",
+        text: "Não consegui registrar seu envio agora. Seus dados continuam preenchidos no formulário.\n\nTente novamente em alguns instantes."
+      }
+    };
+
+    function open(state, waUrl) {
+      var cfg = STATES[state] || STATES.success;
+      if (titleEl) titleEl.textContent = cfg.title;
+      if (textEl) textEl.textContent = !waUrl && cfg.textNoWa ? cfg.textNoWa : cfg.text;
+      if (waBtn) {
+        waBtn.hidden = !waUrl;
+        waBtn.setAttribute("href", waUrl || "#");
+      }
+
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+
+      // Bloqueia a rolagem do fundo
+      var body = document.body;
+      body.setAttribute("data-ws-scroll-lock", "true");
+      body.style.overflow = "hidden";
+
+      var focusBtn = waUrl && waBtn ? waBtn : modal.querySelector(".ws-modal__close");
+      if (focusBtn) focusBtn.focus();
+
+      document.addEventListener("keydown", onKeydown);
+    }
+
+    function close() {
+      modal.hidden = true;
+
+      var body = document.body;
+      body.style.overflow = "";
+      body.removeAttribute("data-ws-scroll-lock");
+
+      document.removeEventListener("keydown", onKeydown);
+
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
+      }
+      lastFocus = null;
+    }
+
+    function onKeydown(ev) {
+      if (ev.key === "Escape") {
+        close();
+        return;
+      }
+
+      // Mantém o foco dentro do diálogo (Tab / Shift+Tab)
+      if (ev.key === "Tab" && dialog) {
+        var focusables = dialog.querySelectorAll("button:not([hidden]), [href]:not([hidden]), input, [tabindex]:not([tabindex='-1'])");
+        if (!focusables.length) return;
+        var first = focusables[0];
+        var last = focusables[focusables.length - 1];
+
+        if (ev.shiftKey && document.activeElement === first) {
+          ev.preventDefault();
+          last.focus();
+        } else if (!ev.shiftKey && document.activeElement === last) {
+          ev.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    var closers = modal.querySelectorAll("[data-ws-modal-close]");
+    for (var i = 0; i < closers.length; i++) {
+      closers[i].addEventListener("click", close);
+    }
+
+    return { open: open, close: close };
+  }
+
+  /* ============================================================
+     ANIMAÇÕES LEVES DE ENTRADA (IntersectionObserver)
+     ============================================================ */
+  function initReveals(root) {
+    var items = root.querySelectorAll(".ws-reveal");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      for (var i = 0; i < items.length; i++) {
+        items[i].classList.add("ws-visible");
+      }
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        for (var j = 0; j < entries.length; j++) {
+          if (entries[j].isIntersecting) {
+            entries[j].target.classList.add("ws-visible");
+            observer.unobserve(entries[j].target);
+          }
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    for (var k = 0; k < items.length; k++) {
+      observer.observe(items[k]);
+    }
+  }
+
+  /* ============================================================
+     INICIALIZAÇÃO
+     Roda para cada instância de #ws-personalizado-page na página.
+     ============================================================ */
+  function init() {
+    var roots = document.querySelectorAll("#ws-personalizado-page");
+    for (var i = 0; i < roots.length; i++) {
+      var root = roots[i];
+      if (root.getAttribute("data-ws-init") === "true") continue; // evita dupla inicialização
+      root.setAttribute("data-ws-init", "true");
+
+      var modalApi = initModal(root);
+
+      initTheme(root);
+      initMobileMenu(root);
+      initAboutFaq(root);
+      initCarousel(root);
+      initForm(root, modalApi || { open: function () {} });
+      initReveals(root);
+
+      // Ano automático no copyright
+      var yearEl = root.querySelector("[data-ws-year]");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      // Habilita transições só depois do tema definido (anti-flash)
+      requestAnimationFrame(
+        function (el) {
+          return function () {
+            el.classList.add("ws-ready");
+          };
+        }(root)
+      );
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>

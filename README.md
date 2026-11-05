@@ -37,6 +37,12 @@ O projeto é distribuído em duas formas equivalentes: uma versão de desenvolvi
 │   ├── landingpage.html/.css/.js
 │   ├── assets/                # Imagens do carrossel (embutidas na versão Elementor)
 │   └── elementor-landingpage.html  # GERADO
+├── s-ecommerce/               # Página do serviço E-commerce (escopada em #ws-ecommerce-page)
+│   ├── ecommerce.html/.css/.js, assets/
+│   └── elementor-ecommerce.html     # GERADO
+├── s-personalizado/           # Página do Site Personalizado, sob consulta (#ws-personalizado-page)
+│   ├── personalizado.html/.css/.js, assets/
+│   └── elementor-personalizado.html # GERADO
 ├── s-privacidade/
 │   └── politica-de-privacidade.html # Política de Privacidade (autocontida, pronta para o Elementor)
 ├── build-elementor.py         # Gera os arquivos consolidados do Elementor
@@ -75,7 +81,8 @@ Não edite os arquivos gerados à mão: as mudanças seriam sobrescritas.
 
 ## Limitações conhecidas
 
-- Sem backend próprio. O formulário da página de Landing Page envia por e-mail via Web3Forms e oferece continuar no WhatsApp; configure `WEB3FORMS_ACCESS_KEY` e `WHATSAPP_NUMBER` no topo de `s-landingpage/landingpage.js`. Sem essa configuração, o formulário mostra uma mensagem de erro e mantém os dados preenchidos (nunca confirma um envio que não aconteceu).
+- As três páginas de serviço compartilham o mesmo CSS/JS (copiados, com prefixos diferentes). Correções em uma devem ser repetidas nas outras.
+- Sem backend próprio. Os formulários das páginas de serviço enviam por e-mail via Web3Forms e oferecem continuar no WhatsApp; configure `WEB3FORMS_ACCESS_KEY` e `WHATSAPP_NUMBER` no topo do JS de cada página (`landingpage.js`, `ecommerce.js`, `personalizado.js`). Sem essa configuração, o formulário mostra uma mensagem de erro e mantém os dados preenchidos (nunca confirma um envio que não aconteceu).
 - Valores da seção Investimento e dados da Política de Privacidade estão marcados com `PREENCHER` nos arquivos.
 - Publicada via widget HTML do Elementor, a página não define `<title>` nem meta tags — SEO deve ser configurado nas opções da página no WordPress.
 - O design utiliza fontes de sistema (Georgia, Helvetica/Arial), sem carregamento de fontes externas.

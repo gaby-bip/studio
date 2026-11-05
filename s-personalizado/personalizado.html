@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site personalizado com várias páginas, estrutura sob medida e funcionalidades para o seu negócio. WebStudio.">
+  <title>WebStudio — Site Personalizado</title>
+
+  <!-- Prévia local: os arquivos ficam na mesma pasta.
+       Para publicar no Elementor, use elementor-personalizado.html (gerado por build-elementor.py). -->
+  <link rel="stylesheet" href="personalizado.css">
+</head>
+<body>
+
+<!-- ============================================================
+     Para o widget HTML do Elementor, cole o conteúdo de
+     elementor-personalizado.html (CSS, JS e imagens embutidos).
+     Todo o conteúdo está dentro de #ws-personalizado-page.
+     ============================================================ -->
+<div id="ws-personalizado-page" data-ws-theme="light">
+
+  <!-- ==========================================================
+       SEÇÃO 1 — HEADER
+       ========================================================== -->
+  <header class="ws-header">
+    <div class="ws-container ws-header__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-nav" aria-label="Navegação principal">
+        <a href="#wscp-sobre" class="ws-nav__link">Serviços</a>
+        <a href="#wscp-investimento" class="ws-nav__link">Investimento</a>
+        <a href="#wscp-contato" class="ws-nav__link">Contato</a>
+
+        <div class="ws-theme" role="group" aria-label="Seleção de tema">
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="dark" aria-pressed="false">Dark</button>
+          <button type="button" class="ws-theme__btn" data-ws-theme-choice="auto" aria-pressed="false">Auto</button>
+        </div>
+      </nav>
+
+      <button type="button" class="ws-menu-toggle" aria-expanded="false" aria-controls="ws-nav" aria-label="Abrir menu">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <a href="#wscp-contato" class="ws-btn ws-btn--primary ws-header__cta">Fale comigo</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       SEÇÃO 2 — HERO + CARROSSEL
+       ========================================================== -->
+  <section class="ws-hero" aria-labelledby="wscp-hero-title">
+    <div class="ws-container ws-hero__inner">
+
+      <div class="ws-reveal">
+        <p class="ws-hero__eyebrow">Site Personalizado</p>
+        <h1 class="ws-hero__title ws-serif" id="wscp-hero-title">Um site do tamanho <em>da sua ideia.</em></h1>
+        <p class="ws-hero__subtitle">Um site com quantas páginas o seu negócio precisar, estrutura pensada do zero e funcionalidades escolhidas para o seu público.</p>
+        <div class="ws-hero__actions">
+          <a href="#wscp-contato" class="ws-btn ws-btn--primary">Solicitar orçamento</a>
+          <a href="#wscp-processo" class="ws-hero__secondary">Entender como funciona</a>
+        </div>
+      </div>
+
+      <!-- Carrossel de sites personalizados.
+           Para trocar as imagens futuramente, basta substituir os
+           arquivos em assets/ e atualizar o "src" e o "alt" abaixo.
+           As legendas ficam em CAROUSEL_CAPTIONS (personalizado.js). -->
+      <div class="ws-carousel ws-reveal" aria-roledescription="carrossel" aria-label="Exemplos de sites personalizados">
+        <div class="ws-carousel__frame">
+          <div class="ws-carousel__chrome" aria-hidden="true">
+            <i></i><i></i><i></i>
+            <span class="ws-carousel__url">seunegocio.com.br</span>
+          </div>
+
+          <div class="ws-carousel__viewport">
+            <div class="ws-carousel__track" data-ws-carousel-track>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 4: Site institucional">
+                <img src="assets/personalizado-01.svg" alt="Exemplo de site institucional, com apresentação da empresa e áreas de atuação" loading="eager" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 4: Site de portfólio">
+                <img src="assets/personalizado-02.svg" alt="Exemplo de site de portfólio, com galeria de trabalhos e filtros por categoria" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 4: Site com blog e conteúdo">
+                <img src="assets/personalizado-03.svg" alt="Exemplo de site com blog, artigos em destaque e lista de conteúdos" loading="lazy" decoding="async">
+              </div>
+              <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 de 4: Site de serviços com agendamento">
+                <img src="assets/personalizado-04.svg" alt="Exemplo de site de serviços com agendamento online e calendário de horários" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="ws-carousel__caption">
+            <p data-ws-carousel-caption>Institucional</p>
+            <span class="ws-carousel__count" data-ws-carousel-count aria-hidden="true">01 / 04</span>
+          </div>
+        </div>
+
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--prev" data-ws-carousel-prev aria-label="Slide anterior">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" class="ws-carousel__arrow ws-carousel__arrow--next" data-ws-carousel-next aria-label="Próximo slide">
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <div class="ws-carousel__dots" role="tablist" aria-label="Escolher slide">
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="true" aria-label="Ir para o slide 1"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 2"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 3"></button>
+          <button type="button" class="ws-carousel__dot" role="tab" aria-selected="false" aria-label="Ir para o slide 4"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 3 — CONHEÇA O SITE PERSONALIZADO
+       ========================================================== -->
+  <section class="ws-about" id="wscp-sobre" aria-labelledby="wscp-sobre-title">
+    <div class="ws-container ws-about__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Conheça o Site Personalizado</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-sobre-title">Espaço para contar sua história, mostrar seu trabalho e crescer.</h2>
+        <p class="ws-section-head__subtitle">Clique nas perguntas para entender como ele funciona.</p>
+      </div>
+
+      <div class="ws-about__faq ws-reveal">
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            O que é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Um site com duas ou mais páginas, como início, sobre, serviços, portfólio, blog e contato, organizado de acordo com o que o seu negócio precisa comunicar.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Para quem é?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Para empresas, profissionais liberais e marcas que precisam apresentar vários serviços, mostrar trabalhos realizados, publicar conteúdo ou oferecer recursos como agendamento.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Qual a diferença para a Landing Page?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>A Landing Page é uma única página com um objetivo. O Site Personalizado reúne várias páginas e funcionalidades, para quem precisa apresentar o negócio de forma mais completa.</p>
+          </div>
+        </details>
+
+        <details class="ws-faq__item">
+          <summary class="ws-faq__question">
+            Por que o preço é sob consulta?
+            <span class="ws-faq__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="ws-faq__answer">
+            <p>Porque cada projeto é diferente: a quantidade de páginas e as funcionalidades mudam bastante o trabalho. Com as respostas do formulário, preparo um orçamento fechado para o seu caso.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4 — COMO FUNCIONA O PROCESSO
+       ========================================================== -->
+  <section class="ws-process" id="wscp-processo" aria-labelledby="wscp-processo-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Como funciona</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-processo-title">Do primeiro contato ao seu site no ar.</h2>
+        <p class="ws-section-head__subtitle">Um processo simples, organizado e pensado para transformar sua ideia em presença digital.</p>
+      </div>
+
+      <div class="ws-cards">
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">01</span>
+          <h3 class="ws-card__title ws-serif">Vamos começar?</h3>
+          <p class="ws-card__desc">Você conta sobre o seu negócio, quantas páginas imagina e o que o site precisa fazer.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">02</span>
+          <h3 class="ws-card__title ws-serif">Planejamos juntos</h3>
+          <p class="ws-card__desc">Definimos o mapa do site: as páginas, o conteúdo de cada uma e as funcionalidades. Você recebe o orçamento fechado.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M3 9h18"/>
+              <path d="M8 14h8"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">03</span>
+          <h3 class="ws-card__title ws-serif">Desenvolvimento</h3>
+          <p class="ws-card__desc">Desenvolvo as páginas, apresento uma prévia e faço os ajustes combinados antes da publicação.</p>
+        </article>
+
+        <article class="ws-card ws-reveal">
+          <span class="ws-card__decor" aria-hidden="true">
+            <svg viewBox="0 0 240 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-10 100 C 60 78 120 104 250 52" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M-10 110 C 70 88 130 114 250 68" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+              <path d="M-10 120 C 80 98 140 124 250 84" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="ws-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </span>
+          <span class="ws-card__num" aria-hidden="true">04</span>
+          <h3 class="ws-card__title ws-serif">Sua marca no ar!</h3>
+          <p class="ws-card__desc">Publico o site e mostro como atualizar textos e imagens no dia a dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4.1 — INVESTIMENTO (SOB CONSULTA)
+       ⚠️ PREENCHER: % de desconto no Pix (procure por "PREENCHER").
+       ========================================================== -->
+  <section class="ws-pricing" id="wscp-investimento" aria-labelledby="wscp-investimento-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Investimento</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-investimento-title">Um orçamento feito para o seu projeto.</h2>
+        <p class="ws-section-head__subtitle">O valor depende da quantidade de páginas e das funcionalidades. Responda ao formulário e receba um orçamento fechado, sem compromisso.</p>
+      </div>
+
+      <div class="ws-pricing__card ws-reveal">
+        <div class="ws-pricing__main">
+          <p class="ws-pricing__from">Investimento</p>
+          <p class="ws-pricing__price ws-pricing__price--consult ws-serif">Sob consulta</p>
+          <p class="ws-pricing__note">Orçamento fechado, com tudo descrito antes de começarmos.</p>
+
+          <h3 class="ws-pricing__subtitle">Formas de pagamento</h3>
+          <ul class="ws-pricing__pay">
+            <!-- PREENCHER: % de desconto no Pix -->
+            <li><strong>Pix à vista</strong> com 0% de desconto</li>
+            <li><strong>50% na entrada</strong> e 50% na entrega</li>
+            <li><strong>Cartão de crédito</strong> parcelado, sem desconto</li>
+          </ul>
+
+          <a href="#wscp-contato" class="ws-btn ws-btn--primary ws-pricing__cta">Solicitar orçamento</a>
+        </div>
+
+        <div class="ws-pricing__details">
+          <h3 class="ws-pricing__subtitle">Todo Site Personalizado inclui</h3>
+          <ul class="ws-pricing__list">
+            <li>Páginas planejadas para o seu negócio, na quantidade combinada</li>
+            <li>Site adaptado para celular, tablet e computador</li>
+            <li>Textos escritos por mim, caso você ainda não os tenha</li>
+            <li>Botão de WhatsApp integrado e formulário de contato</li>
+            <li>Funcionalidades combinadas no orçamento (blog, agendamento, galeria etc.)</li>
+            <li>Uso do seu domínio ou registro de um novo, caso você ainda não tenha</li>
+            <li>Publicação do site no ar</li>
+            <li>Orientação para atualizar textos e imagens</li>
+            <li>2 meses de suporte após a entrega</li>
+            <li>Entrega em 10 a 20 dias úteis<sup>*</sup></li>
+          </ul>
+
+          <h3 class="ws-pricing__subtitle">O que você me envia</h3>
+          <p class="ws-pricing__text">Logo, imagens do seu negócio, as informações de cada página e, se tiver, sites que você admira como referência.</p>
+
+          <p class="ws-pricing__foot"><sup>*</sup> O prazo final é confirmado no orçamento, conforme o número de páginas e funcionalidades, e começa após o alinhamento do escopo e o recebimento dos materiais. Hospedagem: publico na sua ou cuido disso para você, com valor informado no orçamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 5 — FORMULÁRIO DE CONTATO
+       ========================================================== -->
+  <section class="ws-contact" id="wscp-contato" aria-labelledby="wscp-contato-title">
+    <div class="ws-container ws-contact__inner">
+
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Contato</p>
+        <h2 class="ws-section-head__title ws-serif" id="wscp-contato-title">Vamos desenhar o seu site?</h2>
+        <p class="ws-section-head__subtitle">Quanto mais você contar, mais preciso fica o orçamento. Em breve, entro em contato para conversarmos sobre o seu projeto.</p>
+      </div>
+
+      <!-- Campos com data-ws-field são validados pelo JS.
+           Campos sem "required" são opcionais. Todo campo com "name"
+           entra no e-mail automaticamente, usando o texto do rótulo. -->
+      <form class="ws-form ws-reveal" id="wscp-form" novalidate>
+        <!-- Anti-spam (honeypot): invisível para pessoas, bots costumam preencher -->
+        <input type="checkbox" name="botcheck" class="ws-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-nome">Nome e sobrenome</label>
+            <input class="ws-field__input" type="text" id="wscp-nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required aria-required="true" aria-describedby="wscp-nome-erro">
+            <p class="ws-field__error" id="wscp-nome-erro">Informe seu nome e sobrenome.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-email">E-mail</label>
+            <input class="ws-field__input" type="email" id="wscp-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true" aria-describedby="wscp-email-erro">
+            <p class="ws-field__error" id="wscp-email-erro">Informe um e-mail válido.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-telefone">WhatsApp</label>
+            <input class="ws-field__input" type="tel" id="wscp-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true" aria-describedby="wscp-telefone-erro">
+            <p class="ws-field__error" id="wscp-telefone-erro">Informe um WhatsApp com DDD.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-negocio">Nome do negócio ou marca</label>
+            <input class="ws-field__input" type="text" id="wscp-negocio" name="negocio" placeholder="Ex.: Marques Advocacia" autocomplete="organization" required aria-required="true" aria-describedby="wscp-negocio-erro">
+            <p class="ws-field__error" id="wscp-negocio-erro">Informe o nome do seu negócio ou marca.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-area">Área de atuação <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wscp-area" name="area" placeholder="Ex.: advocacia, fotografia, clínica">
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-tipo-site">Tipo de site</label>
+            <select class="ws-field__input ws-field__select" id="wscp-tipo-site" name="tipo_site" required aria-required="true" aria-describedby="wscp-tipo-site-erro">
+              <option value="">Selecione</option>
+              <option>Institucional (apresentar a empresa)</option>
+              <option>Portfólio (mostrar trabalhos)</option>
+              <option>Blog ou site de conteúdo</option>
+              <option>Serviços com agendamento</option>
+              <option>Catálogo de produtos (sem venda online)</option>
+              <option>Outro</option>
+            </select>
+            <p class="ws-field__error" id="wscp-tipo-site-erro">Escolha o tipo de site que mais se aproxima da sua ideia.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-paginas">Quantas páginas?</label>
+            <select class="ws-field__input ws-field__select" id="wscp-paginas" name="paginas" required aria-required="true" aria-describedby="wscp-paginas-erro">
+              <option value="">Selecione</option>
+              <option>2 a 3 páginas</option>
+              <option>4 a 6 páginas</option>
+              <option>7 a 10 páginas</option>
+              <option>Mais de 10 páginas</option>
+              <option>Ainda não sei</option>
+            </select>
+            <p class="ws-field__error" id="wscp-paginas-erro">Escolha uma quantidade aproximada (ou "Ainda não sei").</p>
+          </div>
+        </div>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Quais páginas você imagina? <span class="ws-field__opt">(opcional, marque quantas quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Início"><span>Início</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Sobre"><span>Sobre / quem somos</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Serviços"><span>Serviços</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Portfólio / galeria"><span>Portfólio / galeria</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Depoimentos"><span>Depoimentos</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Blog"><span>Blog</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Perguntas frequentes"><span>Perguntas frequentes</span></label>
+            <label class="ws-check"><input type="checkbox" name="lista_paginas" value="Contato"><span>Contato</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">Funcionalidades desejadas <span class="ws-field__opt">(opcional, marque quantas quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Formulário de contato"><span>Formulário de contato</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Agendamento online"><span>Agendamento online</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Blog com publicações"><span>Blog com publicações</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Galeria de fotos ou vídeos"><span>Galeria de fotos ou vídeos</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Integração com Instagram"><span>Integração com Instagram</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Mapa e localização"><span>Mapa e localização</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Área restrita com login"><span>Área restrita com login</span></label>
+            <label class="ws-check"><input type="checkbox" name="funcionalidades" value="Site em mais de um idioma"><span>Site em mais de um idioma</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">O que você já tem? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="possui" value="Logo / identidade visual"><span>Logo / identidade visual</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Domínio"><span>Domínio (ex.: seunegocio.com.br)</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Hospedagem"><span>Hospedagem</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Textos prontos"><span>Textos prontos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Imagens"><span>Imagens do negócio</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Site atual"><span>Site atual (para refazer)</span></label>
+          </div>
+        </fieldset>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-prazo">Quando gostaria de começar? <span class="ws-field__opt">(opcional)</span></label>
+            <select class="ws-field__input ws-field__select" id="wscp-prazo" name="prazo">
+              <option value="">Selecione</option>
+              <option>O quanto antes</option>
+              <option>Nas próximas semanas</option>
+              <option>Ainda estou pesquisando</option>
+            </select>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-redes">Instagram ou site atual <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wscp-redes" name="redes" placeholder="@seunegocio ou www.seunegocio.com.br">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-referencias">Sites que você admira <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wscp-referencias" name="referencias" placeholder="Links de sites que podem servir de referência">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wscp-mensagem">Conte um pouco sobre o projeto <span class="ws-field__opt">(opcional)</span></label>
+            <textarea class="ws-field__input ws-field__textarea" id="wscp-mensagem" name="mensagem" rows="4" maxlength="1500" placeholder="O que você oferece, para quem, e o que o site precisa resolver."></textarea>
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field ws-field--consent" data-ws-field>
+            <label class="ws-check">
+              <input type="checkbox" id="wscp-consentimento" name="consentimento" value="sim" required aria-required="true" aria-describedby="wscp-consentimento-erro">
+              <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+              <span>Li e concordo com a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato pelos canais informados.</span>
+            </label>
+            <p class="ws-field__error" id="wscp-consentimento-erro">Para continuar, é preciso concordar com a Política de Privacidade.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__actions">
+          <button type="submit" class="ws-btn ws-btn--primary ws-form__submit" data-ws-submit>Enviar interesse</button>
+          <p class="ws-form__hint">Seus dados serão usados apenas para que eu entre em contato com você sobre este projeto.</p>
+          <p class="ws-form__status" data-ws-form-status role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 7 — INFORMAÇÃO SOBRE SUPORTE
+       ========================================================== -->
+  <section class="ws-support" aria-labelledby="wscp-suporte-title">
+    <div class="ws-container">
+      <div class="ws-support__inner ws-reveal">
+        <span class="ws-support__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <div>
+          <h2 class="ws-support__title ws-serif" id="wscp-suporte-title">Seu projeto continua acompanhado.</h2>
+          <p class="ws-support__desc">Após a entrega do seu Site Personalizado, você contará com 2 meses de suporte incluídos no contrato para orientações e auxílio relacionados ao site, conforme as condições acordadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 8 — FOOTER
+       ========================================================== -->
+  <footer class="ws-footer">
+    <div class="ws-container ws-footer__inner">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
+        <span class="ws-brand__mark" aria-hidden="true"></span>
+        WebStudio
+      </a>
+
+      <nav class="ws-footer__nav" aria-label="Navegação do rodapé">
+        <a href="#wscp-sobre" class="ws-footer__link">Serviços</a>
+        <a href="#wscp-investimento" class="ws-footer__link">Investimento</a>
+        <a href="#wscp-contato" class="ws-footer__link">Contato</a>
+        <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+        <a href="/politica-de-privacidade/" class="ws-footer__link">Política de Privacidade</a>
+      </nav>
+
+      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WebStudio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       SEÇÃO 6 — POPUP DE AGRADECIMENTO
+       ========================================================== -->
+  <div class="ws-modal" id="wscp-modal" hidden>
+    <button type="button" class="ws-modal__backdrop" data-ws-modal-close tabindex="-1" aria-label="Fechar mensagem"></button>
+    <div class="ws-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="wscp-modal-title" aria-describedby="wscp-modal-text">
+      <span class="ws-modal__badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </span>
+      <!-- Título e texto são trocados pelo JS conforme o resultado do envio -->
+      <h2 class="ws-modal__title ws-serif" id="wscp-modal-title">Que bom ter você por aqui!</h2>
+      <p class="ws-modal__text" id="wscp-modal-text"></p>
+      <div class="ws-modal__actions">
+        <a href="#" class="ws-btn ws-btn--primary ws-modal__whatsapp" data-ws-modal-whatsapp target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+        <button type="button" class="ws-btn ws-btn--ghost ws-modal__close" data-ws-modal-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /#ws-personalizado-page -->
+
+<!-- Prévia local: o script é carregado como arquivo separado -->
+<script src="personalizado.js"></script>
+</body>
+</html>
