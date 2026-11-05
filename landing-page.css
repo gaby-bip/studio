@@ -966,6 +966,35 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* ---------- Hospedagem e domínio ---------- */
+#ss-landing .ss-hosting {
+  padding: 96px 0;
+}
+
+#ss-landing .ss-cards--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#ss-landing .ss-card--hosting .ss-card__num {
+  position: static;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--ss-pink);
+}
+
+#ss-landing .ss-hosting__note {
+  margin: 32px 0 0;
+  max-width: 720px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ss-text-muted);
+}
+
+#ss-landing .ss-hosting__note .ss-card__link {
+  margin-left: 6px;
+  border-bottom: 1px solid var(--ss-accent);
+}
+
 #ss-landing .ss-card--benefit {
   gap: 12px;
 }
@@ -1117,10 +1146,15 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: none;
   }
+
+  #ss-landing .ss-cards--two {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
   #ss-landing .ss-faq,
+  #ss-landing .ss-hosting,
   #ss-landing .ss-benefits {
     padding: 72px 0;
   }

@@ -21,7 +21,8 @@
     geral: "Olá! Vim pelo site e gostaria de conversar sobre um projeto.",
     landing: "Olá! Tenho interesse em criar uma Landing Page.",
     ecommerce: "Olá! Tenho interesse em criar um E-commerce.",
-    site: "Olá! Tenho interesse em um Site Personalizado."
+    site: "Olá! Tenho interesse em um Site Personalizado.",
+    hospedagem: "Olá! Tenho dúvidas sobre hospedagem e domínio."
   };
 
   /* Aplica os links de contato em todos os CTAs.

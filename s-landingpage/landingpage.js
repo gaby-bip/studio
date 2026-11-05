@@ -1,5 +1,5 @@
 /* ============================================================
-   WS WEBSTUDIO — Página do serviço Landing Page
+   WEBSTUDIO — Página do serviço Landing Page
    JavaScript puro (sem jQuery, sem build).
    Encapsulado em IIFE; inicializa apenas dentro de
    #ws-landing-page, sem conflitar com outros scripts.
@@ -11,20 +11,28 @@
   /* ============================================================
      ⚙️ CONFIGURAÇÃO — EDITE APENAS ESTE BLOCO
      ============================================================
-     1) INTEGRAÇÃO DE ENVIO (futura):
-        Quando houver backend ou serviço de formulários (ex.:
-        Formspree, WPForms, endpoint próprio), implemente a função
-        `submitLead` mais abaixo. Enquanto isso, o formulário apenas
-        valida no navegador e exibe o popup de agradecimento.
+     1) ENVIO POR E-MAIL (Web3Forms — https://web3forms.com):
+        Crie uma chave gratuita informando o e-mail que receberá os
+        contatos e cole em WEB3FORMS_ACCESS_KEY. A chave é pública
+        (feita para ficar no navegador); ela só permite ENVIAR para
+        o e-mail cadastrado.
 
-     2) TEMA:
+     2) WHATSAPP:
+        Número com código do país + DDD, apenas dígitos.
+        Ex.: "5511999999999". Usado no botão "Continuar no WhatsApp"
+        e como alternativa se o envio por e-mail falhar.
+
+     3) TEMA:
         Esta página compartilha a MESMA chave de localStorage do site
         principal ("ss-theme-preference"), para respeitar a escolha
         Light / Dark / Auto feita pelo visitante em qualquer página.
      ============================================================ */
 
+  var WEB3FORMS_ACCESS_KEY = ""; // <-- COLE SUA CHAVE DO WEB3FORMS AQUI
+  var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
+
   var THEME_STORAGE_KEY = "ss-theme-preference"; // mesma chave do site principal
-  var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (comfortável)
+  var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (confortável)
 
   /* ============================================================
      TEMA: Light | Dark | Auto (mesmo comportamento do site principal)
@@ -349,9 +357,9 @@
   /* ============================================================
      FORMULÁRIO
      - Máscara de telefone brasileiro
-     - Validação de obrigatórios e e-mail
-     - Popup de agradecimento
-     - Envio isolado em `submitLead` (preparado para integração)
+     - Validação de obrigatórios, e-mail, telefone e consentimento
+     - Envio por e-mail (Web3Forms) + continuação no WhatsApp
+     - Nunca informa "recebido" se o envio falhou
      ============================================================ */
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -367,9 +375,13 @@
     return "(" + digits.slice(0, 2) + ") " + digits.slice(2, 7) + "-" + digits.slice(7);
   }
 
+  function fieldControl(field) {
+    return field.querySelector("input, select, textarea");
+  }
+
   function setFieldError(field, invalid) {
     field.classList.toggle("ws-field--invalid", invalid);
-    var input = field.querySelector(".ws-field__input");
+    var input = fieldControl(field);
     if (input) {
       if (invalid) {
         input.setAttribute("aria-invalid", "true");
@@ -380,29 +392,121 @@
   }
 
   function validateField(field) {
-    var input = field.querySelector(".ws-field__input");
+    var input = fieldControl(field);
     if (!input) return true;
 
-    var value = (input.value || "").trim();
+    var required = input.hasAttribute("required");
     var invalid = false;
 
-    if (input.hasAttribute("required") && value === "") {
-      invalid = true;
-    } else if (input.type === "email" && value !== "" && !EMAIL_RE.test(value)) {
-      invalid = true;
-    } else if (input.type === "tel" && value !== "") {
-      var digits = value.replace(/\D/g, "");
-      invalid = digits.length < 10 || digits.length > 11;
+    if (input.type === "checkbox") {
+      invalid = required && !input.checked;
+    } else {
+      var value = (input.value || "").trim();
+      if (required && value === "") {
+        invalid = true;
+      } else if (input.type === "email" && value !== "" && !EMAIL_RE.test(value)) {
+        invalid = true;
+      } else if (input.type === "tel" && value !== "") {
+        var digits = value.replace(/\D/g, "");
+        invalid = digits.length < 10 || digits.length > 11;
+      } else if (input.name === "nome" && value !== "" && value.split(/\s+/).length < 2) {
+        invalid = true; // pede nome e sobrenome
+      }
     }
 
     setFieldError(field, invalid);
     return !invalid;
   }
 
-  function initForm(root, openModal) {
+  function fieldValue(form, name) {
+    var el = form.elements[name];
+    return el && el.value ? String(el.value).trim() : "";
+  }
+
+  function collectLead(form) {
+    var possui = [];
+    var boxes = form.querySelectorAll("input[name='possui']:checked");
+    for (var i = 0; i < boxes.length; i++) possui.push(boxes[i].value);
+
+    return {
+      nome: fieldValue(form, "nome"),
+      email: fieldValue(form, "email"),
+      telefone: fieldValue(form, "telefone"),
+      negocio: fieldValue(form, "negocio"),
+      area: fieldValue(form, "area"),
+      objetivo: fieldValue(form, "objetivo"),
+      prazo: fieldValue(form, "prazo"),
+      possui: possui.join(", "),
+      redes: fieldValue(form, "redes"),
+      mensagem: fieldValue(form, "mensagem"),
+      botcheck: !!(form.elements.botcheck && form.elements.botcheck.checked)
+    };
+  }
+
+  /* Link do WhatsApp com um resumo curto (sem e-mail/telefone:
+     a conversa já identifica o número de quem envia). */
+  function whatsappLink(lead) {
+    var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
+    if (!number) return "";
+    var lines = ["Olá! Tenho interesse em uma Landing Page."];
+    if (lead) {
+      if (lead.nome) lines.push("Nome: " + lead.nome);
+      if (lead.negocio) lines.push("Negócio: " + lead.negocio);
+      if (lead.objetivo) lines.push("Objetivo: " + lead.objetivo);
+    }
+    return "https://wa.me/" + number + "?text=" + encodeURIComponent(lines.join("\n"));
+  }
+
+  /* Envio por e-mail via Web3Forms.
+     Chama done(true) se enviado; done(false) se falhou ou não configurado. */
+  function submitLead(lead, done) {
+    if (!WEB3FORMS_ACCESS_KEY || !window.fetch) {
+      done(false);
+      return;
+    }
+
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "Novo interesse em Landing Page — " + (lead.negocio || lead.nome),
+      from_name: "Site WebStudio",
+      replyto: lead.email,
+      "Nome": lead.nome,
+      "E-mail": lead.email,
+      "WhatsApp": lead.telefone,
+      "Negócio": lead.negocio,
+      "Área de atuação": lead.area || "—",
+      "Objetivo da página": lead.objetivo,
+      "Quando quer começar": lead.prazo || "—",
+      "O que já tem": lead.possui || "—",
+      "Instagram / site": lead.redes || "—",
+      "Mensagem": lead.mensagem || "—",
+      "Consentimento (LGPD)": "Aceitou a Política de Privacidade em " + new Date().toLocaleString("pt-BR")
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().then(function (json) {
+          done(!!(res.ok && json && json.success));
+        });
+      })
+      .catch(function () {
+        done(false);
+      });
+  }
+
+  function initForm(root, modal) {
     var form = root.querySelector("#wslp-form");
     if (!form || form.getAttribute("data-ws-form-init") === "true") return;
     form.setAttribute("data-ws-form-init", "true");
+
+    var submitBtn = form.querySelector("[data-ws-submit]");
+    var submitLabel = submitBtn ? submitBtn.textContent : "";
+    var status = form.querySelector("[data-ws-form-status]");
+    var sending = false;
 
     var phone = form.querySelector("#wslp-telefone");
     if (phone) {
@@ -422,12 +526,15 @@
     var fields = form.querySelectorAll("[data-ws-field]");
     for (var i = 0; i < fields.length; i++) {
       (function (field) {
-        var input = field.querySelector(".ws-field__input");
+        var input = fieldControl(field);
         if (!input) return;
-        input.addEventListener("blur", function () {
-          if (input.value.trim() !== "") validateField(field);
-        });
-        input.addEventListener("input", function () {
+        var isToggle = input.type === "checkbox" || input.tagName === "SELECT";
+        if (!isToggle) {
+          input.addEventListener("blur", function () {
+            if (input.value.trim() !== "") validateField(field);
+          });
+        }
+        input.addEventListener(isToggle ? "change" : "input", function () {
           if (field.classList.contains("ws-field--invalid")) {
             validateField(field); // remove o erro assim que corrigir
           }
@@ -435,56 +542,58 @@
       })(fields[i]);
     }
 
+    function setSending(on) {
+      sending = on;
+      if (submitBtn) {
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? "Enviando…" : submitLabel;
+      }
+      if (status) status.textContent = on ? "Enviando suas informações…" : "";
+    }
+
+    function clearForm() {
+      form.reset();
+      for (var k = 0; k < fields.length; k++) setFieldError(fields[k], false);
+    }
+
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
+      if (sending) return;
 
-      var valid = true;
       var firstInvalid = null;
       for (var j = 0; j < fields.length; j++) {
-        var ok = validateField(fields[j]);
-        if (!ok && valid) {
-          valid = false;
-          firstInvalid = fields[j];
-        } else if (!ok) {
-          valid = false;
-        }
+        if (!validateField(fields[j]) && !firstInvalid) firstInvalid = fields[j];
       }
 
-      if (!valid) {
-        if (firstInvalid) {
-          var input = firstInvalid.querySelector(".ws-field__input");
-          if (input) input.focus();
-        }
+      if (firstInvalid) {
+        var input = fieldControl(firstInvalid);
+        if (input) input.focus();
         return;
       }
 
-      // Dados prontos para a futura integração
-      var data = {
-        nome: form.querySelector("#wslp-nome") ? form.querySelector("#wslp-nome").value.trim() : "",
-        email: form.querySelector("#wslp-email") ? form.querySelector("#wslp-email").value.trim() : "",
-        telefone: phone ? phone.value.trim() : ""
-      };
+      var lead = collectLead(form);
 
-      // Envio isolado: substituir por integração real no futuro.
-      submitLead(data);
-
-      form.reset();
-      for (var k = 0; k < fields.length; k++) {
-        setFieldError(fields[k], false);
+      // Honeypot marcado = bot: finge sucesso sem enviar nada
+      if (lead.botcheck) {
+        clearForm();
+        modal.open("success", "");
+        return;
       }
-      openModal();
-    });
-  }
 
-  /* Ponto único de integração futura (backend, serviço de e-mail,
-     CRM, WhatsApp API etc.). Nesta versão, apenas registra no console
-     em ambiente de desenvolvimento e não envia nada. */
-  function submitLead(data) {
-    // TODO: integrar com backend/serviço de formulários.
-    // Ex.: fetch("https://seu-endpoint", { method: "POST", body: JSON.stringify(data) })
-    if (window.console && window.console.info) {
-      window.console.info("[WS WebStudio] Lead capturado (envio ainda não integrado):", data.nome ? "ok" : "vazio");
-    }
+      var wa = whatsappLink(lead);
+
+      setSending(true);
+      submitLead(lead, function (ok) {
+        setSending(false);
+        if (ok) {
+          clearForm();
+          modal.open("success", wa);
+        } else {
+          // Mantém os dados preenchidos para uma nova tentativa
+          modal.open(wa ? "fallback" : "error", wa);
+        }
+      });
+    });
   }
 
   /* ============================================================
@@ -499,9 +608,37 @@
     modal.setAttribute("data-ws-modal-init", "true");
 
     var dialog = modal.querySelector(".ws-modal__dialog");
+    var titleEl = modal.querySelector(".ws-modal__title");
+    var textEl = modal.querySelector(".ws-modal__text");
+    var waBtn = modal.querySelector("[data-ws-modal-whatsapp]");
     var lastFocus = null;
 
-    function open() {
+    // Mensagens por resultado do envio
+    var STATES = {
+      success: {
+        title: "Que bom ter você por aqui!",
+        text: "Recebi seu interesse em desenvolver uma Landing Page com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
+        textNoWa: "Recebi seu interesse em desenvolver uma Landing Page com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+      },
+      fallback: {
+        title: "Quase lá!",
+        text: "Não consegui registrar seu envio agora.\n\nToque no botão abaixo para me enviar suas informações pelo WhatsApp. Seus dados continuam preenchidos no formulário."
+      },
+      error: {
+        title: "Algo deu errado",
+        text: "Não consegui registrar seu envio agora. Seus dados continuam preenchidos no formulário.\n\nTente novamente em alguns instantes."
+      }
+    };
+
+    function open(state, waUrl) {
+      var cfg = STATES[state] || STATES.success;
+      if (titleEl) titleEl.textContent = cfg.title;
+      if (textEl) textEl.textContent = !waUrl && cfg.textNoWa ? cfg.textNoWa : cfg.text;
+      if (waBtn) {
+        waBtn.hidden = !waUrl;
+        waBtn.setAttribute("href", waUrl || "#");
+      }
+
       lastFocus = document.activeElement;
       modal.hidden = false;
 
@@ -510,8 +647,8 @@
       body.setAttribute("data-ws-scroll-lock", "true");
       body.style.overflow = "hidden";
 
-      var closeBtn = modal.querySelector(".ws-modal__close");
-      if (closeBtn) closeBtn.focus();
+      var focusBtn = waUrl && waBtn ? waBtn : modal.querySelector(".ws-modal__close");
+      if (focusBtn) focusBtn.focus();
 
       document.addEventListener("keydown", onKeydown);
     }
@@ -539,7 +676,7 @@
 
       // Mantém o foco dentro do diálogo (Tab / Shift+Tab)
       if (ev.key === "Tab" && dialog) {
-        var focusables = dialog.querySelectorAll("button, [href], input, [tabindex]:not([tabindex='-1'])");
+        var focusables = dialog.querySelectorAll("button:not([hidden]), [href]:not([hidden]), input, [tabindex]:not([tabindex='-1'])");
         if (!focusables.length) return;
         var first = focusables[0];
         var last = focusables[focusables.length - 1];
@@ -610,7 +747,7 @@
       initMobileMenu(root);
       initAboutFaq(root);
       initCarousel(root);
-      initForm(root, modalApi ? modalApi.open : function () {});
+      initForm(root, modalApi || { open: function () {} });
       initReveals(root);
 
       // Ano automático no copyright

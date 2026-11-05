@@ -1,22 +1,14 @@
 ﻿<!-- ============================================================
-     WS WEBSTUDIO - Página do serviço Landing Page
-     VERSÃO CONSOLIDADA PARA O ELEMENTOR (WordPress).
-
-     Como usar:
-     1. Edite a página no WordPress/Elementor.
-     2. Adicione UM widget "HTML".
-     3. Cole TODO o conteúdo deste arquivo dentro dele.
-
-     Observações:
-     - CSS e JS estão embutidos: nenhum arquivo externo é necessário.
-     - As imagens do carrossel ficam em assets/ (landing-01 a 04).
-     - Ao publicar, atualize os "src" das imagens para as URLs
-       absolutas do seu WordPress (ex.: https://seudominio.com/.../assets/landing-01.webp),
-       evitando referências relativas que quebrem dentro do editor.
+     ELEMENTOR - WIDGET HTML  (Serviço: Landing Page)
+     ARQUIVO GERADO por build-elementor.py. NAO edite a mao:
+     altere s-landingpage/landingpage.html, s-landingpage/landingpage.css, s-landingpage/landingpage.js e rode:  python build-elementor.py
+     Cole TODO o conteudo deste arquivo em UM unico widget HTML.
+     CSS, JS e imagens estao embutidos: nao depende de arquivos externos.
      ============================================================ -->
+
 <style>
 /* ============================================================
-   WS WEBSTUDIO — Página do serviço Landing Page
+   WEBSTUDIO — Página do serviço Landing Page
    Todo o CSS está escopado dentro de #ws-landing-page.
    Nenhum seletor global (html, body, header, footer) é afetado.
    ============================================================ */
@@ -93,7 +85,9 @@
 /* ---------- Foco visível ---------- */
 #ws-landing-page a:focus-visible,
 #ws-landing-page button:focus-visible,
-#ws-landing-page input:focus-visible {
+#ws-landing-page input:focus-visible,
+#ws-landing-page select:focus-visible,
+#ws-landing-page textarea:focus-visible {
   outline: 2px solid var(--wslp-pink);
   outline-offset: 3px;
   border-radius: 4px;
@@ -758,6 +752,169 @@
   opacity: 0.4;
 }
 
+/* ---------- Seção: Investimento ---------- */
+#ws-landing-page .ws-pricing {
+  padding: 96px 0;
+  border-top: 1px solid var(--wslp-border);
+}
+
+#ws-landing-page .ws-pricing .ws-section-head {
+  margin-bottom: 48px;
+}
+
+#ws-landing-page .ws-pricing__card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--wslp-bg-card);
+  border: 1px solid var(--wslp-border);
+  border-radius: var(--wslp-radius);
+  box-shadow: var(--wslp-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Detalhe rosa no topo, mesma linguagem do formulário */
+#ws-landing-page .ws-pricing__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wslp-pink), color-mix(in srgb, var(--wslp-pink) 35%, transparent));
+}
+
+#ws-landing-page .ws-pricing__main {
+  padding: 44px 40px;
+  background: color-mix(in srgb, var(--wslp-accent) 6%, transparent);
+  border-right: 1px solid var(--wslp-border);
+  display: flex;
+  flex-direction: column;
+}
+
+#ws-landing-page .ws-pricing__details {
+  padding: 44px 40px;
+}
+
+#ws-landing-page .ws-pricing__from {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wslp-accent);
+  font-weight: 600;
+}
+
+#ws-landing-page .ws-pricing__price {
+  margin: 6px 0 4px;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--wslp-text);
+  font-variant-numeric: tabular-nums;
+}
+
+#ws-landing-page .ws-pricing__currency {
+  font-size: 0.45em;
+  vertical-align: 0.9em;
+  margin-right: 2px;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__note {
+  margin: 0 0 28px;
+  font-size: 0.9rem;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__subtitle {
+  font-family: var(--wslp-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+#ws-landing-page .ws-pricing__details .ws-pricing__subtitle + .ws-pricing__text {
+  margin-top: 0;
+}
+
+#ws-landing-page .ws-pricing__pay,
+#ws-landing-page .ws-pricing__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+#ws-landing-page .ws-pricing__pay {
+  margin-bottom: 32px;
+}
+
+#ws-landing-page .ws-pricing__pay li,
+#ws-landing-page .ws-pricing__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__pay strong {
+  color: var(--wslp-text);
+  font-weight: 600;
+}
+
+/* Marcador: ponto rosa nas formas de pagamento */
+#ws-landing-page .ws-pricing__pay li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wslp-pink);
+}
+
+/* Marcador: check verde no que está incluso */
+#ws-landing-page .ws-pricing__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.35em;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--wslp-accent);
+  border-bottom: 2px solid var(--wslp-accent);
+  transform: rotate(-45deg);
+}
+
+#ws-landing-page .ws-pricing__list {
+  margin-bottom: 28px;
+}
+
+#ws-landing-page .ws-pricing__text {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__foot {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--wslp-border);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
 /* ---------- Seção: Formulário ---------- */
 #ws-landing-page .ws-contact {
   padding: 96px 0;
@@ -910,6 +1067,118 @@
   cursor: pointer;
   padding: 14px 26px;
   font-size: 1rem;
+}
+
+#ws-landing-page .ws-form__submit[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+#ws-landing-page .ws-form__status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--wslp-text-muted);
+  text-align: center;
+}
+
+#ws-landing-page .ws-form__status:empty {
+  display: none;
+}
+
+/* Honeypot anti-spam: fora da tela, sem afetar o layout */
+#ws-landing-page .ws-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+#ws-landing-page .ws-field__opt {
+  font-weight: 400;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-field__textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+/* Select com seta própria (igual nos dois temas) */
+#ws-landing-page .ws-field__select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--wslp-text-muted) 50%),
+    linear-gradient(135deg, var(--wslp-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) 50%,
+    calc(100% - 16px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+#ws-landing-page .ws-field__select option {
+  background: var(--wslp-bg-card);
+  color: var(--wslp-text);
+}
+
+#ws-landing-page .ws-choices {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+  min-width: 0;
+}
+
+#ws-landing-page .ws-choices legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#ws-landing-page .ws-choices__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+
+@media (max-width: 640px) {
+  #ws-landing-page .ws-choices__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ws-landing-page .ws-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--wslp-text);
+  cursor: pointer;
+}
+
+#ws-landing-page .ws-check input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--wslp-pink);
+  cursor: pointer;
+}
+
+#ws-landing-page .ws-check a {
+  color: var(--wslp-text);
+  text-decoration: underline;
+  text-decoration-color: var(--wslp-pink);
+  text-underline-offset: 3px;
+}
+
+#ws-landing-page .ws-field--consent .ws-check {
+  font-size: 0.88rem;
+  color: var(--wslp-text-muted);
 }
 
 /* ---------- Seção: Suporte ---------- */
@@ -1109,8 +1378,20 @@
   white-space: pre-line;
 }
 
-#ws-landing-page .ws-modal__close {
+#ws-landing-page .ws-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#ws-landing-page .ws-modal__close,
+#ws-landing-page .ws-modal__whatsapp {
   min-width: 140px;
+}
+
+#ws-landing-page .ws-modal__whatsapp[hidden] {
+  display: none;
 }
 
 /* ---------- Animações leves de entrada ---------- */
@@ -1171,8 +1452,29 @@
 
   #ws-landing-page .ws-about,
   #ws-landing-page .ws-process,
+  #ws-landing-page .ws-pricing,
   #ws-landing-page .ws-contact {
     padding: 72px 0;
+  }
+
+  #ws-landing-page .ws-pricing__card {
+    grid-template-columns: 1fr;
+  }
+
+  #ws-landing-page .ws-pricing__main {
+    border-right: 0;
+    border-bottom: 1px solid var(--wslp-border);
+  }
+}
+
+@media (max-width: 640px) {
+  #ws-landing-page .ws-pricing__main,
+  #ws-landing-page .ws-pricing__details {
+    padding: 32px 24px;
+  }
+
+  #ws-landing-page .ws-pricing__cta {
+    align-self: stretch;
   }
 }
 
@@ -1267,15 +1569,6 @@
 }
 </style>
 
-<!-- ============================================================
-     WS WEBSTUDIO — Página do serviço Landing Page
-     Todo o conteúdo está dentro de #ws-landing-page.
-     ============================================================ -->
-<!-- ============================================================
-     Para o widget HTML do Elementor, cole o conteúdo de
-     elementor-landingpage.html (CSS e JS embutidos).
-     Todo o conteúdo está dentro de #ws-landing-page.
-     ============================================================ -->
 <div id="ws-landing-page" data-ws-theme="light">
 
   <!-- ==========================================================
@@ -1283,13 +1576,14 @@
        ========================================================== -->
   <header class="ws-header">
     <div class="ws-container ws-header__inner">
-      <a href="#" class="ws-brand" aria-label="WS WebStudio — início">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
         <span class="ws-brand__mark" aria-hidden="true"></span>
-        WS WebStudio
+        WebStudio
       </a>
 
       <nav class="ws-nav" aria-label="Navegação principal">
         <a href="#wslp-sobre" class="ws-nav__link">Serviços</a>
+        <a href="#wslp-investimento" class="ws-nav__link">Investimento</a>
         <a href="#wslp-contato" class="ws-nav__link">Contato</a>
 
         <div class="ws-theme" role="group" aria-label="Seleção de tema">
@@ -1337,16 +1631,16 @@
           <div class="ws-carousel__viewport">
             <div class="ws-carousel__track" data-ws-carousel-track>
               <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 4: Landing Page para serviços profissionais">
-                <img src="assets/landing-01.svg" alt="Exemplo de Landing Page para serviços profissionais, com destaque para resultados e prova social" loading="eager" decoding="async">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBMYW5kaW5nIFBhZ2UgcGFyYSBzZXJ2acOnb3MgcHJvZmlzc2lvbmFpcyI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGNkY0RUYiLz4KCiAgPCEtLSBOYXZlZ2HDp8OjbyBkbyBzaXRlIC0tPgogIDxnPgogICAgPGNpcmNsZSBjeD0iNjQiIGN5PSI1MiIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPgogICAgPHRleHQgeD0iNzgiIHk9IjU4IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjMEIxNzEzIj5BVFVBTDwvdGV4dD4KICAgIDxyZWN0IHg9IjQ3MCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjNUE2QjYyIiBvcGFjaXR5PSIwLjU1Ii8+CiAgICA8cmVjdCB4PSI1MjgiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzVBNkI2MiIgb3BhY2l0eT0iMC40Ii8+CiAgICA8cmVjdCB4PSI1ODYiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzVBNkI2MiIgb3BhY2l0eT0iMC40Ii8+CiAgICA8cmVjdCB4PSI2NDYiIHk9IjM4IiB3aWR0aD0iOTIiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0iI0U5NEI5MSIvPgogIDwvZz4KCiAgPCEtLSBIZXJvOiB0ZXh0byDDoCBlc3F1ZXJkYSAtLT4KICA8dGV4dCB4PSI2NCIgeT0iMTI4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxldHRlci1zcGFjaW5nPSIzIiBmaWxsPSIjMjU0NjM4Ij5DT05TVUxUT1JJQSBFU1RSQVTDiUdJQ0E8L3RleHQ+CiAgPHRleHQgeD0iNjQiIHk9IjE3OCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmaWxsPSIjMEIxNzEzIj5SZXN1bHRhZG9zIHJlYWlzPC90ZXh0PgogIDx0ZXh0IHg9IjY0IiB5PSIyMjAiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzOCIgZm9udC1zdHlsZT0iaXRhbGljIiBmaWxsPSIjMjU0NjM4Ij5wYXJhIG8gc2V1IG5lZ8OzY2lvLjwvdGV4dD4KICA8cmVjdCB4PSI2NCIgeT0iMjQ4IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiM1QTZCNjIiIG9wYWNpdHk9IjAuNDUiLz4KICA8cmVjdCB4PSI2NCIgeT0iMjY2IiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiM1QTZCNjIiIG9wYWNpdHk9IjAuMzUiLz4KICA8cmVjdCB4PSI2NCIgeT0iMzA0IiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjM0IiByeD0iMTciIGZpbGw9IiNFOTRCOTEiLz4KICA8cmVjdCB4PSIyMTgiIHk9IjMwNCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIzNCIgcng9IjE3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyNTQ2MzgiIHN0cm9rZS13aWR0aD0iMS41Ii8+CgogIDwhLS0gSGVybzogY2FydMOjbyBjb20gZ3LDoWZpY28gw6AgZGlyZWl0YSAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjQ3MCIgeT0iMTIwIiB3aWR0aD0iMjY2IiBoZWlnaHQ9IjIyMCIgcng9IjE2IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiLz4KICAgIDxyZWN0IHg9IjQ5NCIgeT0iMTQ0IiB3aWR0aD0iOTAiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzI1NDYzOCIvPgogICAgPHJlY3QgeD0iNDk0IiB5PSIxNjIiIHdpZHRoPSIxMzAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0Q5RDRDOCIvPgogICAgPHJlY3QgeD0iNTAwIiB5PSIyODYiIHdpZHRoPSIyNiIgaGVpZ2h0PSIzOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiLz4KICAgIDxyZWN0IHg9IjU0MCIgeT0iMjYyIiB3aWR0aD0iMjYiIGhlaWdodD0iNjIiIHJ4PSI0IiBmaWxsPSIjMjU0NjM4Ii8+CiAgICA8cmVjdCB4PSI1ODAiIHk9IjI3NCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjUwIiByeD0iNCIgZmlsbD0iI0E4QzVCMiIvPgogICAgPHJlY3QgeD0iNjIwIiB5PSIyNDAiIHdpZHRoPSIyNiIgaGVpZ2h0PSI4NCIgcng9IjQiIGZpbGw9IiNFOTRCOTEiLz4KICAgIDxyZWN0IHg9IjY2MCIgeT0iMjU2IiB3aWR0aD0iMjYiIGhlaWdodD0iNjgiIHJ4PSI0IiBmaWxsPSIjMjU0NjM4Ii8+CiAgICA8bGluZSB4MT0iNDk0IiB5MT0iMzI0IiB4Mj0iNzEyIiB5Mj0iMzI0IiBzdHJva2U9IiNEOUQ0QzgiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPC9nPgoKICA8IS0tIEJsb2NvIGRlIGRlcG9pbWVudG8gLS0+CiAgPGc+CiAgICA8cmVjdCB4PSI2NCIgeT0iMzg0IiB3aWR0aD0iNjcyIiBoZWlnaHQ9Ijc2IiByeD0iMTQiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPgogICAgPGNpcmNsZSBjeD0iMTA0IiBjeT0iNDIyIiByPSIxNiIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC41Ii8+CiAgICA8cmVjdCB4PSIxMzYiIHk9IjQwNCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjMjU0NjM4IiBvcGFjaXR5PSIwLjgiLz4KICAgIDxyZWN0IHg9IjEzNiIgeT0iNDIyIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjRDlENEM4Ii8+CiAgICA8cmVjdCB4PSIxMzYiIHk9IjQzOCIgd2lkdGg9IjI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0Q5RDRDOCIvPgogICAgPHJlY3QgeD0iNjAwIiB5PSI0MTIiIHdpZHRoPSIxMDQiIGhlaWdodD0iMjIiIHJ4PSIxMSIgZmlsbD0iI0VGRUJFMyIvPgogIDwvZz4KPC9zdmc+Cg==" alt="Exemplo de Landing Page para serviços profissionais, com destaque para resultados e prova social" loading="eager" decoding="async">
               </div>
               <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 4: Landing Page para produtos">
-                <img src="assets/landing-02.svg" alt="Exemplo de Landing Page para produtos, com vitrine de itens e botão de compra" loading="lazy" decoding="async">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBMYW5kaW5nIFBhZ2UgcGFyYSBwcm9kdXRvcyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndzcHJvZC1iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxQjM1MkEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjU1IiBzdG9wLWNvbG9yPSIjMTAyMzFCIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBCMTcxMiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9InVybCgjd3Nwcm9kLWJnKSIvPgoKICA8IS0tIE5hdmVnYcOnw6NvIGRvIHNpdGUgLS0+CiAgPGc+CiAgICA8Y2lyY2xlIGN4PSI2NCIgY3k9IjUyIiByPSI2IiBmaWxsPSIjRTk0QjkxIi8+CiAgICA8dGV4dCB4PSI3OCIgeT0iNTgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxNyIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiNGNkY0RUYiPk5PVkE8L3RleHQ+CiAgICA8cmVjdCB4PSI0NzAiIHk9IjQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC41NSIvPgogICAgPHJlY3QgeD0iNTI4IiB5PSI0NyIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMzUiLz4KICAgIDxyZWN0IHg9IjU4NiIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjM1Ii8+CiAgICA8cmVjdCB4PSI2NDYiIHk9IjM4IiB3aWR0aD0iOTIiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0iI0U5NEI5MSIvPgogIDwvZz4KCiAgPCEtLSBIZXJvIGNlbnRyYWRvIC0tPgogIDx0ZXh0IHg9IjQwMCIgeT0iMTMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGxldHRlci1zcGFjaW5nPSIzIiBmaWxsPSIjQThDNUIyIj5MQU7Dh0FNRU5UTyBFWENMVVNJVk88L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iI0Y0RjhGNCI+TyBwcm9kdXRvIHF1ZSBmYWx0YXZhPC90ZXh0PgogIDx0ZXh0IHg9IjQwMCIgeT0iMjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZmlsbD0iI0E4QzVCMiI+cGFyYSBvIHNldSBkaWEgYSBkaWEuPC90ZXh0PgogIDxyZWN0IHg9IjM0MCIgeT0iMjQ0IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IiNFOTRCOTEiLz4KCiAgPCEtLSBWaXRyaW5lIGRlIHByb2R1dG9zIC0tPgogIDxnPgogICAgPHJlY3QgeD0iNjQiIHk9IjMxMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxNTAiIHJ4PSIxNCIgZmlsbD0iIzE0MjYxRiIgc3Ryb2tlPSIjQThDNUIyIiBzdHJva2Utb3BhY2l0eT0iMC4yNSIvPgogICAgPHJlY3QgeD0iMTMyIiB5PSIzMzAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI1NiIgcng9IjgiIGZpbGw9IiMyNTQ2MzgiLz4KICAgIDxyZWN0IHg9IjkyIiB5PSI0MDQiIHdpZHRoPSIxMTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iOTIiIHk9IjQyMiIgd2lkdGg9IjY0IiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0U5NEI5MSIvPgoKICAgIDxyZWN0IHg9IjMwMCIgeT0iMzEwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgcng9IjE0IiBmaWxsPSIjMTQyNjFGIiBzdHJva2U9IiNFOTRCOTEiIHN0cm9rZS1vcGFjaXR5PSIwLjU1Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjMzMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iIzI1NDYzOCIvPgogICAgPHJlY3QgeD0iMzI4IiB5PSI0MDQiIHdpZHRoPSIxMTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzI4IiB5PSI0MjIiIHdpZHRoPSI2NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4KICAgIDxyZWN0IHg9IjQ0MCIgeT0iMjk2IiB3aWR0aD0iNzIiIGhlaWdodD0iMjIiIHJ4PSIxMSIgZmlsbD0iI0U5NEI5MSIvPgoKICAgIDxyZWN0IHg9IjUzNiIgeT0iMzEwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgcng9IjE0IiBmaWxsPSIjMTQyNjFGIiBzdHJva2U9IiNBOEM1QjIiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+CiAgICA8cmVjdCB4PSI2MDQiIHk9IjMzMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iIzI1NDYzOCIvPgogICAgPHJlY3QgeD0iNTY0IiB5PSI0MDQiIHdpZHRoPSIxMTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iNTY0IiB5PSI0MjIiIHdpZHRoPSI2NCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNFOTRCOTEiLz4KICA8L2c+CgogIDwhLS0gQnJpbGhvIGRlY29yYXRpdm8gLS0+CiAgPGNpcmNsZSBjeD0iNzIwIiBjeT0iODAiIHI9IjEyMCIgZmlsbD0iIzI1NDYzOCIgb3BhY2l0eT0iMC4zNSIvPgo8L3N2Zz4K" alt="Exemplo de Landing Page para produtos, com vitrine de itens e botão de compra" loading="lazy" decoding="async">
               </div>
               <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 4: Landing Page para negócios e empresas">
-                <img src="assets/landing-03.svg" alt="Exemplo de Landing Page para negócios e empresas, com números e indicadores de resultado" loading="lazy" decoding="async">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBMYW5kaW5nIFBhZ2UgcGFyYSBlbXByZXNhcyI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGNkY0RUYiLz4KCiAgPCEtLSBOYXZlZ2HDp8OjbyBkbyBzaXRlIC0tPgogIDxnPgogICAgPGNpcmNsZSBjeD0iNjQiIGN5PSI1MiIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPgogICAgPHRleHQgeD0iNzgiIHk9IjU4IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjMEIxNzEzIj5FTVBSRVNBPC90ZXh0PgogICAgPHJlY3QgeD0iNDcwIiB5PSI0NyIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiM1QTZCNjIiIG9wYWNpdHk9IjAuNTUiLz4KICAgIDxyZWN0IHg9IjUyOCIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjNUE2QjYyIiBvcGFjaXR5PSIwLjQiLz4KICAgIDxyZWN0IHg9IjU4NiIgeT0iNDciIHdpZHRoPSI0NiIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjNUE2QjYyIiBvcGFjaXR5PSIwLjQiLz4KICAgIDxyZWN0IHg9IjY0NiIgeT0iMzgiIHdpZHRoPSI5MiIgaGVpZ2h0PSIyOCIgcng9IjE0IiBmaWxsPSIjRTk0QjkxIi8+CiAgPC9nPgoKICA8IS0tIFBhaW5lbCBlc2N1cm8gw6AgZXNxdWVyZGEgLS0+CiAgPHJlY3QgeD0iMCIgeT0iODgiIHdpZHRoPSI0MDAiIGhlaWdodD0iNDEyIiBmaWxsPSIjMjU0NjM4Ii8+CiAgPHRleHQgeD0iNjQiIHk9IjE2NiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyIgZmlsbD0iI0E4QzVCMiI+U09MVcOHw5VFUyBDT1JQT1JBVElWQVM8L3RleHQ+CiAgPHRleHQgeD0iNjQiIHk9IjIxNCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjRjRGOEY0Ij5DcmVzY2ltZW50byBjb208L3RleHQ+CiAgPHRleHQgeD0iNjQiIHk9IjI1NCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXN0eWxlPSJpdGFsaWMiIGZpbGw9IiNBOEM1QjIiPnByb3DDs3NpdG8uPC90ZXh0PgogIDxyZWN0IHg9IjY0IiB5PSIyODQiIHdpZHRoPSIyNDAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjY0IiB5PSIzMDIiIHdpZHRoPSIyMDAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuMyIvPgoKICA8IS0tIEVzdGF0w61zdGljYXMgLS0+CiAgPGc+CiAgICA8dGV4dCB4PSI2NCIgeT0iMzkyIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiNGNEY4RjQiPisyNDA8L3RleHQ+CiAgICA8cmVjdCB4PSI2NCIgeT0iNDA0IiB3aWR0aD0iNzYiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC41Ii8+CiAgICA8dGV4dCB4PSIxODAiIHk9IjM5MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjMwIiBmaWxsPSIjRTk0QjkxIj45OCU8L3RleHQ+CiAgICA8cmVjdCB4PSIxODAiIHk9IjQwNCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjciIHJ4PSIzLjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNSIvPgogICAgPHRleHQgeD0iMjkyIiB5PSIzOTIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzMCIgZmlsbD0iI0Y0RjhGNCI+MTI8L3RleHQ+CiAgICA8cmVjdCB4PSIyOTIiIHk9IjQwNCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjciIHJ4PSIzLjUiIGZpbGw9IiNBOEM1QjIiIG9wYWNpdHk9IjAuNSIvPgogIDwvZz4KCiAgPCEtLSBQYWluZWwgY2xhcm8gw6AgZGlyZWl0YSAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjQ0OCIgeT0iMTI4IiB3aWR0aD0iMjg4IiBoZWlnaHQ9IjE3MCIgcng9IjE2IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiLz4KICAgIDxyZWN0IHg9IjQ3MiIgeT0iMTUyIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiMyNTQ2MzgiLz4KICAgIDxyZWN0IHg9IjQ3MiIgeT0iMTcyIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjciIHJ4PSIzLjUiIGZpbGw9IiNEOUQ0QzgiLz4KICAgIDxyZWN0IHg9IjQ3MiIgeT0iMTg4IiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjciIHJ4PSIzLjUiIGZpbGw9IiNEOUQ0QzgiLz4KICAgIDxwYXRoIGQ9Ik00NzIgMjY4IEMgNTEwIDI0NCA1NDggMjc0IDU4NiAyNTIgQyA2MjQgMjMwIDY2MiAyNTggNzEyIDIzNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjU0NjM4IiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDxwYXRoIGQ9Ik00NzIgMjgyIEMgNTEwIDI2MCA1NDggMjg4IDU4NiAyNjggQyA2MjQgMjQ4IDY2MiAyNzIgNzEyIDI1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTk0QjkxIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNyIvPgogICAgPGNpcmNsZSBjeD0iNzEyIiBjeT0iMjM2IiByPSI0IiBmaWxsPSIjMjU0NjM4Ii8+CgogICAgPHJlY3QgeD0iNDQ4IiB5PSIzMjIiIHdpZHRoPSIxMzYiIGhlaWdodD0iODYiIHJ4PSIxNCIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjRDlENEM4Ii8+CiAgICA8cmVjdCB4PSI0NjYiIHk9IjM0NCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iOCIgZmlsbD0iI0VGRUJFMyIvPgogICAgPHJlY3QgeD0iNDY2IiB5PSIzODQiIHdpZHRoPSI4MCIgaGVpZ2h0PSI3IiByeD0iMy41IiBmaWxsPSIjNUE2QjYyIiBvcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjYwMCIgeT0iMzIyIiB3aWR0aD0iMTM2IiBoZWlnaHQ9Ijg2IiByeD0iMTQiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPgogICAgPHJlY3QgeD0iNjE4IiB5PSIzNDQiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNFRkVCRTMiLz4KICAgIDxyZWN0IHg9IjYxOCIgeT0iMzg0IiB3aWR0aD0iODAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iIzVBNkI2MiIgb3BhY2l0eT0iMC41Ii8+CiAgPC9nPgo8L3N2Zz4K" alt="Exemplo de Landing Page para negócios e empresas, com números e indicadores de resultado" loading="lazy" decoding="async">
               </div>
               <div class="ws-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 de 4: Landing Page para captação de leads">
-                <img src="assets/landing-04.svg" alt="Exemplo de Landing Page para captação de leads, com formulário de inscrição em destaque" loading="lazy" decoding="async">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1vY2t1cCBkZSBMYW5kaW5nIFBhZ2UgcGFyYSBjYXB0YcOnw6NvIGRlIGxlYWRzIj4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0Y2RjRFRiIvPgogIDxjaXJjbGUgY3g9IjkwIiBjeT0iNDQwIiByPSIxNDAiIGZpbGw9IiNFRkVCRTMiLz4KCiAgPCEtLSBOYXZlZ2HDp8OjbyBkbyBzaXRlIC0tPgogIDxnPgogICAgPGNpcmNsZSBjeD0iNjQiIGN5PSI1MiIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPgogICAgPHRleHQgeD0iNzgiIHk9IjU4IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjMEIxNzEzIj5NRU5UT1JJQTwvdGV4dD4KICAgIDxyZWN0IHg9IjYwMCIgeT0iMzgiIHdpZHRoPSIxMzgiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjU0NjM4IiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDwvZz4KCiAgPCEtLSBDb2x1bmEgZXNxdWVyZGE6IHByb21lc3NhICsgYmVuZWbDrWNpb3MgLS0+CiAgPHRleHQgeD0iNjQiIHk9IjE0MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBsZXR0ZXItc3BhY2luZz0iMyIgZmlsbD0iIzI1NDYzOCI+VFVSTUEgTElNSVRBREE8L3RleHQ+CiAgPHRleHQgeD0iNjQiIHk9IjE4OCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM2IiBmaWxsPSIjMEIxNzEzIj5UcmFuc2Zvcm1lIHNldTwvdGV4dD4KICA8dGV4dCB4PSI2NCIgeT0iMjMwIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZmlsbD0iIzI1NDYzOCI+bmVnw7NjaW8gZW0gOTAgZGlhcy48L3RleHQ+CgogIDxnPgogICAgPGNpcmNsZSBjeD0iNzQiIGN5PSIyODQiIHI9IjYiIGZpbGw9IiNFOTRCOTEiLz4KICAgIDxyZWN0IHg9Ijk0IiB5PSIyNzkiIHdpZHRoPSIyMjAiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzVBNkI2MiIgb3BhY2l0eT0iMC41Ii8+CiAgICA8Y2lyY2xlIGN4PSI3NCIgY3k9IjMyMCIgcj0iNiIgZmlsbD0iI0U5NEI5MSIvPgogICAgPHJlY3QgeD0iOTQiIHk9IjMxNSIgd2lkdGg9IjE5MCIgaGVpZ2h0PSI5IiByeD0iNC41IiBmaWxsPSIjNUE2QjYyIiBvcGFjaXR5PSIwLjQiLz4KICAgIDxjaXJjbGUgY3g9Ijc0IiBjeT0iMzU2IiByPSI2IiBmaWxsPSIjRTk0QjkxIi8+CiAgICA8cmVjdCB4PSI5NCIgeT0iMzUxIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjkiIHJ4PSI0LjUiIGZpbGw9IiM1QTZCNjIiIG9wYWNpdHk9IjAuNCIvPgogICAgPGNpcmNsZSBjeD0iNzQiIGN5PSIzOTIiIHI9IjYiIGZpbGw9IiNFOTRCOTEiLz4KICAgIDxyZWN0IHg9Ijk0IiB5PSIzODciIHdpZHRoPSIxNzAiIGhlaWdodD0iOSIgcng9IjQuNSIgZmlsbD0iIzVBNkI2MiIgb3BhY2l0eT0iMC40Ii8+CiAgPC9nPgoKICA8IS0tIENhcnTDo28gZGUgY2FwdGHDp8OjbyBkZSBsZWFkcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjQ0MCIgeT0iMTEwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMzMCIgcng9IjE4IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNEOUQ0QzgiLz4KICAgIDxyZWN0IHg9IjQ0MCIgeT0iMTEwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjRTk0QjkxIi8+CiAgICA8dGV4dCB4PSI0NzIiIHk9IjE2MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIxIiBmaWxsPSIjMEIxNzEzIj5HYXJhbnRhIHN1YSB2YWdhPC90ZXh0PgogICAgPHJlY3QgeD0iNDcyIiB5PSIxODAiIHdpZHRoPSIxODAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0Q5RDRDOCIvPgoKICAgIDxyZWN0IHg9IjQ3MiIgeT0iMjEyIiB3aWR0aD0iMjM2IiBoZWlnaHQ9IjM4IiByeD0iMTAiIGZpbGw9IiNGNkY0RUYiIHN0cm9rZT0iI0Q5RDRDOCIvPgogICAgPHJlY3QgeD0iNDg4IiB5PSIyMjgiIHdpZHRoPSI5MCIgaGVpZ2h0PSI3IiByeD0iMy41IiBmaWxsPSIjQThDNUIyIiBvcGFjaXR5PSIwLjciLz4KICAgIDxyZWN0IHg9IjQ3MiIgeT0iMjYyIiB3aWR0aD0iMjM2IiBoZWlnaHQ9IjM4IiByeD0iMTAiIGZpbGw9IiNGNkY0RUYiIHN0cm9rZT0iI0Q5RDRDOCIvPgogICAgPHJlY3QgeD0iNDg4IiB5PSIyNzgiIHdpZHRoPSIxMTAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC43Ii8+CiAgICA8cmVjdCB4PSI0NzIiIHk9IjMxMiIgd2lkdGg9IjIzNiIgaGVpZ2h0PSIzOCIgcng9IjEwIiBmaWxsPSIjRjZGNEVGIiBzdHJva2U9IiNEOUQ0QzgiLz4KICAgIDxyZWN0IHg9IjQ4OCIgeT0iMzI4IiB3aWR0aD0iNzAiIGhlaWdodD0iNyIgcng9IjMuNSIgZmlsbD0iI0E4QzVCMiIgb3BhY2l0eT0iMC43Ii8+CiAgICA8cmVjdCB4PSI0NzIiIHk9IjM2OCIgd2lkdGg9IjIzNiIgaGVpZ2h0PSI0MCIgcng9IjIwIiBmaWxsPSIjRTk0QjkxIi8+CiAgICA8cmVjdCB4PSI1MjAiIHk9IjQyNCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI3IiByeD0iMy41IiBmaWxsPSIjRDlENEM4Ii8+CiAgPC9nPgoKICA8IS0tIFNlbG8gZGUgdmFnYXMgLS0+CiAgPGc+CiAgICA8cmVjdCB4PSI2NCIgeT0iNDMwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjM0IiByeD0iMTciIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5RDRDOCIvPgogICAgPGNpcmNsZSBjeD0iODYiIGN5PSI0NDciIHI9IjUiIGZpbGw9IiNFOTRCOTEiLz4KICAgIDxyZWN0IHg9IjEwMiIgeT0iNDQzIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNUE2QjYyIiBvcGFjaXR5PSIwLjUiLz4KICA8L2c+Cjwvc3ZnPgo=" alt="Exemplo de Landing Page para captação de leads, com formulário de inscrição em destaque" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -1470,7 +1764,7 @@
           </span>
           <span class="ws-card__num" aria-hidden="true">02</span>
           <h3 class="ws-card__title ws-serif">Sua ideia ganha forma</h3>
-          <p class="ws-card__desc">Você responde nosso formulário com as informações iniciais do seu projeto.</p>
+          <p class="ws-card__desc">Você responde ao formulário com as informações iniciais do seu projeto.</p>
         </article>
 
         <article class="ws-card ws-reveal">
@@ -1489,7 +1783,7 @@
           </span>
           <span class="ws-card__num" aria-hidden="true">03</span>
           <h3 class="ws-card__title ws-serif">Planejamos juntos</h3>
-          <p class="ws-card__desc">Nossa equipe organiza as ideias, entende suas necessidades e define os próximos passos.</p>
+          <p class="ws-card__desc">Organizo as ideias, entendo suas necessidades e defino com você os próximos passos.</p>
         </article>
 
         <article class="ws-card ws-reveal">
@@ -1510,8 +1804,61 @@
           </span>
           <span class="ws-card__num" aria-hidden="true">04</span>
           <h3 class="ws-card__title ws-serif">Sua marca no ar!</h3>
-          <p class="ws-card__desc">Desenvolvemos sua Landing Page e apresentamos o resultado para você.</p>
+          <p class="ws-card__desc">Desenvolvo sua Landing Page e apresento o resultado para você.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4.1 — INVESTIMENTO
+       ⚠️ PREENCHER: valor "a partir de" e % de desconto no Pix
+       (procure por "PREENCHER" neste arquivo).
+       ========================================================== -->
+  <section class="ws-pricing" id="wslp-investimento" aria-labelledby="wslp-investimento-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Investimento</p>
+        <h2 class="ws-section-head__title ws-serif" id="wslp-investimento-title">Tudo o que sua Landing Page precisa para entrar no ar.</h2>
+        <p class="ws-section-head__subtitle">O valor final depende do tamanho da página e do conteúdo. Você recebe o orçamento fechado antes de começarmos.</p>
+      </div>
+
+      <div class="ws-pricing__card ws-reveal">
+        <div class="ws-pricing__main">
+          <p class="ws-pricing__from">A partir de</p>
+          <!-- PREENCHER: valor da Landing Page -->
+          <p class="ws-pricing__price ws-serif"><span class="ws-pricing__currency">R$</span> 0.000</p>
+          <p class="ws-pricing__note">Pagamento único pelo projeto.</p>
+
+          <h3 class="ws-pricing__subtitle">Formas de pagamento</h3>
+          <ul class="ws-pricing__pay">
+            <!-- PREENCHER: % de desconto no Pix -->
+            <li><strong>Pix à vista</strong> com 0% de desconto</li>
+            <li><strong>50% na entrada</strong> e 50% na entrega</li>
+            <li><strong>Cartão de crédito</strong> parcelado, sem desconto</li>
+          </ul>
+
+          <a href="#wslp-contato" class="ws-btn ws-btn--primary ws-pricing__cta">Quero minha Landing Page</a>
+        </div>
+
+        <div class="ws-pricing__details">
+          <h3 class="ws-pricing__subtitle">O que está incluso</h3>
+          <ul class="ws-pricing__list">
+            <li>Página única, adaptada para celular, tablet e computador</li>
+            <li>Textos escritos por mim, caso você ainda não os tenha</li>
+            <li>Botão de WhatsApp integrado</li>
+            <li>Formulário de contato</li>
+            <li>Publicação da página no ar</li>
+            <li>Uso do seu domínio ou registro de um novo, caso você ainda não tenha</li>
+            <li>2 meses de suporte após a entrega</li>
+            <li>Entrega em 5 a 7 dias úteis<sup>*</sup></li>
+          </ul>
+
+          <h3 class="ws-pricing__subtitle">O que você me envia</h3>
+          <p class="ws-pricing__text">Logo, imagens do seu negócio e as informações principais sobre o que você oferece.</p>
+
+          <p class="ws-pricing__foot"><sup>*</sup> O prazo começa após o alinhamento do escopo e o recebimento dos materiais. Hospedagem: publico na sua ou cuido disso para você, com valor informado no orçamento.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1525,37 +1872,116 @@
       <div class="ws-section-head ws-reveal">
         <p class="ws-section-head__eyebrow">Contato</p>
         <h2 class="ws-section-head__title ws-serif" id="wslp-contato-title">Vamos tirar sua ideia do papel?</h2>
-        <p class="ws-section-head__subtitle">Conte um pouquinho sobre você. Em breve, entraremos em contato para conversar sobre seu projeto.</p>
+        <p class="ws-section-head__subtitle">Conte um pouquinho sobre você e seu negócio. Em breve, entro em contato para conversarmos sobre o seu projeto.</p>
       </div>
 
-      <!-- Novos campos poderão ser adicionados futuramente como
-           novos .ws-field dentro de .ws-form__row, sem alterar o JS. -->
+      <!-- Campos com data-ws-field são validados pelo JS.
+           Campos sem "required" são opcionais. Novos campos podem ser
+           adicionados como novos .ws-field; o JS lê todos via "name". -->
       <form class="ws-form ws-reveal" id="wslp-form" novalidate>
+        <!-- Anti-spam (honeypot): invisível para pessoas, bots costumam preencher -->
+        <input type="checkbox" name="botcheck" class="ws-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
         <div class="ws-form__row">
           <div class="ws-field" data-ws-field>
             <label class="ws-field__label" for="wslp-nome">Nome e sobrenome</label>
-            <input class="ws-field__input" type="text" id="wslp-nome" name="nome" placeholder="Como podemos te chamar?" autocomplete="name" required aria-required="true">
-            <p class="ws-field__error" id="wslp-nome-erro" role="alert">Informe seu nome e sobrenome.</p>
+            <input class="ws-field__input" type="text" id="wslp-nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required aria-required="true" aria-describedby="wslp-nome-erro">
+            <p class="ws-field__error" id="wslp-nome-erro">Informe seu nome e sobrenome.</p>
           </div>
         </div>
 
         <div class="ws-form__row ws-form__row--two">
           <div class="ws-field" data-ws-field>
             <label class="ws-field__label" for="wslp-email">E-mail</label>
-            <input class="ws-field__input" type="email" id="wslp-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true">
-            <p class="ws-field__error" id="wslp-email-erro" role="alert">Informe um e-mail válido.</p>
+            <input class="ws-field__input" type="email" id="wslp-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true" aria-describedby="wslp-email-erro">
+            <p class="ws-field__error" id="wslp-email-erro">Informe um e-mail válido.</p>
           </div>
 
           <div class="ws-field" data-ws-field>
-            <label class="ws-field__label" for="wslp-telefone">Telefone / WhatsApp</label>
-            <input class="ws-field__input" type="tel" id="wslp-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true">
-            <p class="ws-field__error" id="wslp-telefone-erro" role="alert">Informe um telefone com DDD.</p>
+            <label class="ws-field__label" for="wslp-telefone">WhatsApp</label>
+            <input class="ws-field__input" type="tel" id="wslp-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true" aria-describedby="wslp-telefone-erro">
+            <p class="ws-field__error" id="wslp-telefone-erro">Informe um WhatsApp com DDD.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-negocio">Nome do negócio ou marca</label>
+            <input class="ws-field__input" type="text" id="wslp-negocio" name="negocio" placeholder="Ex.: Ateliê Flor de Lis" autocomplete="organization" required aria-required="true" aria-describedby="wslp-negocio-erro">
+            <p class="ws-field__error" id="wslp-negocio-erro">Informe o nome do seu negócio ou marca.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-area">Área de atuação <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wslp-area" name="area" placeholder="Ex.: estética, advocacia, moda">
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-objetivo">Objetivo da página</label>
+            <select class="ws-field__input ws-field__select" id="wslp-objetivo" name="objetivo" required aria-required="true" aria-describedby="wslp-objetivo-erro">
+              <option value="">Selecione</option>
+              <option>Vender um produto ou serviço</option>
+              <option>Captar contatos de clientes</option>
+              <option>Divulgar um evento ou lançamento</option>
+              <option>Apresentar meu trabalho</option>
+              <option>Outro</option>
+            </select>
+            <p class="ws-field__error" id="wslp-objetivo-erro">Escolha o objetivo principal da página.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-prazo">Quando gostaria de começar? <span class="ws-field__opt">(opcional)</span></label>
+            <select class="ws-field__input ws-field__select" id="wslp-prazo" name="prazo">
+              <option value="">Selecione</option>
+              <option>O quanto antes</option>
+              <option>Nas próximas semanas</option>
+              <option>Ainda estou pesquisando</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">O que você já tem? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="possui" value="Logo / identidade visual"><span>Logo / identidade visual</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Domínio"><span>Domínio (ex.: seunegocio.com.br)</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Hospedagem"><span>Hospedagem</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Textos prontos"><span>Textos prontos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Imagens"><span>Imagens do negócio</span></label>
+          </div>
+        </fieldset>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-redes">Instagram ou site atual <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wslp-redes" name="redes" placeholder="@seunegocio ou www.seunegocio.com.br">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-mensagem">Conte um pouco sobre o projeto <span class="ws-field__opt">(opcional)</span></label>
+            <textarea class="ws-field__input ws-field__textarea" id="wslp-mensagem" name="mensagem" rows="4" maxlength="1500" placeholder="O que você oferece, para quem, e o que espera da página."></textarea>
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field ws-field--consent" data-ws-field>
+            <label class="ws-check">
+              <input type="checkbox" id="wslp-consentimento" name="consentimento" value="sim" required aria-required="true" aria-describedby="wslp-consentimento-erro">
+              <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+              <span>Li e concordo com a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato pelos canais informados.</span>
+            </label>
+            <p class="ws-field__error" id="wslp-consentimento-erro">Para continuar, é preciso concordar com a Política de Privacidade.</p>
           </div>
         </div>
 
         <div class="ws-form__actions">
           <button type="submit" class="ws-btn ws-btn--primary ws-form__submit" data-ws-submit>Enviar interesse</button>
-          <p class="ws-form__hint">Seus dados serão usados apenas para entrarmos em contato com você.</p>
+          <p class="ws-form__hint">Seus dados serão usados apenas para que eu entre em contato com você sobre este projeto.</p>
+          <p class="ws-form__status" data-ws-form-status role="status" aria-live="polite"></p>
         </div>
       </form>
 
@@ -1587,17 +2013,20 @@
        ========================================================== -->
   <footer class="ws-footer">
     <div class="ws-container ws-footer__inner">
-      <a href="#" class="ws-brand" aria-label="WS WebStudio — início">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
         <span class="ws-brand__mark" aria-hidden="true"></span>
-        WS WebStudio
+        WebStudio
       </a>
 
       <nav class="ws-footer__nav" aria-label="Navegação do rodapé">
         <a href="#wslp-sobre" class="ws-footer__link">Serviços</a>
+        <a href="#wslp-investimento" class="ws-footer__link">Investimento</a>
         <a href="#wslp-contato" class="ws-footer__link">Contato</a>
+        <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+        <a href="/politica-de-privacidade/" class="ws-footer__link">Política de Privacidade</a>
       </nav>
 
-      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WS WebStudio. Todos os direitos reservados.</p>
+      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WebStudio. Todos os direitos reservados.</p>
     </div>
   </footer>
 
@@ -1612,24 +2041,21 @@
           <path d="M20 6L9 17l-5-5"/>
         </svg>
       </span>
+      <!-- Título e texto são trocados pelo JS conforme o resultado do envio -->
       <h2 class="ws-modal__title ws-serif" id="wslp-modal-title">Que bom ter você por aqui!</h2>
-      <p class="ws-modal__text" id="wslp-modal-text">Recebemos seu interesse em desenvolver uma Landing Page com a WS WebStudio.
-
-Em breve, nossa equipe entrará em contato com você pelo WhatsApp e pelo e-mail informado.
-
-Obrigado por confiar sua ideia à gente!</p>
-      <button type="button" class="ws-btn ws-btn--primary ws-modal__close" data-ws-modal-close>Fechar</button>
+      <p class="ws-modal__text" id="wslp-modal-text"></p>
+      <div class="ws-modal__actions">
+        <a href="#" class="ws-btn ws-btn--primary ws-modal__whatsapp" data-ws-modal-whatsapp target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+        <button type="button" class="ws-btn ws-btn--ghost ws-modal__close" data-ws-modal-close>Fechar</button>
+      </div>
     </div>
   </div>
 
 </div><!-- /#ws-landing-page -->
 
-<!-- Prévia local: o script é carregado como arquivo separado -->
-<script src="landingpage.js"></script>
-
 <script>
 /* ============================================================
-   WS WEBSTUDIO — Página do serviço Landing Page
+   WEBSTUDIO — Página do serviço Landing Page
    JavaScript puro (sem jQuery, sem build).
    Encapsulado em IIFE; inicializa apenas dentro de
    #ws-landing-page, sem conflitar com outros scripts.
@@ -1641,20 +2067,28 @@ Obrigado por confiar sua ideia à gente!</p>
   /* ============================================================
      ⚙️ CONFIGURAÇÃO — EDITE APENAS ESTE BLOCO
      ============================================================
-     1) INTEGRAÇÃO DE ENVIO (futura):
-        Quando houver backend ou serviço de formulários (ex.:
-        Formspree, WPForms, endpoint próprio), implemente a função
-        `submitLead` mais abaixo. Enquanto isso, o formulário apenas
-        valida no navegador e exibe o popup de agradecimento.
+     1) ENVIO POR E-MAIL (Web3Forms — https://web3forms.com):
+        Crie uma chave gratuita informando o e-mail que receberá os
+        contatos e cole em WEB3FORMS_ACCESS_KEY. A chave é pública
+        (feita para ficar no navegador); ela só permite ENVIAR para
+        o e-mail cadastrado.
 
-     2) TEMA:
+     2) WHATSAPP:
+        Número com código do país + DDD, apenas dígitos.
+        Ex.: "5511999999999". Usado no botão "Continuar no WhatsApp"
+        e como alternativa se o envio por e-mail falhar.
+
+     3) TEMA:
         Esta página compartilha a MESMA chave de localStorage do site
         principal ("ss-theme-preference"), para respeitar a escolha
         Light / Dark / Auto feita pelo visitante em qualquer página.
      ============================================================ */
 
+  var WEB3FORMS_ACCESS_KEY = ""; // <-- COLE SUA CHAVE DO WEB3FORMS AQUI
+  var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
+
   var THEME_STORAGE_KEY = "ss-theme-preference"; // mesma chave do site principal
-  var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (comfortável)
+  var CAROUSEL_INTERVAL_MS = 6000; // intervalo do autoplay (confortável)
 
   /* ============================================================
      TEMA: Light | Dark | Auto (mesmo comportamento do site principal)
@@ -1979,9 +2413,9 @@ Obrigado por confiar sua ideia à gente!</p>
   /* ============================================================
      FORMULÁRIO
      - Máscara de telefone brasileiro
-     - Validação de obrigatórios e e-mail
-     - Popup de agradecimento
-     - Envio isolado em `submitLead` (preparado para integração)
+     - Validação de obrigatórios, e-mail, telefone e consentimento
+     - Envio por e-mail (Web3Forms) + continuação no WhatsApp
+     - Nunca informa "recebido" se o envio falhou
      ============================================================ */
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -1997,9 +2431,13 @@ Obrigado por confiar sua ideia à gente!</p>
     return "(" + digits.slice(0, 2) + ") " + digits.slice(2, 7) + "-" + digits.slice(7);
   }
 
+  function fieldControl(field) {
+    return field.querySelector("input, select, textarea");
+  }
+
   function setFieldError(field, invalid) {
     field.classList.toggle("ws-field--invalid", invalid);
-    var input = field.querySelector(".ws-field__input");
+    var input = fieldControl(field);
     if (input) {
       if (invalid) {
         input.setAttribute("aria-invalid", "true");
@@ -2010,29 +2448,121 @@ Obrigado por confiar sua ideia à gente!</p>
   }
 
   function validateField(field) {
-    var input = field.querySelector(".ws-field__input");
+    var input = fieldControl(field);
     if (!input) return true;
 
-    var value = (input.value || "").trim();
+    var required = input.hasAttribute("required");
     var invalid = false;
 
-    if (input.hasAttribute("required") && value === "") {
-      invalid = true;
-    } else if (input.type === "email" && value !== "" && !EMAIL_RE.test(value)) {
-      invalid = true;
-    } else if (input.type === "tel" && value !== "") {
-      var digits = value.replace(/\D/g, "");
-      invalid = digits.length < 10 || digits.length > 11;
+    if (input.type === "checkbox") {
+      invalid = required && !input.checked;
+    } else {
+      var value = (input.value || "").trim();
+      if (required && value === "") {
+        invalid = true;
+      } else if (input.type === "email" && value !== "" && !EMAIL_RE.test(value)) {
+        invalid = true;
+      } else if (input.type === "tel" && value !== "") {
+        var digits = value.replace(/\D/g, "");
+        invalid = digits.length < 10 || digits.length > 11;
+      } else if (input.name === "nome" && value !== "" && value.split(/\s+/).length < 2) {
+        invalid = true; // pede nome e sobrenome
+      }
     }
 
     setFieldError(field, invalid);
     return !invalid;
   }
 
-  function initForm(root, openModal) {
+  function fieldValue(form, name) {
+    var el = form.elements[name];
+    return el && el.value ? String(el.value).trim() : "";
+  }
+
+  function collectLead(form) {
+    var possui = [];
+    var boxes = form.querySelectorAll("input[name='possui']:checked");
+    for (var i = 0; i < boxes.length; i++) possui.push(boxes[i].value);
+
+    return {
+      nome: fieldValue(form, "nome"),
+      email: fieldValue(form, "email"),
+      telefone: fieldValue(form, "telefone"),
+      negocio: fieldValue(form, "negocio"),
+      area: fieldValue(form, "area"),
+      objetivo: fieldValue(form, "objetivo"),
+      prazo: fieldValue(form, "prazo"),
+      possui: possui.join(", "),
+      redes: fieldValue(form, "redes"),
+      mensagem: fieldValue(form, "mensagem"),
+      botcheck: !!(form.elements.botcheck && form.elements.botcheck.checked)
+    };
+  }
+
+  /* Link do WhatsApp com um resumo curto (sem e-mail/telefone:
+     a conversa já identifica o número de quem envia). */
+  function whatsappLink(lead) {
+    var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
+    if (!number) return "";
+    var lines = ["Olá! Tenho interesse em uma Landing Page."];
+    if (lead) {
+      if (lead.nome) lines.push("Nome: " + lead.nome);
+      if (lead.negocio) lines.push("Negócio: " + lead.negocio);
+      if (lead.objetivo) lines.push("Objetivo: " + lead.objetivo);
+    }
+    return "https://wa.me/" + number + "?text=" + encodeURIComponent(lines.join("\n"));
+  }
+
+  /* Envio por e-mail via Web3Forms.
+     Chama done(true) se enviado; done(false) se falhou ou não configurado. */
+  function submitLead(lead, done) {
+    if (!WEB3FORMS_ACCESS_KEY || !window.fetch) {
+      done(false);
+      return;
+    }
+
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "Novo interesse em Landing Page — " + (lead.negocio || lead.nome),
+      from_name: "Site WebStudio",
+      replyto: lead.email,
+      "Nome": lead.nome,
+      "E-mail": lead.email,
+      "WhatsApp": lead.telefone,
+      "Negócio": lead.negocio,
+      "Área de atuação": lead.area || "—",
+      "Objetivo da página": lead.objetivo,
+      "Quando quer começar": lead.prazo || "—",
+      "O que já tem": lead.possui || "—",
+      "Instagram / site": lead.redes || "—",
+      "Mensagem": lead.mensagem || "—",
+      "Consentimento (LGPD)": "Aceitou a Política de Privacidade em " + new Date().toLocaleString("pt-BR")
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().then(function (json) {
+          done(!!(res.ok && json && json.success));
+        });
+      })
+      .catch(function () {
+        done(false);
+      });
+  }
+
+  function initForm(root, modal) {
     var form = root.querySelector("#wslp-form");
     if (!form || form.getAttribute("data-ws-form-init") === "true") return;
     form.setAttribute("data-ws-form-init", "true");
+
+    var submitBtn = form.querySelector("[data-ws-submit]");
+    var submitLabel = submitBtn ? submitBtn.textContent : "";
+    var status = form.querySelector("[data-ws-form-status]");
+    var sending = false;
 
     var phone = form.querySelector("#wslp-telefone");
     if (phone) {
@@ -2052,12 +2582,15 @@ Obrigado por confiar sua ideia à gente!</p>
     var fields = form.querySelectorAll("[data-ws-field]");
     for (var i = 0; i < fields.length; i++) {
       (function (field) {
-        var input = field.querySelector(".ws-field__input");
+        var input = fieldControl(field);
         if (!input) return;
-        input.addEventListener("blur", function () {
-          if (input.value.trim() !== "") validateField(field);
-        });
-        input.addEventListener("input", function () {
+        var isToggle = input.type === "checkbox" || input.tagName === "SELECT";
+        if (!isToggle) {
+          input.addEventListener("blur", function () {
+            if (input.value.trim() !== "") validateField(field);
+          });
+        }
+        input.addEventListener(isToggle ? "change" : "input", function () {
           if (field.classList.contains("ws-field--invalid")) {
             validateField(field); // remove o erro assim que corrigir
           }
@@ -2065,56 +2598,58 @@ Obrigado por confiar sua ideia à gente!</p>
       })(fields[i]);
     }
 
+    function setSending(on) {
+      sending = on;
+      if (submitBtn) {
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? "Enviando…" : submitLabel;
+      }
+      if (status) status.textContent = on ? "Enviando suas informações…" : "";
+    }
+
+    function clearForm() {
+      form.reset();
+      for (var k = 0; k < fields.length; k++) setFieldError(fields[k], false);
+    }
+
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
+      if (sending) return;
 
-      var valid = true;
       var firstInvalid = null;
       for (var j = 0; j < fields.length; j++) {
-        var ok = validateField(fields[j]);
-        if (!ok && valid) {
-          valid = false;
-          firstInvalid = fields[j];
-        } else if (!ok) {
-          valid = false;
-        }
+        if (!validateField(fields[j]) && !firstInvalid) firstInvalid = fields[j];
       }
 
-      if (!valid) {
-        if (firstInvalid) {
-          var input = firstInvalid.querySelector(".ws-field__input");
-          if (input) input.focus();
-        }
+      if (firstInvalid) {
+        var input = fieldControl(firstInvalid);
+        if (input) input.focus();
         return;
       }
 
-      // Dados prontos para a futura integração
-      var data = {
-        nome: form.querySelector("#wslp-nome") ? form.querySelector("#wslp-nome").value.trim() : "",
-        email: form.querySelector("#wslp-email") ? form.querySelector("#wslp-email").value.trim() : "",
-        telefone: phone ? phone.value.trim() : ""
-      };
+      var lead = collectLead(form);
 
-      // Envio isolado: substituir por integração real no futuro.
-      submitLead(data);
-
-      form.reset();
-      for (var k = 0; k < fields.length; k++) {
-        setFieldError(fields[k], false);
+      // Honeypot marcado = bot: finge sucesso sem enviar nada
+      if (lead.botcheck) {
+        clearForm();
+        modal.open("success", "");
+        return;
       }
-      openModal();
-    });
-  }
 
-  /* Ponto único de integração futura (backend, serviço de e-mail,
-     CRM, WhatsApp API etc.). Nesta versão, apenas registra no console
-     em ambiente de desenvolvimento e não envia nada. */
-  function submitLead(data) {
-    // TODO: integrar com backend/serviço de formulários.
-    // Ex.: fetch("https://seu-endpoint", { method: "POST", body: JSON.stringify(data) })
-    if (window.console && window.console.info) {
-      window.console.info("[WS WebStudio] Lead capturado (envio ainda não integrado):", data.nome ? "ok" : "vazio");
-    }
+      var wa = whatsappLink(lead);
+
+      setSending(true);
+      submitLead(lead, function (ok) {
+        setSending(false);
+        if (ok) {
+          clearForm();
+          modal.open("success", wa);
+        } else {
+          // Mantém os dados preenchidos para uma nova tentativa
+          modal.open(wa ? "fallback" : "error", wa);
+        }
+      });
+    });
   }
 
   /* ============================================================
@@ -2129,9 +2664,37 @@ Obrigado por confiar sua ideia à gente!</p>
     modal.setAttribute("data-ws-modal-init", "true");
 
     var dialog = modal.querySelector(".ws-modal__dialog");
+    var titleEl = modal.querySelector(".ws-modal__title");
+    var textEl = modal.querySelector(".ws-modal__text");
+    var waBtn = modal.querySelector("[data-ws-modal-whatsapp]");
     var lastFocus = null;
 
-    function open() {
+    // Mensagens por resultado do envio
+    var STATES = {
+      success: {
+        title: "Que bom ter você por aqui!",
+        text: "Recebi seu interesse em desenvolver uma Landing Page com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
+        textNoWa: "Recebi seu interesse em desenvolver uma Landing Page com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+      },
+      fallback: {
+        title: "Quase lá!",
+        text: "Não consegui registrar seu envio agora.\n\nToque no botão abaixo para me enviar suas informações pelo WhatsApp. Seus dados continuam preenchidos no formulário."
+      },
+      error: {
+        title: "Algo deu errado",
+        text: "Não consegui registrar seu envio agora. Seus dados continuam preenchidos no formulário.\n\nTente novamente em alguns instantes."
+      }
+    };
+
+    function open(state, waUrl) {
+      var cfg = STATES[state] || STATES.success;
+      if (titleEl) titleEl.textContent = cfg.title;
+      if (textEl) textEl.textContent = !waUrl && cfg.textNoWa ? cfg.textNoWa : cfg.text;
+      if (waBtn) {
+        waBtn.hidden = !waUrl;
+        waBtn.setAttribute("href", waUrl || "#");
+      }
+
       lastFocus = document.activeElement;
       modal.hidden = false;
 
@@ -2140,8 +2703,8 @@ Obrigado por confiar sua ideia à gente!</p>
       body.setAttribute("data-ws-scroll-lock", "true");
       body.style.overflow = "hidden";
 
-      var closeBtn = modal.querySelector(".ws-modal__close");
-      if (closeBtn) closeBtn.focus();
+      var focusBtn = waUrl && waBtn ? waBtn : modal.querySelector(".ws-modal__close");
+      if (focusBtn) focusBtn.focus();
 
       document.addEventListener("keydown", onKeydown);
     }
@@ -2169,7 +2732,7 @@ Obrigado por confiar sua ideia à gente!</p>
 
       // Mantém o foco dentro do diálogo (Tab / Shift+Tab)
       if (ev.key === "Tab" && dialog) {
-        var focusables = dialog.querySelectorAll("button, [href], input, [tabindex]:not([tabindex='-1'])");
+        var focusables = dialog.querySelectorAll("button:not([hidden]), [href]:not([hidden]), input, [tabindex]:not([tabindex='-1'])");
         if (!focusables.length) return;
         var first = focusables[0];
         var last = focusables[focusables.length - 1];
@@ -2240,7 +2803,7 @@ Obrigado por confiar sua ideia à gente!</p>
       initMobileMenu(root);
       initAboutFaq(root);
       initCarousel(root);
-      initForm(root, modalApi ? modalApi.open : function () {});
+      initForm(root, modalApi || { open: function () {} });
       initReveals(root);
 
       // Ano automático no copyright

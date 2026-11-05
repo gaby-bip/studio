@@ -1,5 +1,5 @@
 /* ============================================================
-   WS WEBSTUDIO — Página do serviço Landing Page
+   WEBSTUDIO — Página do serviço Landing Page
    Todo o CSS está escopado dentro de #ws-landing-page.
    Nenhum seletor global (html, body, header, footer) é afetado.
    ============================================================ */
@@ -76,7 +76,9 @@
 /* ---------- Foco visível ---------- */
 #ws-landing-page a:focus-visible,
 #ws-landing-page button:focus-visible,
-#ws-landing-page input:focus-visible {
+#ws-landing-page input:focus-visible,
+#ws-landing-page select:focus-visible,
+#ws-landing-page textarea:focus-visible {
   outline: 2px solid var(--wslp-pink);
   outline-offset: 3px;
   border-radius: 4px;
@@ -741,6 +743,169 @@
   opacity: 0.4;
 }
 
+/* ---------- Seção: Investimento ---------- */
+#ws-landing-page .ws-pricing {
+  padding: 96px 0;
+  border-top: 1px solid var(--wslp-border);
+}
+
+#ws-landing-page .ws-pricing .ws-section-head {
+  margin-bottom: 48px;
+}
+
+#ws-landing-page .ws-pricing__card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--wslp-bg-card);
+  border: 1px solid var(--wslp-border);
+  border-radius: var(--wslp-radius);
+  box-shadow: var(--wslp-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Detalhe rosa no topo, mesma linguagem do formulário */
+#ws-landing-page .ws-pricing__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wslp-pink), color-mix(in srgb, var(--wslp-pink) 35%, transparent));
+}
+
+#ws-landing-page .ws-pricing__main {
+  padding: 44px 40px;
+  background: color-mix(in srgb, var(--wslp-accent) 6%, transparent);
+  border-right: 1px solid var(--wslp-border);
+  display: flex;
+  flex-direction: column;
+}
+
+#ws-landing-page .ws-pricing__details {
+  padding: 44px 40px;
+}
+
+#ws-landing-page .ws-pricing__from {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wslp-accent);
+  font-weight: 600;
+}
+
+#ws-landing-page .ws-pricing__price {
+  margin: 6px 0 4px;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--wslp-text);
+  font-variant-numeric: tabular-nums;
+}
+
+#ws-landing-page .ws-pricing__currency {
+  font-size: 0.45em;
+  vertical-align: 0.9em;
+  margin-right: 2px;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__note {
+  margin: 0 0 28px;
+  font-size: 0.9rem;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__subtitle {
+  font-family: var(--wslp-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+#ws-landing-page .ws-pricing__details .ws-pricing__subtitle + .ws-pricing__text {
+  margin-top: 0;
+}
+
+#ws-landing-page .ws-pricing__pay,
+#ws-landing-page .ws-pricing__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+#ws-landing-page .ws-pricing__pay {
+  margin-bottom: 32px;
+}
+
+#ws-landing-page .ws-pricing__pay li,
+#ws-landing-page .ws-pricing__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__pay strong {
+  color: var(--wslp-text);
+  font-weight: 600;
+}
+
+/* Marcador: ponto rosa nas formas de pagamento */
+#ws-landing-page .ws-pricing__pay li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wslp-pink);
+}
+
+/* Marcador: check verde no que está incluso */
+#ws-landing-page .ws-pricing__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.35em;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--wslp-accent);
+  border-bottom: 2px solid var(--wslp-accent);
+  transform: rotate(-45deg);
+}
+
+#ws-landing-page .ws-pricing__list {
+  margin-bottom: 28px;
+}
+
+#ws-landing-page .ws-pricing__text {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__foot {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--wslp-border);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-pricing__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
 /* ---------- Seção: Formulário ---------- */
 #ws-landing-page .ws-contact {
   padding: 96px 0;
@@ -893,6 +1058,118 @@
   cursor: pointer;
   padding: 14px 26px;
   font-size: 1rem;
+}
+
+#ws-landing-page .ws-form__submit[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+#ws-landing-page .ws-form__status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--wslp-text-muted);
+  text-align: center;
+}
+
+#ws-landing-page .ws-form__status:empty {
+  display: none;
+}
+
+/* Honeypot anti-spam: fora da tela, sem afetar o layout */
+#ws-landing-page .ws-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+#ws-landing-page .ws-field__opt {
+  font-weight: 400;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-field__textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+/* Select com seta própria (igual nos dois temas) */
+#ws-landing-page .ws-field__select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--wslp-text-muted) 50%),
+    linear-gradient(135deg, var(--wslp-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) 50%,
+    calc(100% - 16px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+#ws-landing-page .ws-field__select option {
+  background: var(--wslp-bg-card);
+  color: var(--wslp-text);
+}
+
+#ws-landing-page .ws-choices {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+  min-width: 0;
+}
+
+#ws-landing-page .ws-choices legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#ws-landing-page .ws-choices__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+
+@media (max-width: 640px) {
+  #ws-landing-page .ws-choices__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#ws-landing-page .ws-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--wslp-text);
+  cursor: pointer;
+}
+
+#ws-landing-page .ws-check input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--wslp-pink);
+  cursor: pointer;
+}
+
+#ws-landing-page .ws-check a {
+  color: var(--wslp-text);
+  text-decoration: underline;
+  text-decoration-color: var(--wslp-pink);
+  text-underline-offset: 3px;
+}
+
+#ws-landing-page .ws-field--consent .ws-check {
+  font-size: 0.88rem;
+  color: var(--wslp-text-muted);
 }
 
 /* ---------- Seção: Suporte ---------- */
@@ -1092,8 +1369,20 @@
   white-space: pre-line;
 }
 
-#ws-landing-page .ws-modal__close {
+#ws-landing-page .ws-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#ws-landing-page .ws-modal__close,
+#ws-landing-page .ws-modal__whatsapp {
   min-width: 140px;
+}
+
+#ws-landing-page .ws-modal__whatsapp[hidden] {
+  display: none;
 }
 
 /* ---------- Animações leves de entrada ---------- */
@@ -1154,8 +1443,29 @@
 
   #ws-landing-page .ws-about,
   #ws-landing-page .ws-process,
+  #ws-landing-page .ws-pricing,
   #ws-landing-page .ws-contact {
     padding: 72px 0;
+  }
+
+  #ws-landing-page .ws-pricing__card {
+    grid-template-columns: 1fr;
+  }
+
+  #ws-landing-page .ws-pricing__main {
+    border-right: 0;
+    border-bottom: 1px solid var(--wslp-border);
+  }
+}
+
+@media (max-width: 640px) {
+  #ws-landing-page .ws-pricing__main,
+  #ws-landing-page .ws-pricing__details {
+    padding: 32px 24px;
+  }
+
+  #ws-landing-page .ws-pricing__cta {
+    align-self: stretch;
   }
 }
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Landing Page estratégica para transformar visitantes em clientes. WS WebStudio.">
-  <title>WS WebStudio — Landing Page</title>
+  <meta name="description" content="Landing Page estratégica para transformar visitantes em clientes. WebStudio.">
+  <title>WebStudio — Landing Page</title>
 
   <!-- Prévia local: os arquivos ficam na mesma pasta.
        Para publicar no Elementor, use elementor-landingpage.html. -->
@@ -24,13 +24,14 @@
        ========================================================== -->
   <header class="ws-header">
     <div class="ws-container ws-header__inner">
-      <a href="#" class="ws-brand" aria-label="WS WebStudio — início">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
         <span class="ws-brand__mark" aria-hidden="true"></span>
-        WS WebStudio
+        WebStudio
       </a>
 
       <nav class="ws-nav" aria-label="Navegação principal">
         <a href="#wslp-sobre" class="ws-nav__link">Serviços</a>
+        <a href="#wslp-investimento" class="ws-nav__link">Investimento</a>
         <a href="#wslp-contato" class="ws-nav__link">Contato</a>
 
         <div class="ws-theme" role="group" aria-label="Seleção de tema">
@@ -211,7 +212,7 @@
           </span>
           <span class="ws-card__num" aria-hidden="true">02</span>
           <h3 class="ws-card__title ws-serif">Sua ideia ganha forma</h3>
-          <p class="ws-card__desc">Você responde nosso formulário com as informações iniciais do seu projeto.</p>
+          <p class="ws-card__desc">Você responde ao formulário com as informações iniciais do seu projeto.</p>
         </article>
 
         <article class="ws-card ws-reveal">
@@ -230,7 +231,7 @@
           </span>
           <span class="ws-card__num" aria-hidden="true">03</span>
           <h3 class="ws-card__title ws-serif">Planejamos juntos</h3>
-          <p class="ws-card__desc">Nossa equipe organiza as ideias, entende suas necessidades e define os próximos passos.</p>
+          <p class="ws-card__desc">Organizo as ideias, entendo suas necessidades e defino com você os próximos passos.</p>
         </article>
 
         <article class="ws-card ws-reveal">
@@ -251,8 +252,61 @@
           </span>
           <span class="ws-card__num" aria-hidden="true">04</span>
           <h3 class="ws-card__title ws-serif">Sua marca no ar!</h3>
-          <p class="ws-card__desc">Desenvolvemos sua Landing Page e apresentamos o resultado para você.</p>
+          <p class="ws-card__desc">Desenvolvo sua Landing Page e apresento o resultado para você.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SEÇÃO 4.1 — INVESTIMENTO
+       ⚠️ PREENCHER: valor "a partir de" e % de desconto no Pix
+       (procure por "PREENCHER" neste arquivo).
+       ========================================================== -->
+  <section class="ws-pricing" id="wslp-investimento" aria-labelledby="wslp-investimento-title">
+    <div class="ws-container">
+      <div class="ws-section-head ws-reveal">
+        <p class="ws-section-head__eyebrow">Investimento</p>
+        <h2 class="ws-section-head__title ws-serif" id="wslp-investimento-title">Tudo o que sua Landing Page precisa para entrar no ar.</h2>
+        <p class="ws-section-head__subtitle">O valor final depende do tamanho da página e do conteúdo. Você recebe o orçamento fechado antes de começarmos.</p>
+      </div>
+
+      <div class="ws-pricing__card ws-reveal">
+        <div class="ws-pricing__main">
+          <p class="ws-pricing__from">A partir de</p>
+          <!-- PREENCHER: valor da Landing Page -->
+          <p class="ws-pricing__price ws-serif"><span class="ws-pricing__currency">R$</span> 0.000</p>
+          <p class="ws-pricing__note">Pagamento único pelo projeto.</p>
+
+          <h3 class="ws-pricing__subtitle">Formas de pagamento</h3>
+          <ul class="ws-pricing__pay">
+            <!-- PREENCHER: % de desconto no Pix -->
+            <li><strong>Pix à vista</strong> com 0% de desconto</li>
+            <li><strong>50% na entrada</strong> e 50% na entrega</li>
+            <li><strong>Cartão de crédito</strong> parcelado, sem desconto</li>
+          </ul>
+
+          <a href="#wslp-contato" class="ws-btn ws-btn--primary ws-pricing__cta">Quero minha Landing Page</a>
+        </div>
+
+        <div class="ws-pricing__details">
+          <h3 class="ws-pricing__subtitle">O que está incluso</h3>
+          <ul class="ws-pricing__list">
+            <li>Página única, adaptada para celular, tablet e computador</li>
+            <li>Textos escritos por mim, caso você ainda não os tenha</li>
+            <li>Botão de WhatsApp integrado</li>
+            <li>Formulário de contato</li>
+            <li>Publicação da página no ar</li>
+            <li>Uso do seu domínio ou registro de um novo, caso você ainda não tenha</li>
+            <li>2 meses de suporte após a entrega</li>
+            <li>Entrega em 5 a 7 dias úteis<sup>*</sup></li>
+          </ul>
+
+          <h3 class="ws-pricing__subtitle">O que você me envia</h3>
+          <p class="ws-pricing__text">Logo, imagens do seu negócio e as informações principais sobre o que você oferece.</p>
+
+          <p class="ws-pricing__foot"><sup>*</sup> O prazo começa após o alinhamento do escopo e o recebimento dos materiais. Hospedagem: publico na sua ou cuido disso para você, com valor informado no orçamento.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -266,37 +320,116 @@
       <div class="ws-section-head ws-reveal">
         <p class="ws-section-head__eyebrow">Contato</p>
         <h2 class="ws-section-head__title ws-serif" id="wslp-contato-title">Vamos tirar sua ideia do papel?</h2>
-        <p class="ws-section-head__subtitle">Conte um pouquinho sobre você. Em breve, entraremos em contato para conversar sobre seu projeto.</p>
+        <p class="ws-section-head__subtitle">Conte um pouquinho sobre você e seu negócio. Em breve, entro em contato para conversarmos sobre o seu projeto.</p>
       </div>
 
-      <!-- Novos campos poderão ser adicionados futuramente como
-           novos .ws-field dentro de .ws-form__row, sem alterar o JS. -->
+      <!-- Campos com data-ws-field são validados pelo JS.
+           Campos sem "required" são opcionais. Novos campos podem ser
+           adicionados como novos .ws-field; o JS lê todos via "name". -->
       <form class="ws-form ws-reveal" id="wslp-form" novalidate>
+        <!-- Anti-spam (honeypot): invisível para pessoas, bots costumam preencher -->
+        <input type="checkbox" name="botcheck" class="ws-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
         <div class="ws-form__row">
           <div class="ws-field" data-ws-field>
             <label class="ws-field__label" for="wslp-nome">Nome e sobrenome</label>
-            <input class="ws-field__input" type="text" id="wslp-nome" name="nome" placeholder="Como podemos te chamar?" autocomplete="name" required aria-required="true">
-            <p class="ws-field__error" id="wslp-nome-erro" role="alert">Informe seu nome e sobrenome.</p>
+            <input class="ws-field__input" type="text" id="wslp-nome" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required aria-required="true" aria-describedby="wslp-nome-erro">
+            <p class="ws-field__error" id="wslp-nome-erro">Informe seu nome e sobrenome.</p>
           </div>
         </div>
 
         <div class="ws-form__row ws-form__row--two">
           <div class="ws-field" data-ws-field>
             <label class="ws-field__label" for="wslp-email">E-mail</label>
-            <input class="ws-field__input" type="email" id="wslp-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true">
-            <p class="ws-field__error" id="wslp-email-erro" role="alert">Informe um e-mail válido.</p>
+            <input class="ws-field__input" type="email" id="wslp-email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required aria-required="true" aria-describedby="wslp-email-erro">
+            <p class="ws-field__error" id="wslp-email-erro">Informe um e-mail válido.</p>
           </div>
 
           <div class="ws-field" data-ws-field>
-            <label class="ws-field__label" for="wslp-telefone">Telefone / WhatsApp</label>
-            <input class="ws-field__input" type="tel" id="wslp-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true">
-            <p class="ws-field__error" id="wslp-telefone-erro" role="alert">Informe um telefone com DDD.</p>
+            <label class="ws-field__label" for="wslp-telefone">WhatsApp</label>
+            <input class="ws-field__input" type="tel" id="wslp-telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" maxlength="15" required aria-required="true" aria-describedby="wslp-telefone-erro">
+            <p class="ws-field__error" id="wslp-telefone-erro">Informe um WhatsApp com DDD.</p>
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-negocio">Nome do negócio ou marca</label>
+            <input class="ws-field__input" type="text" id="wslp-negocio" name="negocio" placeholder="Ex.: Ateliê Flor de Lis" autocomplete="organization" required aria-required="true" aria-describedby="wslp-negocio-erro">
+            <p class="ws-field__error" id="wslp-negocio-erro">Informe o nome do seu negócio ou marca.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-area">Área de atuação <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wslp-area" name="area" placeholder="Ex.: estética, advocacia, moda">
+          </div>
+        </div>
+
+        <div class="ws-form__row ws-form__row--two">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-objetivo">Objetivo da página</label>
+            <select class="ws-field__input ws-field__select" id="wslp-objetivo" name="objetivo" required aria-required="true" aria-describedby="wslp-objetivo-erro">
+              <option value="">Selecione</option>
+              <option>Vender um produto ou serviço</option>
+              <option>Captar contatos de clientes</option>
+              <option>Divulgar um evento ou lançamento</option>
+              <option>Apresentar meu trabalho</option>
+              <option>Outro</option>
+            </select>
+            <p class="ws-field__error" id="wslp-objetivo-erro">Escolha o objetivo principal da página.</p>
+          </div>
+
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-prazo">Quando gostaria de começar? <span class="ws-field__opt">(opcional)</span></label>
+            <select class="ws-field__input ws-field__select" id="wslp-prazo" name="prazo">
+              <option value="">Selecione</option>
+              <option>O quanto antes</option>
+              <option>Nas próximas semanas</option>
+              <option>Ainda estou pesquisando</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="ws-form__row ws-choices">
+          <legend class="ws-field__label">O que você já tem? <span class="ws-field__opt">(opcional, marque quantos quiser)</span></legend>
+          <div class="ws-choices__grid">
+            <label class="ws-check"><input type="checkbox" name="possui" value="Logo / identidade visual"><span>Logo / identidade visual</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Domínio"><span>Domínio (ex.: seunegocio.com.br)</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Hospedagem"><span>Hospedagem</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Textos prontos"><span>Textos prontos</span></label>
+            <label class="ws-check"><input type="checkbox" name="possui" value="Imagens"><span>Imagens do negócio</span></label>
+          </div>
+        </fieldset>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-redes">Instagram ou site atual <span class="ws-field__opt">(opcional)</span></label>
+            <input class="ws-field__input" type="text" id="wslp-redes" name="redes" placeholder="@seunegocio ou www.seunegocio.com.br">
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field" data-ws-field>
+            <label class="ws-field__label" for="wslp-mensagem">Conte um pouco sobre o projeto <span class="ws-field__opt">(opcional)</span></label>
+            <textarea class="ws-field__input ws-field__textarea" id="wslp-mensagem" name="mensagem" rows="4" maxlength="1500" placeholder="O que você oferece, para quem, e o que espera da página."></textarea>
+          </div>
+        </div>
+
+        <div class="ws-form__row">
+          <div class="ws-field ws-field--consent" data-ws-field>
+            <label class="ws-check">
+              <input type="checkbox" id="wslp-consentimento" name="consentimento" value="sim" required aria-required="true" aria-describedby="wslp-consentimento-erro">
+              <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+              <span>Li e concordo com a <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato pelos canais informados.</span>
+            </label>
+            <p class="ws-field__error" id="wslp-consentimento-erro">Para continuar, é preciso concordar com a Política de Privacidade.</p>
           </div>
         </div>
 
         <div class="ws-form__actions">
           <button type="submit" class="ws-btn ws-btn--primary ws-form__submit" data-ws-submit>Enviar interesse</button>
-          <p class="ws-form__hint">Seus dados serão usados apenas para entrarmos em contato com você.</p>
+          <p class="ws-form__hint">Seus dados serão usados apenas para que eu entre em contato com você sobre este projeto.</p>
+          <p class="ws-form__status" data-ws-form-status role="status" aria-live="polite"></p>
         </div>
       </form>
 
@@ -328,17 +461,20 @@
        ========================================================== -->
   <footer class="ws-footer">
     <div class="ws-container ws-footer__inner">
-      <a href="#" class="ws-brand" aria-label="WS WebStudio — início">
+      <a href="#" class="ws-brand" aria-label="WebStudio — início">
         <span class="ws-brand__mark" aria-hidden="true"></span>
-        WS WebStudio
+        WebStudio
       </a>
 
       <nav class="ws-footer__nav" aria-label="Navegação do rodapé">
         <a href="#wslp-sobre" class="ws-footer__link">Serviços</a>
+        <a href="#wslp-investimento" class="ws-footer__link">Investimento</a>
         <a href="#wslp-contato" class="ws-footer__link">Contato</a>
+        <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+        <a href="/politica-de-privacidade/" class="ws-footer__link">Política de Privacidade</a>
       </nav>
 
-      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WS WebStudio. Todos os direitos reservados.</p>
+      <p class="ws-footer__copy">© <span data-ws-year>2026</span> WebStudio. Todos os direitos reservados.</p>
     </div>
   </footer>
 
@@ -353,13 +489,13 @@
           <path d="M20 6L9 17l-5-5"/>
         </svg>
       </span>
+      <!-- Título e texto são trocados pelo JS conforme o resultado do envio -->
       <h2 class="ws-modal__title ws-serif" id="wslp-modal-title">Que bom ter você por aqui!</h2>
-      <p class="ws-modal__text" id="wslp-modal-text">Recebemos seu interesse em desenvolver uma Landing Page com a WS WebStudio.
-
-Em breve, nossa equipe entrará em contato com você pelo WhatsApp e pelo e-mail informado.
-
-Obrigado por confiar sua ideia à gente!</p>
-      <button type="button" class="ws-btn ws-btn--primary ws-modal__close" data-ws-modal-close>Fechar</button>
+      <p class="ws-modal__text" id="wslp-modal-text"></p>
+      <div class="ws-modal__actions">
+        <a href="#" class="ws-btn ws-btn--primary ws-modal__whatsapp" data-ws-modal-whatsapp target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+        <button type="button" class="ws-btn ws-btn--ghost ws-modal__close" data-ws-modal-close>Fechar</button>
+      </div>
     </div>
   </div>
 

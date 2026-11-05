@@ -1,4 +1,4 @@
-# Landing Page — Studio
+# WebStudio — Site
 
 Landing page de apresentação para um estúdio de criação de sites. Página única, minimalista e responsiva, composta por seções institucionais (serviços, benefícios, perguntas frequentes) e canais de contato direto.
 
@@ -29,14 +29,27 @@ O projeto é distribuído em duas formas equivalentes: uma versão de desenvolvi
 
 ```
 .
-├── index.html          # Página completa; referencia landing-page.css e landing-page.js
-├── landing-page.css    # Estilos da landing page (escopados em #ss-landing)
-├── landing-page.js     # Interações da página (tema, menu, acordeão, CTAs)
-├── elementor-html.html # Versão consolidada (HTML + CSS + JS em um bloco) para o widget HTML do Elementor
-└── README.md           # Este documento
+├── index.html                 # Página inicial; referencia landing-page.css e landing-page.js
+├── landing-page.css           # Estilos da página inicial (escopados em #ss-landing)
+├── landing-page.js            # Interações da página inicial (tema, menu, acordeão, CTAs)
+├── elementor-html.html        # GERADO: página inicial consolidada para o Elementor
+├── s-landingpage/             # Página do serviço Landing Page (escopada em #ws-landing-page)
+│   ├── landingpage.html/.css/.js
+│   ├── assets/                # Imagens do carrossel (embutidas na versão Elementor)
+│   └── elementor-landingpage.html  # GERADO
+├── s-privacidade/
+│   └── politica-de-privacidade.html # Política de Privacidade (autocontida, pronta para o Elementor)
+├── build-elementor.py         # Gera os arquivos consolidados do Elementor
+└── README.md
 ```
 
-`elementor-html.html` mantém o mesmo conteúdo e comportamento dos demais arquivos, porém com CSS e JavaScript embutidos, sem dependência de arquivos locais. Os arquivos separados servem para manutenção; as alterações devem ser espelhadas na versão consolidada.
+Os arquivos `elementor-*.html` são **gerados** a partir das fontes. Depois de qualquer alteração, rode:
+
+```bash
+python build-elementor.py
+```
+
+Não edite os arquivos gerados à mão: as mudanças seriam sobrescritas.
 
 ## Arquitetura e organização
 
@@ -62,6 +75,7 @@ O projeto é distribuído em duas formas equivalentes: uma versão de desenvolvi
 
 ## Limitações conhecidas
 
-- Sem backend: não há formulário de envio próprio; o contato ocorre por links externos.
+- Sem backend próprio. O formulário da página de Landing Page envia por e-mail via Web3Forms e oferece continuar no WhatsApp; configure `WEB3FORMS_ACCESS_KEY` e `WHATSAPP_NUMBER` no topo de `s-landingpage/landingpage.js`. Sem essa configuração, o formulário mostra uma mensagem de erro e mantém os dados preenchidos (nunca confirma um envio que não aconteceu).
+- Valores da seção Investimento e dados da Política de Privacidade estão marcados com `PREENCHER` nos arquivos.
 - Publicada via widget HTML do Elementor, a página não define `<title>` nem meta tags — SEO deve ser configurado nas opções da página no WordPress.
 - O design utiliza fontes de sistema (Georgia, Helvetica/Arial), sem carregamento de fontes externas.

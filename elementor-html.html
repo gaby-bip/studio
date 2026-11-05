@@ -1,13 +1,16 @@
 ﻿<!-- ============================================================
-     ELEMENTOR - WIDGET HTML
+     ELEMENTOR - WIDGET HTML  (Página inicial)
+     ARQUIVO GERADO por build-elementor.py. NAO edite a mao:
+     altere index.html, landing-page.css, landing-page.js e rode:  python build-elementor.py
      Cole TODO o conteudo deste arquivo em UM unico widget HTML.
-     CSS e JS estao embutidos: nao depende de arquivos externos.
+     CSS, JS e imagens estao embutidos: nao depende de arquivos externos.
      ============================================================ -->
+
 <style>
 /* ============================================================
-   LANDING PAGE â€” Estilos exclusivos
-   Todo o CSS estÃ¡ escopado dentro de #ss-landing.
-   Nenhum seletor global (html, body, header, footer) Ã© afetado.
+   LANDING PAGE — Estilos exclusivos
+   Todo o CSS está escopado dentro de #ss-landing.
+   Nenhum seletor global (html, body, header, footer) é afetado.
    ============================================================ */
 
 #ss-landing {
@@ -18,7 +21,7 @@
   --ss-pink: #E94B91;
   --ss-offwhite: #F6F4EF;
 
-  /* Tema Light (padrÃ£o) */
+  /* Tema Light (padrão) */
   --ss-bg: var(--ss-offwhite);
   --ss-bg-soft: #EFEBE3;
   --ss-bg-card: #FFFFFF;
@@ -31,7 +34,7 @@
   --ss-shadow: 0 10px 30px rgba(11, 23, 19, 0.08);
   --ss-screen-bg: var(--ss-green-deep);
 
-  /* Tipografia e mÃ©tricas */
+  /* Tipografia e métricas */
   --ss-font: "Georgia", "Times New Roman", serif;
   --ss-font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ss-radius: 14px;
@@ -68,7 +71,7 @@
   transition: none !important;
 }
 
-/* ---------- UtilitÃ¡rios internos ---------- */
+/* ---------- Utilitários internos ---------- */
 #ss-landing .ss-container {
   max-width: var(--ss-max);
   margin: 0 auto;
@@ -79,7 +82,7 @@
   font-family: var(--ss-font);
 }
 
-/* ---------- Foco visÃ­vel ---------- */
+/* ---------- Foco visível ---------- */
 #ss-landing a:focus-visible,
 #ss-landing button:focus-visible {
   outline: 2px solid var(--ss-pink);
@@ -87,7 +90,7 @@
   border-radius: 4px;
 }
 
-/* ---------- CabeÃ§alho ---------- */
+/* ---------- Cabeçalho ---------- */
 #ss-landing .ss-header {
   position: sticky;
   top: 0;
@@ -145,7 +148,7 @@
   color: var(--ss-text);
 }
 
-/* BotÃµes */
+/* Botões */
 #ss-landing .ss-btn {
   display: inline-flex;
   align-items: center;
@@ -670,7 +673,7 @@
   z-index: 1;
 }
 
-/* ---------- ServiÃ§os ---------- */
+/* ---------- Serviços ---------- */
 #ss-landing .ss-services {
   padding: 96px 0;
   background: var(--ss-bg-soft);
@@ -725,7 +728,7 @@
   border-color: var(--ss-accent);
 }
 
-/* CartÃµes de serviÃ§o: Ã­cone, decorativos e acabamento premium */
+/* Cartões de serviço: ícone, decorativos e acabamento premium */
 #ss-landing .ss-card--service {
   min-height: 300px;
   padding: 34px 30px 30px;
@@ -859,7 +862,7 @@
   max-width: none;
 }
 
-/* Layout de duas colunas: ilustraÃ§Ã£o Ã  esquerda, FAQ Ã  direita */
+/* Layout de duas colunas: ilustração à esquerda, FAQ à direita */
 #ss-landing .ss-faq__inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
@@ -909,7 +912,7 @@
 #ss-landing .ss-faq__question {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 16px;
   padding: 20px 24px;
   cursor: pointer;
@@ -921,7 +924,46 @@
   transition: color 0.25s ease;
 }
 
-/* ---------- BenefÃ­cios ---------- */
+#ss-landing .ss-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+#ss-landing .ss-faq__question:hover {
+  color: var(--ss-accent);
+}
+
+#ss-landing .ss-faq__question:focus-visible {
+  outline: 2px solid var(--ss-accent);
+  outline-offset: -2px;
+  border-radius: var(--ss-radius);
+}
+
+#ss-landing .ss-faq__icon {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ss-accent);
+  transition: transform 0.25s ease;
+}
+
+#ss-landing .ss-faq__item[open] .ss-faq__icon {
+  transform: rotate(45deg);
+}
+
+#ss-landing .ss-faq__answer {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--ss-border);
+  padding-top: 20px;
+}
+
+#ss-landing .ss-faq__answer p {
+  margin: 0;
+  color: var(--ss-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---------- Benefícios ---------- */
 #ss-landing .ss-benefits {
   padding: 96px 0;
   background: var(--ss-bg-soft);
@@ -933,6 +975,35 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* ---------- Hospedagem e domínio ---------- */
+#ss-landing .ss-hosting {
+  padding: 96px 0;
+}
+
+#ss-landing .ss-cards--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#ss-landing .ss-card--hosting .ss-card__num {
+  position: static;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--ss-pink);
+}
+
+#ss-landing .ss-hosting__note {
+  margin: 32px 0 0;
+  max-width: 720px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ss-text-muted);
+}
+
+#ss-landing .ss-hosting__note .ss-card__link {
+  margin-left: 6px;
+  border-bottom: 1px solid var(--ss-accent);
+}
+
 #ss-landing .ss-card--benefit {
   gap: 12px;
 }
@@ -942,12 +1013,12 @@
   color: var(--ss-pink);
 }
 
-/* ---------- BotÃ£o flutuante de WhatsApp ---------- */
+/* ---------- Botão flutuante de WhatsApp ---------- */
 #ss-landing .ss-whatsapp {
   position: fixed;
   right: 24px;
-  right: calc(24px + env(safe-area-inset-right, 0px));
   bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  right: calc(24px + env(safe-area-inset-right, 0px));
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -991,7 +1062,7 @@
   }
 }
 
-/* ---------- RodapÃ© ---------- */
+/* ---------- Rodapé ---------- */
 #ss-landing .ss-footer {
   padding: 56px 0 48px;
   background: var(--ss-bg-soft);
@@ -1032,7 +1103,7 @@
   margin-top: 8px;
 }
 
-/* ---------- AnimaÃ§Ãµes leves de entrada ---------- */
+/* ---------- Animações leves de entrada ---------- */
 #ss-landing .ss-reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -1084,10 +1155,15 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: none;
   }
+
+  #ss-landing .ss-cards--two {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
   #ss-landing .ss-faq,
+  #ss-landing .ss-hosting,
   #ss-landing .ss-benefits {
     padding: 72px 0;
   }
@@ -1113,7 +1189,7 @@
   }
 
   #ss-landing .ss-faq__answer {
-    padding: 16px 20px 20px;
+    padding: 0 20px 20px;
   }
 }
 
@@ -1171,27 +1247,23 @@
     gap: 12px;
   }
 }
-
 </style>
 
-<body>
+<div id="ss-landing">
 
-  <!-- Todo o conteÃºdo da landing page fica dentro de #ss-landing -->
-  <div id="ss-landing">
-
-    <!-- CabeÃ§alho -->
+    <!-- Cabeçalho -->
     <header class="ss-header">
       <div class="ss-container ss-header__inner">
-        <a href="#" class="ss-brand" aria-label="Studio â€” inÃ­cio">
+        <a href="#" class="ss-brand" aria-label="WebStudio — início">
           <span class="ss-brand__mark" aria-hidden="true"></span>
-          Studio
+          WebStudio
         </a>
 
-        <nav class="ss-nav" aria-label="NavegaÃ§Ã£o principal">
-          <a href="#ss-servicos" class="ss-nav__link">ServiÃ§os</a>
+        <nav class="ss-nav" aria-label="Navegação principal">
+          <a href="#ss-servicos" class="ss-nav__link">Serviços</a>
           <a href="#ss-contato" class="ss-nav__link">Contato</a>
 
-          <div class="ss-theme" role="group" aria-label="SeleÃ§Ã£o de tema">
+          <div class="ss-theme" role="group" aria-label="Seleção de tema">
             <button type="button" class="ss-theme__btn" data-ss-theme-choice="light" aria-pressed="false">Light</button>
             <button type="button" class="ss-theme__btn" data-ss-theme-choice="dark" aria-pressed="false">Dark</button>
             <button type="button" class="ss-theme__btn" data-ss-theme-choice="auto" aria-pressed="false">Auto</button>
@@ -1210,12 +1282,12 @@
     <section class="ss-hero">
       <div class="ss-container ss-hero__inner">
         <div class="ss-reveal">
-          <p class="ss-hero__eyebrow">CriaÃ§Ã£o de sites</p>
-          <h1 class="ss-hero__title ss-serif">Seu prÃ³ximo site <em>comeÃ§a aqui</em>.</h1>
-          <p class="ss-hero__subtitle">Sites pensados para valorizar sua marca e transformar sua presenÃ§a digital.</p>
+          <p class="ss-hero__eyebrow">Criação de sites</p>
+          <h1 class="ss-hero__title ss-serif">Seu próximo site <em>começa aqui</em>.</h1>
+          <p class="ss-hero__subtitle">Sites pensados para valorizar sua marca e transformar sua presença digital.</p>
           <div class="ss-hero__actions">
-            <a href="#" class="ss-btn ss-btn--primary" data-ss-msg="geral">Solicitar um orÃ§amento</a>
-            <a href="#ss-servicos" class="ss-hero__secondary">Conhecer os serviÃ§os</a>
+            <a href="#" class="ss-btn ss-btn--primary" data-ss-msg="geral">Solicitar um orçamento</a>
+            <a href="#ss-servicos" class="ss-hero__secondary">Conhecer os serviços</a>
           </div>
         </div>
 
@@ -1227,13 +1299,13 @@
               <div class="ss-mocks__screen">
                 <div class="ss-mocks__site">
                   <div class="ss-mocks__topbar">
-                    <span class="ss-mocks__logo"><i></i>Studio</span>
+                    <span class="ss-mocks__logo"><i></i>WebStudio</span>
                     <span class="ss-mocks__links"><i></i><i></i><i></i><i></i></span>
                     <span class="ss-mocks__pill"></span>
                   </div>
                   <div class="ss-mocks__page">
                     <div class="ss-mocks__copy">
-                      <span class="ss-mocks__eyebrow">CriaÃ§Ã£o de sites</span>
+                      <span class="ss-mocks__eyebrow">Criação de sites</span>
                       <span class="ss-mocks__headline">Transforme suas <em>ideias</em> em resultados.</span>
                       <span class="ss-mocks__cta"></span>
                     </div>
@@ -1281,12 +1353,12 @@
       </div>
     </section>
 
-    <!-- ServiÃ§os -->
+    <!-- Serviços -->
     <section class="ss-services" id="ss-servicos">
       <div class="ss-container">
         <div class="ss-section-head ss-reveal">
-          <p class="ss-section-head__eyebrow">ServiÃ§os</p>
-          <h2 class="ss-section-head__title ss-serif">TrÃªs formas de colocar sua marca no ar.</h2>
+          <p class="ss-section-head__eyebrow">Serviços</p>
+          <h2 class="ss-section-head__title ss-serif">Três formas de colocar sua marca no ar.</h2>
         </div>
 
         <div class="ss-cards">
@@ -1307,8 +1379,8 @@
             </span>
             <span class="ss-card__num">01</span>
             <h3 class="ss-card__title ss-serif">Landing Page</h3>
-            <p class="ss-card__desc">Uma pÃ¡gina estratÃ©gica para apresentar serviÃ§os, divulgar produtos e captar clientes.</p>
-            <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informaÃ§Ãµes <span aria-hidden="true">â†’</span></a>
+            <p class="ss-card__desc">Uma página estratégica para apresentar serviços, divulgar produtos e captar clientes.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="landing">Solicitar informações <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="ss-card ss-card--service ss-reveal">
@@ -1329,8 +1401,8 @@
             </span>
             <span class="ss-card__num">02</span>
             <h3 class="ss-card__title ss-serif">E-commerce</h3>
-            <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catÃ¡logo, carrinho e integraÃ§Ã£o com meios de pagamento.</p>
-            <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informaÃ§Ãµes <span aria-hidden="true">â†’</span></a>
+            <p class="ss-card__desc">Uma loja virtual para vender seus produtos, com estrutura preparada para catálogo, carrinho e integração com meios de pagamento.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="ecommerce">Solicitar informações <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="ss-card ss-card--service ss-reveal">
@@ -1352,58 +1424,85 @@
             </span>
             <span class="ss-card__num">03</span>
             <h3 class="ss-card__title ss-serif">Site Personalizado</h3>
-            <p class="ss-card__desc">Um site com duas ou mais pÃ¡ginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
-            <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informaÃ§Ãµes <span aria-hidden="true">â†’</span></a>
+            <p class="ss-card__desc">Um site com duas ou mais páginas, estrutura personalizada e funcionalidades adaptadas ao seu projeto.</p>
+            <a href="#" class="ss-card__link" data-ss-msg="site">Solicitar informações <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- BenefÃ­cios -->
+    <!-- Benefícios -->
     <section class="ss-benefits" id="ss-beneficios" aria-labelledby="ss-beneficios-title">
       <div class="ss-container">
         <div class="ss-section-head ss-reveal">
-          <p class="ss-section-head__eyebrow">BenefÃ­cios</p>
-          <h2 class="ss-section-head__title ss-serif" id="ss-beneficios-title">Mais do que um site: tranquilidade para o seu negÃ³cio.</h2>
+          <p class="ss-section-head__eyebrow">Benefícios</p>
+          <h2 class="ss-section-head__title ss-serif" id="ss-beneficios-title">Mais do que um site: tranquilidade para o seu negócio.</h2>
         </div>
 
         <div class="ss-cards ss-cards--benefits ss-reveal">
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">â—†</span>
+            <span class="ss-card__num" aria-hidden="true">◆</span>
             <h3 class="ss-card__title">Suporte</h3>
-            <p class="ss-card__desc">Conte com orientaÃ§Ã£o e auxÃ­lio para questÃµes relacionadas ao seu site, de acordo com as condiÃ§Ãµes do serviÃ§o contratado.</p>
+            <p class="ss-card__desc">Conte com orientação e auxílio para questões relacionadas ao seu site, de acordo com as condições do serviço contratado.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">â—†</span>
+            <span class="ss-card__num" aria-hidden="true">◆</span>
             <h3 class="ss-card__title">Backup</h3>
-            <p class="ss-card__desc">Manter cÃ³pias de seguranÃ§a do site facilita a recuperaÃ§Ã£o de informaÃ§Ãµes em situaÃ§Ãµes de falha, conforme a polÃ­tica de backup do serviÃ§o.</p>
+            <p class="ss-card__desc">Manter cópias de segurança do site facilita a recuperação de informações em situações de falha, conforme a política de backup do serviço.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">â—†</span>
-            <h3 class="ss-card__title">ProteÃ§Ã£o ponta a ponta</h3>
-            <p class="ss-card__desc">Cuidado com a seguranÃ§a do site: configuraÃ§Ãµes seguras, atualizaÃ§Ãµes e boas prÃ¡ticas de proteÃ§Ã£o aplicadas na medida do possÃ­vel.</p>
+            <span class="ss-card__num" aria-hidden="true">◆</span>
+            <h3 class="ss-card__title">Proteção ponta a ponta</h3>
+            <p class="ss-card__desc">Cuidado com a segurança do site: configurações seguras, atualizações e boas práticas de proteção aplicadas na medida do possível.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">â—†</span>
-            <h3 class="ss-card__title">DomÃ­nio prÃ³prio</h3>
-            <p class="ss-card__desc">Um endereÃ§o exclusivo fortalece a identidade profissional da sua marca e facilita o acesso dos visitantes ao seu site.</p>
+            <span class="ss-card__num" aria-hidden="true">◆</span>
+            <h3 class="ss-card__title">Domínio próprio</h3>
+            <p class="ss-card__desc">Um endereço exclusivo fortalece a identidade profissional da sua marca e facilita o acesso dos visitantes ao seu site.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">â—†</span>
+            <span class="ss-card__num" aria-hidden="true">◆</span>
             <h3 class="ss-card__title">Responsividade</h3>
-            <p class="ss-card__desc">ExperiÃªncia adaptada para celulares, tablets e computadores, para que sua marca apareÃ§a bem em qualquer tela.</p>
+            <p class="ss-card__desc">Experiência adaptada para celulares, tablets e computadores, para que sua marca apareça bem em qualquer tela.</p>
           </article>
 
           <article class="ss-card ss-card--benefit">
-            <span class="ss-card__num" aria-hidden="true">â—†</span>
-            <h3 class="ss-card__title">Desempenho e organizaÃ§Ã£o</h3>
-            <p class="ss-card__desc">Estrutura bem organizada e carregamento eficiente, para uma navegaÃ§Ã£o leve e uma boa experiÃªncia de visita.</p>
+            <span class="ss-card__num" aria-hidden="true">◆</span>
+            <h3 class="ss-card__title">Desempenho e organização</h3>
+            <p class="ss-card__desc">Estrutura bem organizada e carregamento eficiente, para uma navegação leve e uma boa experiência de visita.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Hospedagem e domínio -->
+    <section class="ss-hosting" id="ss-hospedagem" aria-labelledby="ss-hospedagem-title">
+      <div class="ss-container">
+        <div class="ss-section-head ss-reveal">
+          <p class="ss-section-head__eyebrow">Hospedagem e domínio</p>
+          <h2 class="ss-section-head__title ss-serif" id="ss-hospedagem-title">Seu site no ar, do jeito mais simples para você.</h2>
+          <p class="ss-section-head__subtitle">Você escolhe: usar o que já tem ou deixar tudo comigo.</p>
+        </div>
+
+        <div class="ss-cards ss-cards--two ss-reveal">
+          <article class="ss-card ss-card--hosting">
+            <span class="ss-card__num" aria-hidden="true">01</span>
+            <h3 class="ss-card__title ss-serif">Já tenho domínio ou hospedagem</h3>
+            <p class="ss-card__desc">Publico o site no seu domínio e na sua hospedagem. As contas continuam em seu nome e sob o seu controle; eu cuido da configuração.</p>
+          </article>
+
+          <article class="ss-card ss-card--hosting">
+            <span class="ss-card__num" aria-hidden="true">02</span>
+            <h3 class="ss-card__title ss-serif">Quero que você cuide de tudo</h3>
+            <p class="ss-card__desc">Registro um domínio para a sua marca e publico o site em uma hospedagem profissional. O registro do domínio já entra no pacote, e o valor da hospedagem é informado no orçamento.</p>
+          </article>
+        </div>
+
+        <p class="ss-hosting__note ss-reveal">Domínio e hospedagem são renovados anualmente. Os valores e a responsabilidade pela renovação ficam combinados no orçamento, sem surpresas. <a href="#" class="ss-card__link" data-ss-msg="hospedagem">Tirar dúvidas <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
@@ -1413,13 +1512,13 @@
         <div class="ss-section-head ss-reveal">
           <p class="ss-section-head__eyebrow">FAQ</p>
           <h2 class="ss-section-head__title ss-serif" id="ss-faq-title">Perguntas frequentes</h2>
-          <p class="ss-section-head__subtitle">Tire suas dÃºvidas sobre nossos serviÃ§os, prazos e entrega.</p>
+          <p class="ss-section-head__subtitle">Tire suas dúvidas sobre nossos serviços, prazos e entrega.</p>
         </div>
 
         <div class="ss-faq__inner">
           <div class="ss-faq__aside ss-reveal" aria-hidden="true">
-            <!-- IlustraÃ§Ã£o: criaÃ§Ã£o de sites (SVG minimalista, identidade do Studio) -->
-            <svg class="ss-faq__art" viewBox="0 0 420 380" role="img" aria-label="IlustraÃ§Ã£o de criaÃ§Ã£o de sites" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ilustração: criação de sites (SVG minimalista, identidade do WebStudio) -->
+            <svg class="ss-faq__art" viewBox="0 0 420 380" role="img" aria-label="Ilustração de criação de sites" xmlns="http://www.w3.org/2000/svg">
               <!-- Plano de fundo suave -->
               <circle cx="210" cy="190" r="170" fill="var(--ss-bg-soft)"/>
 
@@ -1430,7 +1529,7 @@
               <circle cx="112" cy="99" r="5" fill="var(--ss-sage)"/>
               <circle cx="130" cy="99" r="5" fill="var(--ss-border)"/>
 
-              <!-- ConteÃºdo abstrato da pÃ¡gina -->
+              <!-- Conteúdo abstrato da página -->
               <rect x="94" y="142" width="110" height="12" rx="6" fill="var(--ss-forest)"/>
               <rect x="94" y="166" width="180" height="8" rx="4" fill="var(--ss-sage)"/>
               <rect x="94" y="182" width="150" height="8" rx="4" fill="var(--ss-sage)"/>
@@ -1439,10 +1538,10 @@
               <rect x="158" y="248" width="56" height="8" rx="4" fill="var(--ss-border)"/>
               <rect x="222" y="248" width="56" height="8" rx="4" fill="var(--ss-border)"/>
 
-              <!-- Cursor apontando para o botÃ£o -->
+              <!-- Cursor apontando para o botão -->
               <path d="M262 214 l14 34 7-13 15 3 z" fill="var(--ss-forest)" stroke="var(--ss-bg-card)" stroke-width="2"/>
 
-              <!-- BalÃ£o de conversa -->
+              <!-- Balão de conversa -->
               <rect x="252" y="30" width="128" height="46" rx="10" fill="var(--ss-forest)"/>
               <path d="M272 76 l0 14 16 -14 z" fill="var(--ss-forest)"/>
               <rect x="266" y="44" width="70" height="7" rx="3.5" fill="var(--ss-sage)"/>
@@ -1454,7 +1553,7 @@
               <rect x="52" y="164" width="70" height="7" rx="3.5" fill="var(--ss-forest)"/>
               <rect x="52" y="178" width="52" height="7" rx="3.5" fill="var(--ss-border)"/>
 
-              <!-- Engrenagem / manutenÃ§Ã£o -->
+              <!-- Engrenagem / manutenção -->
               <g fill="none" stroke="var(--ss-accent)" stroke-width="2.5" stroke-linecap="round">
                 <circle cx="330" cy="316" r="16"/>
                 <circle cx="330" cy="316" r="5"/>
@@ -1472,47 +1571,47 @@
           <div class="ss-faq__list ss-reveal">
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Como faÃ§o para solicitar um orÃ§amento?
+                Como faço para solicitar um orçamento?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>VocÃª pode preencher nosso formulÃ¡rio de orÃ§amento ou entrar em contato conosco pelo WhatsApp. O processo Ã© simples, rÃ¡pido e requer apenas algumas informaÃ§Ãµes para entendermos sua necessidade, o tipo de site desejado e os objetivos do seu negÃ³cio. Com essas informaÃ§Ãµes, poderemos avaliar o projeto e orientar vocÃª sobre os prÃ³ximos passos.</p>
+                <p>Você pode preencher nosso formulário de orçamento ou entrar em contato conosco pelo WhatsApp. O processo é simples, rápido e requer apenas algumas informações para entendermos sua necessidade, o tipo de site desejado e os objetivos do seu negócio. Com essas informações, poderemos avaliar o projeto e orientar você sobre os próximos passos.</p>
               </div>
             </details>
 
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Qual Ã© o prazo para desenvolver meu site?
+                Qual é o prazo para desenvolver meu site?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>Os prazos variam conforme o tipo de projeto, a complexidade e o envio dos materiais necessÃ¡rios. Como referÃªncia inicial:</p>
+                <p>Os prazos variam conforme o tipo de projeto, a complexidade e o envio dos materiais necessários. Como referência inicial:</p>
                 <ul class="ss-faq__terms">
-                  <li>Landing Page: 5 a 7 dias Ãºteis</li>
-                  <li>Site Personalizado: 10 a 20 dias Ãºteis</li>
-                  <li>E-commerce: 15 a 25 dias Ãºteis</li>
+                  <li>Landing Page: 5 a 7 dias úteis</li>
+                  <li>Site Personalizado: 10 a 20 dias úteis</li>
+                  <li>E-commerce: 15 a 25 dias úteis</li>
                 </ul>
-                <p>O prazo final serÃ¡ confirmado apÃ³s entendermos os requisitos do projeto e as funcionalidades necessÃ¡rias. A contagem comeÃ§a apÃ³s o alinhamento do escopo e o recebimento dos materiais e informaÃ§Ãµes necessÃ¡rios. SolicitaÃ§Ãµes adicionais ou atrasos no envio de conteÃºdo podem alterar o cronograma.</p>
+                <p>O prazo final será confirmado após entendermos os requisitos do projeto e as funcionalidades necessárias. A contagem começa após o alinhamento do escopo e o recebimento dos materiais e informações necessários. Solicitações adicionais ou atrasos no envio de conteúdo podem alterar o cronograma.</p>
               </div>
             </details>
 
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Como funciona o suporte apÃ³s a entrega?
+                Como funciona o suporte após a entrega?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>O suporte Ã© realizado por chat, e-mail ou videochamada, conforme o plano e as condiÃ§Ãµes definidos em contrato. Antes de iniciar o projeto, alinhamos os canais disponÃ­veis, o perÃ­odo de atendimento e os limites do suporte, para que vocÃª saiba exatamente com o que poderÃ¡ contar apÃ³s a entrega.</p>
+                <p>O suporte é realizado por chat, e-mail ou videochamada, conforme o plano e as condições definidos em contrato. Antes de iniciar o projeto, alinhamos os canais disponíveis, o período de atendimento e os limites do suporte, para que você saiba exatamente com o que poderá contar após a entrega.</p>
               </div>
             </details>
 
             <details class="ss-faq__item">
               <summary class="ss-faq__question">
-                Como o site serÃ¡ entregue? Terei uma cÃ³pia de backup?
+                Como o site será entregue? Terei uma cópia de backup?
                 <span class="ss-faq__icon" aria-hidden="true">+</span>
               </summary>
               <div class="ss-faq__answer">
-                <p>Ao finalizar o projeto, entregaremos o site publicado ou preparado para publicaÃ§Ã£o, conforme o escopo contratado. TambÃ©m forneceremos uma cÃ³pia de backup do projeto e realizaremos uma demonstraÃ§Ã£o por vÃ­deo gravado ou videochamada, explicando o funcionamento do site e orientando vocÃª sobre os principais recursos. Os arquivos, acessos e procedimentos de recuperaÃ§Ã£o serÃ£o disponibilizados conforme o que estiver definido no contrato e nas condiÃ§Ãµes tÃ©cnicas da hospedagem.</p>
+                <p>Ao finalizar o projeto, entregaremos o site publicado ou preparado para publicação, conforme o escopo contratado. Também forneceremos uma cópia de backup do projeto e realizaremos uma demonstração por vídeo gravado ou videochamada, explicando o funcionamento do site e orientando você sobre os principais recursos. Os arquivos, acessos e procedimentos de recuperação serão disponibilizados conforme o que estiver definido no contrato e nas condições técnicas da hospedagem.</p>
               </div>
             </details>
           </div>
@@ -1520,25 +1619,27 @@
       </div>
     </section>
 
-    <!-- RodapÃ© -->
     <footer class="ss-footer" id="ss-contato">
       <div class="ss-container ss-footer__inner">
-        <a href="#" class="ss-brand" aria-label="Studio â€” inÃ­cio">
+        <a href="#" class="ss-brand" aria-label="WebStudio — início">
           <span class="ss-brand__mark" aria-hidden="true"></span>
-          Studio
+          WebStudio
         </a>
 
-        <nav class="ss-footer__nav" aria-label="NavegaÃ§Ã£o do rodapÃ©">
-          <a href="#ss-servicos" class="ss-footer__link">ServiÃ§os</a>
+        <nav class="ss-footer__nav" aria-label="Navegação do rodapé">
+          <a href="#ss-servicos" class="ss-footer__link">Serviços</a>
+          <a href="#ss-hospedagem" class="ss-footer__link">Hospedagem e domínio</a>
           <a href="#" class="ss-footer__link" data-ss-msg="geral">Contato</a>
+          <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+          <a href="/politica-de-privacidade/" class="ss-footer__link">Política de Privacidade</a>
         </nav>
 
-        <p class="ss-footer__copy">Â© <span data-ss-year>2026</span> Studio. Todos os direitos reservados.</p>
+        <p class="ss-footer__copy">© <span data-ss-year>2026</span> WebStudio. Todos os direitos reservados.</p>
       </div>
     </footer>
 
-    <!-- BotÃ£o flutuante de WhatsApp (destino configurado em SS_WHATSAPP_URL) -->
-    <a href="#" class="ss-whatsapp" data-ss-msg="geral" target="_blank" rel="noopener noreferrer" aria-label="Conversar com o Studio pelo WhatsApp">
+    <!-- Botão flutuante de WhatsApp (destino configurado em SS_WHATSAPP_URL / landing-page.js) -->
+    <a href="#" class="ss-whatsapp" data-ss-msg="geral" target="_blank" rel="noopener noreferrer" aria-label="Conversar com o WebStudio pelo WhatsApp">
       <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.115-.198.057-.371-.058-.52-.115-.148-.767-1.847-1.05-2.528-.265-.665-.534-.575-.733-.585-.191-.009-.411-.011-.631-.011-.22 0-.577.083-.88.415-.302.332-1.155 1.13-1.155 2.755 0 1.626 1.18 3.195 1.345 3.415.165.221 2.327 3.555 5.64 4.982.788.34 1.403.543 1.882.695.79.251 1.509.216 2.078.131.634-.095 1.955-.8 2.231-1.572.273-.773.273-1.435.191-1.575-.081-.14-.297-.222-.595-.371zM12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.488z"/>
       </svg>
@@ -1548,7 +1649,7 @@
 
 <script>
 /* ============================================================
-   LANDING PAGE â€” JavaScript puro (sem jQuery, sem build)
+   LANDING PAGE — JavaScript puro (sem jQuery, sem build)
    Inicializa apenas dentro de #ss-landing.
    ============================================================ */
 
@@ -1556,21 +1657,22 @@
   "use strict";
 
   /* ============================================================
-     âš™ï¸ CONFIGURAÃ‡ÃƒO ÃšNICA â€” EDITE APENAS ESTE BLOCO
+     ⚙️ CONFIGURAÇÃO ÚNICA — EDITE APENAS ESTE BLOCO
      ============================================================
      Substitua o valor de SS_WHATSAPP_URL pelo seu link do WhatsApp.
      Exemplo: "https://wa.me/5511999999999"
-     (55 = Brasil, 11 = DDD, 999999999 = nÃºmero, sem espaÃ§os/traÃ§os)
-     Enquanto nÃ£o configurar, os botÃµes apontam para "#" (marcador).
+     (55 = Brasil, 11 = DDD, 999999999 = número, sem espaços/traços)
+     Enquanto não configurar, os botões apontam para "#" (marcador).
      ============================================================ */
   var SS_WHATSAPP_URL = "#"; // <-- COLOQUE SEU LINK DO WHATSAPP AQUI
 
-  // Mensagens prÃ©-preenchidas por serviÃ§o (podem ser personalizadas)
+  // Mensagens pré-preenchidas por serviço (podem ser personalizadas)
   var SS_MESSAGES = {
-    geral: "OlÃ¡! Vim pelo site e gostaria de conversar sobre um projeto.",
-    landing: "OlÃ¡! Tenho interesse em criar uma Landing Page.",
-    ecommerce: "OlÃ¡! Tenho interesse em criar um E-commerce.",
-    site: "OlÃ¡! Tenho interesse em um Site Personalizado."
+    geral: "Olá! Vim pelo site e gostaria de conversar sobre um projeto.",
+    landing: "Olá! Tenho interesse em criar uma Landing Page.",
+    ecommerce: "Olá! Tenho interesse em criar um E-commerce.",
+    site: "Olá! Tenho interesse em um Site Personalizado.",
+    hospedagem: "Olá! Tenho dúvidas sobre hospedagem e domínio."
   };
 
   /* Aplica os links de contato em todos os CTAs.
@@ -1599,15 +1701,15 @@
   }
 
   /* ============================================================
-     TEMA: Light | Dark | AutomÃ¡tico
-     - AutomÃ¡tico: 06:00â€“18:59 = Light | 19:00â€“05:59 = Dark
-     - PersistÃªncia via localStorage (com fallback em memÃ³ria)
-     - Recalcula a cada minuto e quando a aba volta a ficar visÃ­vel
+     TEMA: Light | Dark | Automático
+     - Automático: 06:00–18:59 = Light | 19:00–05:59 = Dark
+     - Persistência via localStorage (com fallback em memória)
+     - Recalcula a cada minuto e quando a aba volta a ficar visível
      ============================================================ */
 
   var STORAGE_KEY = "ss-theme-preference"; // "light" | "dark" | "auto"
 
-  // Fallback seguro quando localStorage estÃ¡ indisponÃ­vel
+  // Fallback seguro quando localStorage está indisponível
   var memoryStore = { value: null };
   var store = {
     get: function () {
@@ -1633,13 +1735,13 @@
     }
   };
 
-  // Retorna "light" ou "dark" conforme o horÃ¡rio local do navegador
+  // Retorna "light" ou "dark" conforme o horário local do navegador
   function themeByTime() {
-    var hour = new Date().getHours(); // 0â€“23, horÃ¡rio local
+    var hour = new Date().getHours(); // 0–23, horário local
     return hour >= 6 && hour <= 18 ? "light" : "dark";
   }
 
-  // PreferÃªncia salva + horÃ¡rio -> tema efetivo
+  // Preferência salva + horário -> tema efetivo
   function effectiveTheme(preference) {
     if (preference === "light" || preference === "dark") return preference;
     return themeByTime();
@@ -1650,7 +1752,7 @@
     root.setAttribute("data-ss-theme-effective", theme);
   }
 
-  // Marca o botÃ£o ativo do seletor
+  // Marca o botão ativo do seletor
   function syncThemeButtons(root, preference) {
     var btns = root.querySelectorAll(".ss-theme__btn");
     for (var i = 0; i < btns.length; i++) {
@@ -1665,7 +1767,7 @@
   }
 
   function initTheme(root) {
-    // Aplica imediatamente (o CSS jÃ¡ evita transiÃ§Ã£o atÃ© .ss-ready)
+    // Aplica imediatamente (o CSS já evita transição até .ss-ready)
     var saved = store.get();
     applyTheme(root, saved || "auto");
 
@@ -1677,21 +1779,21 @@
       if (!choice) return;
 
       if (choice === "auto") {
-        store.remove(); // remove preferÃªncia manual
+        store.remove(); // remove preferência manual
       } else {
         store.set(choice);
       }
       applyTheme(root, store.get() || "auto");
     });
 
-    // Recalcula o tema a cada minuto (modo automÃ¡tico)
+    // Recalcula o tema a cada minuto (modo automático)
     setInterval(function () {
       if ((store.get() || "auto") === "auto") {
         applyTheme(root, "auto");
       }
     }, 60000);
 
-    // Recalcula quando a pÃ¡gina volta a ficar visÃ­vel
+    // Recalcula quando a página volta a ficar visível
     document.addEventListener("visibilitychange", function () {
       if (document.visibilityState === "visible" && (store.get() || "auto") === "auto") {
         applyTheme(root, "auto");
@@ -1731,7 +1833,7 @@
   }
 
   /* ============================================================
-     ANIMAÃ‡Ã•ES LEVES DE ENTRADA (IntersectionObserver)
+     ANIMAÇÕES LEVES DE ENTRADA (IntersectionObserver)
      ============================================================ */
   function initReveals(root) {
     var items = root.querySelectorAll(".ss-reveal");
@@ -1762,10 +1864,10 @@
   }
 
   /* ============================================================
-      FAQ (ACORDEÃƒO)
-      - Usa <details>/<summary> nativos (sem dependÃªncias)
+      FAQ (ACORDEÃO)
+      - Usa <details>/<summary> nativos (sem dependências)
       - Apenas uma pergunta aberta por vez
-      - CompatÃ­vel com Elementor (inicializaÃ§Ã£o idempotente)
+      - Compatível com Elementor (inicialização idempotente)
       ============================================================ */
   function initFaq(root) {
     var faq = root.querySelector("#ss-faq");
@@ -1789,14 +1891,14 @@
   }
 
   /* ============================================================
-     INICIALIZAÃ‡ÃƒO
-     Roda para cada instÃ¢ncia de #ss-landing na pÃ¡gina.
+     INICIALIZAÇÃO
+     Roda para cada instância de #ss-landing na página.
      ============================================================ */
   function init() {
     var roots = document.querySelectorAll("#ss-landing");
     for (var i = 0; i < roots.length; i++) {
       var root = roots[i];
-      if (root.getAttribute("data-ss-init") === "true") continue; // evita dupla inicializaÃ§Ã£o
+      if (root.getAttribute("data-ss-init") === "true") continue; // evita dupla inicialização
       root.setAttribute("data-ss-init", "true");
 
       applyContactLinks(root);
@@ -1805,13 +1907,13 @@
       initReveals(root);
       initFaq(root);
 
-      // Ano automÃ¡tico no copyright
+      // Ano automático no copyright
       var yearEl = root.querySelector("[data-ss-year]");
       if (yearEl) {
         yearEl.textContent = String(new Date().getFullYear());
       }
 
-      // Habilita transiÃ§Ãµes sÃ³ depois do tema definido (anti-flash)
+      // Habilita transições só depois do tema definido (anti-flash)
       requestAnimationFrame(function (el) {
         return function () {
           el.classList.add("ss-ready");
@@ -1826,5 +1928,4 @@
     init();
   }
 })();
-
 </script>

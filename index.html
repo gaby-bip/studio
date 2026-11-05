@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sites pensados para valorizar sua marca e transformar sua presença digital.">
-  <title>Studio — Seu próximo site começa aqui</title>
+  <title>WebStudio — Seu próximo site começa aqui</title>
 
   <!-- Prévia local: os arquivos ficam em pastas separadas -->
   <link rel="stylesheet" href="landing-page.css">
@@ -17,9 +17,9 @@
     <!-- Cabeçalho -->
     <header class="ss-header">
       <div class="ss-container ss-header__inner">
-        <a href="#" class="ss-brand" aria-label="Studio — início">
+        <a href="#" class="ss-brand" aria-label="WebStudio — início">
           <span class="ss-brand__mark" aria-hidden="true"></span>
-          Studio
+          WebStudio
         </a>
 
         <nav class="ss-nav" aria-label="Navegação principal">
@@ -62,7 +62,7 @@
               <div class="ss-mocks__screen">
                 <div class="ss-mocks__site">
                   <div class="ss-mocks__topbar">
-                    <span class="ss-mocks__logo"><i></i>Studio</span>
+                    <span class="ss-mocks__logo"><i></i>WebStudio</span>
                     <span class="ss-mocks__links"><i></i><i></i><i></i><i></i></span>
                     <span class="ss-mocks__pill"></span>
                   </div>
@@ -242,6 +242,33 @@
       </div>
     </section>
 
+    <!-- Hospedagem e domínio -->
+    <section class="ss-hosting" id="ss-hospedagem" aria-labelledby="ss-hospedagem-title">
+      <div class="ss-container">
+        <div class="ss-section-head ss-reveal">
+          <p class="ss-section-head__eyebrow">Hospedagem e domínio</p>
+          <h2 class="ss-section-head__title ss-serif" id="ss-hospedagem-title">Seu site no ar, do jeito mais simples para você.</h2>
+          <p class="ss-section-head__subtitle">Você escolhe: usar o que já tem ou deixar tudo comigo.</p>
+        </div>
+
+        <div class="ss-cards ss-cards--two ss-reveal">
+          <article class="ss-card ss-card--hosting">
+            <span class="ss-card__num" aria-hidden="true">01</span>
+            <h3 class="ss-card__title ss-serif">Já tenho domínio ou hospedagem</h3>
+            <p class="ss-card__desc">Publico o site no seu domínio e na sua hospedagem. As contas continuam em seu nome e sob o seu controle; eu cuido da configuração.</p>
+          </article>
+
+          <article class="ss-card ss-card--hosting">
+            <span class="ss-card__num" aria-hidden="true">02</span>
+            <h3 class="ss-card__title ss-serif">Quero que você cuide de tudo</h3>
+            <p class="ss-card__desc">Registro um domínio para a sua marca e publico o site em uma hospedagem profissional. O registro do domínio já entra no pacote, e o valor da hospedagem é informado no orçamento.</p>
+          </article>
+        </div>
+
+        <p class="ss-hosting__note ss-reveal">Domínio e hospedagem são renovados anualmente. Os valores e a responsabilidade pela renovação ficam combinados no orçamento, sem surpresas. <a href="#" class="ss-card__link" data-ss-msg="hospedagem">Tirar dúvidas <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
     <!-- Perguntas frequentes -->
     <section class="ss-faq" id="ss-faq">
       <div class="ss-container">
@@ -253,7 +280,7 @@
 
         <div class="ss-faq__inner">
           <div class="ss-faq__aside ss-reveal" aria-hidden="true">
-            <!-- Ilustração: criação de sites (SVG minimalista, identidade do Studio) -->
+            <!-- Ilustração: criação de sites (SVG minimalista, identidade do WebStudio) -->
             <svg class="ss-faq__art" viewBox="0 0 420 380" role="img" aria-label="Ilustração de criação de sites" xmlns="http://www.w3.org/2000/svg">
               <!-- Plano de fundo suave -->
               <circle cx="210" cy="190" r="170" fill="var(--ss-bg-soft)"/>
@@ -357,22 +384,25 @@
 
     <footer class="ss-footer" id="ss-contato">
       <div class="ss-container ss-footer__inner">
-        <a href="#" class="ss-brand" aria-label="Studio — início">
+        <a href="#" class="ss-brand" aria-label="WebStudio — início">
           <span class="ss-brand__mark" aria-hidden="true"></span>
-          Studio
+          WebStudio
         </a>
 
         <nav class="ss-footer__nav" aria-label="Navegação do rodapé">
           <a href="#ss-servicos" class="ss-footer__link">Serviços</a>
+          <a href="#ss-hospedagem" class="ss-footer__link">Hospedagem e domínio</a>
           <a href="#" class="ss-footer__link" data-ss-msg="geral">Contato</a>
+          <!-- Ajuste o endereço caso a página da política tenha outro slug no WordPress -->
+          <a href="/politica-de-privacidade/" class="ss-footer__link">Política de Privacidade</a>
         </nav>
 
-        <p class="ss-footer__copy">© <span data-ss-year>2026</span> Studio. Todos os direitos reservados.</p>
+        <p class="ss-footer__copy">© <span data-ss-year>2026</span> WebStudio. Todos os direitos reservados.</p>
       </div>
     </footer>
 
     <!-- Botão flutuante de WhatsApp (destino configurado em SS_WHATSAPP_URL / landing-page.js) -->
-    <a href="#" class="ss-whatsapp" data-ss-msg="geral" target="_blank" rel="noopener noreferrer" aria-label="Conversar com o Studio pelo WhatsApp">
+    <a href="#" class="ss-whatsapp" data-ss-msg="geral" target="_blank" rel="noopener noreferrer" aria-label="Conversar com o WebStudio pelo WhatsApp">
       <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.115-.198.057-.371-.058-.52-.115-.148-.767-1.847-1.05-2.528-.265-.665-.534-.575-.733-.585-.191-.009-.411-.011-.631-.011-.22 0-.577.083-.88.415-.302.332-1.155 1.13-1.155 2.755 0 1.626 1.18 3.195 1.345 3.415.165.221 2.327 3.555 5.64 4.982.788.34 1.403.543 1.882.695.79.251 1.509.216 2.078.131.634-.095 1.955-.8 2.231-1.572.273-.773.273-1.435.191-1.575-.081-.14-.297-.222-.595-.371zM12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.488z"/>
       </svg>
