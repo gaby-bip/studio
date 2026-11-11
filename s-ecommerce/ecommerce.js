@@ -1,5 +1,5 @@
 /* ============================================================
-   WEBSTUDIO — Página do serviço E-commerce
+   BROTALINK — Página do serviço E-commerce
    JavaScript puro (sem jQuery, sem build).
    Encapsulado em IIFE; inicializa apenas dentro de
    #ws-ecommerce-page, sem conflitar com outros scripts.
@@ -503,7 +503,7 @@
     var payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: "Novo interesse em " + SERVICE_NAME + " — " + (lead.negocio || lead.nome),
-      from_name: "Site WebStudio",
+      from_name: "Site brotalink",
       replyto: lead.email,
       "Serviço": SERVICE_NAME
     };
@@ -646,8 +646,8 @@
     var STATES = {
       success: {
         title: "Que bom ter você por aqui!",
-        text: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
-        textNoWa: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a WebStudio.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+        text: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a brotalink.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
+        textNoWa: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a brotalink.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
       },
       fallback: {
         title: "Quase lá!",

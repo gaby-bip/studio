@@ -1,33 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Mockup de loja virtual de moda, com vitrine de produtos e filtros por categoria">
-  <defs><linearGradient id="wsec1-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B352A"/><stop offset="0.55" stop-color="#10231B"/><stop offset="1" stop-color="#0B1712"/></linearGradient></defs><rect width="800" height="500" fill="url(#wsec1-bg)"/>
-  <circle cx="64" cy="52" r="6" fill="#E94B91"/>
-  <text x="78" y="58" font-family="Georgia, serif" font-size="17" letter-spacing="2" fill="#F6F4EF">ATELIÊ</text>
-  <rect x="470" y="47" width="46" height="9" rx="4.5" fill="#A8C5B2" opacity="0.55"/>
-  <rect x="528" y="47" width="46" height="9" rx="4.5" fill="#A8C5B2" opacity="0.35"/>
-  <rect x="586" y="47" width="46" height="9" rx="4.5" fill="#A8C5B2" opacity="0.35"/>
-  <g fill="none" stroke="#F6F4EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M680 42h6l5 20h20l4-14h-27"/><circle cx="694" cy="68" r="2"/><circle cx="708" cy="68" r="2"/></g>
-  <circle cx="718" cy="42" r="8" fill="#E94B91"/><text x="718" y="46" text-anchor="middle" font-family="Arial" font-size="10" fill="#fff">2</text>
-  <text x="64" y="130" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#A8C5B2">NOVA COLEÇÃO</text>
-  <text x="64" y="172" font-family="Georgia, serif" font-size="34" fill="#F4F8F4">Peças que contam</text>
-  <text x="64" y="210" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#A8C5B2">a sua história.</text>
-  <rect x="64" y="236" width="66" height="22" rx="11" fill="#E94B91" stroke="#A8C5B2" stroke-opacity="0"/>
-  <rect x="140" y="236" width="66" height="22" rx="11" fill="none" stroke="#A8C5B2" stroke-opacity="0.4"/>
-  <rect x="216" y="236" width="66" height="22" rx="11" fill="none" stroke="#A8C5B2" stroke-opacity="0.4"/>
-  <rect x="64" y="288" width="150" height="170" rx="12" fill="#14261F" stroke="#A8C5B2" stroke-opacity="0.25"/>
-  <rect x="76" y="300" width="126" height="94" rx="8" fill="#254638"/>
-  <rect x="76" y="406" width="100" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
-  <rect x="76" y="424" width="54" height="12" rx="6" fill="#E94B91"/>
-  <rect x="238" y="288" width="150" height="170" rx="12" fill="#14261F" stroke="#E94B91" stroke-opacity="0.55"/>
-  <rect x="250" y="300" width="126" height="94" rx="8" fill="#254638"/>
-  <rect x="250" y="406" width="100" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
-  <rect x="250" y="424" width="54" height="12" rx="6" fill="#E94B91"/>
-  <rect x="412" y="288" width="150" height="170" rx="12" fill="#14261F" stroke="#A8C5B2" stroke-opacity="0.25"/>
-  <rect x="424" y="300" width="126" height="94" rx="8" fill="#254638"/>
-  <rect x="424" y="406" width="100" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
-  <rect x="424" y="424" width="54" height="12" rx="6" fill="#E94B91"/>
-  <rect x="586" y="288" width="150" height="170" rx="12" fill="#14261F" stroke="#A8C5B2" stroke-opacity="0.25"/>
-  <rect x="598" y="300" width="126" height="94" rx="8" fill="#254638"/>
-  <rect x="598" y="406" width="100" height="8" rx="4" fill="#A8C5B2" opacity="0.6"/>
-  <rect x="598" y="424" width="54" height="12" rx="6" fill="#E94B91"/>
+  <defs><linearGradient id="wsec1-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E3829"/><stop offset="0.55" stop-color="#20271D"/><stop offset="1" stop-color="#171C14"/></linearGradient></defs><rect width="800" height="500" fill="url(#wsec1-bg)"/>
+  <circle cx="64" cy="52" r="6" fill="#E83E78"/>
+  <text x="78" y="58" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="17" letter-spacing="2" fill="#FFF5E8">ATELIÊ</text>
+  <rect x="470" y="47" width="46" height="9" rx="4.5" fill="#A9C08A" opacity="0.55"/>
+  <rect x="528" y="47" width="46" height="9" rx="4.5" fill="#A9C08A" opacity="0.35"/>
+  <rect x="586" y="47" width="46" height="9" rx="4.5" fill="#A9C08A" opacity="0.35"/>
+  <g fill="none" stroke="#FFF5E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M680 42h6l5 20h20l4-14h-27"/><circle cx="694" cy="68" r="2"/><circle cx="708" cy="68" r="2"/></g>
+  <circle cx="718" cy="42" r="8" fill="#E83E78"/><text x="718" y="46" text-anchor="middle" font-family="Arial" font-size="10" fill="#fff">2</text>
+  <text x="64" y="130" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#A9C08A">NOVA COLEÇÃO</text>
+  <text x="64" y="172" font-family="Arial, Helvetica, sans-serif" font-weight="bold" letter-spacing="-0.5" font-size="34" fill="#FFF5E8">Peças que contam</text>
+  <text x="64" y="210" font-family="Arial, Helvetica, sans-serif" font-weight="bold" letter-spacing="-0.5" font-size="34" fill="#F2C230">a sua história.</text>
+  <rect x="64" y="236" width="66" height="22" rx="11" fill="#E83E78" stroke="#A9C08A" stroke-opacity="0"/>
+  <rect x="140" y="236" width="66" height="22" rx="11" fill="none" stroke="#A9C08A" stroke-opacity="0.4"/>
+  <rect x="216" y="236" width="66" height="22" rx="11" fill="none" stroke="#A9C08A" stroke-opacity="0.4"/>
+  <rect x="64" y="288" width="150" height="170" rx="12" fill="#2A3326" stroke="#A9C08A" stroke-opacity="0.25"/>
+  <rect x="76" y="300" width="126" height="94" rx="8" fill="#465B32"/>
+  <rect x="76" y="406" width="100" height="8" rx="4" fill="#A9C08A" opacity="0.6"/>
+  <rect x="76" y="424" width="54" height="12" rx="6" fill="#E83E78"/>
+  <rect x="238" y="288" width="150" height="170" rx="12" fill="#2A3326" stroke="#E83E78" stroke-opacity="0.55"/>
+  <rect x="250" y="300" width="126" height="94" rx="8" fill="#465B32"/>
+  <rect x="250" y="406" width="100" height="8" rx="4" fill="#A9C08A" opacity="0.6"/>
+  <rect x="250" y="424" width="54" height="12" rx="6" fill="#E83E78"/>
+  <rect x="412" y="288" width="150" height="170" rx="12" fill="#2A3326" stroke="#A9C08A" stroke-opacity="0.25"/>
+  <rect x="424" y="300" width="126" height="94" rx="8" fill="#465B32"/>
+  <rect x="424" y="406" width="100" height="8" rx="4" fill="#A9C08A" opacity="0.6"/>
+  <rect x="424" y="424" width="54" height="12" rx="6" fill="#E83E78"/>
+  <rect x="586" y="288" width="150" height="170" rx="12" fill="#2A3326" stroke="#A9C08A" stroke-opacity="0.25"/>
+  <rect x="598" y="300" width="126" height="94" rx="8" fill="#465B32"/>
+  <rect x="598" y="406" width="100" height="8" rx="4" fill="#A9C08A" opacity="0.6"/>
+  <rect x="598" y="424" width="54" height="12" rx="6" fill="#E83E78"/>
 
 </svg>

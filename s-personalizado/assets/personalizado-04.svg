@@ -1,60 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Mockup de site de serviços com agendamento online e calendário de horários">
-  <rect width="800" height="500" fill="#F6F4EF"/>
-  <circle cx="64" cy="52" r="6" fill="#E94B91"/>
-  <text x="78" y="58" font-family="Georgia, serif" font-size="17" letter-spacing="2" fill="#0B1713">VIVA CLÍNICA</text>
-  <rect x="470" y="47" width="46" height="9" rx="4.5" fill="#254638" opacity="0.55"/>
-  <rect x="528" y="47" width="46" height="9" rx="4.5" fill="#254638" opacity="0.35"/>
-  <rect x="586" y="47" width="46" height="9" rx="4.5" fill="#254638" opacity="0.35"/>
-  <rect x="646" y="38" width="92" height="28" rx="14" fill="#E94B91"/>
-  <text x="64" y="136" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#254638">AGENDE ONLINE</text>
-  <text x="64" y="178" font-family="Georgia, serif" font-size="32" fill="#0B1713">Cuidado que cabe</text>
-  <text x="64" y="216" font-family="Georgia, serif" font-size="32" font-style="italic" fill="#254638">na sua rotina.</text>
-  <rect x="64" y="246" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#D9D4C8"/>
-  <circle cx="86" cy="267" r="6" fill="#E94B91"/>
-  <rect x="102" y="263" width="150" height="8" rx="4" fill="#254638" opacity="0.55"/>
-  <rect x="64" y="300" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#D9D4C8"/>
-  <circle cx="86" cy="321" r="6" fill="#A8C5B2"/>
-  <rect x="102" y="317" width="135" height="8" rx="4" fill="#254638" opacity="0.55"/>
-  <rect x="64" y="354" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#D9D4C8"/>
-  <circle cx="86" cy="375" r="6" fill="#A8C5B2"/>
-  <rect x="102" y="371" width="120" height="8" rx="4" fill="#254638" opacity="0.55"/>
-  <rect x="64" y="408" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#D9D4C8"/>
-  <circle cx="86" cy="429" r="6" fill="#A8C5B2"/>
-  <rect x="102" y="425" width="105" height="8" rx="4" fill="#254638" opacity="0.55"/>
-  <rect x="430" y="96" width="306" height="364" rx="16" fill="#FFFFFF" stroke="#D9D4C8"/>
-  <text x="454" y="132" font-family="Georgia, serif" font-size="18" fill="#0B1713">Escolha um horário</text>
-  <rect x="454" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="492" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="530" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="568" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="606" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="644" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="682" y="152" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="454" y="190" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="492" y="190" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="530" y="190" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="568" y="190" width="30" height="30" rx="8" fill="#E94B91" opacity="1"/>
-  <rect x="606" y="190" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="644" y="190" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="682" y="190" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="454" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="492" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="530" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="568" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="606" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="644" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="682" y="228" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="454" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="492" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="530" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="568" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="606" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="644" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="1"/>
-  <rect x="682" y="266" width="30" height="30" rx="8" fill="#E3EDE6" opacity="0.4"/>
-  <rect x="454" y="320" width="80" height="28" rx="14" fill="none" stroke="#D9D4C8"/>
-  <rect x="548" y="320" width="80" height="28" rx="14" fill="none" stroke="#E94B91"/>
-  <rect x="642" y="320" width="80" height="28" rx="14" fill="none" stroke="#D9D4C8"/>
-  <rect x="454" y="390" width="258" height="40" rx="20" fill="#E94B91"/>
+  <rect width="800" height="500" fill="#FFF5E8"/>
+  <circle cx="64" cy="52" r="6" fill="#E83E78"/>
+  <text x="78" y="58" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="17" letter-spacing="2" fill="#20271D">VIVA CLÍNICA</text>
+  <rect x="470" y="47" width="46" height="9" rx="4.5" fill="#465B32" opacity="0.55"/>
+  <rect x="528" y="47" width="46" height="9" rx="4.5" fill="#465B32" opacity="0.35"/>
+  <rect x="586" y="47" width="46" height="9" rx="4.5" fill="#465B32" opacity="0.35"/>
+  <rect x="646" y="38" width="92" height="28" rx="14" fill="#E83E78"/>
+  <text x="64" y="136" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#465B32">AGENDE ONLINE</text>
+  <text x="64" y="178" font-family="Arial, Helvetica, sans-serif" font-weight="bold" letter-spacing="-0.5" font-size="32" fill="#20271D">Cuidado que cabe</text>
+  <text x="64" y="216" font-family="Arial, Helvetica, sans-serif" font-weight="bold" letter-spacing="-0.5" font-size="32" fill="#C9285F">na sua rotina.</text>
+  <rect x="64" y="246" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#EAD9C0"/>
+  <circle cx="86" cy="267" r="6" fill="#E83E78"/>
+  <rect x="102" y="263" width="150" height="8" rx="4" fill="#465B32" opacity="0.55"/>
+  <rect x="64" y="300" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#EAD9C0"/>
+  <circle cx="86" cy="321" r="6" fill="#A9C08A"/>
+  <rect x="102" y="317" width="135" height="8" rx="4" fill="#465B32" opacity="0.55"/>
+  <rect x="64" y="354" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#EAD9C0"/>
+  <circle cx="86" cy="375" r="6" fill="#A9C08A"/>
+  <rect x="102" y="371" width="120" height="8" rx="4" fill="#465B32" opacity="0.55"/>
+  <rect x="64" y="408" width="330" height="42" rx="10" fill="#FFFFFF" stroke="#EAD9C0"/>
+  <circle cx="86" cy="429" r="6" fill="#A9C08A"/>
+  <rect x="102" y="425" width="105" height="8" rx="4" fill="#465B32" opacity="0.55"/>
+  <rect x="430" y="96" width="306" height="364" rx="16" fill="#FFFFFF" stroke="#EAD9C0"/>
+  <text x="454" y="132" font-family="Arial, Helvetica, sans-serif" font-weight="bold" letter-spacing="-0.5" font-size="18" fill="#20271D">Escolha um horário</text>
+  <rect x="454" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="492" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="530" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="568" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="606" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="644" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="682" y="152" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="454" y="190" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="492" y="190" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="530" y="190" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="568" y="190" width="30" height="30" rx="8" fill="#E83E78" opacity="1"/>
+  <rect x="606" y="190" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="644" y="190" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="682" y="190" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="454" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="492" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="530" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="568" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="606" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="644" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="682" y="228" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="454" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="492" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="530" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="568" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="606" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="644" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="1"/>
+  <rect x="682" y="266" width="30" height="30" rx="8" fill="#FBEAD3" opacity="0.4"/>
+  <rect x="454" y="320" width="80" height="28" rx="14" fill="none" stroke="#EAD9C0"/>
+  <rect x="548" y="320" width="80" height="28" rx="14" fill="none" stroke="#E83E78"/>
+  <rect x="642" y="320" width="80" height="28" rx="14" fill="none" stroke="#EAD9C0"/>
+  <rect x="454" y="390" width="258" height="40" rx="20" fill="#E83E78"/>
   <text x="583" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">Confirmar agendamento</text>
 
 </svg>

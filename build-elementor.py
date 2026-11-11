@@ -14,9 +14,12 @@ Fontes (edite SEMPRE estes arquivos):
       -> s-personalizado/elementor-personalizado.html
       (nas páginas de serviço, as imagens de assets/ são embutidas no HTML)
 
-As três páginas de serviço usam o mesmo CSS/JS; só mudam o prefixo
-(#ws-*-page / ws** nos ids) e o bloco de configuração no topo do JS.
-Uma correção feita em uma delas deve ser repetida nas outras.
+As três páginas de serviço usam o mesmo CSS. A FONTE ÚNICA é
+s-landingpage/landingpage.css: este script gera ecommerce.css e
+personalizado.css a partir dela (só troca os prefixos). Não edite esses
+dois arquivos à mão.
+O JS também é igual nas três, exceto o bloco de configuração no topo;
+correções no restante do JS devem ser repetidas nos três arquivos.
 
 Os arquivos gerados são UTF-8 com BOM (garante acentos corretos ao abrir o arquivo direto no navegador). Não edite os arquivos gerados à mão:
 as alterações seriam perdidas na próxima geração.
@@ -87,7 +90,29 @@ def build(name, html_path, css_path, js_path, root_id, out_path, embed_images=Fa
     print(f"OK  {out_path.relative_to(ROOT).as_posix()}  ({len(out.encode('utf-8')) // 1024} KB)")
 
 
+SERVICE_CSS_COPIES = [
+    # (pasta, arquivo, id da raiz, prefixo dos ids/variáveis, nome do serviço)
+    ("s-ecommerce", "ecommerce.css", "ws-ecommerce-page", "wsec", "E-commerce"),
+    ("s-personalizado", "personalizado.css", "ws-personalizado-page", "wscp", "Site Personalizado"),
+]
+
+
+def sync_service_css():
+    """Gera o CSS das outras páginas de serviço a partir do da Landing Page."""
+    src = read(ROOT / "s-landingpage" / "landingpage.css")
+    for folder, name, root_id, prefix, service in SERVICE_CSS_COPIES:
+        css = (src.replace("ws-landing-page", root_id)
+                  .replace("wslp", prefix)
+                  .replace("Página do serviço Landing Page", "Página do serviço " + service))
+        css = ("/* ARQUIVO GERADO por build-elementor.py a partir de "
+               "s-landingpage/landingpage.css. NÃO edite à mão. */\n" + css)
+        out = ROOT / folder / name
+        out.write_text(css, encoding="utf-8", newline="\n")
+        print(f"OK  {out.relative_to(ROOT).as_posix()}  (copiado da Landing Page)")
+
+
 if __name__ == "__main__":
+    sync_service_css()
     build(
         "Página inicial",
         ROOT / "index.html",

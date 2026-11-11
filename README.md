@@ -1,4 +1,4 @@
-# WebStudio — Site
+# brotalink — Site
 
 Landing page de apresentação para um estúdio de criação de sites. Página única, minimalista e responsiva, composta por seções institucionais (serviços, benefícios, perguntas frequentes) e canais de contato direto.
 
@@ -14,7 +14,8 @@ O projeto é distribuído em duas formas equivalentes: uma versão de desenvolvi
 
 **Bibliotecas e frameworks**
 
-- Nenhuma. Todo o JavaScript é vanilla, sem dependências externas, bibliotecas ou fontes de terceiros.
+- Nenhuma. Todo o JavaScript é vanilla, sem dependências externas ou bibliotecas.
+- Fontes do Google Fonts (Bricolage Grotesque, DM Sans e Archivo Black), carregadas por `@import` no topo de cada CSS.
 
 **Plataforma de publicação**
 
@@ -85,4 +86,21 @@ Não edite os arquivos gerados à mão: as mudanças seriam sobrescritas.
 - Sem backend próprio. Os formulários das páginas de serviço enviam por e-mail via Web3Forms e oferecem continuar no WhatsApp; configure `WEB3FORMS_ACCESS_KEY` e `WHATSAPP_NUMBER` no topo do JS de cada página (`landingpage.js`, `ecommerce.js`, `personalizado.js`). Sem essa configuração, o formulário mostra uma mensagem de erro e mantém os dados preenchidos (nunca confirma um envio que não aconteceu).
 - Valores da seção Investimento e dados da Política de Privacidade estão marcados com `PREENCHER` nos arquivos.
 - Publicada via widget HTML do Elementor, a página não define `<title>` nem meta tags — SEO deve ser configurado nas opções da página no WordPress.
-- O design utiliza fontes de sistema (Georgia, Helvetica/Arial), sem carregamento de fontes externas.
+- As fontes vêm do Google Fonts: o navegador do visitante se conecta aos servidores do Google (citado na Política de Privacidade). Sem conexão com o Google, o site usa fontes de sistema parecidas.
+
+## Identidade visual (brotalink)
+
+| Cor | Hex | Uso |
+|---|---|---|
+| Verde-musgo | `#465B32` | destaques no tema claro |
+| Laranja tropical | `#F06A32` | grafismos e marcadores |
+| Rosa pitaya | `#E83E78` | ponto do logotipo e grafismos |
+| Rosa pitaya escurecido | `#C9285F` | botões (texto branco com contraste 5,3:1) |
+| Amarelo manga | `#F2C230` | destaques no tema escuro e sublinhados |
+| Branco de coco | `#FFF5E8` | fundo claro |
+| Verde mata noturno | `#20271D` | fundo escuro |
+
+- Títulos: Bricolage Grotesque. Textos: DM Sans. Chamadas curtas (rótulos e preços): Archivo Black.
+- Logotipo `brotalink.` em minúsculas, peso ExtraBold, com o ponto final em rosa.
+- O rosa puro (`#E83E78`) não tem contraste suficiente para texto em botões; por isso os botões usam o tom escurecido.
+- Os grafismos orgânicos (folhagem no hero, broto em uma seção e faixa de cores no rodapé) ficam na camada "IDENTIDADE BROTALINK", no fim do CSS.
