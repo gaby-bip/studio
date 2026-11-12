@@ -18,11 +18,11 @@
 
   // Mensagens pré-preenchidas por serviço (podem ser personalizadas)
   var SS_MESSAGES = {
-    geral: "Olá! Vim pelo site e gostaria de conversar sobre um projeto.",
-    landing: "Olá! Tenho interesse em criar uma Landing Page.",
-    ecommerce: "Olá! Tenho interesse em criar um E-commerce.",
-    site: "Olá! Tenho interesse em um Site Personalizado.",
-    hospedagem: "Olá! Tenho dúvidas sobre hospedagem e domínio."
+    geral: "Oi! Vim pelo site da brotalink e quero conversar sobre um projeto.",
+    landing: "Oi! Quero saber mais sobre a Landing Page.",
+    ecommerce: "Oi! Quero saber mais sobre o E-commerce.",
+    site: "Oi! Quero saber mais sobre o Site Personalizado.",
+    hospedagem: "Oi! Tenho uma dúvida sobre hospedagem e domínio."
   };
 
   /* Aplica os links de contato em todos os CTAs.

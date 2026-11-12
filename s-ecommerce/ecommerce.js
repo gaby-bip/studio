@@ -480,7 +480,7 @@
   function whatsappLink(lead) {
     var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
     if (!number) return "";
-    var lines = ["Olá! Tenho interesse em " + SERVICE_ARTICLE + " " + SERVICE_NAME + "."];
+    var lines = ["Oi! Vim pelo site e quero saber mais sobre " + SERVICE_ARTICLE + " " + SERVICE_NAME + "."];
     if (lead) {
       for (var i = 0; i < lead.fields.length; i++) {
         var f = lead.fields[i];
@@ -577,7 +577,7 @@
         submitBtn.disabled = on;
         submitBtn.textContent = on ? "Enviando…" : submitLabel;
       }
-      if (status) status.textContent = on ? "Enviando suas informações…" : "";
+      if (status) status.textContent = on ? "Enviando…" : "";
     }
 
     function clearForm() {
@@ -645,17 +645,17 @@
     // Mensagens por resultado do envio
     var STATES = {
       success: {
-        title: "Que bom ter você por aqui!",
-        text: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a brotalink.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nSe preferir, já podemos começar a conversa agora.",
-        textNoWa: "Recebi seu interesse em desenvolver " + SERVICE_ARTICLE + " " + SERVICE_NAME + " com a brotalink.\n\nEm breve, entro em contato pelo WhatsApp ou pelo e-mail informado.\n\nAgradeço por confiar sua ideia a mim!"
+        title: "Recebi! Que bom que você brotou por aqui.",
+        text: "Em breve eu te chamo no WhatsApp ou no e-mail que você deixou.\n\nSe quiser, a gente já pode começar a conversa agora.",
+        textNoWa: "Em breve eu te chamo no WhatsApp ou no e-mail que você deixou.\n\nValeu por confiar a sua ideia à brotalink!"
       },
       fallback: {
         title: "Quase lá!",
-        text: "Não consegui registrar seu envio agora.\n\nToque no botão abaixo para me enviar suas informações pelo WhatsApp. Seus dados continuam preenchidos no formulário."
+        text: "Seu envio não chegou até mim agora.\n\nToque no botão abaixo para me mandar tudo pelo WhatsApp. Seus dados continuam no formulário."
       },
       error: {
-        title: "Algo deu errado",
-        text: "Não consegui registrar seu envio agora. Seus dados continuam preenchidos no formulário.\n\nTente novamente em alguns instantes."
+        title: "Ops, algo deu errado",
+        text: "Seu envio não chegou até mim agora. Seus dados continuam no formulário.\n\nTenta de novo em alguns instantes?"
       }
     };
 
