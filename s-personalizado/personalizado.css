@@ -1663,6 +1663,14 @@
   color: var(--wscp-rosa);
 }
 
+/* Logo em SVG (letras herdam a cor do tema; a folha é sempre laranja) */
+#ws-personalizado-page .ws-brand__logo {
+  display: block;
+  height: 1.3rem;
+  width: auto;
+  overflow: visible;
+}
+
 /* ---------- Grafismos orgânicos ---------- */
 #ws-personalizado-page .ws-hero {
   isolation: isolate;

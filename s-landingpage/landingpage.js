@@ -28,7 +28,7 @@
         Light / Dark / Auto feita pelo visitante em qualquer página.
      ============================================================ */
 
-  var WEB3FORMS_ACCESS_KEY = ""; // <-- COLE SUA CHAVE DO WEB3FORMS AQUI
+  var WEB3FORMS_ACCESS_KEY = "e93ab6f3-90f2-4cf2-89c5-13d8fe1f7718"; // chave do Web3Forms (envia para brotalink@gmail.com)
   var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
 
   /* Dados desta página de serviço */

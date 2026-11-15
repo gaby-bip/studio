@@ -1336,6 +1336,14 @@
   color: var(--ss-rosa);
 }
 
+/* Logo em SVG (letras herdam a cor do tema; a folha é sempre laranja) */
+#ss-landing .ss-brand__logo {
+  display: block;
+  height: 1.3rem;
+  width: auto;
+  overflow: visible;
+}
+
 /* ---------- Grafismos orgânicos ---------- */
 #ss-landing .ss-hero {
   isolation: isolate;
