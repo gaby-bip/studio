@@ -760,6 +760,21 @@
   }
 
   /* ============================================================
+     WHATSAPP DIRETO (abaixo do formulário)
+     Monta o link com WHATSAPP_NUMBER e uma mensagem pronta.
+     Sem número configurado, o bloco continua escondido.
+     ============================================================ */
+  function initWhatsappDirect(root) {
+    var box = root.querySelector("[data-ws-wa-direct]");
+    if (!box) return;
+    var url = whatsappLink(null);
+    if (!url) return; // WHATSAPP_NUMBER vazio: nada aparece
+    var link = box.querySelector("a");
+    if (link) link.href = url;
+    box.hidden = false;
+  }
+
+  /* ============================================================
      INICIALIZAÇÃO
      Roda para cada instância de #ws-landing-page na página.
      ============================================================ */
@@ -777,6 +792,7 @@
       initAboutFaq(root);
       initCarousel(root);
       initForm(root, modalApi || { open: function () {} });
+      initWhatsappDirect(root);
       initReveals(root);
 
       // Ano automático no copyright

@@ -2229,3 +2229,74 @@
   border: 0;
   overflow: visible;   /* deixa o broto da divisória aparecer inteiro (os recortes de canto estão desligados no claro) */
 }
+
+
+/* ============================================================
+   CONTATO DIRETO PELO WHATSAPP (abaixo do formulário)
+   Para quem prefere não preencher. O JS só mostra o bloco
+   quando WHATSAPP_NUMBER estiver configurado.
+   ============================================================ */
+#ws-landing-page .ws-wa-direct {
+  max-width: 640px;
+  margin: 24px auto 0;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  flex-wrap: wrap;
+  border: 1px dashed var(--wslp-border);
+  border-radius: var(--wslp-radius);
+  background: var(--wslp-bg-soft);
+}
+
+#ws-landing-page .ws-wa-direct[hidden] {
+  display: none;
+}
+
+#ws-landing-page .ws-wa-direct__text {
+  margin: 0;
+  flex: 1 1 240px;
+  color: var(--wslp-text-muted);
+}
+
+#ws-landing-page .ws-wa-direct__text strong {
+  display: block;
+  color: var(--wslp-text);
+}
+
+/* Verde do WhatsApp com texto escuro (contraste 9:1) */
+#ws-landing-page .ws-wa-direct__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #062A16;
+  border-color: #25D366;
+  box-shadow: none;
+}
+
+#ws-landing-page .ws-wa-direct__btn:hover,
+#ws-landing-page .ws-wa-direct__btn:focus-visible {
+  background: #1EBE5A;
+  border-color: #1EBE5A;
+  color: #062A16;
+}
+
+#ws-landing-page .ws-wa-direct__btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+@media (max-width: 640px) {
+  #ws-landing-page .ws-wa-direct {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #ws-landing-page .ws-wa-direct__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
