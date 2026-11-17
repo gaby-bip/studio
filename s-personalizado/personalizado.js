@@ -29,7 +29,7 @@
      ============================================================ */
 
   var WEB3FORMS_ACCESS_KEY = "e93ab6f3-90f2-4cf2-89c5-13d8fe1f7718"; // chave do Web3Forms (envia para brotalink@gmail.com)
-  var WHATSAPP_NUMBER = "";      // <-- SEU WHATSAPP, ex.: "5511999999999"
+  var WHATSAPP_NUMBER = "5513974182734"; // WhatsApp da brotalink: (13) 97418-2734
 
   /* Dados desta página de serviço */
   var SERVICE_NAME = "Site Personalizado";   // usado no e-mail, no WhatsApp e no popup
@@ -480,7 +480,7 @@
   function whatsappLink(lead) {
     var number = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
     if (!number) return "";
-    var lines = ["Oi! Vim pelo site e quero saber mais sobre " + SERVICE_ARTICLE + " " + SERVICE_NAME + "."];
+    var lines = ["Olá, brotalink! Vim pelo site e tenho interesse em " + SERVICE_ARTICLE + " " + SERVICE_NAME + " para o meu negócio. Podemos conversar?"];
     if (lead) {
       for (var i = 0; i < lead.fields.length; i++) {
         var f = lead.fields[i];

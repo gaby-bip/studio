@@ -14,15 +14,15 @@
      (55 = Brasil, 11 = DDD, 999999999 = número, sem espaços/traços)
      Enquanto não configurar, os botões apontam para "#" (marcador).
      ============================================================ */
-  var SS_WHATSAPP_URL = "#"; // <-- COLOQUE SEU LINK DO WHATSAPP AQUI
+  var SS_WHATSAPP_URL = "https://wa.me/5513974182734"; // WhatsApp da brotalink: (13) 97418-2734
 
   // Mensagens pré-preenchidas por serviço (podem ser personalizadas)
   var SS_MESSAGES = {
-    geral: "Oi! Vim pelo site da brotalink e quero conversar sobre um projeto.",
-    landing: "Oi! Quero saber mais sobre a Landing Page.",
-    ecommerce: "Oi! Quero saber mais sobre o E-commerce.",
-    site: "Oi! Quero saber mais sobre o Site Personalizado.",
-    hospedagem: "Oi! Tenho uma dúvida sobre hospedagem e domínio."
+    geral: "Olá, brotalink! Quero colocar minha empresa na internet. Podemos conversar?",
+    landing: "Olá, brotalink! Tenho interesse em uma Landing Page para o meu negócio. Podemos conversar?",
+    ecommerce: "Olá, brotalink! Quero montar uma loja virtual para vender pela internet. Podemos conversar?",
+    site: "Olá, brotalink! Tenho interesse em um Site Personalizado para a minha empresa. Podemos conversar?",
+    hospedagem: "Olá, brotalink! Tenho uma dúvida sobre hospedagem e domínio. Pode me ajudar?"
   };
 
   /* Aplica os links de contato em todos os CTAs.
