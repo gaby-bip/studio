@@ -12,10 +12,6 @@ Fontes (edite SEMPRE estes arquivos):
       -> s-ecommerce/elementor-ecommerce.html
   s-personalizado/personalizado.html + .css + .js
       -> s-personalizado/elementor-personalizado.html
-  s-templates/templates.html + templates.css + templates.js
-      -> s-templates/elementor-templates.html   (modelos de Landing Page)
-  s-templates/loja.html + templates.css + templates.js
-      -> s-templates/elementor-loja.html        (modelos de loja virtual)
       (nas páginas de serviço, as imagens de assets/ são embutidas no HTML)
 
 As três páginas de serviço usam o mesmo CSS. A FONTE ÚNICA é
@@ -37,14 +33,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
-HEADER = """<!-- ============================================================
-     ELEMENTOR - WIDGET HTML  ({name})
-     ARQUIVO GERADO por build-elementor.py. NAO edite a mao:
-     altere {sources} e rode:  python build-elementor.py
-     Cole TODO o conteudo deste arquivo em UM unico widget HTML.
-     CSS, JS e imagens estao embutidos: nao depende de arquivos externos.
-     ============================================================ -->
-"""
+HEADER = "<!-- {name}: gerado por build-elementor.py. Para alterar, edite {sources} e gere de novo. -->\n"
 
 
 def read(path: Path) -> str:
@@ -98,15 +87,7 @@ SERVICE_CSS_COPIES = [
     # (pasta, arquivo, id da raiz, prefixo dos ids/variáveis, nome do serviço)
     ("s-ecommerce", "ecommerce.css", "ws-ecommerce-page", "wsec", "E-commerce"),
     ("s-personalizado", "personalizado.css", "ws-personalizado-page", "wscp", "Site Personalizado"),
-    # Página de Modelos: base da Landing Page + estilos próprios (templates-modelos.css)
-    ("s-templates", "templates.css", "ws-templates-page", "wstp", "Modelos"),
 ]
-
-# CSS próprio somado ao final da cópia (pasta -> arquivo fonte)
-SERVICE_CSS_EXTRAS = {
-    "s-templates": "templates-modelos.css",
-}
-
 
 def sync_service_css():
     """Gera o CSS das outras páginas de serviço a partir do da Landing Page."""
@@ -115,16 +96,7 @@ def sync_service_css():
         css = (src.replace("ws-landing-page", root_id)
                   .replace("wslp", prefix)
                   .replace("Página do serviço Landing Page", "Página do serviço " + service))
-        extra = SERVICE_CSS_EXTRAS.get(folder)
         origem = "s-landingpage/landingpage.css"
-        if extra:
-            extra_css = read(ROOT / folder / extra)
-            # @import só vale no topo do arquivo: sobe os do CSS próprio
-            linhas = extra_css.split("\n")
-            imports = [l for l in linhas if l.startswith("@import")]
-            extra_css = "\n".join(l for l in linhas if not l.startswith("@import"))
-            css = "".join(i + "\n" for i in imports) + css.rstrip() + "\n\n" + extra_css
-            origem += f" + {folder}/{extra}"
         css = ("/* ARQUIVO GERADO por build-elementor.py a partir de "
                f"{origem}. NÃO edite à mão. */\n" + css)
         out = ROOT / folder / name
@@ -139,8 +111,9 @@ if __name__ == "__main__":
         ROOT / "index.html",
         ROOT / "landing-page.css",
         ROOT / "landing-page.js",
-        "ss-landing",
+        "csb-site",
         ROOT / "elementor-html.html",
+        embed_images=True,   # logos (marca/copybrota) e imagens do portfólio
     )
     lp = ROOT / "s-landingpage"
     build(
@@ -170,24 +143,5 @@ if __name__ == "__main__":
         cp / "personalizado.js",
         "ws-personalizado-page",
         cp / "elementor-personalizado.html",
-        embed_images=True,
-    )
-    tp = ROOT / "s-templates"
-    build(
-        "Modelos (destino do Google Ads)",
-        tp / "templates.html",
-        tp / "templates.css",
-        tp / "templates.js",
-        "ws-templates-page",
-        tp / "elementor-templates.html",
-        embed_images=True,
-    )
-    build(
-        "Modelos de loja virtual (destino do Google Ads)",
-        tp / "loja.html",
-        tp / "templates.css",   # mesmo CSS e JS da página de modelos
-        tp / "templates.js",
-        "ws-templates-page",
-        tp / "elementor-loja.html",
         embed_images=True,
     )

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1440">
+<title>Modelos do portfólio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@500;600&family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#111;font-family:Manrope,Arial,sans-serif}
+.m{position:relative;width:1440px;height:900px;overflow:hidden;display:none}
+.m.on{display:block}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.nav{position:absolute;top:0;left:0;right:0;height:96px;display:flex;align-items:center;padding:0 80px;gap:44px;z-index:3}
+.nav .links{display:flex;gap:36px;margin-left:auto;font-size:15px;font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:999px;font-weight:700;font-size:16px}
+.wa::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid currentColor}
+
+/* 1 — Psicologia */
+#psicologia{background:#f5f0e8;color:#26352c}
+#psicologia .logo{font-family:Fraunces,serif;font-size:26px;font-weight:600}
+#psicologia .logo small{display:block;font-family:Manrope;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:#6c8a76}
+#psicologia .nav .cta{border:1.5px solid #26352c;padding:13px 24px;border-radius:999px;font-weight:700;font-size:14px}
+#psicologia .copy{position:absolute;left:80px;top:220px;width:640px}
+#psicologia .tag{display:inline-block;padding:8px 16px;border-radius:999px;background:#dfe8de;color:#3f5e4a;font-weight:700;font-size:13px;letter-spacing:.06em}
+#psicologia h1{font-family:Fraunces,serif;font-weight:400;font-size:72px;line-height:1.04;margin:26px 0 24px;letter-spacing:-.02em}
+#psicologia h1 em{font-style:italic;color:#4f7a5f}
+#psicologia p{font-size:19px;line-height:1.6;color:#5b6a60;max-width:520px}
+#psicologia .actions{display:flex;gap:18px;align-items:center;margin-top:38px}
+#psicologia .btn{background:#3f5e4a;color:#fff}
+#psicologia .info{font-size:14px;font-weight:700;color:#3f5e4a}
+#psicologia .photo{position:absolute;right:80px;top:130px;width:520px;height:680px;border-radius:260px 260px 24px 24px;overflow:hidden}
+#psicologia .badge{position:absolute;right:520px;bottom:120px;background:#fff;border-radius:18px;padding:22px 26px;box-shadow:0 20px 50px rgba(38,53,44,.14);font-size:14px;color:#5b6a60}
+#psicologia .badge b{display:block;font-family:Fraunces,serif;font-size:22px;color:#26352c;font-weight:600}
+#psicologia .strip{position:absolute;left:80px;bottom:56px;display:flex;gap:40px;font-size:14px;font-weight:700;color:#6c8a76;letter-spacing:.04em}
+
+/* 2 — Nutrição */
+#nutricao{background:#fffaf3;color:#1e2b22}
+#nutricao .logo{font-weight:800;font-size:26px;letter-spacing:-.02em}
+#nutricao .logo i{font-style:normal;color:#ef7d3c}
+#nutricao .nav .cta{background:#1f7a4d;color:#fff;padding:14px 24px;border-radius:12px;font-weight:700;font-size:14px}
+#nutricao .copy{position:absolute;left:80px;top:210px;width:620px}
+#nutricao .kicker{font-weight:800;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#ef7d3c}
+#nutricao h1{font-weight:800;font-size:76px;line-height:1;letter-spacing:-.035em;margin:22px 0 26px}
+#nutricao h1 span{color:#1f7a4d}
+#nutricao p{font-size:19px;line-height:1.6;color:#55625a;max-width:500px}
+#nutricao .actions{display:flex;gap:16px;margin-top:38px}
+#nutricao .btn{border-radius:14px;background:#1f7a4d;color:#fff}
+#nutricao .btn.ghost{background:transparent;color:#1e2b22;border:2px solid #d9e2db}
+#nutricao .blob{position:absolute;right:-60px;top:90px;width:760px;height:760px;border-radius:50%;background:#e9f3ec}
+#nutricao .photo{position:absolute;right:120px;top:150px;width:470px;height:600px;border-radius:32px;overflow:hidden;box-shadow:0 30px 60px rgba(30,43,34,.18)}
+#nutricao .food{position:absolute;right:500px;bottom:90px;width:220px;height:220px;border-radius:50%;overflow:hidden;border:10px solid #fffaf3}
+#nutricao .chip{position:absolute;right:70px;top:210px;background:#fff;padding:16px 20px;border-radius:16px;box-shadow:0 16px 40px rgba(30,43,34,.14);font-weight:800;font-size:15px}
+#nutricao .chip small{display:block;font-weight:500;color:#55625a;font-size:12px}
+
+/* 3 — Estética facial */
+#estetica{background:#141210;color:#f1e9df}
+#estetica .bg{position:absolute;inset:0 0 0 46%}
+#estetica .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.85) 0%,rgba(20,18,16,0) 22%),linear-gradient(90deg,#141210 0%,rgba(20,18,16,.25) 40%,rgba(20,18,16,0) 70%)}
+#estetica .logo{font-family:"Cormorant Garamond",serif;font-size:30px;letter-spacing:.2em;text-transform:uppercase}
+#estetica .nav .links{color:#cfc3b4}
+#estetica .nav .cta{border:1px solid #c8a97e;color:#e6cfa8;padding:13px 24px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+#estetica .copy{position:absolute;left:80px;top:230px;width:660px;z-index:2}
+#estetica .kicker{color:#c8a97e;font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:700}
+#estetica h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:88px;line-height:.98;margin:26px 0;letter-spacing:-.01em}
+#estetica h1 em{color:#e6cfa8}
+#estetica p{font-size:18px;line-height:1.7;color:#bdb2a5;max-width:470px}
+#estetica .btn{margin-top:40px;background:linear-gradient(135deg,#e6cfa8,#b8925f);color:#1b1610;border-radius:0;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
+#estetica .list{position:absolute;left:80px;bottom:60px;display:flex;gap:0;z-index:2}
+#estetica .list span{padding:0 34px;border-left:1px solid rgba(200,169,126,.4);font-family:"Cormorant Garamond",serif;font-size:22px;color:#e6cfa8}
+#estetica .list span:first-child{padding-left:0;border:0}
+
+/* 4 — Depilação a laser */
+#laser{background:linear-gradient(120deg,#5b2a86,#8f3fa8 55%,#c25bb5);color:#fff}
+#laser .logo{font-weight:800;font-size:28px;letter-spacing:-.02em}
+#laser .logo i{font-style:normal;font-weight:400}
+#laser .nav{background:linear-gradient(90deg,#5b2a86,#8f3fa8 55%,#c25bb5)}
+#laser .nav .links{color:#f0dcf5}
+#laser .photo{position:absolute;left:600px;top:96px;width:470px;height:804px}
+#laser .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#7a37a0 0%,rgba(122,55,160,0) 30%)}
+#laser .copy{position:absolute;left:80px;top:220px;width:560px;z-index:2}
+#laser .pill{display:inline-block;background:#ffd84d;color:#3d1a5c;font-weight:800;font-size:14px;padding:9px 18px;border-radius:999px;letter-spacing:.04em}
+#laser h1{font-weight:800;font-size:68px;line-height:1.02;letter-spacing:-.03em;margin:26px 0 22px}
+#laser p{font-size:19px;line-height:1.55;color:#f0dcf5;max-width:470px}
+#laser .checks{margin-top:30px;display:grid;gap:12px;font-weight:700;font-size:16px}
+#laser .checks span::before{content:"✓";display:inline-grid;place-items:center;width:24px;height:24px;margin-right:12px;border-radius:50%;background:#ffd84d;color:#3d1a5c;font-size:13px}
+#laser .card{position:absolute;right:80px;top:200px;width:330px;background:#fff;color:#2b1840;border-radius:24px;padding:34px 30px;box-shadow:0 30px 70px rgba(40,10,60,.35);z-index:2}
+#laser .card h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+#laser .card p{color:#6a5a78;font-size:14px;margin:10px 0 20px}
+#laser .chips{display:flex;flex-wrap:wrap;gap:8px}
+#laser .chips span{border:1.5px solid #e2d4ec;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:#5b2a86}
+#laser .chips span.on{background:#5b2a86;border-color:#5b2a86;color:#fff}
+#laser .card .btn{width:100%;justify-content:center;margin-top:24px;background:#25a35a;color:#fff;border-radius:14px}
+
+/* 5 — Personal trainer */
+#personal{background:#0d0f0c;color:#f4f6ef}
+#personal .photo{position:absolute;right:0;top:0;width:760px;height:900px}
+#personal .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0d0f0c 0%,rgba(13,15,12,0) 45%),linear-gradient(0deg,rgba(13,15,12,.7),rgba(13,15,12,0) 40%)}
+#personal .logo{font-family:"Archivo Black";font-size:26px;letter-spacing:.02em}
+#personal .logo i{font-style:normal;color:#c6ff3d}
+#personal .nav .links{color:#b9c0b0}
+#personal .nav .cta{background:#c6ff3d;color:#0d0f0c;padding:14px 26px;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+#personal .copy{position:absolute;left:80px;top:170px;width:700px;z-index:2}
+#personal .kicker{color:#c6ff3d;font-weight:800;font-size:14px;letter-spacing:.24em;text-transform:uppercase}
+#personal h1{font-family:"Archivo Black";font-weight:400;font-size:80px;line-height:.92;text-transform:uppercase;margin:22px 0 22px;letter-spacing:-.01em}
+#personal h1 span{color:transparent;-webkit-text-stroke:2px #c6ff3d}
+#personal p{font-size:19px;line-height:1.6;color:#b9c0b0;max-width:480px}
+#personal .actions{display:flex;gap:16px;margin-top:38px}
+#personal .btn{border-radius:0;background:#c6ff3d;color:#0d0f0c;text-transform:uppercase;letter-spacing:.06em}
+#personal .btn.ghost{background:transparent;color:#f4f6ef;border:2px solid #3a4035}
+#personal .stats{position:absolute;left:80px;bottom:60px;display:flex;gap:0;z-index:2}
+#personal .stats div{padding:0 40px;border-left:1px solid #2c3128;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.06em}
+#personal .stats div:first-child{padding-left:0;border:0}
+#personal .stats small{display:block;color:#8a9282;font-weight:500;font-size:13px;text-transform:none;letter-spacing:0;margin-top:4px}
+
+/* 6 — Estúdio funcional */
+#estudio{background:#ffc928;color:#111}
+#estudio .logo{font-family:"Archivo Black";font-size:30px;letter-spacing:-.02em}
+#estudio .nav .links{font-weight:700}
+#estudio .nav .cta{background:#111;color:#ffc928;padding:14px 26px;border-radius:999px;font-weight:800;font-size:14px}
+#estudio .copy{position:absolute;left:80px;top:190px;width:640px;z-index:2}
+#estudio h1{font-family:"Archivo Black";font-weight:400;font-size:118px;line-height:.88;text-transform:uppercase;letter-spacing:-.03em}
+#estudio p{font-family:Archivo;font-size:20px;line-height:1.5;margin:28px 0 36px;max-width:470px;font-weight:600}
+#estudio .btn{background:#111;color:#fff;font-family:Archivo;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+#estudio .photo{position:absolute;right:80px;top:120px;width:560px;height:700px;border-radius:28px;overflow:hidden;transform:rotate(2deg)}
+#estudio .photo2{position:absolute;right:560px;bottom:70px;width:250px;height:300px;border-radius:22px;overflow:hidden;border:8px solid #ffc928;transform:rotate(-4deg)}
+#estudio .tags{position:absolute;left:80px;bottom:64px;display:flex;gap:12px}
+#estudio .tags span{border:2px solid #111;border-radius:999px;padding:10px 20px;font-family:Archivo;font-weight:800;font-size:14px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- FOTOS: troque o "src" das <img> (atual: Unsplash, licença gratuita). Depois rode: python portfolio/gerar-imagens.py -->
+
+<section class="m" id="psicologia">
+  <nav class="nav"><div class="logo">Espaço Acolher<small>Psicologia clínica</small></div><div class="links"><span>Sobre</span><span>Atendimento</span><span>Abordagem</span><span>Contato</span></div><span class="cta">Agendar consulta</span></nav>
+  <div class="copy">
+    <span class="tag">Atendimento online e presencial</span>
+    <h1>Um espaço seguro para cuidar da sua <em>saúde emocional.</em></h1>
+    <p>Psicoterapia para adultos, com escuta acolhedora e sem julgamentos. Dê o primeiro passo no seu tempo.</p>
+    <div class="actions"><span class="btn wa">Agendar pelo WhatsApp</span><span class="info">CRP 00/00000</span></div>
+  </div>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1100&q=80" alt=""></div>
+  <div class="badge"><b>Terapia individual</b>Sessões de 50 minutos</div>
+  <div class="strip"><span>Ansiedade</span><span>Autoestima</span><span>Relacionamentos</span><span>Luto</span></div>
+</section>
+
+<section class="m" id="nutricao">
+  <nav class="nav"><div class="logo">vitta<i>.</i>nutri</div><div class="links"><span>Como funciona</span><span>Consultas</span><span>Depoimentos</span><span>Contato</span></div><span class="cta">Marcar consulta</span></nav>
+  <div class="copy">
+    <span class="kicker">Nutrição clínica e esportiva</span>
+    <h1>Alimentação leve, <span>resultado que dura.</span></h1>
+    <p>Plano alimentar feito para a sua rotina, com acompanhamento de perto e sem dietas impossíveis.</p>
+    <div class="actions"><span class="btn wa">Agendar consulta</span><span class="btn ghost">Ver como funciona</span></div>
+  </div>
+  <div class="blob"></div>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1757936613818-916978e2cdd3?auto=format&fit=crop&w=1000&q=80" alt=""></div>
+  <div class="food"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt=""></div>
+  <div class="chip">Consulta online<small>em todo o Brasil</small></div>
+</section>
+
+<section class="m" id="estetica">
+  <div class="bg"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=80" alt=""></div>
+  <nav class="nav"><div class="logo">Maison Lumière</div><div class="links"><span>Tratamentos</span><span>A clínica</span><span>Resultados</span><span>Contato</span></div><span class="cta">Agendar avaliação</span></nav>
+  <div class="copy">
+    <span class="kicker">Estética facial avançada</span>
+    <h1>Naturalidade que <em>realça</em> a sua beleza.</h1>
+    <p>Protocolos personalizados para a sua pele, em um ambiente pensado para o seu conforto.</p>
+    <span class="btn">Agendar avaliação</span>
+  </div>
+  <div class="list"><span>Limpeza de pele</span><span>Bioestimuladores</span><span>Peeling</span><span>Skinbooster</span></div>
+</section>
+
+<section class="m" id="laser">
+  <nav class="nav"><div class="logo">lisse<i> laser</i></div><div class="links"><span>Áreas</span><span>Como funciona</span><span>Unidades</span><span>Dúvidas</span></div></nav>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1544717304-a2db4a7b16ee?auto=format&fit=crop&w=1000&q=80" alt=""></div>
+  <div class="copy">
+    <span class="pill">Depilação a laser</span>
+    <h1>Pele lisa e livre de pelos, do jeito certo.</h1>
+    <p>Tecnologia de ponta e profissionais especializados para um tratamento seguro e confortável.</p>
+    <div class="checks"><span>Avaliação com especialista</span><span>Sessões rápidas</span><span>Pacotes por área</span></div>
+  </div>
+  <div class="card">
+    <h3>Agende sua avaliação</h3>
+    <p>Escolha as áreas de interesse e fale com a nossa equipe.</p>
+    <div class="chips"><span class="on">Axilas</span><span>Virilha</span><span class="on">Pernas</span><span>Buço</span><span>Barba</span><span>Costas</span></div>
+    <span class="btn wa">Chamar no WhatsApp</span>
+  </div>
+</section>
+
+<section class="m" id="personal">
+  <div class="photo"><img src="https://images.unsplash.com/photo-1758875568932-0eefd3e60090?auto=format&fit=crop&w=1400&q=80" alt=""></div>
+  <nav class="nav"><div class="logo">TREINO<i>PRIME</i></div><div class="links"><span>Método</span><span>Planos</span><span>Resultados</span><span>Contato</span></div><span class="cta">Aula experimental</span></nav>
+  <div class="copy">
+    <span class="kicker">Personal trainer</span>
+    <h1>Treino feito <span>pra você</span> evoluir.</h1>
+    <p>Acompanhamento individual, presencial ou online, com treinos ajustados ao seu objetivo e à sua rotina.</p>
+    <div class="actions"><span class="btn">Quero começar</span><span class="btn ghost">Conhecer o método</span></div>
+  </div>
+  <div class="stats"><div>Avaliação física<small>no primeiro encontro</small></div><div>Treino online<small>pelo app</small></div><div>Acompanhamento<small>semanal</small></div></div>
+</section>
+
+<section class="m" id="estudio">
+  <nav class="nav"><div class="logo">MOVE•STUDIO</div><div class="links"><span>Modalidades</span><span>Horários</span><span>Planos</span><span>Unidade</span></div><span class="cta">Agendar aula</span></nav>
+  <div class="copy">
+    <h1>Treine no seu ritmo.</h1>
+    <p>Treino funcional em turmas pequenas, com professor acompanhando cada movimento.</p>
+    <span class="btn">Agende uma aula grátis</span>
+  </div>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1100&q=80" alt=""></div>
+  <div class="photo2"><img src="https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&fit=crop&w=600&q=80" alt=""></div>
+  <div class="tags"><span>Funcional</span><span>HIIT</span><span>Mobilidade</span></div>
+</section>
+
+<script>
+var m=new URLSearchParams(location.search).get("m")||"psicologia";
+document.getElementById(m).classList.add("on");
+</script>
+</body>
+</html>

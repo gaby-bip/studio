@@ -1,5 +1,7 @@
 # Google Ads: palavras-chave e anúncios por nicho
 
+> **Atenção (nov/2026):** as páginas `/templates/` e `/modelos-loja/` foram removidas do projeto. Antes de usar estas campanhas, troque o link final para a página inicial (ex.: `https://SEU-DOMINIO/#csb-portfolio`), senão os anúncios levam a uma página inexistente.
+
 Cada grupo de anúncios leva para o link do seu nicho. A página abre na aba certa e o título do topo muda para o nicho, com as mesmas palavras da busca.
 
 > Os links abaixo supõem que as páginas no WordPress se chamam `/templates/` e `/modelos-loja/`. Se forem outros, troque nos anúncios.

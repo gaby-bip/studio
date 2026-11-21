@@ -4,143 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>brotalink — Política de Privacidade</title>
+  <title>Copy $ Brota — Política de Privacidade</title>
 </head>
 <body style="margin:0">
 
-<!-- ============================================================
-     POLÍTICA DE PRIVACIDADE — brotalink
-     Arquivo autocontido (CSS e JS embutidos).
-     Para o Elementor: cole TUDO entre <body> e </body> em um widget HTML
-     de uma página com o endereço /politica-de-privacidade/.
-
-     ⚠️ MODELO: revise com um(a) advogado(a) ou contador(a).
-     ============================================================ -->
-<div id="ws-privacy" data-ws-theme="light">
+<!-- ELEMENTOR: cole tudo entre <body> e </body> em um widget HTML da página /politica-de-privacidade/. Revise o texto com um(a) advogado(a). -->
+<div id="csb-privacy">
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap");
 
-#ws-privacy {
-  --wspp-bg: #FFF5E8;
-  --wspp-card: #FFFCF7;
-  --wspp-text: #20271D;
-  --wspp-muted: #5B6150;
-  --wspp-border: #EAD9C0;
-  --wspp-accent: #465B32;
-  --wspp-pink: #C9285F;
-  background: var(--wspp-bg);
-  color: var(--wspp-text);
-  font-family: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+#csb-privacy {
+  --csbp-bg: #0a0a0a;
+  --csbp-card: #151515;
+  --csbp-text: #f2ece4;
+  --csbp-muted: #b5aea6;
+  --csbp-line: rgba(242, 236, 228, 0.14);
+  --csbp-pink: #e60662;
+  --csbp-pink-text: #ff4d93;
+  background: var(--csbp-bg);
+  color: var(--csbp-text);
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.7;
   padding: 72px 24px 96px;
   -webkit-font-smoothing: antialiased;
 }
-#ws-privacy[data-ws-theme="dark"] {
-  --wspp-bg: #20271D;
-  --wspp-card: #2A3326;
-  --wspp-text: #FFF5E8;
-  --wspp-muted: #C9CDB8;
-  --wspp-border: rgba(255, 245, 232, 0.14);
-  --wspp-accent: #F2C230;
-  --wspp-pink: #FF7FA8;
+#csb-privacy * { box-sizing: border-box; }
+#csb-privacy .csbp-inner { max-width: 760px; margin: 0 auto; }
+#csb-privacy .csbp-brand {
+  display: inline-block;
+  margin: 0 0 28px;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--csbp-text);
+  text-decoration: none;
 }
-#ws-privacy .wspp-inner {
-  max-width: 760px;
-  margin: 0 auto;
+#csb-privacy .csbp-brand span { color: var(--csbp-pink); }
+#csb-privacy h1,
+#csb-privacy h2 {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--csbp-text);
 }
-#ws-privacy .wspp-eyebrow {
-  margin: 0 0 12px;
-  font-family: "Bricolage Grotesque", "DM Sans", Arial, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: var(--wspp-text);
-}
-#ws-privacy .wspp-eyebrow span {
-  color: #E83E78;
-}
-#ws-privacy h1,
-#ws-privacy h2 {
-  font-family: "Bricolage Grotesque", "DM Sans", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-#ws-privacy h1 {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-}
-#ws-privacy h1 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  margin: 0 0 12px;
-}
-#ws-privacy h2 {
-  font-size: 1.35rem;
-  margin: 40px 0 12px;
-}
-#ws-privacy p,
-#ws-privacy li {
-  color: var(--wspp-muted);
-  font-size: 0.98rem;
-}
-#ws-privacy strong {
-  color: var(--wspp-text);
-}
-#ws-privacy ul {
-  padding-left: 20px;
-  margin: 0 0 16px;
-}
-#ws-privacy li {
-  margin-bottom: 6px;
-}
-#ws-privacy a {
-  color: var(--wspp-text);
-  text-decoration: underline;
-  text-decoration-color: var(--wspp-pink);
-  text-underline-offset: 3px;
-}
-#ws-privacy .wspp-updated {
-  font-size: 0.88rem;
-  margin: 0 0 32px;
-}
-#ws-privacy .wspp-box {
-  background: var(--wspp-card);
-  border: 1px solid var(--wspp-border);
-  border-radius: 14px;
+#csb-privacy h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin: 0 0 12px; }
+#csb-privacy h2 { font-size: 1.6rem; margin: 48px 0 12px; letter-spacing: .01em; }
+#csb-privacy h2::before { content: ""; display: block; width: 36px; height: 4px; margin-bottom: 14px; background: var(--csbp-pink); }
+#csb-privacy p,
+#csb-privacy li { color: var(--csbp-muted); font-size: 1rem; }
+#csb-privacy p { margin: 0 0 14px; }
+#csb-privacy strong { color: var(--csbp-text); }
+#csb-privacy ul { padding-left: 20px; margin: 0 0 16px; }
+#csb-privacy li { margin-bottom: 6px; }
+#csb-privacy li::marker { color: var(--csbp-pink); }
+#csb-privacy a { color: var(--csbp-pink-text); text-underline-offset: 3px; }
+#csb-privacy .csbp-updated { font-size: .9rem; margin: 0 0 32px; }
+#csb-privacy .csbp-box {
+  background: var(--csbp-card);
+  border: 1px solid var(--csbp-line);
+  border-left: 4px solid var(--csbp-pink);
+  border-radius: 12px;
   padding: 22px 26px;
   margin: 24px 0;
 }
-#ws-privacy .wspp-box p {
-  margin: 0;
-}
+#csb-privacy .csbp-box p { margin: 0; }
 @media (max-width: 640px) {
-  #ws-privacy {
-    padding: 48px 16px 72px;
-  }
+  #csb-privacy { padding: 48px 16px 72px; }
 }
 </style>
 
-  <div class="wspp-inner">
-    <p class="wspp-eyebrow">brotalink<span aria-hidden="true">.</span></p>
+  <div class="csbp-inner">
+    <!-- LINK: endereço da página inicial -->
+    <a class="csbp-brand" href="/">Copy <span>$</span> Brota</a>
     <h1>Política de Privacidade</h1>
-    <p class="wspp-updated">Última atualização: novembro de 2026.</p>
+    <p class="csbp-updated">Última atualização: novembro de 2026.</p>
 
-    <div class="wspp-box">
-      <p>Esta política explica, de forma simples, quais dados pessoais a brotalink coleta pelo site e durante a prestação dos serviços, por que eles são usados, com quem são compartilhados e quais são os seus direitos, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).</p>
+    <div class="csbp-box">
+      <p>Esta política explica, de forma simples, quais dados pessoais a Copy $ Brota coleta pelo site e durante a prestação dos serviços, por que eles são usados, com quem são compartilhados e quais são os seus direitos, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).</p>
     </div>
 
     <h2>1. Quem é responsável pelos seus dados</h2>
-    <!-- Atuação como autônoma: quem responde é a pessoa física. Ao abrir CNPJ, trocar pela razão social.
-         Ao criar o e-mail @brotalink.com, trocar o endereço abaixo (aparece 2 vezes: href e texto). -->
-    <p>Quem responde pelo tratamento dos dados (o “controlador”, nos termos da LGPD) é <strong>Gabrielly Santos</strong>, profissional autônoma que atua sob o nome brotalink. Para qualquer assunto sobre privacidade, escreva para <a href="mailto:brotalink@gmail.com">brotalink@gmail.com</a>.</p>
-    <p>Por se tratar de um agente de tratamento de pequeno porte, a brotalink não é obrigada a indicar um encarregado de dados (Resolução CD/ANPD nº 2/2022). O e-mail acima é o canal oficial para pedidos e dúvidas sobre os seus dados.</p>
+    <!-- RESPONSÁVEL E E-MAIL: ao abrir CNPJ, troque pela razão social. Ao criar um e-mail novo, troque o endereço (aparece 2 vezes: href e texto). -->
+    <p>Quem responde pelo tratamento dos dados (o “controlador”, nos termos da LGPD) é <strong>Gabrielly Santos</strong>, profissional autônoma que atua sob o nome Copy $ Brota. Para qualquer assunto sobre privacidade, escreva para <a href="mailto:brotalink@gmail.com">brotalink@gmail.com</a>.</p>
+    <p>Por se tratar de um agente de tratamento de pequeno porte, a Copy $ Brota não é obrigada a indicar um encarregado de dados (Resolução CD/ANPD nº 2/2022). O e-mail acima é o canal oficial para pedidos e dúvidas sobre os seus dados.</p>
 
     <h2>2. Quais dados são coletados</h2>
-    <p><strong>Pelo formulário do site</strong>, coleto apenas o que você informa:</p>
-    <ul>
-      <li><strong>Identificação e contato:</strong> nome, e-mail e número de WhatsApp.</li>
-      <li><strong>Sobre o projeto:</strong> nome e área do negócio, tipo e objetivo do site, páginas e funcionalidades desejadas, informações sobre produtos, pagamentos e entregas (no caso de loja virtual), quando deseja começar, materiais que já possui, Instagram ou site atual, referências e a mensagem que você escrever.</li>
-    </ul>
+    <p>O site não tem formulários. <strong>Quando você me chama no WhatsApp</strong>, recebo o seu nome e número (conforme o seu perfil no aplicativo) e as informações que você enviar na conversa, como dados do seu negócio e do projeto.</p>
     <p><strong>Se você contratar um serviço</strong>, também posso tratar:</p>
     <ul>
       <li>CPF ou CNPJ, endereço e dados de contato, para o contrato, a emissão de recibo ou nota fiscal e o registro do domínio em seu nome;</li>
@@ -149,12 +100,9 @@
     </ul>
     <p><strong>Dados técnicos:</strong> como acontece com qualquer site, a empresa de hospedagem registra dados de acesso (como endereço IP, data e hora e o navegador usado) por motivos de segurança e funcionamento.</p>
 
-    <h2>3. Cookies e armazenamento no navegador</h2>
+    <h2>3. Cookies</h2>
     <p>Este site <strong>não usa cookies de publicidade nem ferramentas de análise ou rastreamento</strong> (como Google Analytics ou Pixel do Facebook).</p>
-    <ul>
-      <li><strong>Preferência de tema:</strong> o site guarda no seu próprio navegador (armazenamento local) se você escolheu o tema claro, escuro ou automático. Essa informação não identifica você, não é enviada para mim e pode ser apagada a qualquer momento nas configurações do navegador.</li>
-      <li><strong>Cookies técnicos:</strong> a plataforma do site (WordPress) e a hospedagem podem usar cookies estritamente necessários para o funcionamento e a segurança das páginas.</li>
-    </ul>
+    <p>A plataforma do site (WordPress) e a hospedagem podem usar cookies estritamente necessários para o funcionamento e a segurança das páginas.</p>
     <p>Se, no futuro, o site passar a usar cookies de análise ou de publicidade, você será avisado(a) e poderá aceitar ou recusar antes que eles sejam ativados.</p>
 
     <h2>4. Para que os dados são usados</h2>
@@ -169,8 +117,7 @@
 
     <h2>5. Base legal</h2>
     <ul>
-      <li><strong>Consentimento</strong> (art. 7º, I), dado ao marcar a caixa de concordância do formulário;</li>
-      <li><strong>Procedimentos preliminares e execução de contrato</strong> (art. 7º, V), para o orçamento e a prestação do serviço;</li>
+      <li><strong>Procedimentos preliminares e execução de contrato</strong> (art. 7º, V), para responder ao seu contato, fazer o orçamento e prestar o serviço;</li>
       <li><strong>Cumprimento de obrigação legal</strong> (art. 7º, II), para guardar documentos fiscais e contratuais;</li>
       <li><strong>Legítimo interesse</strong> (art. 7º, IX), para a segurança do site e os dados técnicos de acesso.</li>
     </ul>
@@ -178,12 +125,10 @@
     <h2>6. Com quem os dados são compartilhados</h2>
     <p>Alguns serviços de terceiros participam do processo, sempre só para as finalidades descritas aqui:</p>
     <ul>
-      <li><strong>Web3Forms:</strong> serviço que recebe o formulário e o encaminha para o meu e-mail;</li>
-      <li><strong>Provedor de e-mail:</strong> onde as mensagens ficam armazenadas;</li>
-      <li><strong>WhatsApp (Meta):</strong> somente se você escolher continuar a conversa por lá;</li>
+      <li><strong>WhatsApp (Meta):</strong> aplicativo onde acontece o atendimento;</li>
+      <li><strong>Provedor de e-mail:</strong> onde as mensagens ficam armazenadas, se você escrever por e-mail;</li>
       <li><strong>Hostinger:</strong> empresa de hospedagem do site;</li>
       <li><strong>Google Fonts:</strong> serviço que entrega as fontes usadas no site. Ao carregar as páginas, seu navegador se conecta aos servidores do Google, que recebem dados técnicos como o endereço IP;</li>
-      <li><strong>Unsplash:</strong> banco de imagens que entrega as fotos ilustrativas da página de modelos. Ao carregar essa página, seu navegador se conecta aos servidores do Unsplash, que recebem dados técnicos como o endereço IP;</li>
       <li><strong>Mercado Pago:</strong> processa os pagamentos, se você contratar um serviço;</li>
       <li><strong>Registro.br ou outro registrador de domínio:</strong> recebe os dados exigidos para registrar o domínio em seu nome, se esse serviço for contratado;</li>
       <li><strong>Contador(a) e autoridades:</strong> quando necessário para cumprir obrigações fiscais ou ordens legais.</li>
@@ -200,10 +145,8 @@
       <li>Corrigir dados incompletos, inexatos ou desatualizados;</li>
       <li>Pedir a anonimização, o bloqueio ou a exclusão de dados desnecessários ou tratados em desacordo com a lei;</li>
       <li>Pedir a portabilidade dos seus dados;</li>
-      <li>Pedir a exclusão dos dados tratados com base no seu consentimento;</li>
       <li>Saber com quem eles foram compartilhados;</li>
-      <li>Saber o que acontece se você não der o consentimento;</li>
-      <li>Revogar o seu consentimento.</li>
+      <li>Revogar um consentimento que você tenha dado.</li>
     </ul>
     <p>Para isso, basta enviar um e-mail para o endereço informado no item 1. Respondo em até 15 dias. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
 
@@ -213,20 +156,7 @@
     <h2>10. Alterações nesta política</h2>
     <p>Esta política pode ser atualizada para refletir mudanças no site, nos serviços ou na legislação. A data da última atualização fica sempre no topo da página.</p>
   </div>
-
-<script>
-/* Aplica o mesmo tema escolhido no restante do site (chave compartilhada). */
-(function () {
-  var root = document.getElementById("ws-privacy");
-  if (!root) return;
-  var pref = null;
-  try { pref = window.localStorage.getItem("ss-theme-preference"); } catch (e) { /* noop */ }
-  var hour = new Date().getHours();
-  var theme = pref === "light" || pref === "dark" ? pref : (hour >= 6 && hour <= 18 ? "light" : "dark");
-  root.setAttribute("data-ws-theme", theme);
-})();
-</script>
-</div><!-- /#ws-privacy -->
+</div><!-- /#csb-privacy -->
 
 </body>
 </html>
