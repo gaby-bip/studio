@@ -14,8 +14,9 @@
     <header class="csb-header">
       <div class="csb-wrap csb-header__inner">
         <a href="#csb-inicio" class="csb-logo" aria-label="Copy $ Brota — início">
-          <!-- LOGO C$B: para trocar, substitua o src pela URL da nova imagem -->
-          <img src="marca/copybrota/copybrota-csb.webp" alt="C$B — Copy $ Brota" width="280" height="163" decoding="async">
+          <!-- LOGO C$B: para trocar, substitua o src pela URL da nova imagem (a 1ª é a do modo escuro, a 2ª a do modo claro) -->
+          <img class="csb-logo__on-dark" src="marca/copybrota/copybrota-csb.webp" alt="C$B — Copy $ Brota" width="280" height="163" decoding="async">
+          <img class="csb-logo__on-light" src="marca/copybrota/copybrota-csb-escuro.webp" alt="C$B — Copy $ Brota" width="280" height="163" decoding="async">
         </a>
 
         <nav class="csb-nav" id="csb-nav" aria-label="Navegação principal">
@@ -26,6 +27,11 @@
           <a href="#csb-contato" class="csb-nav__link">Contato</a>
           <a href="#" class="csb-btn csb-btn--primary csb-nav__cta" data-csb-msg="geral">Solicitar orçamento</a>
         </nav>
+
+        <button type="button" class="csb-theme" aria-label="Ativar modo claro">
+          <svg class="csb-theme__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="csb-theme__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        </button>
 
         <a href="#" class="csb-btn csb-btn--outline csb-header__cta" data-csb-msg="geral">
           Solicitar orçamento
@@ -95,8 +101,8 @@
 
       <div class="csb-marquee" aria-hidden="true">
         <div class="csb-marquee__track">
-          <span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b>
-          <span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b>
+          <div class="csb-marquee__group"><span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b><span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b><span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b></div>
+          <div class="csb-marquee__group"><span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b><span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b><span>Landing pages</span><b>$</b><span>Sites institucionais</span><b>$</b><span>Lojas virtuais</span><b>$</b><span>Redesign</span><b>$</b></div>
         </div>
       </div>
 

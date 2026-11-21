@@ -68,7 +68,8 @@ Não edite os arquivos gerados à mão: as mudanças seriam sobrescritas.
 
 **Configuração** (topo de `landing-page.js`):
 - `CSB_WHATSAPP_NUMBER`: número com 55 + DDD (hoje `5513974182734`).
-- `CSB_INSTAGRAM_URL`: link do perfil. Vazio = ícone do Instagram escondido no rodapé.
+- `CSB_INSTAGRAM_URL`: link do perfil (hoje `https://www.instagram.com/brota.link/`). Vazio = ícone escondido.
+- `CSB_DEFAULT_THEME`: tema inicial, `"dark"` ou `"light"`. O botão de sol/lua no cabeçalho troca o tema e a escolha do visitante fica salva no navegador. No modo claro, a chamada final e o rodapé continuam pretos.
 - `CSB_MESSAGES`: mensagem pré-preenchida de cada botão (`data-csb-msg="geral|landing|site|ecommerce|redesign|desconto"`).
 - `CSB_CAROUSEL_SPEED`: velocidade do carrossel (px/s).
 

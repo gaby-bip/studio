@@ -3,7 +3,10 @@
 
   /* CONTATOS: altere aqui */
   var CSB_WHATSAPP_NUMBER = "5513974182734";
-  var CSB_INSTAGRAM_URL = ""; // ex.: "https://www.instagram.com/seuperfil/" (vazio = ícone escondido)
+  var CSB_INSTAGRAM_URL = "https://www.instagram.com/brota.link/";
+
+  /* TEMA INICIAL: "dark" (escuro) ou "light" (claro). A escolha do visitante fica salva no navegador. */
+  var CSB_DEFAULT_THEME = "dark";
 
   /* MENSAGENS DO WHATSAPP: uma por botão (atributo data-csb-msg) */
   var CSB_MESSAGES = {
@@ -42,6 +45,24 @@
     a.hidden = false;
   });
   $all("[data-csb-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  var themeBtn = $(".csb-theme");
+  function storedTheme() {
+    try { return window.localStorage.getItem("csb-theme"); } catch (e) { return null; }
+  }
+  function setTheme(theme, save) {
+    root.setAttribute("data-csb-theme", theme);
+    themeBtn.setAttribute("aria-label", theme === "light" ? "Ativar modo escuro" : "Ativar modo claro");
+    if (save) {
+      try { window.localStorage.setItem("csb-theme", theme); } catch (e) { /* navegação privada */ }
+    }
+  }
+  var saved = storedTheme();
+  setTheme(saved === "light" || saved === "dark" ? saved : CSB_DEFAULT_THEME, false);
+  window.requestAnimationFrame(function () { root.classList.add("csb-theme-ready"); });
+  themeBtn.addEventListener("click", function () {
+    setTheme(root.getAttribute("data-csb-theme") === "light" ? "dark" : "light", true);
+  });
 
   var header = $(".csb-header");
   var nav = $(".csb-nav");
